@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>accretion disks on </title>
+    <link>https://chongchonghe.github.io/tags/accretion-disks/</link>
+    <description>Recent content in accretion disks on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Tue, 01 Mar 2016 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://chongchonghe.github.io/tags/accretion-disks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anisotropy of X-Ray Bursts from Neutron Stars with Concave Accretion Disks</title>
+      <link>https://chongchonghe.github.io/publication/he-2016/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/publication/he-2016/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

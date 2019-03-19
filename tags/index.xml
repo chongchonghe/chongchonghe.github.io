@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Academic</title>
+    <title>Tags on </title>
     <link>https://chongchonghe.github.io/tags/</link>
-    <description>Recent content in Tags on Academic</description>
+    <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
     
 	<atom:link href="https://chongchonghe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>X-rays: binaries</title>
+      <link>https://chongchonghe.github.io/tags/x-rays-binaries/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/x-rays-binaries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>X-rays: bursts</title>
+      <link>https://chongchonghe.github.io/tags/x-rays-bursts/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/x-rays-bursts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>accretion</title>
+      <link>https://chongchonghe.github.io/tags/accretion/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/accretion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>accretion disks</title>
+      <link>https://chongchonghe.github.io/tags/accretion-disks/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/accretion-disks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stars: neutron</title>
+      <link>https://chongchonghe.github.io/tags/stars-neutron/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/stars-neutron/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

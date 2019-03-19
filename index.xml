@@ -1,12 +1,75 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic on Academic</title>
+    <title></title>
     <link>https://chongchonghe.github.io/</link>
-    <description>Recent content in Academic on Academic</description>
+    <description>Recent content on </description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Tue, 19 Mar 2019 00:45:06 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Simulating Star Cluster Formation</title>
+      <link>https://chongchonghe.github.io/post/he2019/</link>
+      <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
+      
+      <guid>https://chongchonghe.github.io/post/he2019/</guid>
+      <description>&lt;p&gt;This is a movie my simulations of star cluster formation from a
+molecular cloud. The left and right panel shows the density and
+temperature and the cyan dots represent stars.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+&lt;video controls &gt;
+  &lt;source src=&#34;Job3.2.2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+
+&lt;p&gt;Related publication:&lt;br&gt;
+&lt;strong&gt;C.-C. He&lt;/strong&gt;, M. Ricotti &amp;amp; S. Geen (2019, in preparation). “Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Anisotropy of X-Ray Bursts from Neutron Stars with Concave Accretion Disks</title>
+      <link>https://chongchonghe.github.io/publication/he-2016/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/publication/he-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>https://chongchonghe.github.io/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chongchonghe.github.io/cv/</guid>
+      <description>&lt;p&gt;this is my CV&lt;/p&gt;
+
+&lt;p&gt;Name: CC He&lt;/p&gt;
+
+&lt;p&gt;Pub&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- He: 2016
+- He: 2019
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
   </channel>
 </rss>

@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Academic</title>
+    <title>Authors on </title>
     <link>https://chongchonghe.github.io/authors/</link>
-    <description>Recent content in Authors on Academic</description>
+    <description>Recent content in Authors on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Tue, 01 Mar 2016 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://chongchonghe.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>**C.-C. He**</title>
+      <link>https://chongchonghe.github.io/authors/c.-c.-he/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/authors/c.-c.-he/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>L. Keek</title>
+      <link>https://chongchonghe.github.io/authors/l.-keek/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>https://chongchonghe.github.io/authors/l.-keek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>admin</title>
       <link>https://chongchonghe.github.io/authors/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
       
       <guid>https://chongchonghe.github.io/authors/admin/</guid>
       <description></description>

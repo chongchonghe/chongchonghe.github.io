@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>admin on Academic</title>
+    <title>admin on </title>
     <link>https://chongchonghe.github.io/authors/admin/</link>
-    <description>Recent content in admin on Academic</description>
+    <description>Recent content in admin on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Tue, 19 Mar 2019 00:45:06 -0400</lastBuildDate>
     
 	<atom:link href="https://chongchonghe.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Simulating Star Cluster Formation</title>
+      <link>https://chongchonghe.github.io/post/he2019/</link>
+      <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
+      
+      <guid>https://chongchonghe.github.io/post/he2019/</guid>
+      <description>This is a movie my simulations of star cluster formation from a molecular cloud. The left and right panel shows the density and temperature and the cyan dots represent stars.
+ Related publication:
+C.-C. He, M. Ricotti &amp;amp; S. Geen (2019, in preparation). “Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies”</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://chongchonghe.github.io/author/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Mar 2019 01:07:54 -0400</pubDate>
       
       <guid>https://chongchonghe.github.io/author/admin/</guid>
-      <description>Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+      <description>I&amp;rsquo;m a third-year graduate student at the University of Maryland studying theoretical and computational astrophysics. My current research focuses on simulating star formation in the early universe.</description>
     </item>
     
   </channel>
