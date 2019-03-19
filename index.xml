@@ -16,11 +16,7 @@
       <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
       
       <guid>https://chongchonghe.github.io/post/he2019/</guid>
-      <description>&lt;p&gt;This is a movie my simulations of star cluster formation from a
-molecular cloud. The left and right panel shows the density and
-temperature and the cyan dots represent stars.&lt;/p&gt;
-
-
+      <description>&lt;p&gt;
 
 
 
@@ -38,6 +34,9 @@ temperature and the cyan dots represent stars.&lt;/p&gt;
 &lt;video controls &gt;
   &lt;source src=&#34;Job3.2.2.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
+- Movie of a simulation of star cluster formation. It shows the
+density (left) and temperature (right) of the gaseous cloud. The cyan
+dots represent stars.&lt;/p&gt;
 
 &lt;p&gt;Related publication:&lt;br&gt;
 &lt;strong&gt;C.-C. He&lt;/strong&gt;, M. Ricotti &amp;amp; S. Geen (2019, in preparation). “Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies”&lt;/p&gt;
