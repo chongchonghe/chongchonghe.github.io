@@ -13,24 +13,30 @@
     
     
     <item>
-      <title>Simulating Star Cluster Formation</title>
+      <title>Simulating Star Clusters</title>
       <link>https://chongchonghe.github.io/post/he2019/</link>
       <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
       
       <guid>https://chongchonghe.github.io/post/he2019/</guid>
-      <description>- Movie of a simulation of star cluster formation. It shows the density (left) and temperature (right) of the gaseous cloud. The cyan dots represent stars.
-Related publication:
-C.-C. He, M. Ricotti &amp;amp; S. Geen (2019, in preparation). “Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies”</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;What is this picture?&lt;/li&gt;
+&lt;li&gt;It is a snapshot of a simulation of star cluster formation from a
+molecular cloud. The color pixels are projections of gas density and
+the stars are reprensented by the cyan dots.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is a movie of this simulation:&lt;br&gt;
+&lt;a href=&#34;https://chongchonghe.github.io/post/he2019&#34;&gt;Read More &amp;hellip;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
       <link>https://chongchonghe.github.io/author/admin/</link>
-      <pubDate>Tue, 19 Mar 2019 01:26:03 -0400</pubDate>
+      <pubDate>Wed, 20 Mar 2019 00:45:02 -0400</pubDate>
       
       <guid>https://chongchonghe.github.io/author/admin/</guid>
       <description>This webpage is under construction &amp;hellip;
-I&amp;rsquo;m a third-year graduate student at the University of Maryland studying theoretical and computational astrophysics. My current research focuses on simulating star formation in the early universe.</description>
+I am a PhD student at UMD working with Prof. Massimo Ricotti to study the formation and evolution of compact star clusters. I use a start-of-art radiation-magnetohydrodynamics code RAMSES-RT to simulate star formation from molecular clouds in the early universe. In particular, I am looking to understand the role of the first dense star clusters in the production of supermassive black hole seeds and in the reionization of the universe.</description>
     </item>
     
   </channel>
