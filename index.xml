@@ -7,51 +7,16 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
-    <lastBuildDate>Tue, 19 Mar 2019 00:45:06 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Simulating Star Clusters</title>
-      <link>https://chongchonghe.github.io/post/he2019/</link>
-      <pubDate>Tue, 19 Mar 2019 00:45:06 -0400</pubDate>
+      <title>Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies</title>
+      <link>https://chongchonghe.github.io/publication/he-2019/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 -0400</pubDate>
       
-      <guid>https://chongchonghe.github.io/post/he2019/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;What is this picture?&lt;/li&gt;
-&lt;li&gt;It is a snapshot of a simulation of star cluster formation from a
-molecular cloud. The color pixels are projections of gas density and
-the stars are reprensented by the cyan dots.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here is a movie of this simulation:&lt;br&gt;
-&lt;a href=&#34;https://chongchonghe.github.io/post/he2019&#34;&gt;Read More &amp;hellip;&lt;/a&gt;&lt;/p&gt;
-
-&lt;!-- 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-&lt;video controls &gt;
-  &lt;source src=&#34;Job3.2.2.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt; --&gt;
-
-&lt;!-- &lt;video poster=&#34;config.ini_00853.png&#34; preload=&#34;metadata&#34; controls&gt; --&gt;
-
-&lt;p&gt;&lt;video poster=&#34;config.ini_00853.png&#34; controls&gt;
-  &lt;source src=&#34;Job3.2.2.mp4&#34; &gt;
-&lt;/video&gt;
-Related publication:&lt;br&gt;
-&lt;strong&gt;C.-C. He&lt;/strong&gt;, M. Ricotti &amp;amp; S. Geen (2019, in preparation). “Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies”&lt;/p&gt;</description>
+      <guid>https://chongchonghe.github.io/publication/he-2019/</guid>
+      <description></description>
     </item>
     
     <item>
