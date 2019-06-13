@@ -7,8 +7,104 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
-    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 01:23:32 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why you should never use &#39;jet&#39; colormap</title>
+      <link>https://chongchonghe.github.io/post/colormap/</link>
+      <pubDate>Sun, 05 May 2019 01:23:32 -0400</pubDate>
+      
+      <guid>https://chongchonghe.github.io/post/colormap/</guid>
+      <description>
+
+&lt;!-- # Why you should never use &#34;jet&#34; colormap --&gt;
+
+&lt;h2 id=&#34;compare-viridis-and-jet-with-gray-colormap&#34;&gt;Compare &amp;ldquo;viridis&amp;rdquo; and &amp;ldquo;jet&amp;rdquo; with &amp;ldquo;gray&amp;rdquo; colormap&lt;/h2&gt;
+
+&lt;p&gt;Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &amp;ldquo;gray&amp;rdquo; colormap.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from __future__ import division, print_function
+import numpy as np
+import matplotlib.pyplot as plt
+
+# construct a 2D Gaussian
+x = np.linspace(-3, 3, 200)
+y = x
+X, Y = np.meshgrid(x, y)
+d = np.sqrt(X*X + Y*Y)
+sigma, mu = .5, 0.0
+gaus = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )
+extent = [-3, 3, -3, 3]
+plt.imshow(gaus, cmap=&#39;gray&#39;, extent=extent)
+plt.colorbar();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_3_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looks nice, ah? But, black and white are boring, so let us make it colorful. Here is what it looks like with the current default colormap &amp;ldquo;viridis&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.imshow(gaus, cmap=&#39;viridis&#39;, extent=extent)
+plt.title(&amp;quot;Viridis&amp;quot;)
+plt.colorbar();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_5_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looks awsome! We see a bright dot at the center and gradual change to heavier colors toward the edge. Now, let us see what it looks like when plotted with &amp;ldquo;jet&amp;rdquo;, the default colormap in older versions of matplotlib:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.imshow(gaus, cmap=&#39;jet&#39;, extent=extent)
+plt.title(&amp;quot;Jet&amp;quot;)
+plt.colorbar();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_7_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is a disaster! There are artifactual hierarchical layers showing as abrupt changes in color that are not shown in data.&lt;/p&gt;
+
+&lt;h2 id=&#34;define-your-own-color-map&#34;&gt;Define your own color map&lt;/h2&gt;
+
+&lt;p&gt;Here I create another artificial data: a ring with a radius of 1.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = np.linspace(-2, 2, 1000)
+y = x
+X, Y = np.meshgrid(x, y)
+r = np.sqrt(X**2 + Y**2)
+sigma = 0.5
+z = np.exp(-( (r-1)**2 / ( 2.0 * sigma**2 ) ) )
+extent = [-2, 2, -2, 2]
+plt.imshow(z, cmap=&#39;viridis&#39;, extent=extent)
+plt.colorbar();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_11_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Assume we want to focus only on the ring (i.e., say, $z&amp;gt;0.9$) and do not care about other areas, then, we want to redefine the colormap so that all bright colors concentrates on $z&amp;gt;0.9$.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define my own colormap
+from matplotlib.colors import ListedColormap
+base = np.linspace(0, 1, 256)
+cmap_viridis = plt.cm.get_cmap(&#39;viridis&#39;)
+colors = [cmap_viridis(i) for i in base]
+viridis_copy = ListedColormap(colors)
+
+# Edit the colormap and make it more concentrated at higher values.
+# Rescale the data-to-color function with a polynomial function
+power = 3
+base_mod = np.linspace(0, 1, 256)**power
+colors_mod = [cmap_viridis(i) for i in base_mod]
+viridis_mod = ListedColormap(colors_mod)
+
+# Show the same image with the edited viridis cmap
+plt.figure()
+plt.imshow(z, cmap=viridis_mod)
+plt.title(&amp;quot;Edited Viridis&amp;quot;)
+plt.colorbar();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;output_13_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies</title>
@@ -25,7 +121,38 @@
       <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
       
       <guid>https://chongchonghe.github.io/publication/he-2016/</guid>
-      <description></description>
+      <description>
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;PosterFig.jpg&#34; /&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;$\alpha$
+Emission from neutron stars and accretion disks in low-mass X-ray
+binaries (LMXBs) is not isotropic. Previous studies made predictions
+of the anisotropy factors for burst flux, assuming a geometrically
+flat disk. In this case, the ratio of the reflected and direct burst
+flux ($\xi_{r}^{-1}/\xi_{d}^{-1}$, or the reflection fraction)
+peaks at 0.5. Recently (2014), however, detailed observations showed
+that the reflection fraction could reach to ~6 at the tail of a
+superburst (top right), which is much higher than what a system with a
+flat disk can account for.&lt;/p&gt;
+
+&lt;p&gt;We create numerical models to calculate the anisotropy factors of
+radiation for different disk shapes, including a disk with a thick
+bulge in the inner region (top left). We present the anisotropy
+factors of the direct and reflected burst flux separately, as well as
+the anisotropy of the persistent flux (bottom right). Reflection
+fractions substantially larger than unity are produced in case the
+inner accretion disk steeply increases in height, such that part of
+the star is blocked from view (bottom left). Such a geometry could
+possibly be induced by the X-ray burst if X-ray heating causes the
+inner disk to puff up.&lt;/p&gt;
+</description>
     </item>
     
     <item>
