@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
-    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chongchonghe.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Simulating Star Clusters Across Cosmic Time: I. Initial Mass Function, Star Formation Rates and Efficiencies</title>
       <link>https://chongchonghe.github.io/publication/he-2019/</link>
-      <pubDate>Mon, 01 Apr 2019 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0800</pubDate>
       
       <guid>https://chongchonghe.github.io/publication/he-2019/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Anisotropy of X-Ray Bursts from Neutron Stars with Concave Accretion Disks</title>
       <link>https://chongchonghe.github.io/publication/he-2016/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0800</pubDate>
       
       <guid>https://chongchonghe.github.io/publication/he-2016/</guid>
       <description>$\alpha$ Emission from neutron stars and accretion disks in low-mass X-ray binaries (LMXBs) is not isotropic. Previous studies made predictions of the anisotropy factors for burst flux, assuming a geometrically flat disk. In this case, the ratio of the reflected and direct burst flux ($\xi_{r}^{-1}/\xi_{d}^{-1}$, or the reflection fraction) peaks at 0.5. Recently (2014), however, detailed observations showed that the reflection fraction could reach to ~6 at the tail of a superburst (top right), which is much higher than what a system with a flat disk can account for.</description>
