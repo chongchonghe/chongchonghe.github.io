@@ -123,14 +123,14 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #bf4aa8;
+  color: <no value>;
   text-decoration: none;
   transition: color 0.6s ease;
 }
 
 a:hover,
 a:focus {
-  color: #bf4aa8;
+  color: <no value>;
 }
 
 img,
@@ -386,7 +386,7 @@ small,
 }
 
 .form-control:focus {
-  border-color: #bf4aa8;
+  border-color: <no value>;
   box-shadow: 0 0 0 .2rem #80e27e;
 }
 
@@ -691,7 +691,7 @@ a.hero-cta-alt:hover {
 .featurette-icon {
   display: block;
   width: 100%;
-  color: #bf4aa8;
+  color: <no value>;
   font-size: 3rem;
   text-align: center;
 }
@@ -1031,7 +1031,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-  color: #bf4aa8;
+  color: <no value>;
 }
 
 .middot-divider {
@@ -1284,11 +1284,11 @@ article .article-metadata {
 
 .experience .m-2 .border,
 .experience .col.border-right {
-  border-color: #bf4aa8 !important;
+  border-color: <no value> !important;
 }
 
 .experience .m-2 .border.exp-fill {
-  background-color: #bf4aa8 !important;
+  background-color: <no value> !important;
 }
 
 /*************************************************
@@ -1650,13 +1650,13 @@ a.badge:hover {
  **************************************************/
 
 .btn-primary {
-  border-color: #bf4aa8;
-  background: #bf4aa8;
+  border-color: <no value>;
+  background: <no value>;
 }
 
 .btn-outline-primary {
-  border-color: #bf4aa8;
-  color: #bf4aa8;
+  border-color: <no value>;
+  color: <no value>;
 }
 
 .btn-primary:hover,
@@ -1664,7 +1664,7 @@ a.badge:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .open > .dropdown-toggle.btn-primary {
-  background: #bf4aa8;
+  background: <no value>;
 }
 
 .btn-outline-light:hover,
@@ -1677,8 +1677,8 @@ a.badge:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #bf4aa8;
-  border-color: #bf4aa8;
+  background-color: <no value>;
+  border-color: <no value>;
 }
 
 .dark .btn-outline-primary:not(:disabled):not(.disabled).active,
@@ -1689,8 +1689,8 @@ a.badge:hover {
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #bf4aa8;
-  border-color: #bf4aa8;
+  background-color: <no value>;
+  border-color: <no value>;
 }
 
 .dark .btn-outline-primary:hover {
@@ -2094,7 +2094,7 @@ div.alert a {
 }
 
 .docs-search .form-control:focus {
-  border-color: #bf4aa8;
+  border-color: <no value>;
   box-shadow: 0 0 0 3px #80e27e;
 }
 
@@ -2160,7 +2160,7 @@ div.alert a {
 .docs-sidebar .nav>.active:hover>a,
 .docs-sidebar .nav>.active>a {
   font-weight: bold;
-  color: #bf4aa8;
+  color: <no value>;
   background-color: transparent;
 }
 
@@ -2169,7 +2169,7 @@ div.alert a {
 .docs-toggle {
   line-height: 1;
   font-size: 1.2rem;
-  color: #bf4aa8;
+  color: <no value>;
   background-color: transparent;
 }
 
@@ -2286,7 +2286,7 @@ ul.toc-top {
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
-  color: #bf4aa8;
+  color: <no value>;
   text-decoration: none;
 }
 
@@ -2299,7 +2299,7 @@ ul.toc-top {
 }
 
 .anchorjs-link:hover {
-  color: #bf4aa8;
+  color: <no value>;
   text-decoration: none;
 }
 
@@ -2324,7 +2324,7 @@ body.dark,
 
 .dark .form-control:focus {
   background-color: rgb(68, 71, 90);
-  border-color: #bf4aa8;
+  border-color: <no value>;
   box-shadow: 0 0 0 .2rem #087f23;
 }
 
@@ -2357,7 +2357,7 @@ body.dark,
 }
 
 .dark ul.share li a {
-  background-color: #bf4aa8;
+  background-color: <no value>;
 }
 
 .dark table table {
@@ -2410,7 +2410,7 @@ body.dark,
 }
 
 .dark .card h4 a {
-  color: #bf4aa8;
+  color: <no value>;
   border-bottom: solid 1px transparent;
 }
 
