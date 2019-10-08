@@ -126,13 +126,12 @@ plt.colorbar();
 
 &lt;figure&gt;
 
-&lt;img src=&#34;PosterFig.jpg&#34; /&gt;
+&lt;img src=&#34;featured.jpg&#34; /&gt;
 
 
 &lt;/figure&gt;
 
-&lt;p&gt;$\alpha$
-Emission from neutron stars and accretion disks in low-mass X-ray
+&lt;p&gt;Emission from neutron stars and accretion disks in low-mass X-ray
 binaries (LMXBs) is not isotropic. Previous studies made predictions
 of the anisotropy factors for burst flux, assuming a geometrically
 flat disk. In this case, the ratio of the reflected and direct burst
