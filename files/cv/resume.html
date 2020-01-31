@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>resume</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  /*
+   * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+   *
+   * CSS for making a resume with pandoc. Inspired by moderncv.
+   *
+   * This CSS document is delivered to you under the CC BY-SA 3.0 License.
+   * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+   */
+
+  /* Whole document */
+  body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      /* font-family: Georgia; "Computer Modern"; sans-serif; */
+      max-width: 800px;
+      margin: auto;
+      background: #FFFFFF;
+      padding: 10px 10px 10px 10px;
+  }
+
+  /* Title of the resume */
+  h1 {
+      font-size: 45px;
+      color: #757575;
+      text-align:center;
+      margin-bottom:15px;
+  }
+  h1::before {
+      /* content: "PDF"; */
+      display: block;
+      text-align: right;
+      color: black;
+      font-size: medium;
+  }
+  /* h1:hover { */
+  /*     background-color: #757575; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
+
+  /* Titles of categories */
+  h2 {
+      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+      color: #397249;
+      margin-bottom: 8px;
+  }
+  h2:after
+  {
+      content:' ';
+      display:block;
+      border:1px solid #408052;
+  }
+  /* There is a bar just before each category */
+  /* h2:before { */
+  /*     content: ""; */
+  /*     display: inline-block; */
+  /*     margin-right:1%; */
+  /*     width: 16%; */
+  /*     height: 10px; */
+  /*     margin-bottom:3px; */
+  /*     /\* This is called "rulecolor" in the ConTeXt stylesheet. *\/ */
+  /*     background-color: #9CB770; */
+  /* } */
+  /* h2:hover { */
+  /*     background-color: #397249; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
+
+  /* Definitions (e.g. the years, 2018-2022) */
+  dt {				/*category left */
+      float: left;
+      clear: left;
+      width: 13%;
+      /* font-weight: bold;	/\* Uncommented to avoid bold year. Use bold when needed *\/ */
+  }
+  dd {				/* category right */
+      margin-left: 13%;
+      margin-bottom:7px;
+  }
+  p {
+      margin-top:0px;
+      margin-bottom:7px;
+  }
+  ul {
+      /* list-style-type: disc; */
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      margin-left: 1em;
+      padding-left: 0; 
+  }
+
+  /* Blockquotes */
+  blockquote {
+      text-align: center
+  }
+
+  /* Links */
+  a {
+      text-decoration: none;
+      color: #397249;
+  }
+  a:hover, a:active {
+      /* background-color: #397249; */
+      /* color: #FFFFFF; */
+      text-decoration: underline;
+      /* text-shadow: 1px 1px 1px #333; */
+  }
+
+  /* Horizontal separators */
+  hr {
+      color: #A6A6A6;
+  }
+
+  table {
+      width: 100%;
+  }
+  </style>
+</head>
+<body>
+<!-- <a href="https://www.w3schools.com"> PDF </a> -->
+<h1 id="chong-chong-he">Chong-Chong He</h1>
+<blockquote>
+<p>University of Maryland, Department of Astronomy<br> 1113 PSC Bldg. 415 <br> College Park, MD 20742-0001</p>
+<p>chongchong@astro.umd.edu   <a href="https://chongchonghe.github.io/" target="_blank">https://chongchonghe.github.io/</a></p>
+</blockquote>
+<h2 id="education">Education</h2>
+<dl>
+<dt>2018-2022 (expected)</dt>
+<dd><p><strong>Ph.D., Astronomy</strong>; University of Maryland</p>
+<p>Thesis (proposed): <em>Simulating Compact Star Clusters and Growth of the Seed Black Holes in the First Galaxies</em></p>
+</dd>
+<dt>2016-2018</dt>
+<dd><p><strong>M.S., Astronomy</strong>; University of Maryland</p>
+<p>Thesis: <em>Simulating Star Clusters Across Cosmic Time</em></p>
+</dd>
+<dt>Spring 2015</dt>
+<dd><p>Georgia Institute of Technology</p>
+<p>Non-degree visiting honors student program; Physics and Language</p>
+</dd>
+<dt>2012-2016</dt>
+<dd><p><strong>B.S., Physics, With Highest Honor</strong>; Jilin University</p>
+<p>Upper Division GPA: 3.92/4   Cumulative GPA 3.91/4</p>
+</dd>
+</dl>
+<h2 id="research-experience">Research Experience</h2>
+<p><strong>Department of Astronomy, University of Maryland</strong></p>
+<p>2017 - Present   Advisor: Massimo Ricotti &amp; Cole Miller</p>
+<!-- * Using a radiative magneto-hydrodynamical code _RAMSES_ to simulate -->
+<!--   the formation of star clusters from molecular clouds. -->
+<ul>
+<li>Running simulations of the formation and dynamic evolution of star clusters in the early Universe.</li>
+</ul>
+<!-- * I made minor modifications to the code to investigate various -->
+<!--   dependencies including metallicities, Helium, various feedback -->
+<!--   modules -->
+<!-- * I study the dynamics of star clusters focusing on the effects of -->
+<!--   stellar feedback and on the understanding of stellar dynamics. -->
+<p><strong>Center for Theoretical Physics, Jilin University</strong></p>
+<p>12/2015 - 03/2016   Advisor: Ping He</p>
+<ul>
+<li>Ran simulations of CMB anisotropies using <em>CAMB</em>.</li>
+</ul>
+<p><strong>Center for Relativistic Astrophysics, Georgia Institute of Technology</strong></p>
+<p>01/2015 - 08/2015   Advisor: Laurens Keek</p>
+<ul>
+<li>Created a set of numerical programs to simulate the angular distributions of X-ray radiation from Low-Mass X-ray Binaries. <!-- * Created a set of numerical programs to compute the angular --> <!--   distribution of X-ray radiation from Low-Mass X-ray Binaries with --> <!--   accretion disks of random shapes. The model, for the first time, --> <!--   successfully explains the high ratio of observed reflected and --> <!--   direct burst flux, giving implications to unusual accretion disk --> <!--   geometry. --></li>
+</ul>
+<!-- Successful Proposals -->
+<!-- ---------- -->
+<!-- MARCC/Bluecrab Supercomputer, Q1 2018, 200 kSU monthly allocation -->
+<h2 id="refereed-publications">Refereed Publications</h2>
+<ul>
+<li><p><strong>He, C.-C.</strong>, Ricotti, M., &amp; Geen, S., 2020, “<a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp..162H/abstract" target="_blank">Simulating Star Clusters Across Cosmic Time - II. Fraction of Ionizing Photons Escaping from Molecular Clouds</a>”, <em>Monthly Notices of the Royal Astronomical Society</em></p></li>
+<li><p><strong>He, C.-C.</strong>, Ricotti, M., &amp; Geen, S., 2019, “<a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.1880H/abstract" target="_blank">Simulating Star Clusters Across Cosmic Time - I. Initial Mass Function, Star Formation Rates, and Efficiencies</a>”, <em>Monthly Notices of the Royal Astronomical Society</em>, 489, 1880-1898.</p></li>
+<li><p><strong>He, C.-C.</strong> &amp; Keek, L., 2016, “<a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...819...47H/abstract" target="_blank">Anisotropy of X-Ray Bursts from Neutron Stars with Concave Accretion Disks</a>”, <em>The Astrophysical Journal</em>, 819, 47.</p></li>
+</ul>
+<h2 id="honors-awards">Honors &amp; Awards</h2>
+<dl>
+<dt>2016</dt>
+<dd><p><strong>Dean’s Honored Graduates</strong>, Jilin University</p>
+<p>  <span style="font-size:0.9em"> The highest honor awarded to graduating seniors in the college</span></p>
+</dd>
+<dt>2016</dt>
+<dd><strong>China Youth Science and Technology Innovation Award</strong>, China Youth League <!-- Ref: Translation: https://thesmalab.com/2014/09/07/the-9th-china-youth-science-and-technology-innovation-award/ -->
+</dd>
+<dt>2016</dt>
+<dd><p><strong>Tang-Ao Qing Supreme Award for Excellence in Research &amp; Practice</strong>, Jilin University</p>
+<!-- &emsp; <span style="font-size:0.9em"> Awarded to 1/160 in the -->
+<!-- Tang-Ao Qing program, Jilin University</span> -->
+</dd>
+<dt>2015</dt>
+<dd><strong>National Scholarship</strong>
+</dd>
+<dt>2014</dt>
+<dd><p><strong>Scholarship for Overseas Study</strong>, China Scholarship Council</p>
+<!-- &emsp; <span style="font-size:0.9em"> Awarded to 2/270 in the -->
+<!-- College of Physics, Jilin University</span> -->
+</dd>
+</dl>
+<h2 id="teaching-experience">Teaching Experience</h2>
+<p><strong>Graduate Teaching Assistant</strong>; University of Maryland</p>
+<p>09/2016 - 05/2018, 01/2020 - Present</p>
+<ul>
+<li>Responsibilities include leading classroom discussions, writing homework and exam solutions, grading homework and exams, and holding office hours to provide additional guidance to students.</li>
+</ul>
+<!-- * Fall 2017, ASTR 100:  -->
+<!-- * Fall 2016 - Spring 2018, ASTR 420, ASTR 330, ASTR 300, ASTR 340 -->
+<ul>
+<li>Courses include Introduction to Astronomy, Stars and Stellar Systems, Solar System Astronomy, Origin of the Universe, Life in the Universe, Galaxies, Cosmology.</li>
+</ul>
+<h2 id="skills-and-professional-services">Skills and Professional Services</h2>
+<p>Programming Languages &amp; Softwares</p>
+<ul>
+<li><strong>Python</strong>, <strong>LaTeX</strong>; advanced</li>
+<li><strong>C/C++</strong>, <strong>Fortran</strong>, <strong>Mathematica</strong>, <strong>MATLAB</strong>; proficient</li>
+<li><strong>HTML/CSS</strong>; basic</li>
+</ul>
+<p>Operating Systems</p>
+<ul>
+<li><p><strong>MacOS</strong>, <strong>Unix/Linux</strong>; proficient</p></li>
+<li><p><strong>Windows</strong>; basic</p></li>
+</ul>
+<p>High-Performance Computing</p>
+<ul>
+<li>Experienced in <strong>MPI Parallel Programming</strong></li>
+</ul>
+<p>Data Science</p>
+<ul>
+<li>Basic knowledge of <strong>Machine Learning</strong>, including <strong>Deep Learning</strong> and <strong>Neural Networks</strong></li>
+</ul>
+<p><strong>Member</strong>, American Astronomical Society</p>
+<h2 id="presentations">Presentations</h2>
+<dl>
+<dt>06/2016</dt>
+<dd>“Life and Academics in college”, invited presentation in the summer program for elite high school students at Jilin University
+</dd>
+<dt>07/2014</dt>
+<dd>“Topics on Quantum Mechanics and Quantum Teleportation”, review presentation at the concluding ceremony of Physics Summer School in Peking University, Jul. 2014
+</dd>
+</dl>
+<h2 id="outreach">Outreach</h2>
+<dl>
+<dt>2018, 2020</dt>
+<dd>Lecture Assistant, GRAD-MAP Python Bootcamp, University of Maryland
+</dd>
+</dl>
+<!-- 2018  -->
+<!-- :   Lecture Assistant, GRAD-MAP Python Bootcamp, University of -->
+<!--     Maryland -->
+<dl>
+<dt>2017</dt>
+<dd>Maryland Day volunteer
+</dd>
+</dl>
+<!-- 2015  -->
+<!-- :   TAQ program -->
+<!-- [ref]: https://github.com/githubuser/superlongprojectname -->
+</body>
+</html>
