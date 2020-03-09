@@ -1,58 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on </title>
+    <title>Tags on Chong-Chong He</title>
     <link>https://chongchonghe.github.io/tags/</link>
-    <description>Recent content in Tags on </description>
+    <description>Recent content in Tags on Chong-Chong He</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Thu, 17 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chongchonghe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>X-rays: binaries</title>
-      <link>https://chongchonghe.github.io/tags/x-rays-binaries/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <title>development</title>
+      <link>https://chongchonghe.github.io/tags/development/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chongchonghe.github.io/tags/x-rays-binaries/</guid>
+      <guid>https://chongchonghe.github.io/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>X-rays: bursts</title>
-      <link>https://chongchonghe.github.io/tags/x-rays-bursts/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <title>hugo</title>
+      <link>https://chongchonghe.github.io/tags/hugo/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chongchonghe.github.io/tags/x-rays-bursts/</guid>
+      <guid>https://chongchonghe.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>accretion</title>
-      <link>https://chongchonghe.github.io/tags/accretion/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <title>themes</title>
+      <link>https://chongchonghe.github.io/tags/themes/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chongchonghe.github.io/tags/accretion/</guid>
+      <guid>https://chongchonghe.github.io/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>accretion disks</title>
-      <link>https://chongchonghe.github.io/tags/accretion-disks/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <title>i18n</title>
+      <link>https://chongchonghe.github.io/tags/i18n/</link>
+      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://chongchonghe.github.io/tags/accretion-disks/</guid>
+      <guid>https://chongchonghe.github.io/tags/i18n/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>stars: neutron</title>
-      <link>https://chongchonghe.github.io/tags/stars-neutron/</link>
-      <pubDate>Tue, 01 Mar 2016 00:00:00 -0500</pubDate>
+      <title>go</title>
+      <link>https://chongchonghe.github.io/tags/go/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://chongchonghe.github.io/tags/stars-neutron/</guid>
+      <guid>https://chongchonghe.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://chongchonghe.github.io/tags/golang/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>templates</title>
+      <link>https://chongchonghe.github.io/tags/templates/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://chongchonghe.github.io/tags/templates/</guid>
       <description></description>
     </item>
     
