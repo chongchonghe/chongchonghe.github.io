@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 何崇崇</title>
-    <link>https://www.astro.umd.edu/~chongchong/zh/categories/</link>
+    <link>http://www.astro.umd.edu/~chongchong/zh/categories/</link>
     <description>Recent content in Categories on 何崇崇</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
     
-	<atom:link href="https://www.astro.umd.edu/~chongchong/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.astro.umd.edu/~chongchong/zh/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
