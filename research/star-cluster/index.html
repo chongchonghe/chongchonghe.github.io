@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Chong-Chong He">
+    <meta name="description" content="Chong-Chong He&#39;s personal website">
+    <meta name="keywords" content="ChongChong,Chong-Chong,blog,personal,academic,website">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="I use a state-of-art radiation-magnetohydrodynamics code RAMSES-RT to simulate star formation in molecular clouds. In particular, I am looking to understand the role the first dense star clusters play in the reionization of the universe and in the production of supermassive black hole seeds. Resolved simulations of star cluster formation from molecular clouds    Left: Line-of-sight projections of the gas density from a simulation with cloud mass $3 \times 10^4 \ {\rm M}_{\odot}$ and mean density $2000 \ {\rm cm}^{-3}$."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="I use a state-of-art radiation-magnetohydrodynamics code RAMSES-RT to simulate star formation in molecular clouds. In particular, I am looking to understand the role the first dense star clusters play in the reionization of the universe and in the production of supermassive black hole seeds. Resolved simulations of star cluster formation from molecular clouds    Left: Line-of-sight projections of the gas density from a simulation with cloud mass $3 \times 10^4 \ {\rm M}_{\odot}$ and mean density $2000 \ {\rm cm}^{-3}$." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.astro.umd.edu/~chongchong/research/star-cluster/" />
+
+
+
+    
+      <base href="https://www.astro.umd.edu/~chongchong/research/star-cluster/">
+    
+    <title>
+   · Chong-Chong He
+</title>
+
+    
+      <link rel="canonical" href="https://www.astro.umd.edu/~chongchong/research/star-cluster/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://www.astro.umd.edu/~chongchong/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://www.astro.umd.edu/~chongchong/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://www.astro.umd.edu/~chongchong/css/custom.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://www.astro.umd.edu/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.astro.umd.edu/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://www.astro.umd.edu/~chongchong/">
+      Chong-Chong He
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.astro.umd.edu/~chongchong/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.astro.umd.edu/~chongchong/research/star-cluster/">Research</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.astro.umd.edu/~chongchong/publications/">Publications</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.astro.umd.edu/~chongchong/gallery/">Gallery</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://www.astro.umd.edu/~chongchong/CV.html">CV</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://www.astro.umd.edu/~chongchong/zh/">中文</a>
+            </li>
+          
+        
+      
+    </ul>
+    
+  </section>
+</nav>
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title"></h1>
+        </div>
+      </header>
+
+      <div>
+        
+        
+<p>
+I use a state-of-art radiation-magnetohydrodynamics code RAMSES-RT to
+simulate star formation in molecular clouds. In particular, I am
+looking to understand the role the first dense star clusters play in
+the reionization of the universe and in the production of supermassive
+black hole seeds.
+</p>
+<h3 id="headline-1">
+Resolved simulations of star cluster formation from molecular clouds
+</h3>
+<figure style="text-align:left;font-style:italic;font-size:smaller;text-indent:0;margin:2%" alt="IMF.png">
+<img src="./fig/info_00025_proj_density_v4.h5_Projection_x_density.png" style="width:50%" alt="SMF">
+<img src="./fig/IMF_SMF_Job2.2.2.png" style="width:46%" alt="SMF">
+</figure>
+<p>
+<em>Left: Line-of-sight projections of the gas density from a simulation with cloud mass $3 \times 10^4 \ {\rm M}_{\odot}$ and mean density $2000 \ {\rm cm}^{-3}$. Sink particles are displayed as cyan dots. Right: The mass function of the sink particles.</em>
+</p>
+<p>
+The origin of the stellar initial mass function (IMF) is a long-standing question. Theories exist that could explain the characteristic shapes of the present-day IMF. Simulations considering critical physical processes are necessary to understand the whole mass spectrum of star clusters. Using <em>RAMSES-RT</em>, I conduct a series of simulations of the collapsing of turbulent molecular clouds spanning a wide range of masses and densities, taking into account hydrodynamics, gravity, magnetic fields, and radiative feedback. Stars are created in the simulation as sink particles. The IMFs of the star clusters forming from theses simulations have not only characteristic power-law slopes very close to Salpeter, but also the same normalization to a sampled Kroupa IMF without any rescaling. The only assumption is that each sink particle converts ~40% of its mass to a single star and the rest to several smaller stars, a mechanism inferred from the mapping between the observed core mass function (CMF) and stellar IMF which in turn gives implications on the CMF-to-IMF conversion.
+</p>
+<p>
+<strong><strong>Relevent publication</strong></strong>
+</p>
+<p>
+<strong><strong>C.-C. He</strong></strong>, M. Ricotti, &amp; S. Geen, <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.1880H/abstract">2019 MNRAS, 489, 1880-1898</a>
+</p>
+<h4 id="headline-2">
+Massive stars form later
+</h4>
+<figure style="float:left;width:45%;text-align:center;font-style:italic;font-size:smaller;text-indent:0;margin:.5em;margin-right:2em" alt="IMF.png">
+<img src="./fig/He2019-IMF-evo.png" alt="IMF">
+</figure>
+<p>
+The shape of the mass function stays virtually the same, while its scale increases over time. In the star formation episode, the masses of forming stars are drawn from a probability function similar to Salpeter. In the beginning, because the number of stars is small, statistically, there are few high-mass stars. The apparent behavior is that low- and intermediate-mass stars form first, followed by the most massive stars.
+</p>
+<div style="clear:left"></div>
+<h4 id="headline-3">
+Star formation is feedback regulated — the sound-crossing time
+</h4>
+<figure style="float:left;width:40%;text-align:left;font-style:italic;font-size:smaller;text-indent:0;margin:.5em;margin-right:2em" alt="sound-crossing time">
+<img src="./fig/f12-sfe_fit_width_and_height_He19.png">
+</figure>
+<p>
+Figure: Top: Dimensionless star formation rate per free-fall time. Bottom: The ratio of star formation time $t_{\rm SF}$ to sound-crossing time $t_{\rm cr} = r_{\rm gas}/c_{\rm s}$, where $c_{\rm s} = 10 {\rm km} \ {\rm s}^{-1}$. Overpressured HII regions require approximately 6 crossing times to suppress star formation.
+</p>
+<p>
+The efficiency of conversion of gas into stars is typically much lower than 100% because energetic processes from massive stars can disperse the cloud before all of the gas collapses into protostars, a process called ‘feedback.&#39; Recent work favors ionizing radiation as the primary driver of molecular cloud dispersal for the bulk of star clusters. Based on a set of simulations of star formation from molecular clouds extending a wide range of masses and densities, we find a strong correlation between the star formation timescale regulated by photoionization feedback and the sound-crossing time, $t_{\rm sc}$, defined as the crossing time of the cloud radius with the sound speed in HII region (~ 10 km/s). As an HII region expands due to the pressure gradient in the edge, it wipes out the gas and flattens the density contrast. This process happens in the timescale of several $t_{\rm sc}$. 
+</p>
+<h4 id="headline-4">
+Massive compact GMCs efficiently form bound clusters
+</h4>
+<figure style="float:left;width:50%;text-align:left;font-style:italic;font-size:smaller;text-indent:0;margin:.5em;margin-right:2em" alt="TSFE">
+<img src="./fig/f10b-sfe_fit_TSFE_f.png">
+</figure>
+<p>
+We note that very compact ($n \approx 10^4 {\rm cm}^{-3}$) and massive clouds appear to form GC progenitors, in the sense that star clusters remain gravitationally bound after the gas has been mostly removed. We plan to explore in detail the dynamics of these bound star clusters and possible relationships with the SFE and the escape fraction of ionizing photons in future works.
+</p>
+<div style="clear:left"></div>
+<h3 id="headline-5">
+The Epoch of Reionization
+</h3>
+<p>
+<strong><strong>Relevent publication</strong></strong>
+</p>
+<p>
+<strong>C.-C. He</strong>, M. Ricotti, &amp; S. Geen, <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.tmp..162H/abstract">2020 MNRAS 492, 4858</a>
+</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chongchonghe" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );">
+  </script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Last updated: Mar 22, 2020</p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+  </body>
+
+</html>

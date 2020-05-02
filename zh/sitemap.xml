@@ -3,118 +3,131 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/publications/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/publications/</loc>
     <lastmod>2020-03-08T13:38:07-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/publications/"
+                href="https://www.astro.umd.edu/~chongchong/publications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/publications/"
+                href="https://www.astro.umd.edu/~chongchong/zh/publications/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/</loc>
     <lastmod>2020-03-08T13:38:07-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/"
+                href="https://www.astro.umd.edu/~chongchong/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/"
+                href="https://www.astro.umd.edu/~chongchong/zh/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/gallery/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/gallery/</loc>
     <lastmod>2020-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/gallery/"
+                href="https://www.astro.umd.edu/~chongchong/gallery/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/gallery/"
+                href="https://www.astro.umd.edu/~chongchong/zh/gallery/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/research/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/avatar/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/research/"
+                href="https://www.astro.umd.edu/~chongchong/avatar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/research/"
+                href="https://www.astro.umd.edu/~chongchong/zh/avatar/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/categories/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/categories/"
+                href="https://www.astro.umd.edu/~chongchong/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/categories/"
+                href="https://www.astro.umd.edu/~chongchong/zh/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/series/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/series/"
+                href="https://www.astro.umd.edu/~chongchong/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/series/"
+                href="https://www.astro.umd.edu/~chongchong/zh/series/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/tags/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/tags/"
+                href="https://www.astro.umd.edu/~chongchong/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/tags/"
+                href="https://www.astro.umd.edu/~chongchong/zh/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://chongchonghe.github.io/zh/about/</loc>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/about/"
+                href="https://www.astro.umd.edu/~chongchong/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/about/"
+                href="https://www.astro.umd.edu/~chongchong/zh/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.astro.umd.edu/~chongchong/zh/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.astro.umd.edu/~chongchong/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://www.astro.umd.edu/~chongchong/zh/contact/"
                 />
   </url>
   
