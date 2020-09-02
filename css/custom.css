@@ -1,0 +1,56 @@
+body {
+    font-family: sans-serif;
+    /* font-family: Arial, Verdana, sans-serif; */
+    /* font-family: Roboto, Arial, Verdana, sans-serif; */
+    /* font-family: Garamond, "Times New Roman", Times, serif; */
+    font-size: 13pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* margin: 6.4rem 0 3.2rem 0; */
+    margin: 3.0rem 0 1rem 0;
+    line-height: normal;
+}
+
+h1 {
+  font-size: 4.2rem;
+  @media only screen and (max-width : 768px) {
+    font-size: 3.0rem;
+    line-height: 3.4rem;
+  }
+}
+h2 {
+  font-size: 3.8rem;
+  @media only screen and (max-width : 768px) {
+    font-size: 2.6rem;
+    line-height: 3.0rem;
+  }
+}
+h3 {
+  font-size: 3.0rem;
+  @media only screen and (max-width : 768px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+}
+h4 {
+  font-size: 2.4rem;
+  @media only screen and (max-width : 768px) {
+    font-size: 2.0rem;
+    line-height: 2.4rem;
+  }
+}
+
+/* http://sparkandshine.net/en/insert-images-with-captions-in-markdown/ */
+/* /\* for image caption *\/ */
+/* img + br + em { */
+/*     font-style: normal; */
+/*     display: inherit; */
+/*     text-align: center; */
+/*     font-size: 90%; */
+/* } */
