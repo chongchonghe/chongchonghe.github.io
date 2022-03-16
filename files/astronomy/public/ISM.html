@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-28 Fri 15:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ISM</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/org.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="./index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">ISM</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#h-ii-region">1. H II Region</a>
+<ul>
+<li><a href="#sec:recomb">1.1. Radiative Recombination of Hydrogen</a></li>
+<li><a href="#ionization-time-scales">1.2. Ionization Time Scales</a></li>
+<li><a href="#ionization-fraction">1.3. Ionization Fraction</a></li>
+<li><a href="#i-front-dynamics">1.4. I-front Dynamics</a>
+<ul>
+<li><a href="#propagation-of-ionization-fronts">1.4.1. Propagation of ionization fronts</a></li>
+<li><a href="#expansion-of-h-ii-regions">1.4.2. Expansion of H II Regions</a></li>
+</ul>
+</li>
+<li><a href="#emission-and-absorption-by-the-ism">1.5. Emission and Absorption by the ISM</a>
+<ul>
+<li><a href="#emission-from-hii-regions">1.5.1. Emission from HII Regions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#spectra-lines">2. Spectra lines</a>
+<ul>
+<li>
+<ul>
+<li><a href="#lyman-alpha">2.0.1. Lyman-\(\alpha\)</a></li>
+<li><a href="#lyman-continuum">2.0.2. Lyman continuum</a></li>
+<li><a href="#cm">2.0.3. 21-cm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#dust">3. Dust</a>
+<ul>
+<li><a href="#metallicity">3.1. Metallicity</a></li>
+<li><a href="#orgb6d47a1">3.2. Dust Extinction</a></li>
+<li><a href="#sputtering">3.3. Sputtering</a>
+<ul>
+<li><a href="#sputtering-in-hot-gas">3.3.1. Sputtering in Hot Gas</a></li>
+</ul>
+</li>
+<li><a href="#ramsesrt">3.4. RAMSES+RT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="HTML" id="orge7437ea">
+<p>
+\(
+	  \newcommand{\dif}{\,\mathrm{d}}
+	  \newcommand{\sci}[2]{#1 \times 10^{#2}}
+	  \def\num#1{\numx#1}\def\numx#1e#2{{#1}\mathrm{e}{#2}}
+	  \newcommand{\msun}{{\rm M}_\odot}
+	  \newcommand{\si}[1]{{\rm #1}}
+\)
+</p>
+
+</div>
+
+<div id="outline-container-h-ii-region" class="outline-2">
+<h2 id="h-ii-region"><span class="section-number-2">1</span> H II Region</h2>
+<div class="outline-text-2" id="text-h-ii-region">
+</div>
+
+<div id="outline-container-sec:recomb" class="outline-3">
+<h3 id="sec:recomb"><span class="section-number-3">1.1</span> Radiative Recombination of Hydrogen</h3>
+<div class="outline-text-3" id="text-sec:recomb">
+<p>
+<a href="hydro-and-code.html#sec:ramses">RAMSES</a>
+</p>
+
+<p>
+Case B recombination: optically thick to radiation just above \(I_{\rm H}=13.60\) eV, so that ionizing photons emitted during recombination are immediately reabsorbed, creating another ion and free electron by photoionization.
+</p>
+
+<p>
+Following Draine Ch 15.1.1, let \(Q_{0}\) be the rate of emission of hydrogen-ionizing photons, i.e., \(h\nu>I_{{\rm H}}=13.6\) eV. Equating the rates of photoionization and radiative recombination gives the ionization balance equation:
+</p>
+
+<p>
+\[Q_{0}=\frac{4\pi}{3}R_{{\rm S}}^{\;3}\,\alpha\,n(H^{+})\,n_{e}.\]
+</p>
+
+<p>
+Since \(n(H^{+})=n_{e}=n_{H}\equiv n_{0}\), we can solve for the <i>Stromgren radius</i> \citep[][Eq. 15.1 (pg 163)]{Draine:2011}
+\[
+\label{eq:rs}
+  R_{S}\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3} = 3.17 \, Q_{49}^{1/3} \, n_2^{-2/3} \, T_4^{0.28}~{\rm pc},
+\]
+where
+\[
+\alpha_B(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4 {\rm K}} \right)^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.
+\]
+</p>
+
+<p>
+Draine also talked about other aspects of region, including the mean emission measure, mean free path of an 18 eV photon at \(T<50,000\) K, and helium ionization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ionization-time-scales" class="outline-3">
+<h3 id="ionization-time-scales"><span class="section-number-3">1.2</span> Ionization Time Scales</h3>
+<div class="outline-text-3" id="text-ionization-time-scales">
+<p>
+How long will it take to ionize an region?
+</p>
+
+<p>
+\[\tau_{{\rm ioni.}}=\frac{4/3\,\pi R_{{\rm
+S}}^{\;3}\,n_{0}}{Q_{0}}=\frac{1}{\alpha_{B}\,n_{0}}=\frac{1.22\times10^{3}\,{\rm
+yr}}{n_{2}}.\]
+for \(T \sim 10^4\) K. The <i>recombination timescale</i> (after the ionizing source turns off) is identical to the ionization timescale. For \(n_{0}>0.03\,{\rm cm}^{-3}\), this timescale is shorter than the main-sequence lifetime \(\gtrsim\) 5 Myr for a massive star.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ionization-fraction" class="outline-3">
+<h3 id="ionization-fraction"><span class="section-number-3">1.3</span> Ionization Fraction</h3>
+<div class="outline-text-3" id="text-ionization-fraction">
+<p>
+TODO
+</p>
+</div>
+</div>
+
+<div id="outline-container-i-front-dynamics" class="outline-3">
+<h3 id="i-front-dynamics"><span class="section-number-3">1.4</span> I-front Dynamics</h3>
+<div class="outline-text-3" id="text-i-front-dynamics">
+</div>
+
+<div id="outline-container-propagation-of-ionization-fronts" class="outline-4">
+<h4 id="propagation-of-ionization-fronts"><span class="section-number-4">1.4.1</span> Propagation of ionization fronts</h4>
+<div class="outline-text-4" id="text-propagation-of-ionization-fronts">
+</div>
+</div>
+
+<div id="outline-container-expansion-of-h-ii-regions" class="outline-4">
+<h4 id="expansion-of-h-ii-regions"><span class="section-number-4">1.4.2</span> Expansion of H II Regions</h4>
+<div class="outline-text-4" id="text-expansion-of-h-ii-regions">
+<p>
+Expansion of HII regions due to pressure force.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-emission-and-absorption-by-the-ism" class="outline-3">
+<h3 id="emission-and-absorption-by-the-ism"><span class="section-number-3">1.5</span> Emission and Absorption by the ISM</h3>
+<div class="outline-text-3" id="text-emission-and-absorption-by-the-ism">
+</div>
+
+<div id="outline-container-emission-from-hii-regions" class="outline-4">
+<h4 id="emission-from-hii-regions"><span class="section-number-4">1.5.1</span> Emission from HII Regions</h4>
+<div class="outline-text-4" id="text-emission-from-hii-regions">
+<p>
+The UV radiation from OB stars in HII regions cause the photoionization of the surrounding ISM. At \(T \sim 10^4~{\rm K}\) and \(N_e<10^6 {\rm cm^{-3}}\), the luminosity in the H\(\alpha\) line is \[L_{{\rm H}\alpha} = 0.450 (h \nu_{{\rm H}\alpha}) \dot{N}_{\rm ion},\] where \(\dot{N}_{\rm ion}\) is the number of ionizing photons emitted per unit time, and since it has to be balanced by recombination rate, \[\dot{N}_{\rm ion} = \alpha_{\rm B} n_pn_eV.\] The Ly\(\alpha\) emission is determined by substracting the Case B recombination coefficient \(\alpha_{\rm B}\) by the effective recombination coefficient to 2S. At the same environment as above, \[L_{{\rm Ly}\alpha} = 0.676 h \nu_{{\rm Ly}\alpha} \dot{N}_{\rm ion}.\] Thus, we can infer the number of OB stars in a HII region by measuring the luminosity in a recombination line, and since OB stars are short lived, their number is directly related to their birth rate. This provides the principle for deriving the star-formation rate in a star-forming region from its recombination line strengths.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-spectra-lines" class="outline-2">
+<h2 id="spectra-lines"><span class="section-number-2">2</span> Spectra lines</h2>
+<div class="outline-text-2" id="text-spectra-lines">
+</div>
+
+<div id="outline-container-lyman-alpha" class="outline-4">
+<h4 id="lyman-alpha"><span class="section-number-4">2.0.1</span> Lyman-\(\alpha\)</h4>
+<div class="outline-text-4" id="text-lyman-alpha">
+<p>
+(\citealt{Draine2011} Sec 15.7)
+</p>
+
+<p>
+The Lyman-alpha line is the spectral line of hydrogen from \(n=2\) to \(n=1\). 1215.67 angstroms, or 10.2 eV.
+</p>
+
+<p>
+The recombining hydrogen in HII region generates Lyman-alpha radiation in a rate of about \(\frac{2}{3} f_{\rm ion} Q_0\). The Lyman-alpha photons can be resonantly scattered by the small amount of neutral hydrogen.
+</p>
+
+<p>
+Escape of Lyman-alpha photons from galaxies therefore requires either very low dust abundances or "breakout" of the ionization front so that, in at least some directions, the H II is not bounded by dusty H I gas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-lyman-continuum" class="outline-4">
+<h4 id="lyman-continuum"><span class="section-number-4">2.0.2</span> Lyman continuum</h4>
+<div class="outline-text-4" id="text-lyman-continuum">
+</div>
+</div>
+
+<div id="outline-container-cm" class="outline-4">
+<h4 id="cm"><span class="section-number-4">2.0.3</span> 21-cm</h4>
+<div class="outline-text-4" id="text-cm">
+</div>
+</div>
+</div>
+
+<div id="outline-container-dust" class="outline-2">
+<h2 id="dust"><span class="section-number-2">3</span> Dust</h2>
+<div class="outline-text-2" id="text-dust">
+</div>
+
+<div id="outline-container-metallicity" class="outline-3">
+<h3 id="metallicity"><span class="section-number-3">3.1</span> Metallicity</h3>
+<div class="outline-text-3" id="text-metallicity">
+<p>
+Solar metallicity is \(Z = 0.0134\) \cite{Asplund2009}, where \(Z\) is the heavy element mass fraction. The <b>metallicity</b> relative to solar is \[[{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right],\] Stars with [Fe/H] &lt; 0 are metal-poor relative to the Sun. Metal poor makes stars bluer and metal rich makes stars redder due to line blanketing (metals absorb preferentially blue light) and opacity effect (metals absorb energy from the interior of the star, making red giants "swell up" even more, and give them cooler temperatures.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6d47a1" class="outline-3">
+<h3 id="orgb6d47a1"><span class="section-number-3">3.2</span> Dust Extinction</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Figure <a href="#org14e7de5">1</a>: dust extinction curve from \cite{Gnedin2008}
+</p>
+
+<p>
+cite:Ma2021
+</p>
+
+
+<div id="org14e7de5" class="figure">
+<p><img src="../img/dust_extinction_fit.png" alt="dust_extinction_fit.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Dust extinction in LMC/SMC</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sputtering" class="outline-3">
+<h3 id="sputtering"><span class="section-number-3">3.3</span> Sputtering</h3>
+<div class="outline-text-3" id="text-sputtering">
+</div>
+
+<div id="outline-container-sputtering-in-hot-gas" class="outline-4">
+<h4 id="sputtering-in-hot-gas"><span class="section-number-4">3.3.1</span> Sputtering in Hot Gas</h4>
+<div class="outline-text-4" id="text-sputtering-in-hot-gas">
+<p>
+[Draine Sec. 25.7] Grain lifetime of a stationary grain is given by \[\tau = 10^5 (1 + T_6^{-3}) \frac{a/0.1 \mu{\rm m}}{n_{\rm H}/{\rm cm}^{-3}} \; {\rm yr}.\] In HII region with \(T = 10^4~{\rm K}\) and \(n_{\rm H} = 10^4~\si{cm^{-3}}\), \(\tau = 10\) Myr for grains with size 0.1 micron. With \(n_{\rm H} = 10^2~\si{cm^{-3}}\), \(\tau = 1000\) Myr, and if the temperature increases to \(10^5\) K, \(\tau = 1\) Myr.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ramsesrt" class="outline-3">
+<h3 id="ramsesrt"><span class="section-number-3">3.4</span> RAMSES+RT</h3>
+<div class="outline-text-3" id="text-ramsesrt">
+<p>
+Possible issues:
+</p>
+
+<ul class="org-ul">
+<li>I see a mu=1.4 with comments: hard set mu=1.4 to make temperature
+agree with Audic &amp; Hennebelle.</li>
+</ul>
+
+<p>
+Mean particle mass, \(\mu\), is correctly calculated by the function
+<code>getMu</code> in main/rt_cooling_module.f90:
+</p>
+
+<p>
+\[\mu = [X(1+x_{\rm HII}) + \frac{Y}{4}(1 + x_{\rm HeII} + 2x_{\rm HeIII})]^{-1}\]
+</p>
+
+<ul class="org-ul">
+<li>For hydrogen and helium
+
+<ul class="org-ul">
+<li>In each cell, photoheating and radiative cooling of hydrogen and
+helium is performed by the radiative transfer module of RAMSES-RT as
+in Rosdahl et al. (2013).
+
+<ul class="org-ul">
+<li>Photoheating rate \(\mathcal{H}\) is a sum of the heating
+contributiosn from all photoionziation events (HI, HeI, and HeII).</li>
+
+<li>The primordial cooling rate \(\mathcal{L}\) include various cooling processes: collisional ionizations, collisional excitations, recombinations, dielectronic recombinations, bremsstrahlung and Compton cooling.</li>
+</ul></li>
+</ul></li>
+
+<li>For metals
+
+<ul class="org-ul">
+<li>'Neutral' function N(T)
+
+<ul class="org-ul">
+<li>Below 10^4 K: the prescription of Audit &amp; Hennebelle (2005), which
+includes <b>carbon, oxygen and dust grains</b> as well as the <b>ambient
+UV background</b> in the ISM. This is based on the work of Wolfire et
+al. (1995, 2003).
+
+<ul class="org-ul">
+<li>Including cooling by
+
+<ul class="org-ul">
+<li>fine-structure lines of CII (92 K)</li>
+
+<li>fine-structure lines of OI (228 and 326 K)</li>
+
+<li>cooling by H (Lyα line)</li>
+
+<li>cooling by electron recombination onto positively charged
+grains</li>
+</ul></li>
+
+<li>and heating by
+
+<ul class="org-ul">
+<li>photo-electric effect on small grains and PAHs due to the FUV
+galactic radiation.</li>
+</ul></li>
+
+<li>(This might be probmatic due to the hard mu = 1.4. In Audit2005,
+they have no radiative transfer, so the mean particle weight is
+constant at mu = 1.4, while in RAMSES+RT, mu is dramatically
+higher due to ionized electrons.)</li>
+</ul></li>
+
+<li>Above 10^4 K: Sutherland &amp; Dopita (1993)</li>
+</ul></li>
+
+<li>'Photoionized' cooling function
+
+<ul class="org-ul">
+<li>a piecewise fit to Ferland (2003):
+\(\Lambda = 3\times10^{-24}~{\rm erg~cm^3~s^{-1}}\) below 9000 K and
+\(2.2\times10^{-22}~{\rm erg~cm^3~s^{-1}}\) above 10^5 K.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+TODO: make a curve of the cooling funciton
+</p>
+
+<p>
+Radiative cooling and heating of hydrogen and helium is performed by the
+RT module of RAMSES-RT as in Rosdahl et al. (2013), consisting of two
+functions:
+</p>
+
+<ul class="org-ul">
+<li>'Neutral' function \(N(T)\): Audit &amp; Hennebelle (2005), which includes
+cooling from carbon , oxygen, and dust grains as well as the effect of
+the ambient UV background in the ISM.</li>
+
+<li>'photoionized' cooling function \(P(T)\): Ferland (2003)</li>
+</ul>
+
+<p>
+TODO: plot cooling function in RAMSES, find
+</p>
+
+<p>
+bibliographystyle:plain
+bibliography:~/folders/BIB_HE.bib
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: ChongChong He</p><p></p><p><a href='https://www.astro.umd.edu/~chongchong/'>www.astro.umd.edu/~chongchong/</a></p>
+</div>
+</body>
+</html>

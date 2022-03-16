@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-28 Fri 15:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mathamatical Tools</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/org.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="./index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Mathamatical Tools</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org89985a4">1. Statistics</a>
+<ul>
+<li><a href="#org0da534a">1.1. Basic probability and statistics</a>
+<ul>
+<li><a href="#orgf566abd">1.1.1. Central limit theorem</a></li>
+</ul>
+</li>
+<li><a href="#org2397b17">1.2. Bayesian Statistics</a>
+<ul>
+<li><a href="#orgebf6980">1.2.1. Bayes' Theorem</a></li>
+<li><a href="#orgaa13197">1.2.2. Parameter Estimation, Discrete Distributions</a></li>
+<li><a href="#orgb685e8e">1.2.3. Parameter Estimation, Continuous Distributions</a></li>
+<li><a href="#org264bff7">1.2.4. Nuisance Parameters: Marginalization</a></li>
+<li><a href="#orgf2ab587">1.2.5. Model Comparison</a></li>
+<li><a href="#org4fed459">1.2.6. Example: Fitting a Straight Line to Data</a></li>
+</ul>
+</li>
+<li><a href="#org1c443a2">1.3. Two-point Correlation Function</a>
+<ul>
+<li><a href="#org6d47c5c">1.3.1. Definition</a></li>
+<li><a href="#org6f66550">1.3.2. Estimators</a></li>
+<li><a href="#org894d9ad">1.3.3. Analytical Calculation of the Random Field</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0228db8">2. Fourier Transforms</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org80e3060">2.0.0.1. Power spectrum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec:math">3. Fitting functions</a>
+<ul>
+<li><a href="#subsec:fermi">3.1. ArcTan and Sigmoid function</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="HTML" id="orgb638f06">
+<p>
+\(
+	  \newcommand{\dif}{\,\mathrm{d}}
+	  \newcommand{\sci}[2]{#1 \times 10^{#2}}
+	  \def\num#1{\numx#1}\def\numx#1e#2{{#1}\mathrm{e}{#2}}
+	  \newcommand{\msun}{{\rm M}_\odot}
+	  \newcommand{\si}[1]{{\rm #1}}
+\)
+</p>
+
+</div>
+
+<div id="outline-container-org89985a4" class="outline-2">
+<h2 id="org89985a4"><span class="section-number-2">1</span> Statistics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0da534a" class="outline-3">
+<h3 id="org0da534a"><span class="section-number-3">1.1</span> Basic probability and statistics</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgf566abd" class="outline-4">
+<h4 id="orgf566abd"><span class="section-number-4">1.1.1</span> Central limit theorem</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Using the following code, I showed that the number of head-up coins of 100 flipping followes the following distribution: N(50, sigma^2) and sigma = 5. I will work out the math.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #6a1868;">N</span> = 10000
+<span style="color: #6a1868;">a</span> = np.random.choice([0, 1], [N, 100])
+<span style="color: #6a1868;">count</span> = np.<span style="color: #a626a4;">sum</span>(a, axis=1)
+<span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">bins = np.linspace(0, 100, 50)</span>
+<span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">n, _ = np.histogram(count, bins=bins)</span>
+<span style="color: #e45649;">from</span> scipy.stats <span style="color: #e45649;">import</span> norm
+<span style="color: #6a1868;">mu</span>, <span style="color: #6a1868;">std</span> = norm.fit(count)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2397b17" class="outline-3">
+<h3 id="org2397b17"><span class="section-number-3">1.2</span> Bayesian Statistics</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Here I describe the very basics of Bayes inference with some examples.
+Here's an article about
+<a href="http://jakevdp.github.io/blog/2014/06/14/frequentism-and-bayesianism-4-bayesian-in-python/">How
+to be a Bayesian in Python</a>, which introduces the Python MCMC package:
+<a href="http://dfm.io/emcee/current/">emcee</a>.
+</p>
+</div>
+
+<div id="outline-container-orgebf6980" class="outline-4">
+<h4 id="orgebf6980"><span class="section-number-4">1.2.1</span> Bayes' Theorem</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+\[P(A|B) = \frac{P(B|A)P(A)}{P(B)},
+  \label{eq:bayes}\] where Bayesian interpretations of the factors in
+this equation are:
+</p>
+
+<ul class="org-ul">
+<li>\(P(A|B)\) is the probability of the hypothesis given the dat and prior
+information.</li>
+
+<li>\(P(B|A)\) is the probability that the data would be observed if the
+hypothesis were true.</li>
+
+<li>\(P(A)\) is the prior probability of the hypothesis being true (in other
+words, the probability you assigned to the hypothesis before you took
+the data).</li>
+
+<li>\(P(B)\) can be considered as a normalizing constant, given that
+probabilities must integrate to unity.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa13197" class="outline-4">
+<h4 id="orgaa13197"><span class="section-number-4">1.2.2</span> Parameter Estimation, Discrete Distributions</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+First consider the discrete case. In a particular model, you expect
+there to be \(m_i\) counts in bin \(i\). Then, the probability of actually
+observing \(d_i\) counts in bin \(i\) of the data, given the model is
+correct, is, from the Poisson distribution,
+\[{\cal L}_i = \frac{m_i^{d_i}}{d_i!} e^{-m_i}.
+  \label{eq:L}\]
+</p>
+
+<p>
+In the limit of Gaussian statistics, the probability of the data given
+the model in bin \(i\), \(p_i\), is given by
+\[p_i = \frac{1}{\sigma_i \sqrt{2\pi}} e^{-(d_i - m_i)^2 / 2\sigma_i^2}.
+  \label{eq:pi}\] Wilks' theorem tells us that
+\(2\Delta \ln {\cal L} = - \Delta \chi^2\) in the Gaussian limit.
+\(1\sigma\) range would be \(\Delta \chi^2 = 1\), which corresponds to
+\(\Delta \ln {\cal L} = -0.5\) around the maximum.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb685e8e" class="outline-4">
+<h4 id="orgb685e8e"><span class="section-number-4">1.2.3</span> Parameter Estimation, Continuous Distributions</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+The probability of a data is simplily the probability distribution
+function (PDF): \(dP = N(x) \mathop{}\!\mathrm{d}x\), and the log
+posterior probability \(\ln {\cal L} =
+\Sigma \ln N(x_i)\) + const, where \(x_i\) is the observed data.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org264bff7" class="outline-4">
+<h4 id="org264bff7"><span class="section-number-4">1.2.4</span> Nuisance Parameters: Marginalization</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Given a posterio probability distribution \(P(a_1, a_2, \cdots, a_n)\),
+normalized so that<br />
+\(\int P(a_{1}, a_{2}, \cdots, a_{n}) da_1 da_2 \cdots da_n=1\). To get
+the probability distribution for parameter \(a_1\), independent of the
+values of the other parameters, we integrate over those other
+parameters:
+\[p(a_1) = \int P(a_1, a_2, \cdots, a_n) \mathop{}\!\mathrm{d}a_2 \cdots \mathop{}\!\mathrm{d}a_n.
+  \label{eq:margin}\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2ab587" class="outline-4">
+<h4 id="orgf2ab587"><span class="section-number-4">1.2.5</span> Model Comparison</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+"Bayes factor".
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4fed459" class="outline-4">
+<h4 id="org4fed459"><span class="section-number-4">1.2.6</span> Example: Fitting a Straight Line to Data</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<p>
+Assume a fitting to the data \[y = \beta_0 + \beta_1 \, x. \label{eq:y}\] If we assume that each data point departs from the staright line by an amount \(\epsilon_i\) which as a \(\mathcal{N}(0,\sigma^2)\) distribution, and \(\sigma\) is known, i.e.,
+</p>
+
+<p>
+\[y_i \sim {\cal N} (\beta_0 + \beta_1 x_i, \sigma^2),
+  \label{eq:yi}\]
+</p>
+
+<p>
+then, the posterior distribution for \(\beta_0\) and \(\beta_1\) is proportional to the product of the \(N\) normal densities:
+</p>
+
+<p>
+\[P(\beta_0,\beta_1|{y_1,y_2,\cdots,y_N}) \propto \prod_{i=1}^{N} \exp \left[
+  -\frac{(y_i-(\beta_0+\beta_1 x_i))^2}{2\sigma^2} \right].
+  \label{eq:pbeta}\]
+</p>
+
+<p>
+In practice, we set the prior as \(p(\theta, b) = p(\theta)p(b)\), where \(p(\theta) = 1/\pi\) from \(\theta=0\) to \(\theta = \pi\) and 0 otherwise, and \(p(b) = 1/(b_2 - b_1)\) from \(b=b_1\) to \(b=b_2\) and 0 otherwise. Then,
+</p>
+
+<p>
+\[P(\theta, b) \propto \frac{1}{\pi} \frac{1}{b_2 - b_1} \prod_{i=1}^{N} \exp \left[ -\frac{(y_i-(\beta_0+\beta_1 x_i))^2}{2\sigma^2} \right]. \label{eq:pbeta2}\]
+</p>
+
+<p>
+For data with uncertainties, \(\sigma\) may be replaced with \(\sigma_i\), the reported Gaussian uncertainty in the $i$th measurement of x. Note that the log of the product is \(- \chi^2/2\). We then normalize the posterior probability density such that
+</p>
+
+<p>
+\[\int_0^\pi \int_{b_1}^{b_2} P(\theta, b) \mathop{}\!\mathrm{d}b \mathop{}\!\mathrm{d}\theta = 1. \label{eq:norm}\]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c443a2" class="outline-3">
+<h3 id="org1c443a2"><span class="section-number-3">1.3</span> Two-point Correlation Function</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<a href="http://www.astro.lu.se/Education/utb/ASTM21/ASTM21-P1.pdf">This pdf document</a> (or <a href="file:///Users/chongchonghe/Academics/Books-more/Astrophysics/StarsStarClusters/ASTM21-P1.pdf">local</a>) introduces the theories of two-point correlation function with references. Python has a package to do pair counting.
+</p>
+</div>
+
+<div id="outline-container-org6d47c5c" class="outline-4">
+<h4 id="org6d47c5c"><span class="section-number-4">1.3.1</span> Definition</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+In order to quantify the clustering of galaxies, one must survey the entire galaxy distribution, from voids to superclusters. The most commonly used quantitative measure of large scale structure is the galaxy two-point correlation function, which is the amplitude of galaxy clustering as a function of scale. The two-point correlation function, \(\xi(r)\), is defined as a measure of the excess probability above what is expected for an unclustered random Poisson distribution, of finding a galaxy in a volume element \(dV\) at a separation \(r\) from another galaxy,
+</p>
+
+<p>
+\[ dP = [1 + \xi(r)] n dV, \]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f66550" class="outline-4">
+<h4 id="org6f66550"><span class="section-number-4">1.3.2</span> Estimators</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+The dataset (\(D\)) under investigation contains \(n\) points. The two-point correlation function is obtained by comparing the distribution of separations in \(D\) with that in a random set, called \(R\), which contains \(r\) points. In the interval \(x\) to \(x + \delta x\), count the number of pairs in \(D\) and \(R\) and denote them as \(N_D\) and \(N_R\), respectively. The 'natural' estimator of \(w(x)\) is
+</p>
+
+<p>
+\[w_1 = \frac{\frac{N_D}{n(n-1)/2} - \frac{N_R}{r(r-1)/2}}{\frac{N_R}{r(r-1)/2}} = \frac{r(r-1)}{n(n-1)} \frac{N_D}{N_R} - 1 \approx \frac{r^2}{n^2} \frac{N_D}{N_R} - 1.\]
+</p>
+
+<p>
+Landy &amp; Szalay suggested a much better estimate by using also the cross-correlation statistic \(N_{DR}\), which is the number of pairs in the seperation interval, with one point taken from \(D\) and the other from \(R\). \[w_3 \approx \frac{N_D/n^2 - 2N_{DR}/nr + N_R/r^2}{N_R/r^2} = \frac{r^2 N_D}{n^2 N_R} - \frac{r N_{DR}}{n N_{R}} + 1.\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org894d9ad" class="outline-4">
+<h4 id="org894d9ad"><span class="section-number-4">1.3.3</span> Analytical Calculation of the Random Field</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+I propose to use a general analytical expression to account for Input
+</p>
+
+<pre class="example" id="orgaad0db8">
+    Integrate[x ArcCos[(x^2 + r^2 - R^2)/(2 x r)], x]
+</pre>
+
+<p>
+Output
+</p>
+
+<pre class="example" id="org4a23cf6">
+   1/4 x (-r Sqrt[-((r^4 + (R^2 - x^2)^2 - 2 r^2 (R^2 + x^2))/(
+        r^2 x^2))] + 2 x ArcCos[(r^2 - R^2 + x^2)/(2 r x)]) - (
+   r R^2 x Sqrt[-((r^4 + (R^2 - x^2)^2 - 2 r^2 (R^2 + x^2))/(r^2 x^2))]
+     ArcTan[(r^2 + R^2 - x^2)/
+     Sqrt[-r^4 - (R^2 - x^2)^2 + 2 r^2 (R^2 + x^2)]])/(
+   2 Sqrt[-r^4 - (R^2 - x^2)^2 + 2 r^2 (R^2 + x^2)])
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0228db8" class="outline-2">
+<h2 id="org0228db8"><span class="section-number-2">2</span> Fourier Transforms</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Define the Fourier transformation \[\label{eq:fourier1}
+F(\omega) = \int_{-\infty}^{+\infty} e^{-i\omega\tau} f(\tau) \mathop{}\!\mathrm{d}\tau,\]
+and the inverse transformation that relates \(f(t)\) to \(F(\tau)\),
+\[\label{eq:6}
+f(t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{i \omega t}
+F(\omega) \mathop{}\!\mathrm{d}\omega.\] Note that \(f(\tau)\) is usually
+a real function. Physicists prefer the following form for convenience:
+</p>
+
+<p>
+\[\begin{aligned}
+\Phi(p) &= \int_{-\infty}^{+\infty} F(x) e^{-2\pi i p x} \mathop{}\!\mathrm{d}x,\\
+F(x) &= \int_{-\infty}^{+\infty} \Phi(p) e^{2\pi i x p} \mathop{}\!\mathrm{d}p.
+\label{eq:fourier2}\end{aligned}\]
+</p>
+
+<p>
+Some popular pairs of conjugate variables, \(x\) and \(p\), are 1) time \(t\)
+and frequency \(\nu\), in accoustics and radio; 2) position \(x\) and
+momentum divided by Planck's constant \(p/\hbar\) in quantum mechanics; 3)
+aperture \(x\) and diffraction angle divied by wavelength \(\sin
+\theta/\lambda\) in diffraction theory.
+</p>
+
+<p>
+I list the Fourier Transforms of some of the commonly used functions in
+</p>
+</div>
+
+<div id="outline-container-org80e3060" class="outline-5">
+<h5 id="org80e3060"><span class="section-number-5">2.0.0.1</span> Power spectrum</h5>
+<div class="outline-text-5" id="text-2-0-0-1">
+<p>
+\(S(\nu) = \Phi(\nu) \Phi^{*}(\nu) = \left| \Phi(\nu) \right|^2\) is
+called the power spectrum of the spectral power density (SPD) of \(F(t)\).
+This is what an optical spectrometer measures.
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(F(x)\)</th>
+<th scope="col" class="org-left">\(\Phi(p)\)</th>
+<th scope="col" class="org-left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">'top-hat' function \(\Pi_a(x)\)</td>
+<td class="org-left">\(a~\mathrm{sinc}(\pi p a)\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Gaussian \(G(x)=e^{-x^2/a^2}\)</td>
+<td class="org-left">\(g(p) = a \sqrt{\pi} e^{-\pi^2a^2p^2}\)</td>
+<td class="org-left">\(G(x)\) is a Gausian with width parameter \(a\), while \(g(p)\) has a width parameter \(1/\pi a\).</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f(x) = e^{-x/a} \; (x>0)\)</td>
+<td class="org-left">\(\Phi(p) = \frac{-1}{2\pi i p -1/a}\)</td>
+<td class="org-left">The power spectrum of \(f(x)\) is a Lorentz profile with a FWHM \(1/\pi a\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\delta(x)\)</td>
+<td class="org-left">1</td>
+<td class="org-left">"Small is big; big is small." Think about a Gaussian function with unit area.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec:math" class="outline-2">
+<h2 id="sec:math"><span class="section-number-2">3</span> Fitting functions</h2>
+<div class="outline-text-2" id="text-sec:math">
+</div>
+
+<div id="outline-container-subsec:fermi" class="outline-3">
+<h3 id="subsec:fermi"><span class="section-number-3">3.1</span> ArcTan and Sigmoid function</h3>
+<div class="outline-text-3" id="text-subsec:fermi">
+<p>
+The Fermi Function is used to fit the SFE(t) in our project:
+\[\label{eq:3}
+f(x) = \frac{a}{e^{-(x-\mu)/k} + 1}.\] Its derivative
+\(F(x) = \d f(x) / \d x\) has a smilar shape as the Gaussian function. It
+peaks at \(x=\mu\) at which \(F(x) = a/4k\). Its Full-Width Half-Maximum
+(FWHM) is \(2 \ln(3+2 \sqrt{2}) k \approx
+3.525 k\).
+</p>
+
+<p>
+The \(\arctan\) function \(f(x) = a \arctan(k(x-b))\) has the similar shape
+with its derivative having a height of \(a k\) and FWHM of \(2/k\).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: ChongChong He</p><p></p><p><a href='https://www.astro.umd.edu/~chongchong/'>www.astro.umd.edu/~chongchong/</a></p>
+</div>
+</body>
+</html>

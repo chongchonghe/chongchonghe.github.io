@@ -1,0 +1,8 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Galaxies
+
+* The Solar Motion
+
+http://burro.case.edu/Academics/Astr222/Galaxy/Kinematics/solarmotion.html

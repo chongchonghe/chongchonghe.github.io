@@ -1,0 +1,23 @@
+* Astronomy Notes
+
+* Coding
+
+** Convert tex to org
+
+To convert ../astronomy/*.tex to ./*.org:
+
+#+BEGIN_SRC python :results output
+  # pandoc ../astronomy/sec-ISM.tex -o sec-ISM.org
+  import os, sys
+  from glob import glob
+  os.chdir("../astronomy/")
+  for f in glob("*.tex"):
+		  if f[:4] != "sec-":
+				  continue
+		  name = f[4:-4]
+		  os.system(f"pandoc {f} -o ../astronomy-org/tex-export-to-org/{name}.org")
+  # pandoc ../astronomy/sec-code.tex -o sec-code.org
+#+END_SRC
+
+#+RESULTS:
+

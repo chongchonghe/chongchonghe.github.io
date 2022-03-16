@@ -1,0 +1,12 @@
+* Cosmology
+  :PROPERTIES:
+  :CUSTOM_ID: sec:cosmo
+  :END:
+
+** Distances
+   :PROPERTIES:
+   :CUSTOM_ID: sec:cosmo-dis
+   :END:
+
+A good document:
+"/Users/chongchonghe/Academics/Courses/ASTRO/622/Distance Measures.pdf"

@@ -1,0 +1,115 @@
+*Astronomy Cheat Sheet* Chong-Chong He Last updated:
+
+** Constants
+   :PROPERTIES:
+   :CUSTOM_ID: constants
+   :CLASS: unnumbered
+   :END:
+
+| Constant | Value |
+|----------+-------|
+| $m_p$    | g     |
+
+** Fundamentals
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:fund
+   :END:
+
+Metallicity: $$Z = 0.0134, \;
+  [{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right]$$
+
+** 
+   :PROPERTIES:
+   :CUSTOM_ID: section
+   :CLASS: unnumbered
+   :END:
+
+$$R_{S}\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3} = 3.17 \, Q_{49}^{1/3} \, n_2^{-2/3} \, T_4^{0.28}~{\rm pc},$$
+$$\alpha_{B}(T_e) \approx 2 \times 10^{-13} \, T_{e,4}^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.$$
+
+$$\tau_{{\rm ioni.}}=\frac{4/3\,\pi R_{{\rm
+S}}^{\;3}\,n_{0}}{Q_{0}}=\frac{1}{\alpha_{B}\,n_{0}}=\frac{1.22\times10^{3}\,{\rm
+yr}}{n_{2}} \; (T \sim 10^4 \, {\rm K})$$
+
+** Dust
+   :PROPERTIES:
+   :CUSTOM_ID: dust
+   :CLASS: unnumbered
+   :END:
+
+$$\tau_{\rm sputter} = \frac{a}{|da/dt|} \approx \num{1e5} (1 + T_6^{-3})
+  \frac{a/0.1 \mu m}{n_H/{\rm cm}^{-3}} \;{\rm yr}$$ Radiation pressure
+cross section in the solar neighborhood is\\
+$\left< \sigma_{\rm rad.pr.} \right>_{\rm ISRF} = \num{2.8e-22}~{\rm cm^2H^{-1}}$,
+whereas electron scattering is
+$\sigma_{\rm T} = \num{6.65e-25}~{\rm cm^2}$.
+
+* Star Formation: Theories
+  :PROPERTIES:
+  :CUSTOM_ID: star-formation-theories
+  :CLASS: unnumbered
+  :END:
+
+** Time Scales
+   :PROPERTIES:
+   :CUSTOM_ID: time-scales
+   :CLASS: unnumbered
+   :END:
+
+$$t_{\rm ff}=\sqrt{\frac{3\pi}{32G\rho_{0}}} \approx 43.5 \, {\rm Myr} \cdot n^{-1/2},$$
+assuming a mean particle weight $\mu = 1.4$.
+
+$$c_{s}=\sqrt{\gamma \frac{p_{0}}{\rho_{0}}} = \sqrt{\gamma \frac{kT}{\mu m_{H}}}
+= 0.31~T_{1}^{\;1/2}~{\rm km/s} \approx 10~T_4^{1/2}~{\rm km/s}.
+% = 9.91~\si{km/s} \cdot T_{4}^{\;1/2}.$$
+
+$$\left\{
+\begin{array}{ll}
+\lambda_{\rm J} &\equiv c_{\rm s} \sqrt{\cfrac{\pi}{G \bar\rho}} \;, \\
+M_{\rm J} &\equiv \cfrac{4\pi}{3} \left( \cfrac{\lambda_{\rm J}}{2}\right)^3 \bar\rho = \cfrac{\pi^{5/2}}{6} \cfrac{c_{\rm s}^3}{(G^3 \bar\rho)^{1/2}} \\
+&= 105~\msun \, \mu^{-2} \cdot T^{3/2} n^{-1/2},
+\end{array}
+\right.$$
+
+$$\begin{aligned}
+  v_{\rm vir,orb} = \sqrt{\frac{GM}{R}} &= 6.6~\si{km.s^{-1}} \; M_4^{1/2} R_{\rm pc}^{-1/2} \\
+  &= 30~\si{km.s^{-1}} \; M^{1/2} R_{\rm AU}^{-1/2}\end{aligned}$$
+
+** Cooling
+   :PROPERTIES:
+   :CUSTOM_ID: cooling
+   :CLASS: unnumbered
+   :END:
+
+$$t_{\rm cool} = \frac{3}{2} \frac{kT}{n \Lambda} = 0.66~{\rm yr} \; \left( \frac{n}{{\rm cm}^{3}} \right)^{-1} \left( \frac{T}{{\rm K}} \right) \left( \frac{\Lambda}{10^{-23}~{\rm erg}~{\rm cm}^3~{\rm s}^{-1}} \right)^{-1}$$
+
+Radiative cooling at $T>10^6$ K is dominated by the bremsstrahlung
+volume cooling rate:
+$${\cal E}_{\rm ff} = \int \varepsilon_{\rm ff}(\nu) \dif \nu
+  \approx \num{1.4e-23} T_8^{1/2} \left( \frac{n_e}{{\rm cm}^{-3}} \right)^2
+  \si{erg.s^{-1}.cm^{-3}}$$ assuming a charge number of unity ($Z=1$)
+and $n_i \sim n_e$.
+
+* Dynamics
+  :PROPERTIES:
+  :CUSTOM_ID: dynamics
+  :CLASS: unnumbered
+  :END:
+
+Dynamical friction: $$\begin{aligned}
+  \frac{\dif \mathbf{v}_M}{\dif t} &= D[\Delta v] \approx \frac{4 \sqrt{2\pi}}{3} G^2 M \rho
+  \ln \Lambda \frac{ {\bf v}_M}{\sigma^3} \;\;\; (v_M \; \mathrm{small}),
+  \\
+  \frac{\dif {\bf v}_M}{\dif t} &= D[\Delta v] \approx 4\pi G^2 M \rho
+  \ln \Lambda \frac{{\bf v}_M}{v_M^3} \;\;\; (v_M \; \mathrm{large}),\end{aligned}$$
+where
+$$\Lambda = \frac{b_{\rm max}}{b_{90}} \approx \frac{\cal M}{M} \frac{R_{\rm
+  orb}}{\cal R}.$$
+
+* Radiative Transfer
+  :PROPERTIES:
+  :CUSTOM_ID: radiative-transfer
+  :CLASS: unnumbered
+  :END:
+
+$${\rm Compton:} \; \lambda_2 - \lambda_1 = \frac{h}{mc}(1 - \cos \theta)$$

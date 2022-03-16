@@ -1,0 +1,98 @@
+* Hydrodynamical simulations
+  :PROPERTIES:
+  :CUSTOM_ID: hydrodynamical-simulations
+  :END:
+
+** Methods and Code
+   :PROPERTIES:
+   :CUSTOM_ID: methods-and-code
+   :END:
+
+Specification of the flow field:
+
+- Euler approach: The fluid properties are written as functions of space
+  and times. Cons: limited dynamic range.
+
+- Lagrangian approach: Pieces of the fluid are "tagged". The fluid flow
+  properties are determined by tracking the motion and properties of the
+  particles as they move in time.
+
+- Smooth Particles Hydrodynamics (SPH): an intermediate solution.
+  Follows the Lagrangian evolution of the flow, in which resolution
+  elements are defined as appropriate averages over 50 neighboring
+  particles.
+
+Methods of N-body code:
+
+- Particle-Mesh: fastest, but only support dynamical range of $10^3$.
+
+- P3M: higher spatial resolution, but significant increase in CPU time.
+
+- AP3M: rectangular grids is placed in clustered regions to apply PM
+  solver.
+
+- AMR: Generalization of both AP3M and TREE. e.g. ART.
+
+N-body code:
+
+- ART:
+
+  - The first implementation of a grid-based high-resolution N-body
+    code.
+
+  - AMR: recursively in a fully adaptive manner in the regions where the
+    density exceeds a predefined threshold. Mean number of particles per
+    cell remains roughly constant (around 10).
+
+  - "Quasi-Lagrangian" approach ensures two-body relaxation remains
+    unimportant.
+
+  - The mesh structure is not created at every time step, but is
+    properly adjusted to the evolving particle distribution.
+
+** RAMSES
+   :PROPERTIES:
+   :CUSTOM_ID: sec:ramses
+   :END:
+
+*** Summary
+    :PROPERTIES:
+    :CUSTOM_ID: summary
+    :END:
+
+- The AMR grid is built on a tree structure.
+
+- The hydrogdynamical solver is based on a second order Godunov method,
+  to solve the Euler equation.
+
+- Refinement strategy retained for cosmological simulations is based on
+  a "quasi-Lagrangian" mesh evolution.
+
+*** Features
+    :PROPERTIES:
+    :CUSTOM_ID: features
+    :CLASS: unnumbered
+    :END:
+
+- Coupling a tree-based AMR hydrodynamical scheme to the N-body solver
+  developed for the ART code.
+
+- Hydrodynamical solver: second-order Godunov scheme for perfect gases.
+
+** N-body
+   :PROPERTIES:
+   :CUSTOM_ID: n-body
+   :END:
+
+The density field is computed using the 'Cloud-In-Cell' (CIC)
+interpolation scheme. The Poisson equation at the course level is solved
+using standard FFT technique. For fine levels, the potential is found
+using a relaxation method. The acceleration is then calculated using the
+6-points finite difference approximation of the gradient. Variable time
+steps: a second-order midpoint scheme that reduces exactly to the
+leapfrog scheme for constant time steps.
+
+** Hydro
+   :PROPERTIES:
+   :CUSTOM_ID: hydro
+   :END:

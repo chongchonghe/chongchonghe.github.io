@@ -1,0 +1,240 @@
+#+OPTIONS: tex:t
+#+SETUPFILE: css/default.setup
+#+SETUPFILE: css/define.setup
+#+HTML_MATHJAX: align: left indent: 2em 
+#+TITLE: ASTRO CHEAT SHEET AND MEMO
+#+AUTHOR: Chong-Chong He
+
+# {{{newcommand(\\e,\\times 10^{#1},[1])}}}
+# {{{def(\\dif,\\textrm{d})}}}
+
+# e.g.
+# \newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+# to (\ensuremant is not allowed)
+# {{{newcommand(\\e,\\times 10^{#1},[1])}}}
+
+* Cheat Sheet
+
+** ISM
+
+$$R_{S}
+\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3}
+= 3.17 {\rm pc} \, Q_{49}^{1/3} \, n_2^{-2/3} \, T_4^{0.28},$$
+$$\alpha(T_e) \approx 2 \times 10^{-13} \, T_{e,4}^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.$$
+$$Z = 0.0134, \;
+  [{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right]$$
+
+** Star Formation: Theories
+
+*** Time Scales
+
+$$t_{{\rm ff}}=\sqrt{\frac{3\pi}{32G\rho_{0}}} \approx 43.5 \, {\rm Myr} \cdot n^{-1/2},$$
+assuming a mean molecular weight $\mu = 1.4$.
+
+$$c_{s}=\sqrt{\gamma \frac{p_{0}}{\rho_{0}}} = \sqrt{\gamma \frac{kT}{\mu m_{H}}}
+= 0.313~{\rm km/s} \cdot T_{1}^{\;1/2}.
+% = 9.91~{\rm km/s} \cdot T_{4}^{\;1/2}.$$
+
+\begin{align*}
+  v_{\rm vir,orb} = \sqrt{\frac{GM}{R}} &= 6.6~{\rm km~s^{-1}} \; M_4^{1/2} R_{\rm pc}^{-1/2} \\
+  &= 30~{\rm km~s^{-1}} \; M^{1/2} R_{\rm AU}^{-1/2}
+\end{align*}
+
+*** Cooling
+
+Radiative cooling at $T>10^6$ K is dominated by the bremsstrahlung
+volume cooling rate:
+$${\cal E}_{\rm ff} = \int \varepsilon_{\rm ff}(\nu) \ d \nu 
+  \approx 1.4\times 10^{-23} 1.4\e{-23} T_8^{1/2} \left( \frac{n_e}{{\rm cm}^{-3}} \right)^2
+  {\rm erg} {\rm s}^{-1} {\rm cm}^{-3}$$ assuming a charge number of unity ($Z=1$)
+and $n_i \sim n_e$.
+
+*** Dynamics
+
+Dynamical friction: 
+
+\begin{align*}
+  \frac{\dif \mathbf{v}_M}{\dif t} &= D[\Delta v] \approx \frac{4 \sqrt{2\pi}}{3} G^2 M \rho
+  \ln \Lambda \frac{ {\bf v}_M}{\sigma^3} \;\;\; (v_M \; \mathrm{small}),
+  \\
+  \frac{\dif {\bf v}_M}{\dif t} &= D[\Delta v] \approx 4\pi G^2 M \rho
+  \ln \Lambda \frac{{\bf v}_M}{v_M^3} \;\;\; (v_M \; \mathrm{large}),
+\end{align*}
+
+where
+$$\Lambda = \frac{b_{\rm max}}{b_{90}} \approx \frac{\cal M}{M} \frac{R_{\rm
+  orb}}{\cal R}.$$
+  
+* ISM
+  :PROPERTIES:
+  :CUSTOM_ID: sec:ism
+  :END:
+
+** H II Region
+   :PROPERTIES:
+   :CUSTOM_ID: h-ii-region
+   :END:
+
+*** Radiative Recombination of Hydrogen
+    :PROPERTIES:
+    :CUSTOM_ID: sec:recomb
+    :END:
+
+Case B recombination: optically thick to radiation just above $I_{\rm
+H}=13.60$ eV, so that ionizing photons emitted during recombination
+are immediately reabsorbed, creating another ion and free electron by
+photoionization.
+
+Following Draine Ch 15.1.1, let $Q_{0}$ be the rate of emission of
+hydrogen-ionizing photons, i.e., $h\nu>I_{\rm H}=13.6$ eV. Equating
+the rates of photoionization and radiative recombination gives the
+ionization balance equation:
+
+$$Q_{0}=\frac{4\pi}{3}R_{{\rm S}}^{\;3}\,\alpha\,n(H^{+})\,n_{e}.$$
+
+Since $n(H^{+})=n_{e}=n_{H}\equiv n_{0}$, we can solve for the
+/Stromgren radius/ Draine2011 [Eq. 15.1 (pg 163)]
+
+$$R_{S}\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3}
+= (9.77\e{18} {\rm cm}, {\rm or} \; 3.17 ~{\rm pc}) \, Q_{49}^{1/3} \,
+n_2^{-2/3} \, T_4^{0.28},$$
+
+with 
+
+$$\alpha(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4 {\rm
+K}} \right)^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.$$
+
+Draine also talked about other aspects of region, including the mean
+emission measure, mean free path of an 18 eV photon at
+$T<50,000$ K, and helium ionization.
+
+*** Ionization Time Scales
+    :PROPERTIES:
+    :CUSTOM_ID: ionization-time-scales
+    :END:
+
+How long will it take to ionize an region?
+
+$$\tau_{{\rm ioni.}}=\frac{4/3\,\pi R_{{\rm S}}^{\;3}\,n_{0}}{Q_{0}} =
+\frac{1}{\alpha_{B}\,n_{0}}=\frac{1.22\times10^{3}\,{\rm
+yr}}{n_{2}}.$$
+
+for $T \sim 10^4$ K. The /recombination time scale/ (after the
+ionizing source turns off) is identical to the ionization time
+scale. For $n_{0}>0.03$ cm$^{-3}$, this time scale is shorter than the
+main-sequence lifetime $\gtrsim$ 5 Myr for a massive star.
+
+*** Ionization Fraction
+    :PROPERTIES:
+    :CUSTOM_ID: ionization-fraction
+    :END:
+
+TODO
+
+*** I-front Dynamics
+    :PROPERTIES:
+    :CUSTOM_ID: i-front-dynamics
+    :END:
+
+**** Propagation of ionization fronts
+     :PROPERTIES:
+     :CUSTOM_ID: propagation-of-ionization-fronts
+     :END:
+
+**** Expansion of H II Regions
+     :PROPERTIES:
+     :CUSTOM_ID: expansion-of-h-ii-regions
+     :END:
+
+Expansion of HII regions due to pressure force.
+
+** Dust
+   :PROPERTIES:
+   :CUSTOM_ID: dust
+   :END:
+
+*** Metallicity
+    :PROPERTIES:
+    :CUSTOM_ID: metallicity
+    :END:
+
+Solar metallicity is $Z = 0.0134$ \cite{Asplund2009}, where $Z$ is the
+heavy element mass fraction. The *metallicity* relative to solar is
+$$[{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm
+H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right],$$ Stars with [Fe/H]
+< 0 are metal-poor relative to the Sun. Metal poor makes stars bluer
+and metal rich makes stars redder due to line blanketing (metals
+absorb preferentially blue light) and opacity effect (metals absorb
+energy from the interior of the star, making red giants "swell up"
+even more, and give them cooler temperatures.)
+
+*** Sputtering
+    :PROPERTIES:
+    :CUSTOM_ID: sputtering
+    :END:
+
+**** Sputtering in Hot Gas
+     :PROPERTIES:
+     :CUSTOM_ID: sputtering-in-hot-gas
+     :END:
+
+[Draine Sec. 25.7] Grain lifetime of a stationary grain is given by
+
+$$\tau = 10^5 (1 + T_6^{-3}) \frac{a/0.1 \mu{\rm m}}{n_{\rm H}/{\rm
+cm}^{-3}} \; {\rm yr}.$$
+
+In HII region with $T = 10^4~{\rm K}$ and
+$n_{\rm H} = 10^4~{\rm cm^{-3}}$, $\tau = 10$ Myr for grains with size
+0.1 micron. With $n_{\rm H} = 10^2~{\rm cm^{-3}}$, $\tau = 1000$ Myr, and
+if the temperature increases to $10^5$ K, $\tau = 1$ Myr.
+
+** Cooling function
+   :PROPERTIES:
+   :CUSTOM_ID: cooling-function
+   :END:
+
+*** RAMSES+RT
+    :PROPERTIES:
+    :CUSTOM_ID: ramsesrt
+    :END:
+
+Radiative cooling and heating of hydrogen and helium is performed by the
+RT module of RAMSES-RT as in Rosdahl et al. (2013), consisting of two
+functions:
+
+- 'Neutral' function $N(T)$:
+  [[https://ui.adsabs.harvard.edu/abs/2005A&A...433....1A][Audit2005]]
+  which includes cooling from carbon, oxygen, and dust grains as well
+  as the effect of the ambient UV background in the ISM.
+
+- 'photoionized' cooling function $P(T)$: Ferland2003
+
+TODO: plot cooling function in RAMSES, find.
+
+* Galaxies
+  :PROPERTIES:
+  :CUSTOM_ID: galaxies
+  :END:
+
+** The Intergalactic Medium
+   :PROPERTIES:
+   :CUSTOM_ID: the-intergalactic-medium
+   :END:
+
+*** The Lyman Forest
+    :PROPERTIES:
+    :CUSTOM_ID: the-lyman-forest
+    :END:
+
+(Ref: /Mo2010/)
+
+The Lyman $\alpha$ forest is the set of absorption lines arising from
+the absorption of Ly$\alpha$ resonance photons by neutral hydrogen along
+the line-of-sight towards a QSO.
+
+Radiation shorter than the Ly$\alpha$ line at $\r{A}$ 1215 Å travels
+outward from a quasar along its path will eventually be redshifted to
+the wavelength of the Ly$\alpha$ line, where the radiation will excite
+the electron in a neutral hydrogen atom from the ground state tot he
+first level, and be re-emiited by the atom in a random direction as it
+decays back to the ground state.

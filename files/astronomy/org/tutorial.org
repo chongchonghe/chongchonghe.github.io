@@ -1,0 +1,10 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+** Cross reference
+
+Same file: Use =<<tag>>= and =[[tag][text]]=. 
+
+Different file:
+- Heading search =[[file:code.org::*RAMSES][RAMSES]]=
+- Tag: =[[file:code.org::RAMSES][RAMSES]]=

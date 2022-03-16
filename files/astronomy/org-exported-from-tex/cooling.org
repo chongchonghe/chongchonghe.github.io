@@ -1,0 +1,157 @@
+* Cooling
+  :PROPERTIES:
+  :CUSTOM_ID: cooling
+  :END:
+
+** Basics
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:cooling
+   :END:
+
+Cooling time $$\label{eq:cooling}
+  \frac{d{\cal E}}{dt} = n^2(\Gamma - \Lambda)$$ and
+${\cal E} = \frac{3}{2} nkT$, therefore $$\label{eq:tcool}
+  t_{\rm cool} = \frac{3}{2} \frac{kT}{n \Lambda} = 0.66~{\rm yr} \; \left( \frac{n}{{\rm cm}^{3}} \right)^{-1} \left( \frac{T}{{\rm K}} \right) \left( \frac{\Lambda}{10^{-23}~{\rm erg}~{\rm cm}^3~{\rm s}^{-1}} \right)^{-1}$$
+
+** Basic Radiative Processes (MBW Sec 8.1)
+   :PROPERTIES:
+   :CUSTOM_ID: basic-radiative-processes-mbw-sec-8.1
+   :END:
+
+*** Compton Cooling
+    :PROPERTIES:
+    :CUSTOM_ID: compton-cooling
+    :END:
+
+Photons pass through a thermal gas of non-relativistic electrons,
+electrons lose energy to the radiation field when $T_\gamma \ll T_e$,
+causing the gas to cool. The cooling rate per unit volume is expressed
+as $${\cal E}_{\rm Comp} = \frac{\dif u_\gamma}{\dif t} =
+\frac{4k_BT_e}{m_ec^2}c\sigma_Tn_ea_rT_\gamma^4 \propto n_e T_e T_\gamma^4
+  \label{eq:compton}$$ For a fully ionized gas of primordial composition
+($Y_P \simeq 1/4$), the cooling time scale is
+$$t_{\rm Comp} \approx \frac{3k_BT_en_e}{{\cal E}_{\rm Comp}} =
+  \frac{3m_ec}{4\sigma_Ta_rT_\gamma^4},
+  \label{eq:tcomp}$$ provided $T_e \gg T_\gamma$.
+
+**** Cooling against CMB.
+     :PROPERTIES:
+     :CUSTOM_ID: cooling-against-cmb.
+     :END:
+
+The temperature of the CMB changes with redshift as
+$T_\gamma \approx 2.73(1+z)$K. It can be shown that this time scale is
+smaller than the Hubble time only at $z \gtrsim 6$, therefore Compton
+cooling against the CMB is only important for gas at high redshifts.
+
+*** Radiative Cooling
+    :PROPERTIES:
+    :CUSTOM_ID: sec:radcool
+    :END:
+
+This is the primary cooling processes relevant for structure formation.
+Radiative cooling is the processes in which gas loses energy through
+radiation as a result of two-body interaction. At $T>10^6$ K (almost
+fully ionized), the only significant radiative cooling process is
+bremsstrahlung. The volume cooling rate is related to the bremsstrahlung
+emissivity $\varepsilon_{\rm ff}$ through $$\begin{aligned}
+  {\cal E}_{\rm ff} &= \int \varepsilon_{\rm ff}(\nu) \dif \nu \nonumber \\
+  & \approx \num{1.4e-23} T_8^{1/2} \left( \frac{n_e}{{\rm cm}^{-3}} \right)^2
+  \si{erg.s^{-1}.cm^{-3}}
+  \label{eq:eff}\end{aligned}$$ assuming a charge number of unity and
+$n_i \sim n_e$.
+
+At lower temperatures, $10^4 \lesssim T \lesssim 10^6$ K, in regions,
+other important processes are:
+
+- Collisional ionization: atoms are ionized by collisions with
+  electrons.
+
+- Recombination: atoms recombines with an ion, emitting a photon.
+
+- Collisional excitation: atoms are first excited by collisions with
+  electrons and then decay radiatively to the ground state.
+
+The cooling rates of the cosmic gas (rich in hydrogen), combining all
+effects, is represented by the cooling function defined as
+$\Lambda(T) \equiv {\cal E}/n_{\rm H}^2$, shown in
+Fig. [[#fig:cooling][1]], assuming that the gas is optically thin to the
+emitted photons. A large fraction of the electrons are bound to their
+atoms when $T<10^{5.5}$ K. The peaks, from left to right, are due to
+collisionally excited electronic levels of H$^0$ and He$^+$, and of
+oxygen, carbon, nitrogen, etc for enriched gas.
+
+#+CAPTION: Equilibrium cooling functions, calculated by solving
+population densities of all ions. The processes included are:
+collisional excitation of H$^0$ and He$^+$, ionization of H$^0$, He$^0$,
+and He$^+$, recombination of H$^+$, He$^+$, and He$^{++}$, and free-free
+of all ions. (Copied from MBW, Fig. 8.1, Pg 369.)
+[[file:figures/f1_cooling.png]]
+
+*** Cooling below $10^4$ K
+    :PROPERTIES:
+    :CUSTOM_ID: cooling-below-104-k
+    :END:
+
+At temperatures below $10^4$, most of the electrons have recombined.
+Cooling at this temperature range is possible if the gas is enriched.
+
+- Collisions with neutral hydrogen atoms and with the few free electrons
+  left can excite the fine structure levels of low ions, such as OI,
+  OII, OIII, and CII.
+
+- Collisional excitation of the rotational/vibrational levels of
+  molecules (H$_2$, CO, etc) at low temperature.
+
+significant amounts of molecular hydrogen can form in the gas. The
+reactions for H$_2$ formation are: $$\begin{aligned}
+  \md{H}^0 + \md{e} \rightarrow \md{H}^- + \gamma,\;\; &\md{H}^- + \md{H}^0
+  \rightarrow
+  \md{H}_2 +
+  e;\\
+  \md{H}^+ + \md{H}^0 \rightarrow \md{H}_2^+ + \gamma,\;\; &\md{H}_2^+ + \md{H}^0
+  \rightarrow
+  \md{H}_2 + \md{H}^+.\end{aligned}$$
+
+In enriched gas, collisions with few free electrons can excite the fine
+structure levels of low ions, such as OI, OII, OIII and If
+
+** In RAMSES
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:coolramses
+   :END:
+
+*** Radiative Cooling
+    :PROPERTIES:
+    :CUSTOM_ID: radiative-cooling
+    :END:
+
+\citep{Geen:2016} In RAMSES the cooling in neutral gas is the
+prescription of Audit & Hennebelle (2005), which includes carbon, oxygen
+and dust grains as well as the ambient UV background in the ISM,
+transitioning to Sutherland & Dopita (1993) above $10^4$ K (see
+Sec. [[#sec:radcool][1.2.2]]).
+
+A further 'photoionised' cooling function that is a piecewise fit to
+Ferland (2003) is implemented, as in Rosdahl et al. (2013). In all our
+simulations, unless specifically stated, we assume a cooling function
+for a gas with solar metallicity.
+
+** Radiative Transfer
+   :PROPERTIES:
+   :CUSTOM_ID: radiative-transfer
+   :END:
+
+Ref: \cite{Rosdahl:2013}.
+
+Summary: RAMSES-RT uses the moment method with M1 Eddington tensor
+closure.
+
+- Radiative transfer (RT) is performed on the AMR grid with a
+  first-order Godunov method using the *M1 closure* for the Eddington
+  tensor, and is coupled to the hydrodynamics via non-equilibrium
+  thermochemistry of hydrogen and helium. This *moment-based* approach
+  has the great advantage that the computational cost is independent of
+  the number of radiative sources.
+
+- No radiation pressure.

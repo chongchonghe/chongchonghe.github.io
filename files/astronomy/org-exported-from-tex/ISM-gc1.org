@@ -1,0 +1,128 @@
+* ISM
+  :PROPERTIES:
+  :CUSTOM_ID: sec:ism
+  :END:
+
+** H II Region
+   :PROPERTIES:
+   :CUSTOM_ID: h-ii-region
+   :END:
+
+*** Radiative Recombination of Hydrogen
+    :PROPERTIES:
+    :CUSTOM_ID: sec:recomb
+    :END:
+
+Case B recombination: optically thick to radiation just above
+$I_{\rm H}=13.60\,$eV, so that ionizing photons emitted during
+recombination are immediately reabsorbed, creating another ion and free
+electron by photoionization.
+
+Following Draine Ch 15.1.1, let $Q_{0}$ be the rate of emission of
+hydrogen-ionizing photons, i.e., $h\nu>I_{{\rm H}}=$13.6$\,$eV. Equating
+the rates of photoionization and radiative recombination gives the
+ionization balance equation:
+$$Q_{0}=\frac{4\pi}{3}R_{{\rm S}}^{\;3}\,\alpha\,n(H^{+})\,n_{e}.$$
+Since $n(H^{+})=n_{e}=n_{H}\equiv n_{0}$, we can solve for the
+/Stromgren radius/ \citep[][Eq. 15.1 (pg 163)]{Draine:2011}
+$$R_{S}\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3} = (\num{9.77e18} \si{cm}, {\rm or} \; 3.17 ~\si{pc}) \, Q_{49}^{1/3} \, n_2^{-2/3} \, T_4^{0.28},$$
+with $$\alpha(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4 {\rm
+        K}} \right)^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.$$ Draine also
+talked about other aspects of region, including the mean emission
+measure, mean free path of an 18$\,$eV photon at $T<50,000\,$K, and
+helium ionization.
+
+*** Ionization Time Scales
+    :PROPERTIES:
+    :CUSTOM_ID: ionization-time-scales
+    :END:
+
+How long will it take to ionize an region?
+$$\tau_{{\rm ioni.}}=\frac{4/3\,\pi R_{{\rm 
+S}}^{\;3}\,n_{0}}{Q_{0}}=\frac{1}{\alpha_{B}\,n_{0}}=\frac{1.22\times10^{3}\,{\rm 
+yr}}{n_{2}}.$$ for $T \sim 10^4 \,$K. The /recombination time scale/
+(after the ionizing source turns off) is identical to the ionization
+time scale. For $n_{0}>0.03\,$cm$^{-3}$, this time scale is shorter than
+the main-sequence lifetime $\gtrsim$ 5 Myr for a massive star.
+
+*** Ionization Fraction
+    :PROPERTIES:
+    :CUSTOM_ID: ionization-fraction
+    :END:
+
+TODO
+
+*** I-front Dynamics
+    :PROPERTIES:
+    :CUSTOM_ID: i-front-dynamics
+    :END:
+
+**** Propagation of ionization fronts
+     :PROPERTIES:
+     :CUSTOM_ID: propagation-of-ionization-fronts
+     :END:
+
+**** Expansion of H II Regions
+     :PROPERTIES:
+     :CUSTOM_ID: expansion-of-h-ii-regions
+     :END:
+
+Expansion of HII regions due to pressure force.
+
+** Dust
+   :PROPERTIES:
+   :CUSTOM_ID: dust
+   :END:
+
+*** Metallicity
+    :PROPERTIES:
+    :CUSTOM_ID: metallicity
+    :END:
+
+Solar metallicity is $Z = 0.0134$ \cite{Asplund2009}, where $Z$ is the
+heavy element mass fraction. The *metallicity* relative to solar is
+$$[{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right],$$
+Stars with [Fe/H] < 0 are metal-poor relative to the Sun. Metal poor
+makes stars bluer and metal rich makes stars redder due to line
+blanketing (metals absorb preferentially blue light) and opacity effect
+(metals absorb energy from the interior of the star, making red giants
+"swell up" even more, and give them cooler temperatures.)
+
+*** Sputtering
+    :PROPERTIES:
+    :CUSTOM_ID: sputtering
+    :END:
+
+**** Sputtering in Hot Gas
+     :PROPERTIES:
+     :CUSTOM_ID: sputtering-in-hot-gas
+     :END:
+
+[Draine Sec. 25.7] Grain lifetime of a stationary grain is given by
+$$\tau = 10^5 (1 + T_6^{-3}) \frac{a/0.1 \mu{\rm m}}{n_{\rm H}/{\rm cm}^{-3}} \; {\rm yr}.$$
+In HII region with $T = 10^4~{\rm K}$ and
+$n_{\rm H} = 10^4~\si{cm^{-3}}$, $\tau = 10$ Myr for grains with size
+0.1 micron. With $n_{\rm H} = 10^2~\si{cm^{-3}}$, $\tau = 1000$ Myr, and
+if the temperature increases to $10^5$ K, $\tau = 1$ Myr.
+
+** Cooling function
+   :PROPERTIES:
+   :CUSTOM_ID: cooling-function
+   :END:
+
+*** RAMSES+RT
+    :PROPERTIES:
+    :CUSTOM_ID: ramsesrt
+    :END:
+
+Radiative cooling and heating of hydrogen and helium is performed by the
+RT module of RAMSES-RT as in Rosdahl et al. (2013), consisting of two
+functions:
+
+- 'Neutral' function $N(T)$: Audit & Hennebelle (2005), which includes
+  cooling from carbon , oxygen, and dust grains as well as the effect of
+  the ambient UV background in the ISM.
+
+- 'photoionized' cooling function $P(T)$: Ferland (2003)
+
+TODO: plot cooling function in RAMSES, find

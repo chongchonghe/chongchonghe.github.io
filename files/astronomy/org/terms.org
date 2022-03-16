@@ -1,0 +1,19 @@
+* Astronomical and Astrophysical Terms
+
+** Galactic
+
+*** Messier object
+
+The Messier objects are a set of 110 nebulous objects catalogued by the French astronomer Charles Messier in order to avoid confusion with comets. The catalogue consists of a diverse range of astronomical objects, from star clusters and nebulae to galaxies. For example, M 1 is a supernova remnant known as the Crab Nebula, and M 31 is the great spiral Andromeda Galaxy.
+
+*** Cold Dark Matter (CDM)
+
+CDM is the idea that a signiﬁcant part of the mass of the Universe is in the form of non-relativistic particles of an unknown kind.
+
+** Solar System
+
+*** Asteroid v.s. comet
+
+The main difference between asteroids and comets is their composition. Asteroids are made up of metals and rocky material, while comets are made up of ice, dust and rocky material. Both asteroids and comets were formed early in the history of the solar system about 4.5 billion years ago. Asteroids formed much closer to the Sun, where it was too warm for ices to remain solid. Comets formed farther from the Sun where ices would not melt. Comets which approach the Sun lose material with each orbit because some of their ice melts and vaporizes to form a tail.
+
+
