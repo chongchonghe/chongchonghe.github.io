@@ -1,0 +1,35 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Prestellar Cores
+
+[[https://iopscience.iop.org/article/10.1088/0004-637X/785/1/69#apj492747s7][\cite{Chen2014}]] (+Ostriker): Ambipolar diffusion and turbulence
+
+Magnetic properties
+
+- B-rho relations:
+
+  - Myers2021: Method: 17 dense cores within a few hundred parsecs of the Sun. Plane-of-the-sky field strengths. Conclusion: mass-to-flux ratio is 0.5 - 3 times the critical. \(B \propto n^{0.66}\). Matches with those derived from Zeeman studies (Crutcher2010). Could be explained by a sample of strongly bound, nearly magnetically critical cores with spheroidal shape.
+  - The discussion section of Myers2021 has summarized a lot of researches, both with observations and simulations, of the B-rho relation. [[https://ui.adsabs.harvard.edu/abs/2015MNRAS.452.2500L][Li2015]] has the most complete comparison between simulations and observables: clumps has mildly supercritical mass-to-flux ratio.
+  - Li2015: Mouschovias (1991) suggests that \(B \propto \bar{\rho}^{1/2} \sigma\), and Basu (2000) showed that this is in excellent agreement with observation.
+  - In simulations, we could compare the line-of-sight mass-to-flux ratio, \(\mu_{\rm los}\). Figure out how \(\mu\) is actually measure.
+
+Results from ALMA observations of Substructures in the Keplerian disc around the O-type (proto-)star G17.64+0.16 shows that the mass at center is 45+-10 Msun, disk mass is 0.6 - 2.6 Msun, and the disc currently appears stable for temperatures > 150 K. ([[https://www.aanda.org/articles/aa/full_html/2019/07/aa35633-19/aa35633-19.html][Maud2019]])
+
+** Topics
+
+*** Fragmentation of prestellar cores
+
+*Goodwin2017*
+
+In classical literature, the 'cores' stand for prestellar cores that collapse into a single binary. The mass is between ? and ? Msun, size between ? and ?. A typical prestellar core have a radius of 0.1 pc, density > 10^4 cm-3, and velocity dispersion 0.5 km/s. 
+
+/Turbulent fragmentation/. A very low level of turbulence (alpha_turb ~ 0.025) is enough for most cores in an ensemble to form more than one star. (Goodwin et al. 2004b). As turbulence increase, the number of stars that form increases.
+
+Fragmentation occurs in a 'disk-like' mode in circumstellar accretion regions
+
+Fragmentation occurs for some regions with high density beyond 50 - 100 AU from the central star. (Gawryszczak et al., 2006).
+
+Summary: turbulent cores generally fragment into several stars: approximately one per /initial/ Jeans mass in the core. 
+
+

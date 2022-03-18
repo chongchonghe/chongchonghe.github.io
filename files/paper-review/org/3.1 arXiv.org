@@ -1,0 +1,21 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* arXiv summary
+** 2021-05-20, Thu
+*** Galaxy
+
+- First survey of HCNH+ in high-mass star-forming cloud cores
+  [[https://arxiv.org/abs/2105.08732][arXiv:2105.08732]]
+- Moving-mesh radiation-hydrodynamic simulations of wind-reprocessed
+  transients [[https://arxiv.org/abs/2105.08735][arXiv:2105.08735]]
+
+** 2021-05-19, Wed
+*** Galaxy
+
+- Preparing the next gravitational million-body simulations: Evolution
+  of single and binary stars in Nbody6++GPU, MOCCA and McLuster
+  [[https://arxiv.org/abs/2105.08067][arXiv:2105.08067]]
+- Comparing different closure relations for cosmic ray hydrodynamics
+  [[https://arxiv.org/abs/2105.08090][arXiv:2105.08090]]
+- 

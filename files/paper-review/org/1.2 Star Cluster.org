@@ -1,0 +1,214 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Star Cluster
+** Dust
+*** Gnedin2008
+Table 1 provides parameters for the dust extinction law fits. Assume
+\(N_H\) is gas column density (as opposed to hydrogen column density).
+
+*** Corrales2016
+This paper cited [@Draine2003], but actually using data from both
+[@Weingartner2001] and _Draine2003_, as the latter extends the spectrum
+to X-ray, which is the focus of this paper.
+
+** Supermassive Black Hole Seed
+From [[https://arxiv.org/abs/1812.08892]]: Due to the theory of
+primordial star formation and the observed first chemical enrichment,
+the most likely candidates for seed black holes (Volonteri 2010; Latif
+\& Ferrara 2016) are the remnants of Population iii stars (Madau \& Rees
+2001; Bromm et al. 2002; Schneider et al. 2002), the direct collapse of
+primordial gas (Bromm \& Loeb 2003; Koushiappas et al. 2004; Agarwal et
+al. 2012), or via a massive quasi-star formed from collisions in nuclear
+star clusters in the early Universe (Baumgarte \& Shapiro 1999;
+Portegies Zwart et al. 1999; Devecchi \& Volonteri 2009).
+
+*** Latif:2016
+
+1. BH formation scenarios:
+
+   - core-collapse of massive stars (Ciardi \& Ferrara 2005; Bromm
+
+     1.
+
+   - dynamical evolution of dense nuclear star clusters, (Baumgarte \&
+     Shapiro 1999; Portegies Zwart et al. 1999; Devecchi \& Volonteri
+
+     1.
+
+   - collapse of a protogalactic metal free gas cloud. Here I focus on
+     scenario ii.
+
+2. Some backgrounds:
+
+   - The earlier studies suggested dense stellar clusters with more than
+     \(10^7\) stars are required for the run-away collapse to occur (Lee
+     1987; Quinlan \& Shapiro 1990). Binary heating stops the core
+     collapse in less massive stellar clusters (Heggie 1975; Hut et
+     al. 1992). Moreover, the core collapse timescale has to be shorter
+     than \(\sim 3\) Myr, otherwise mass loss from the supernova may
+     halt the core collapse.
+   - Mass segregation instability can lead to for mation of BH seed even
+     in less massive clusters (Spitzer 1969; Vishniac 1978; Begelman \&
+     Rees 1978), if mass segregation occurs within the first 3 Myr. Need
+     low metallicity clusters where mass loss from stellar winds is
+     expected to be minimum (Hirschi 2007; Glebbeek et al. 2009).
+   - merging of many stellar mass BHs or a supra-exponential growth of
+     stellar mass black holes in a cluster by dense cold gas flows
+     Alexander \& Natarajan (2014). Will not work, BHs will be thrown
+     away.
+   - Run-away merging of stellar mass black holes in the core of a dense
+     cluster mediated by the extremely large inflows of gas (Davies,
+     Miller, \& Bellovary 2011; Lupi et al. 2014).
+
+3. Compact star clusters
+
+   - Collapse timescale has to be shorter than \(\sim 3\)~Myr.
+   - Number of collisions and ther increase in mass per collision
+     strongly depend on half-mass radius. (Portegies Zwart \& McMillan
+     2002). The mass of a Very Massive Star (VMS) linearly increases
+     with the initial central density of a cluster.
+   - At hiehger metallicities, fragmentation occrus at densities at low
+     as \(10^3 {\rm cm^{-3}}\), resulting in the core collapse time
+     longer than 3 Myr (Omukai et al. 2008; Devecchi \& Volonteri 2009;
+     Devecchi et al. 2012).
+   - Large accretion rates and efficient star formation are required for
+     the formation of such compact nuclear stellar. By performming 3D
+     cosmological simulations, Latif et al. (2016) find that a dense
+     cluster may also form for \(Z/Z_{\odot} \ge 10^{-4}\) in the
+     presence of a strong UV flux.
+
+*** Portegies-Zwart:1999
+*** Katz:2015
+My summary: Kate:2015 set initial conditions for simulations of an star
+cluster with NBODY6 from the gas cloud forming in the core of the
+metal-enriched halo from zoom-in simulation of mini-halos. They find
+that the mass of the VMS can reach \(>400~\msun\) in clusters with
+stellar masses \(\approx 10^4~\msun\) and over \(1000~\msun\) for more
+massive and denser cluster.
+
+Latif:2016's summary: Katz et al. (2015) used a combination of
+hydrodynamical cosmological simulations and direct N-body simulations to
+estimate the mass of a VMS forming via stellar run-away collisions in a
+metal poor stellar cluster. They found that a VMS of \(\ge 400~\msun\)
+can form in a stellar cluster of \(10^4~\msun\) at z = 15 and may reach
+up to a \(1000~\msun\) for a cluster mass of a few times \(10^5~\msun\).
+
+1. Methods
+
+   Simualte evolusion of a pair of neighboring high-redshift mini-halos
+   with zoom-in RAMSES simulation. The central nuclear star cluster
+   (NSC) can be enriched to a critical metallicity, sufficient for Pop.
+   II star formation at \(z \approx 27\). From the gas cloud forming in
+   the core of the metal-enriched halo, they set initial conditions for
+   simulations of an star cluster with NBODY6. The final mass of the VMS
+   can reach \(>400~\msun\) in clusters with stellar masses
+   \(\approx 10^4~\msun\) and over \(1000~\msun\) for more massive and
+   denser cluster.
+
+2. My concerns
+
+   Are the initial conditions of the sampled star cluster realistic?
+
+*** SILCC: chemical evolution
+
+1. On the SILCC project (led by S. C. O. Glover?) (Seifried et al. 2017)
+   4 chemical convergence criteria are proposed. See logs.org for how my
+   simulations meet these criteria.
+
+** Escape fraction from MC
+*** Howard (2017)
+
+1. Initial conditios
+
+   n = 100 cm-3, corresponding to tff = 4.4 Myr (assuming \(\mu\) =
+   1.4). Masses = \(10^{4-6}~\msun\).
+
+2. Method
+
+   include radiation pressure adopting a single UV opacity.
+
+*** [@Howard:2018]}
+\paragraph{Escape fraction from populations}
+
+- Sampling discrete distribution following \(M^\alpha\) and
+  \(\alpha = -1.5\) or \(-2.5\).
+
+*** Howard:2018a
+Todo: compare Z dependence.
+
+- Star clusters form in filaments and move with the filamentary gas
+  flows.
+- Clusters grow by gas inflow from their host filaments and by merging
+  events.
+- Forms 229 and 146 {*cluster particles*}.
+- Particle merging is allowed.
+- Lowering Z results in higher \(f_{\rm star}\), contrary to what we
+  find. A factor of \(\sim 4\) difference due to metallicity difference.
+  At sub-solar metallicity, the radiation produced by the young stars
+  exerts less pressure on the surrounding gas because the opacity is
+  lower, allowing the YMC to continue accreting gas throughout its
+  entire history.
+- Subgrid model for star formation: Samping Chabrier IMF with \(20\%\)
+  efficiency.
+- Radiative transfer: raytracing scheme. Radiation pressure is included.
+
+*** Kim:2017
+Title: Modeling UV Radiation Feedback from Massive Stars. I.
+Implementation of Adaptive Ray-tracing Method and Tests
+
+** Galactic escape fraction
+*** Gnedin:2008
+
+- Escape fraction of \(1\% - 3\%\) over the entire redshift interval (3
+  < \(z\) < 9) and veries by more than an order of magnitude along
+  different lines of sight, for a massive galaxies and SFR
+  \(\approx 1-5 \ {\rm M_\odot} \ {\rm yr}^{-1}\).
+  \(\langle f_{\rm esc}\rangle\) declines steeply at lower masses and
+  SFR. Absorption by dust is considered.
+- The low values of escape fractions are due to a small fraction of
+  young stars located just outside the edge of the H i disk. This
+  fraction is smaller in disks of smaller galaxies.
+- Alternative method: direct measurements of HI column density at
+  \(z \sim 3\).
+- *Absorption by dust* Dust may contribute significantly to the
+  absorption of ionizing radiation (e.g., Weingartner \& Draine 2001).
+- Compare with previous work:
+
+  - Siana et al. 2007: Lyman continuum escape fractions in galaxies at
+    \(z \sim 1\), \(f_{esc} \lesssim 0.1\).
+
+*** Arata:2019
+A number of literatures have examined the escape fraction of UV photons
+from galaxies. Using zoom-in initial conditions in cosmological
+hydrodynamic simulations, _Arata:2019_ investigate three massive
+galaxies and find the escape fraction of UV photons fluctuates in the
+range of 0.2 -- 0.8 with a time-averaged value of 0.3. They find that
+gas and dust are ejected from star-forming regions by supernova
+feedback, allowing the UV photons to escape.
+
+*** Ma2015
+[@Ma2015] studied the escape fraction of ionizing photons from
+less-massive galaxies with halo mass
+\(M_{\rm h} \sim 10^9 - 10^{11} ~\msun\) and showed that
+\(f_{\rm esc}^{\rm gal}\) has large time variability and the
+time-averaged \(f_{\rm esc}^{\rm gal}\) generally remains \(< \sim 5\)
+per cent.
+
+#+begin_src latex
+  A number of literature have examined the escape fraction of
+  UV photons from galaxies, $f_{\rm esc}^{\rm gal}$. \cite{Ma2015}
+  studied the escape fraction of ionizing photons from less-massive
+  galaxies with halo mass $M_{\rm h} \sim 10^9 - 10^{11} ~\msun$ and
+  showed that $f_{\rm esc}^{\rm gal}$ has large time variability and the
+  time-averaged $f_{\rm esc}^{\rm gal}$ generally remains $lesssim 5$
+  per cent. Using zoom-in initial conditions in cosmological
+  hydrodynamic simulations, \cite{Arata:2019} investigate three massive
+  galaxies and find the escape fraction of UV photons fluctuates in the
+  range of 20 per cent -- 80 per cent with a time-averaged value of 30
+  per cent. They find that gas and dust are ejected from star-forming
+  regions by supernova feedback, allowing the UV photons to escape.
+#+end_src
+
+** Stellar radiation
+Keywords: Vacca function, Schaerer fit

@@ -1,0 +1,10 @@
+#+TITLE: yt quick reference
+#+SETUPFILE: ../style/default.setup
+
+* Quick links
+
+- [[file:~/Academics/Projects/2017-RAMSES/README/about-yt/cheatsheet/cheatsheet.pdf][cheatsheet.pdf]]
+
+* Links to official doc
+
+- [[https://yt-project.org/doc/reference/api/yt.visualization.plot_window.html#yt.visualization.plot_window.ProjectionPlot][ProjectionPlot]]

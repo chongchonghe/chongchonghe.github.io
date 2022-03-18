@@ -1,2 +1,3 @@
-- [[./paper-reviews/index.html][Paper reviews]]
-
+- [[./paper-review/public/index.html][Paper reviews]]
+- [[file:astronomy/public/index.html][Astronomy]]
+- [[file:wiki/public/index.html][Wiki]]

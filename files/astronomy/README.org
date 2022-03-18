@@ -1,8 +1,22 @@
 * Astronomy Notes
 
-* Coding
+** About
 
-** Convert tex to org
+Learning notes of Astronomy. 
+
+** Compile
+
+To compile, do ~make -C ..~ when a org file is open.
+
+To add a 'scroll-to-top' on a page, add the following to the beginning of the document:
+#+begin_src 
+#+include: ~/dotfiles/org-styles/common/scroll-to-top.org
+#+end_src
+
+
+** Coding
+
+*** Convert tex to org
 
 To convert ../astronomy/*.tex to ./*.org:
 

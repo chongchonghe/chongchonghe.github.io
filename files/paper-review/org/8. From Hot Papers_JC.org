@@ -1,0 +1,193 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Hot Papers
+** About
+
+#+begin_quote
+  Zoom information is below.
+
+  As with previous iterations of Hot Papers, voting will take place each
+  week on which papers will be discussed the following week. In the
+  period between voting and the following meeting, we'll be asking (in
+  general) two people to volunteer as discussion leaders for papers that
+  they voted for. We'd particularly appreciate *having faculty and
+  postdocs vote and present papers*, as the graduate students have
+  indicated that they value seeing their perspectives on selecting and
+  breaking down papers.
+
+  Given the upcoming dissolution of VoxCharta, we'll be moving our
+  voting venue to benty-fields http://www.benty-fields.com/ for the time
+  being. To place your votes, you'll need to make an account, click on
+  "Journal Club," and search for "UMD Astro Hot Papers."
+
+  As a reminder, the papers and topics we discuss at Hot Papers are
+  determined by *you*! You don't need to be an expert to vote on a
+  paper, and you can always say no if Arjun or I ask you to present a
+  paper that you voted on. If you are presenting a paper, you don't need
+  to know everything. Coming with questions is encouraged! Hot Papers is
+  a group discussion to help everyone better understand the top-voted
+  papers in astronomy.
+
+  Happy voting, and hope to see you tomorrow! Julian
+#+end_quote
+
+** 2020-09-03
+
+1. Prospects for Characterizing the Haziest Sub-Neptune Exoplanets with
+   High Resolution Spectroscopy https://arxiv.org/abs/2008.11299 by Hood
+   et al. Presented by Dana Louie
+
+2. Cold gas in the Milky Way's nuclear wind
+   https://arxiv.org/abs/2008.09121 by Di Teodoro et al. Presented by
+   Becca Levy
+
+** 2020-09-10
+GW190521: A Binary Black Hole Merger with a Total Mass of 150 M⊙
+https://arxiv.org/pdf/2009.01075.pdf by R. Abbott et al. (LIGO
+Scientific Collaboration and Virgo Collaboration) Presented by Cole
+Miller
+
+** 2020-09-18
+GRB 160625B: Evidence for a Gaussian-Shaped Jet
+https://arxiv.org/abs/2009.00579 by Cunningham, Cenko, Ryan, Vogel, et
+al. Congratulations to all the UMD authors here! Presented by Ginny
+Cunningham.
+
+On the Origin & Thermal Stability of Arrokoth's and Pluto's Ices
+https://arxiv.org/abs/2009.02277 by Lisse et al. *Presented by Carrie
+Holt*.
+
+** 2020-09-25
+Phosphine Gas in the Cloud Decks of Venus
+https://arxiv.org/pdf/2009.06593.pdf by J.S. Greaves et al. *Presented
+by Giannina Guzman Caloca*
+
+The Magellanic Corona and the formation of the Magellanic Stream
+https://arxiv.org/pdf/2009.04368.pdf by S. Lucchini et al. *Presented by
+Calvin Osinga*
+
+** 2020-10-02
+M51-ULS-1b: The First Candidate for a Planet in an External Galaxy
+https://arxiv.org/pdf/2009.08987.pdf by Di Stefano et al. Presented by
+Richard Mushotzky.
+
+The Imperative to Reduce Carbon Emissions in Astronomy
+https://arxiv.org/abs/1912.05834 by Stevens et al. and The Ecological
+Impact of High-performance Computing in Astrophysics
+https://arxiv.org/abs/2009.11295 by Zwart. Presented by Geoff Ryan
+
+** 2020-10-09
+The Evolution of the Baryons Associated with Galaxies Averaged over
+Cosmic Time and Space https://arxiv.org/abs/2009.11126 by F. Walter et
+al. *Presented by Benedikt Diemer*
+
+A Giant Planet Candidate Transiting a White Dwarf
+https://arxiv.org/abs/2009.07282 by A. Vanderburg et al. *Presented by
+Guangwei Fu*
+
+** 2020-10-16
+On the possibility of through passage of asteroid bodies across the
+Earth's atmosphere https://arxiv.org/abs/2009.14234 by Khrennikov et
+al. Presented by Thomas Rimlinger
+
+Black-hole spectroscopy, the no-hair theorem and GW150914: Kerr
+vs. Occam https://arxiv.org/abs/2010.01857 by Bustillo et al. Presented
+by Cecilia Chirenti
+
+** 2020-10-23
+Re-analysis of the 267-GHz ALMA observations of Venus: No statistically
+significant detection of phosphine https://arxiv.org/abs/2010.09761 by
+Snellen et al. *Presented by Teal*
+
+Integral-Field Spectroscopy of Fast Outflows in Dwarf Galaxies with AGN
+https://arxiv.org/abs/2010.09008 by Liu et al. *Presented by Weizhe Liu*
+
+** 2021-02-26
+
+- [[https://arxiv.org/abs/2102.01835][Icy Exomoons Evidenced by
+  Spallogenic Nuclides in Polluted White Dwarfs]] by Doyle et al.
+
+/Presented by Giannina Guzman Caloca/
+
+- [[https://arxiv.org/abs/2102.08488][On the Capture of Interstellar
+  Objects by our Solar System]] by Napier et al. /Presented by Doug
+  Hamilton/
+
+  - Computational power: simulating 500 million asteroid trajectories.
+
+- Journal Club:
+  [[https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020JE006475][Global
+  Patterns of Recent Mass Movement on Asteroid (101955) Bennu]] by Joe
+  DeMartini
+
+  - An ancient relic of our solar system's early days, Bennu has seen
+    more than 4.5 billion years of history. Because its materials are so
+    old, Bennu represents a type of building block of our solar system's
+    rocky planets. It may even contain organic molecules similar to
+    those that could have played a role in the start of life on Earth.
+  - Size and Distance: At about half a kilometer wide at its equator.
+    Bennu's average orbital distance from the Sun is slightly bigger
+    than 1 AU.
+
+2021-02
+
+** 2021-04-02
+[[https://arxiv.org/abs/2103.08788][1I/'Oumuamua as an N2 ice fragment
+of an exo-Pluto surface: I. size and compositional constraints]] by
+Jackson and Desch
+
+Presented by: Antoine Washington
+
+- Hyperbolic orbit: outside of solar system
+- Research:
+
+  - Non-gravitational motion, motion not caused by the Sun:
+
+    - Figure 1. Predicted non-gravitational acceleration at 1.42 AU due
+      to sublimation and jetting. N2, CO, CH4, Ne are possible
+      candidates.
+
+  - Conclusion: made of nitrogen iceberg
+
+[[https://arxiv.org/abs/2103.08723][To H0 or not to H0?]] by Efstathiou
+
+Presented by: Calvin Osinga
+
+Distance ladder:
+
+- tip of red giant branch???
+
+** 2021-04-09
+[[https://arxiv.org/abs/2103.14039][Machine Learning the 6th Dimension:
+Stellar Radial Velocities from 5D Phase-Space Correlations]] by Dropulic
+et al.
+
+/Presented by Jegug Ih/
+
+** 2021-04-23
+
+- Wong et al. 2021
+
+Fig. 5: magnetic field lines
+
+Fig. 7: velocity fields, colored by v_phi. INTERESTING
+
+*Sagi A star?*
+
+- Eve Lee: Primordial Radius Gap and Potentially Broad Core Mass
+  Distributions of Super-Earths and Sub-Neptunes
+
+  - [[https://iopscience-iop-org.proxy-um.researchport.umd.edu/article/10.3847/1538-4357/abd6c7][PDF]]
+  - Eq. 5: isothermal accretion at envelope
+
+** today
+C^+ atomic mass?, CO, molecular mass, sum up together. CII to mass
+ratio? Q: independant measurement of those ratios?
+
+** 2021-11-05
+[[https://arxiv.org/pdf/2110.06957.pdf][Constraints on the neutron
+star's maximum densities from postmerger gravitational-waves with
+third-generation observations]] by Breschi et al.
+
+/Presented by/ /Isiah/

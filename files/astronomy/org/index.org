@@ -1,7 +1,4 @@
-#+TITLE: Index
-
-#+SETUPFILE: ../style/default.setup
-#+OPTIONS: toc:nil
+#+TITLE: Home
 * [[file:cheatsheet.org][*Astrophysics Cheat Sheet*]]
 * [[file:ISM.org][ISM]]
 * [[file:math.org][Mathamatical Tools]]
@@ -13,3 +10,4 @@
 * [[file:solarsystem.org][solarsystem]]
 * [[file:terms.org][terms]]
 * [[file:tutorial.org][tutorial]]
+

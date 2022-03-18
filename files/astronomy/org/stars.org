@@ -1,6 +1,6 @@
-#+SETUPFILE: ../style/default.setup
-#+INCLUDE: ../style/latex.setup
 #+TITLE: Stars
+# #+SETUPFILE: ../style/default.setup
+# #+INCLUDE: ../style/latex.setup
 
 * The Properties of Stars
 
@@ -391,6 +391,7 @@ Types of stellar feedback includes:
 ** Young stellar object
 
 Young stellar object (YSO)
+
 
 Lada scheme of low-mass stars. Class 0, I, II, and III, distinguished by their spectral energy distribution.
 

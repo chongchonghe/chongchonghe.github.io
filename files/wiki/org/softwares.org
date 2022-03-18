@@ -1,0 +1,661 @@
+#+TITLE: softwares
+#+SETUPFILE: ../style/default.setup
+
+* Emacs
+
+** References:
+
+  - My (very long) .emacs: http://home.thep.lu.se/~karlf/emacs.html#sec-13-8
+
+  - https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+
+  - David O'Toole Org tutorial: https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+
+  - Org Mode - Organize Your Life In Plain Text!: http://doc.norang.ca/org-mode.html#AgendaSetup
+
+  - [[https://alhassy.github.io/init/][A Life Configuring Emacs]]
+
+  - https://pages.sachachua.com/.emacs.d/Sacha.html
+
+** Dot Emacs files
+
+- [[https://akirakyle.com/dotfile/dotfile.html#org83b9c8b][One Dotfile to rule them all!]]
+- dakrone-dotfiles: https://github.com/dakrone/dakrone-dotfiles/blob/master/emacs.org
+- Juan José García Ripoll: http://juanjose.garciaripoll.com/blog/my-emacs-windows-configuration/index.html
+** How to get help?
+
+*** Search for function
+
+  - http://ergoemacs.org/emacs/elisp_search_documentation.html
+
+  - To search command by name, ~Alt+x apropos-command~, or ~Ctrl+h
+    a~. ~Ctrl+u Ctrl+h a~ to search both function and command names.
+
+  - To search variable names, ~Alt+x apropos-variable~
+
+  - To search all symbols space (commands, functions, variables, faces),
+    ~Alt+x apropos~.
+
+*** Get help
+  - ~C-h i~
+  - An example: For more details on mode hooks, see the built-in Emacs
+    manual node [(emacs) Hooks][1]. You can get there from Emacs via C-h
+    i r m Hooks <enter>: C-h for help, i for info, r for read the
+    manual, m for menu item, and Hooks to pick the menu item. (or you
+    can follow the link above to see the html version).
+  - C-h w <command-name> :: Find the key bindings for a command
+      ("where-is")
+  - C-h k <key-sequence> :: Find the command bound to a key sequence.
+  - C-h f <function-name> :: Get detailed information about a command
+  - C-h f <outline-minor-mode> :: Get documentation of a minor mode
+  - C-h c <key-sequence> :: Find what function is bound to a key sequence.
+  - C-h ? :: For more help
+
+*** A nice reference (dead)
+  http://www.coli.uni-saarland.de/~slemaguer/emacs/main.html
+
+** Tips
+
+ - Find files
+   - ~C-x C-f~ for helm find files
+   - ~SPC f L~ to locate files anywhere
+   - ~SPC p f~ to find files in the current project (directory)
+
+** Installation
+
+  1. install emacs on Mac
+      #+BEGIN_SRC bash
+      $ brew update
+      $ brew install emacs --with-cocoa
+      $ brew linkapps emacs
+      #+END_SRC
+  2. Copy the first few lines of an old .emacs file, and restart emacs.
+  3. [Install elpy][3]
+     1. M-x *package-refresh-contents*
+     2. M-x *package-install* RET *elpy* RET
+  4. M-x *package-install* RET *neotree* RET
+  5. [Install autopep8][4]
+     `conda install -c conda-forge autopep8=1.3.2`
+  6. Uncomment autopep8
+  7. Copy other parts of the .emacs file
+  8. Install spolsky theme
+  9. Install sublime-themes using package-install
+  10. add (require 'emacs-color-themes) to .init
+  11. package install: markdown-mode
+
+  Follow ~/.emacs
+
+** magit: git integration
+
+  Use magit
+  https://opensource.com/article/19/1/how-use-magit
+  https://www.masteringemacs.org/article/introduction-magit-emacs-mode-git
+
+*** Usage
+
+  - Check status: ~M-x magit-status~. See what's changed: **TAB** key.
+
+** LaTeX
+
+  I switched from vim-latex to Emacs + AUCTeX.
+
+*** Tips
+
+  - AUCTeX Get help: C-h i d m AUCTeX RET
+  - siunitx — A comprehensive (SI) units package
+
+*** Preview
+  - M-x preview-buffer ::
+  - C-c C-p C-p :: preview at point
+
+*** Setups
+
+     Installed the following packages:
+     - AUCTeX (via Elpy)
+     - CDLaTeX
+
+*** CDLaTeX
+
+     - Link: https://github.com/cdominik/cdlatex
+     - Get help: C-c ? (cdlatex-command-help)
+
+**** Features
+     - Abbreviations. e.g. equ <TAB> inserts an equation enviroment.
+       - C-c ? (cdlatex-command-help) to list available abbreviations
+       - Math stemplates: fr<TAB>, lr(<TAB>
+     - Math symbols
+         - Typing `a to get \alpha
+     - <TAB> to jump out of a group (paranthesis, $$, etc)
+
+*** Bibtex
+
+  - reftex-citation: C-c [
+    - Auto-completion: Ret
+
+*** Forward/inverse search
+
+     - Following
+     https://tex.stackexchange.com/questions/236366/emacsclient-issue-when-using-pdfsync-on-mac-os-x
+     - Skim:
+       - Preset: Custom
+       - Commmand: /usr/local/Cellar/emacs/26.1_1/bin/emacsclient
+       - Check for file changes: yes
+         - Reload automatically: no
+
+     - ~/.latexmkrc: setup compilation of latex.
+     -
+
+** Un-cat
+
+*** About line wraping
+  - Line wrapping: to disable hard line wrapping, turn off
+      ~auto-fill-mode~.
+  - ~M-x toggle-truncate-lines~: toggle visual line wrap
+
+*** Neotree
+  Open neotree dir ~M-x n-dir~
+
+*** Spell checking
+**** Basics
+      - Get help: C-h w flyspell-mode
+      - z = :: correct words (using Ispell).
+      - M-x flyspell-mode :: Enable Flyspell mode, which highlights all misspelled words.
+      - M-x flyspell-prog-mode :: Enable Flyspell mode for comments and strings only.
+      - M-x ispell-message :: Check spelling in an email message you
+           are writing, checks the whole buffer, except for material
+           that is indented or appears to be cited from other messages.
+
+*** Hide show
+  - Add ~#+STARTUP: showall~ to the beginning of a file to preset
+    hide-show level. Available options are
+  #+BEGIN_SRC
+  #+STARTUP: overview
+  #+STARTUP: content
+  #+STARTUP: showall
+  #+STARTUP: showeverything
+  #+END_SRC
+
+*** Folding mode
+**** Get help
+      - Refer to .emacs.d/pkgs/folding.el
+      - C-h f folding
+
+*** mail
+
+  https://www.reddit.com/r/emacs/comments/8q84dl/tip_how_to_easily_manage_your_emails_with_mu4e/
+
+**** Compose an email: C-x m
+
+**** Send email:
+
+*** Themes
+  I am using a modified version of the solarized-light theme (as of Mar
+  21, 2019). A backup of this theme file is in
+  ~~/Documents/computer/emacs/~.
+
+*** Change encoding (UTF-8, GB18030, etc)
+
+  Force Emacs to read a file in a specific encoding with
+
+  ~C-x RET c ENCODING RET C-x C-f~
+
+  To reload the file with a named encoding, type
+
+  ~M-x revert-buffer-with-coding-system~
+
+*** shell
+
+**** Multi-shell
+
+  C-u M-x shell ret ret
+
+** Switching to spacemacs
+
+*** TODO
+
+  - M-q runs the command org-fill-paragraph (found in org-mode-map),
+    which is an interactive compiled Lisp function in ‘org.el’.
+
+*** Logs
+
+  - <2020-02-16 Sun>
+    - Starting to try spacemacs
+  - <2020-02-17 Mon>
+    - Abandoned it because mu4e won't work
+  - <2020-02-17 Mon>
+    - mu4e works as I fixed a bug in the init file
+  - <2020-02-19 Wed>
+    - Ref: https://www.spacemacs.org/layers/+emacs/org/README.html
+    - Tried org agenda and todo lists.
+      - Set projectile-file to ~/TODOs.org
+    - git cloned the deveper version of spacemacs. old one backed up to .emacs.d.sp.bk20200219. Ref: https://github.com/syl20bnr/spacemacs/issues/10434, commands: ~https://github.com/syl20bnr/spacemacs/issues/10434~
+    - copied the whole spacemacs project into bk_spacemacs. Reinstalled a brand new spacemacs
+
+** Emacs, change encoding (UTF-8, GB18030, etc)
+
+  Force Emacs to read a file in a specific encoding with
+  =C-x RET c ENCODING RET C-x C-f=.
+
+  To reload the file with a named encoding, type
+  =M-x revert-buffer-with-coding-system=
+** Ansi-term
+
+  Ref:
+  https://www.masteringemacs.org/article/running-shells-in-emacs-overview
+
+  To switch between the two modes type C-c C-j to switch to line mode,
+  and C-c C-k to switch to char mode. To save you from having to switch
+  between modes for one-off commands you can use the alias C-c char
+  which translates into C-x char.
+** Neotree
+
+  Shortcut (Only in Neotree Buffer)
+  + SPC or RET or TAB Open current item if it is a file. Fold/Unfold
+    current item if it is a directory.
+  + U Go up a directory
+  + g Refresh
+  + A Maximize/Minimize the NeoTree Window
+  + H Toggle display hidden files
+  + C-c C-n Create a file or create a directory if filename ends with a ‘/’
+  + C-c C-d Delete a file or a directory.
+  + C-c C-r Rename a file or a directory.
+  + C-c C-c Change the root directory.
+  + C-c C-p Copy a file or a directory.
+** Debuggin
+
+ - ~""" """~ problem
+   - Disable smartparens package by adding ~smartparens~ to the excluded-packages.
+
+* org-mode
+** Tips
+
+*** Easy templates
+  [[https://www.gnu.org/software/emacs/manual/html_node/org/Easy-templates.html][Reference]]. <s <TAB> expands to a ‘src’ code block.
+  Pre-defined easy templates:
+  - s =#+BEGIN_SRC ... #+END_SRC=
+  - e =#+BEGIN_EXAMPLE ... #+END_EXAMPLE=
+  - q =#+BEGIN_QUOTE ... #+END_QUOTE=
+
+*** Key-bindings
+
+**** =TODO= and agenda
+
+  - =C-c / (org-sparse-tree)= :: Create a sparse tree, prompt for
+       details (TODO entries, search expression, deadlines before/after
+       a data)
+  - =C-c / t (org-show-todo-tree)= :: View TODO items in a sparse tree
+
+*** Auto-update chrome
+
+  #+BEGIN_SRC shell
+  #!/bin/bash
+
+  fswatch -o index.html | xargs -n1 -I {} osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
+  #+END_SRC
+
+*** Include files
+
+ During export, you can include the content of another file:
+ #+begin_src org
+   #+INCLUDE: "./code/prime_mp.py" src python
+ #+end_src
+
+** Quick template
+
+  #+BEGIN_SRC org
+    #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+    #+STARTUP: overview
+    #+TITLE:   Title
+    #+AUTHOR:  Chong-Chong He
+    #+OPTIONS: toc:nil num:nil
+    #+STARTUP: inlineimages showall
+    # #+STARTUP: noinlineimages
+  #+END_SRC
+
+** Learning resources
+
+  - Using emacs 26, by Mike Zamansky
+    - https://www.youtube.com/watch?v=vO_RF2dK7M0
+    - [[https://cestlaz.github.io/posts/using-emacs-26-gcal/][Using Emacs - 26 - Google Calendar, Org Agenda]]
+    - [[https://cestlaz.github.io/stories/emacs/][Using Emacs Series]]
+
+** Basics and shortcuts
+
+  - Insert inline code :: ~~code~~
+
+  - Easy templates :: ~<s TAB~ expands to a ‘src’ code block.
+
+  - TODO :: ~C-c C-t~ to toggle TODO. ~- [ ]~ to create a checkbox and
+            use ~C-c C-c~ to toggle state.
+
+  - Subscripts and superscripts :: ~^~ and ~_~, surrounded by ~{}~. ~C-c
+       C-x \~ will format sub- and superscripts in a WYSIWYM way
+
+** A list of org themes
+
+  Use online CSS styles by adding a line of code in the beginning of
+  your org file and export to html via ~C-c C-e h o~.
+
+*** readtheorg
+
+https://github.com/fniessen/org-html-themes
+
+#+BEGIN_SRC
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+END_SRC
+
+#+attr_html: :width 800px
+[[file:attach/orgtheme-readtheorg.png]]
+
+*** org CSS
+
+https://github.com/gongzhitaao/orgcss
+
+#+BEGIN_SRC org
+,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+#+END_SRC
+
+#+attr_html: :width 800px
+[[file:attach/orgtheme-gongzhitaao.png]]
+
+*** Solarized CSS
+
+http://thomasf.github.io/solarized-css/
+
+#+BEGIN_SRC
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+END_SRC
+
+#+attr_html: :width 800px
+[[file:attach/orgtheme-solarized-css.png]]
+
+*** dakrone/eos
+
+https://github.com/dakrone/eos
+
+#+BEGIN_SRC
+#+SETUPFILE: /Users/chongchonghe/Documents/computer/emacs/org_export/eos/default.setup
+#+END_SRC
+
+** Easy templates
+
+  - https://orgmode.org/manual/Easy-templates.html
+
+** Org export
+
+  Math formatting in HTML export:
+  https://orgmode.org/manual/Math-formatting-in-HTML-export.html
+
+*** Some settings
+  - Disable _ and ^ as under and superscipts when exporting
+    - using the menus Org -> Customize -> Browse Org Group. To update
+      the default behavior for subscripts & superscripts, choose:
+      - Group Org Export -> Group Org Export General -> Option Org
+        Export With Sub Superscripts -> Curly brackets or Do not
+        interpret them
+      - [[https://emacs.stackexchange.com/questions/10549/org-mode-how-to-export-underscore-as-underscore-instead-of-highlight-in-html][Reference]]
+
+*** Math, newcommands
+
+  Following https://github.com/bcw/org-tex-define.
+
+  Put a file with the following content to somewhere
+  #+BEGIN_SRC org
+    # -*- mode: org -*-
+    ,#+MACRO: when-fmt (eval (when (org-export-derived-backend-p org-export-current-backend '$1) "$2"))
+    ,#+MACRO: preamble {{{when-fmt(html,\\($1\\))}}}{{{when-fmt(latex,\n#+LATEX_HEADER: $1\n)}}}
+    ,#+MACRO: def {{{preamble(\\def$1{$2})}}}
+    ,#+MACRO: newcommand {{{preamble(\\newcommand{$1}$3{$2})}}}
+    ,#+MACRO: renewcommand {{{preamble(\\renewcommand{$1}$3{$2})}}}
+    ,#+MACRO: newenvironment {{{preamble(\\newenvironment{$1}$4{$2}{$3})}}}
+    ,#+MACRO: renewenvironment {{{preamble(\\renewenvironment{$1}$4{$2}{$3})}}}
+  #+END_SRC
+  and put the following near the beginning of your ~.org~ file:
+  #+BEGIN_SRC org
+    #+SETUPFILE: path/to/define.setup
+  #+END_SRC
+
+  Some commonly used commands:
+  #+BEGIN_SRC latex
+    \newcommand{\e}[1]{\times 10^{#1}}
+    \def\dif{\times 10^{#1}}        % may conflict with physics package, so I use \def here
+  #+END_SRC
+
+  and their correspondent org preamble:
+  #+BEGIN_SRC org
+    {{{newcommand(\\e,\\times 10^{#1},[1])}}}
+    {{{def(\\dif,\\textrm{d})}}}
+  #+END_SRC
+
+** Org babel
+
+*Old: spacemacs*
+
+I installed the package ~ess~ in ~.spacemacs.d/addons~, and enabled julia in org-babel under ~org-babel-do-load-languages~, which also enabled ~julia-mode~.
+
+*** Python
+
+**** Session mode example
+#+begin_src python :session :eval never
+a = 'hello'
+a
+#+end_src
+
+#+RESULTS:
+: hello
+
+#+begin_src python :session 
+a + ' you'
+#+end_src
+
+#+RESULTS:
+: hello you
+
+**** Non-session mode example
+
+First block:
+#+begin_src python
+a = 'hello'
+return a
+#+end_src
+
+#+RESULTS:
+: hello
+
+Second block: will error out: 'a is not defined'
+#+begin_src python
+return a
+#+end_src
+
+#+RESULTS:
+
+**** Display figure
+
+Tags:
+- =results file= put results into =[[file:#1]]= and display inline image
+- =cache: yes=  only execute if code has changed
+- =exports: both= for html export
+
+#+begin_src python :results file :exports both :cache yes
+import numpy as np
+import matplotlib.pyplot as plt
+
+N = 400
+t = np.linspace(0, 2 * np.pi, N)
+r = 0.5 + np.cos(t)
+x, y = r * np.cos(t), r * np.sin(t)
+fig, ax = plt.subplots()
+ax.plot(x, y)
+fn = "attach/f1.png"
+plt.savefig(fn)
+return fn
+#+end_src
+
+#+RESULTS[8fbf07c499e195c81198a0732a824b434e3fceaf]:
+[[file:attach/f1.png]]
+
+*** Shell
+
+- e.g. 1
+
+#+BEGIN_SRC sh :session mf :results file :export both
+python zoomin/src/main_imf.py 2> /dev/null
+#+END_SRC
+
+** Org agenda, tasks
+
+ A good reference: https://vincent.demeester.fr/articles/my_organizational_workflow.html
+
+** Taking notes
+
+*** Images
+
+ #+begin_src org
+   #+ATTR_ORG: :width 400
+   [[file:/path/to/image]]
+ #+end_src
+
+** Org publish
+
+ A typical =publish.el=:
+
+ #+begin_src emacs-lisp
+   (require 'ox-publish)
+   (setq org-publish-project-alist
+         '(("body"
+            :base-directory "."
+            :base-extension "org"
+            :publishing-directory "."
+            :recursive t
+            :section-numbers nil
+            :table-of-contents nil
+            :publishing-function org-html-publish-to-html
+            :auto-sitemap nil)
+           ("all" :components ("body"))))
+ #+end_src
+
+ Usage: to publish a file or project, move to the end of the first line and press
+ C-x C-e to load org-publish. Now go to the end of the last line and press C-x
+ C-e again. Finally, M-x org-publish-project RET all RET to publish.
+
+* Git
+
+** Install git from source
+
+  https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+  1. Download from https://www.kernel.org/pub/software/scm/git/
+  2. tar xf git\*.tar.xz, cd git\*
+  3. make configure
+  4. ./configure —prefix=/path
+  5. Make && make install
+
+** git https without password
+
+  Following
+  https://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-on-github,
+  the answer of Alwar.
+
+  #+BEGIN_SRC bash
+  git config --global credential.helper store
+  #+END_SRC
+
+** Connect two computers
+
+ Make ssh work without password on all platforms.
+
+ On the server (say, your desktop), create the Master branch:
+     1. ~mkdir test.git~
+     2. ~cd test.git~
+     3. ~git init --bare~ (create a bare git repo as the server)
+
+ On client1, (say, your laptop):
+     1. (optional) ~git config —global user.name "<a name>"~
+     2. (optional) ~git config —global user.email "<your email>"~
+     3. (optional, set the default editor to nano) ~git config —global core.editor nano~
+     4. ~git clone your_name@machine_name.astro.umd.edu:/path/to/test.git~
+     5. (Work in this folder, move all files here)
+     6. ~git add .~
+     7. ~git commit -m "initial commit"~
+     9. ~git push origin master~
+
+ On client2, repeat what you did on client1.
+
+*** work with JetBrains family softwars
+
+  - (on desktop) git init —bare
+  - (On laptop, e.g. CLion) git clone "st:work.git"
+
+** git diff
+
+- See unstaged changes: ~git diff~
+- See staged changes: ~git diff --staged~
+- Staged and unstaged changes: ~git diff HEAD~
+- 
+
+** Tips
+
+  - Compare a file with its MASTER version
+
+		- Use vim: ~git difftool master filename~
+
+  - Hard retrieve to last commit: ?
+
+  - Copy an old version of a file and name it as =old_main.cpp=
+
+		- ~git show HEAD^:main.cpp > old_main.cpp~
+
+		- https://stackoverflow.com/questions/888414/git-checkout-older-revision-of-a-file-under-a-new-name
+
+  - Find out the url a git repository is cloned from
+
+    #+BEGIN_SRC
+    git remote show origin
+    #+END_SRC
+
+  - Discarding a local file
+
+		- https://docs.gitlab.com/ee/topics/git/numerous_undo_possibilities_in_git/
+
+		- Discarding local changes (permanently) to a file:
+
+			~git checkout -- <file>~
+
+		- Discard all local changes to all files permanently:
+
+		  ~git reset --hard~
+		  ~git clean -f -d~
+
+		- Remove a file from git after adding it to gitignore:
+
+		  ~git rm --cached <file>~ then ~git add -A~ and ~git commit~
+
+		- Find and remove from git: ~find . -name .DS_Store -print0 | xargs -0 git
+		  rm -f --ignore-unmatch~, then ~git add -A~ and git commit. [[https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository][Ref]]
+
+  - Revert a ~git pull~
+
+		- Make a copy of the project first. Run ~git reflog~ to view git reference, find the commit_id. Then, do ~git reset --hard commit_id~. [[https://stackoverflow.com/a/68373289/4635427][Reference.]]
+
+** Trouble shooting
+
+- “Pulling without specifying how to reconcile divergent branches is discouraged”
+	  - Do as the message suggested: ~git config pull.ff only~ to make it automatically merge only when fast-foward.
+	  - [[https://salferrarello.com/git-warning-pulling-without-specifying-how-to-reconcile-divergent-branches-is-discouraged/][Git warning: Pulling without specifying how to reconcile divergent branches i...]]
+	  - [[https://stackoverflow.com/questions/62653114/how-to-deal-with-this-git-warning-pulling-without-specifying-how-to-reconcile][stackoverflow]]
+
+* Typora
+
+Use appliscript: ~export-to-html~
+
+[[https://stackoverflow.com/questions/64159791/how-to-use-applescript-export-markdown-to-html-in-typora][how to use applescript export markdown to html in typora?]] 
+
+* Dropbox
+
+- [[https://help.dropbox.com/files-folders/restore-delete/ignored-files][How to set a Dropbox file or folder to be ignored]]
+	  - ~xattr -w com.dropbox.ignored 1 /Users/yourname/Dropbox\ \(Personal\)/YourFileName.pdf~
+
+* PyCharm
+
+** a

@@ -1,5 +1,5 @@
 #+OPTIONS: toc:1 num:nil ^:{}
-#+SETUPFILE: ../style/default.setup
+# #+SETUPFILE: ../style/default.setup
 #+INCLUDE: ../style/latex.setup
 #+TITLE: *Astrophysics Cheat Sheet* 
 #+AUTHOR: Chong-Chong He

@@ -1,0 +1,312 @@
+#+TITLE: programming languages
+#+SETUPFILE: ../style/default.setup
+
+* Python
+
+** Short notes on Python programming
+
+~meshgrid~ :: ~meshgrid~ is a convenient command to general coordinates for multidimensional images. A tricky part about this function is the dimension of the generated arrays. Compare the following two commands:
+
+#+begin_src python :results output pp :exports both
+import numpy as np
+X = np.meshgrid(np.arange(0,5), np.arange(0,4))[0]
+print(X)
+print(X.shape)
+print(np.meshgrid(np.arange(0,5), np.arange(0,4), np.arange(0,3))[0].shape)
+#+end_src
+
+#+RESULTS:
+: [[0 1 2 3 4]
+:  [0 1 2 3 4]
+:  [0 1 2 3 4]
+:  [0 1 2 3 4]]
+: (4, 5)
+: (4, 5, 3)
+
+** Tips
+
+  - To make a parameter into a list, use ~ensure_list(x)~?
+
+  - pdb: add breakpoints in another file:
+
+    ~import sys;~
+
+    ~sys.path.append(module)~
+
+  - Add a .py or .pyc file to ~/.ipython/profile_default/startup/ and it will be excuted every time you start up ipython
+
+** Deepthought2
+
+*** What I did
+
+  1. Created ~/.mypython, ~/.mypython/lib, ~/.mypython/lib/python
+  2. Installed PYMSES in ~/.mypython/lib/python/pymses_4.0.0
+  3. Added the following to my .cshrc.mine file
+
+#+begin_src python
+setenv PYTHONPATH ~/.mypython/lib/python
+setenv PYTHONPATH ~/.mypython/lib/python/pymses_4.0.0:$PYTHONPATH
+setenv PATH ${PATH}:~/.mypython/lib/python/pymses_4.0.0/bin
+#+end_src
+
+  4. Installed mpi4pi in ~/.mypython (results in lib/python/)
+
+     #+begin_src shell
+       cd ~/.mypython/mpi4py-2.0.0
+       python setup.py install --home ~/.mypython
+     #+end_src
+
+  5. Installed anaconda2 but it's not the default enviroment. To
+     activate it, do `exec bash1` and `source ~/.cshrc.local.python`. Some .bash files have that code in it, e.g. _~/lustre/Sam/work/profilePlot.bash
+
+*** Installing modules yourself
+
+  Following https://www.glue.umd.edu/hpcc/help/software/python.html
+
+  The mechanism for installing a module is of course dependent on the module being installed, but most modern python modules support the `setup.py` mechanism described below. Assuming that is the case, the standard procedure for installing your own copy of a module is:
+
+  1. `module load python/X.Y.Z` to select the version of python you wish to use.
+  2. Create a directory to contain your python module, if not already done. Typically, you will want one directory to house all of the modules you are installing, so something like `mkdir ~/.mypython` will work. You should also create `lib` and `lib/python` directories beneath it, e.g. `mkdir ~/.mypython/lib ~/.mypython/lib/python`.
+  3. You will need to tell python where to look for your modules. Assuming you are putting your modules under `~/.mypython`, something like `setenv PYTHONPATH ~/.mypython/lib/python` (bash/bourne shell users should do `PYTHONPATH=~/.mypython/lib/python; export PYTHONPATH `). You probably want to add this to your `.cshrc.mine` or `.bashrc.mine`.
+  4. Download and unzip/untar/etc the module sources. Cd to the main module source directory (it should contain the file `setup.py`
+  5. Run `python setup.py install --home ~/.mypython`
+
+  If all goes well, the module should now be installed under `~/.mypython` or wherever you specified. If there are executables associated with it, they should be in `~/.mypython/bin`. You should be able to import the module in python now (this assumes that PYTHONPATH is set as indicated above).
+
+  Of course, not all modules install easily. Unfortunately, the install process can fail in far too many ways than can be reasonably enumerated. If you are comfortable with building modules, you might find reasonable guidance from error messages to assist you in getting the module to build, but it is probably easiest to just request the module be installed to the system libraries.
+
+  ## PEP 8 -- Style Guide for Python Code
+
+  - Class names should normally use the CapWords convention.
+  - Function names should be lowercase, with words separated by underscores as necessary to improve readability.
+  - Variable names follow the same convention as function names.
+  - Method Names and Instance Variables: Use the function naming rules
+    - Use one leading underscore only for non-public methods and instance variables.
+  - Constants are usually defined on a module level and written in all capital letters with underscores separating words. Examples include `MAX_OVERFLOW` and `TOTAL`.
+
+  ## Mallecious
+
+  Update Spyder: ~pip install -U spyder~
+
+  An environment for Python 3.5 installed along with Python 2 by
+
+  #+begin_src shell
+    conda create -n py35 python=3.5 anaconda
+  #+end_src
+
+  To activate this environment, type `source activate py35`; to deactivate, use `source deactivate`.
+  The enviroment path is on */startrek/chongchong/anaconda2/envs/py35/bin/python*.
+
+*** MPI4PY
+
+**** Solution to a problem
+
+  <https://stackoverflow.com/questions/44573568/mpirun-doesnt-work-and-ask-to-change-tmpdir-variable-to-tmp>
+
+ #+begin_src shell
+   export TMPDIR=/tmp
+ #+end_src
+
+** Plotting
+*** plotutils.py
+**** What does it do?
+  - Set figure size to make the lines and texts larger
+  - Set font size, including texts, ticks, etc
+  - Useful function like set_plot_style, sized_figure_new, etc
+
+**** How to use?
+  - ~import plotutils~
+  - Use the following methods to enable latex and serif style
+    - ~pu.set_plot_style(0)~
+    - Put a ~-l~ in argv, e.g. ~python main.py -l~
+
+*** color palettes (in Seaborn)
+
+  https://chrisalbon.com/python/data_visualization/seaborn_color_palettes/
+
+*** SciencePlot
+
+  #+BEGIN_SRC python
+    with plt.style.context(['science']):
+        fig, ax = plt.subplots()
+        for p in [10, 15, 20, 30, 50, 100]:
+            ax.plot(x, model(x, p), label=p)
+        ax.legend(title='Order')
+        ax.set(xlabel=r'Voltage ($\frac{1}{mV}$)')
+        ax.set(ylabel='Current ($\mu$A)')
+        ax.set(title='this is title')
+        ax.autoscale(tight=True)    # to auto set x and y lim
+        fig.savefig('figures/fig-t1-autoscale.pdf')
+  #+END_SRC
+
+** Miscellaneous
+*** Split pdf files
+
+  from pdfsplit import *  # in a folder with pdfsplit.py
+  pagenumbers = [3,4,1,2]
+  slices = []
+
+  for i in pagenumbers:
+  slices.append(slice(i, i+1, None))
+
+  path = file_path
+  splitPages(path, slices)
+
+** PyLint
+
+*** Documentation
+     - Docu: https://pylint.readthedocs.io/en/latest/
+     - Tutorial: https://pylint.readthedocs.io/en/latest/tutorial.html
+     - Naming:
+       https://pylint.readthedocs.io/en/latest/user_guide/options.html
+
+*** .pylintrc
+
+     I have my own version of .pylintrc in ~/
+
+** Cython
+
+*** Example: primes.pyx
+     See ~/Documents/projects/Python/cython/eg_prime
+**** Steps
+     1. Write primes.pyx
+     2. Write setup.py
+     3. Compile with ~python setup.py build_ext --inplace~
+     4. In python, do
+     #+BEGIN_SRC python
+     import primes
+     primes.primes(10)
+     #+END_SRC
+
+** iPython tricks
+
+Autoreload module
+
+#+BEGIN_SRC python
+%load_ext autoreload
+%autoreload 2
+from foo import some_function
+some_function()
+# Do some edit to foo.py
+some_function()
+#+END_SRC
+
+** Jupyter
+
+*** Configurations
+
+  - [[http://christopherroach.com/articles/jupyterlab-desktop-app/][Running Jupyter Lab as a Desktop Application]] ([[file:/Users/chongchonghe/Documents/computer/local-html-bk/Running_Jupyter_Lab_as_a_Desktop_Application.html][local]])
+
+  - vim mode: I have installed jwkvam/jupyterlab-vim on macOS and startrek.
+
+  - Table of contents: Installed jupyterlab/jupyterlab-toc on macOS and startrek.
+
+*** Tips
+
+**** Shortcuts
+
+  ~Shift-Cmd '~: switch to previously used tab
+
+*** Edit python notebooks over SSH
+
+Source:
+- [[https://fizzylogic.nl/2017/11/06/edit-jupyter-notebooks-over-ssh/][5 easy steps to start editing python notebooks over SSH - Willem's Fizzy Logic]]
+- Open jupyter as application: http://christopherroach.com/articles/jupyterlab-desktop-app/
+
+**** Quick steps
+
+***** Method 1
+
+  1. Start a jupyter server on startrek with host 8088 (not via ssh):
+
+      #+BEGIN_SRC
+      startrek >>> jln
+      #+END_SRC
+
+  2. On my macOS, do ~jlst2~, which will setup a SSH tunnel to startrek
+     and open a localhost in browser.
+
+***** Method 2
+
+  On my macOS, do ~jlst~ in one terminal, which will start a jupyter
+  notebook on startrek via ssh, then ~jlst2~ in another terminal.
+
+**** Steps
+
+1. Start jupyter notebook editor on server (via ssh): (~--ip=0.0.0.0~ is necessary)
+
+#+BEGIN_EXAMPLE
+nohup jupyter notebook --no-browser --ip=0.0.0.0 --port=8088 &
+#+END_EXAMPLE
+
+2. Setup a SSH tunnel to your server (short: ~jlconnect 8088~):
+
+#+BEGIN_EXAMPLE
+ssh -NL 8088:localhost:8088 <remote_user>@<remote_host>
+#+END_EXAMPLE
+
+3. Open the notebook in your browser (short: ~jlopen 8088~):
+
+#+BEGIN_EXAMPLE
+open http://localhost:8089/lab
+#+END_EXAMPLE
+
+I have set a password on st, which is stored in lastpass.
+
+*** Add kernel to jupyter
+
+Source: [[https://janakiev.com/blog/jupyter-virtual-envs/][Using Virtual Environments in Jupyter Notebook and Python - Parametric Thoughts]]
+
+On base Python:
+#+BEGIN_SRC sh
+pip install --user ipykernel
+#+END_SRC
+
+Add your virtual environment to Jupyter
+#+BEGIN_SRC sh
+python -m ipykernel install --user --name=myenv
+#+END_SRC
+
+** Web
+
+*** Downloading files from web using Python
+
+Using ~wget~:
+#+BEGIN_SRC sh
+wget img-url
+# or
+wget img-url --referer=img-url
+#+END_SRC
+
+Using ~requests~:
+#+begin_src python :results file :export both :cache no
+# imported the requests library 
+import requests 
+image_url = "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"
+  
+# URL of the image to be downloaded is defined as image_url 
+r = requests.get(image_url) # create HTTP response object 
+  
+with open("python_logo.png",'wb') as f: 
+    # write the contents of the response (r.content) 
+    # to a new file in binary mode. 
+    f.write(r.content) 
+#+end_src
+
+** Logging
+
+*** Try logging into file
+
+#+begin_src python :results file :export both :cache no
+flogger = tools.getlog(__name__, "info")
+# flogger.propagate = False
+fileHandler = logging.FileHandler('parameters.log', mode='a')
+fileHandler.setLevel(logging.INFO)
+flogger.addHandler(fileHandler)
+flogger.info("\n")
+formatter = logging.Formatter('%(asctime)s %(name)s: %(message)s')
+fileHandler.setFormatter(formatter)
+
+flooger.info("log message")
+#+end_src
+

@@ -1,0 +1,238 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Top
+
+* Star formation
+** Star formation: general
+*** Krumholz:2011a, Star Formation in Molecular Clouds
+
+- Star-forming clouds are generally cold, most of observational
+  techniques require on infrared, sub-millimeter, and radio observations
+- H2
+
+  - In the high densities where stars form, H tends to be molecular, and
+    H2 is extremely hard to observe. (H atoms is easy to observe via 21
+    cm hyperfine line)
+
+    - The first excited state is the J = 1 rotational state, is above
+      100 K, but dense ISM has T ~ 10 K. Also, because H2 is a
+      homonuclear molecule and have zero electric dipole moment, meaning
+      there is no J = 1 -> 0 emission.
+
+  - Observing the dust
+
+    - Dust grains emit thermal radiation. They can absorb or emit
+      continuum radiation.
+
+# Star formation: observations
+
+## Pillars of Creation
+
+Eagle Nebula, shock wave produced by a supernova. 
+
+** Star formation: theories
+*** Padoan1997
+
+- One of the first models combining the effects of density fluctuations
+  and gravity to predict a CMF.
+- Assuming a lognormal density PDF and isothermal gas. Estimate the
+  number of regions in which the density would be sufficiently high so
+  that the Jeans mass is below a value.
+- Predicts a lognormal CMF with a peak and a power-law extension at high
+  masses
+- Limitations:
+
+  1. neglected local turbulent support
+  2. neglected size scale dependence of the gravitational instability
+
+*** Padoan2002
+
+- Heuristic assumption that the size of each region followed the
+  characteristic size scale of postshock gas.
+- More naturally led to a power-law high-mass slope
+
+*** Hennebelle2008
+
+- Assumed gas log density is a Gaussian random field.
+- Density power spectrum gives the density distribution at all scales,
+  resolving the size limitation in padoan:1997
+- Turbulent + thermal support --> self-gravitating regions --> CMF with
+  a peak, a Salpeter-like power law at high masses.
+- One solution for the 'cloud-in-cloud' problem (Bond et al., 1991).
+- Including:
+
+  - Turbulent fragmentation
+
+- Missing:
+
+  - Gravitationally induced fragmentation
+
+- Result: agree well with mass spectrum of observed CO clumps, less with
+  the IMF-like CMF.
+
+*** Hopkins2012,2012a
+
+- Extended upon Hennebelle:2008
+- Encompass the entire galactic disk and include rotational support.
+- "Excursion set theory"
+
+*** McKee2007, Theory of Star Formation
+Table of Contents of "Theory of Star Formation", by Christopher F.
+McKee1 and Eve C. Ostriker
+
+1. INTRODUCTION
+2. BASIC PHYSICAL PROCESSES 2.1. Turbulence 2.1.1. Spatial correlations
+   of velocity and magnetic fields. 2.1.2. Turbulent dissipation
+   timescales. 2.1.3. Physical scales in turbulent flows. 2.2.
+   Self-Gravity 2.3. Magnetic Fields 2.3.1. Ionization.
+3. MACROPHYSICS OF STAR FORMATION 3.1. Physical State of Giant Molecular
+   Clouds, Clumps, and Cores 3.1.1. Dynamics of giant molecular clouds
+   3.1.2. Clumps and cores. 3.2. Formation, Evolution, and Destruction
+   of GMCs 3.2.1. Cloud formation. 3.2.2. Cloud evolution and
+   destruction. 3.3. Core Mass Functions and the Initial Mass Function
+   3.3.1. Observations of the stellar initial mass function and the core
+   mass function. 3.3.2. Theoretical proposals and numerical results.
+   3.4. The Large-Scale Rate of Star Formation
+4. MICROPHYSICS OF STAR FORMATION 4.1. Low-Mass Star Formation 4.1.1.
+   Theory of core collapse and protostellar infall. 4.1.1.1. Effects of
+   rotation. 4.1.1.2. Effects of magnetic fields. 4.1.2. Bondi-Hoyle
+   accretion. 4.1.3. Observations of low-mass star formation 4.1.3.1.
+   Brown dwarfs. 4.1.3.2. Binaries 4.2. Disks and Winds 4.2.1.
+   Observations of disks. 4.2.2. Accretion mechanisms. 4.2.2.1.
+   Hydrodynamic mechanisms. 4.2.2.2.MHDmechanisms. 4.2.2.3.
+   Self-gravitational mechanisms. 4.2.3. Disk clearing. 4.2.4.
+   Observations of young stellar object jets and outflows. 4.2.5.
+   Driving magnetohydrodynamic winds and jets. 4.2.6. Origins and
+   effects of outflows. 4.3. High-Mass Star Formation 4.3.1.
+   Protostellarinfall 4.3.2. Observations of high-mass protostars 4.3.3.
+   Forming stars in the presence of radiation pressure. 4.3.4.
+   Photoionization feedback: HII regions 4.3.5. Star formation in
+   clusters
+5. OVERVIEW OF THE STAR-FORMATION PROCESS
+
+*** [[file:~/Googledrive/Academic/Papers/O/Offner2014.pdf][Offner2014]]:
+The Origin and Universality of the Stellar Initial Mass Function
+
+1. (Sec 2) Observations of IMF
+
+   - Methods of deriving the IMF: 1. Measure the LF of a complete sample
+     of stars. 2. the LF is converted into a present-day mass function
+     (PDMF). 3. The PDMF is corrected for the star-formation history,
+     stellar evolution, cluster evolution, and binarity to obtain the
+     individual star IMF.
+   - The Milky Ways have shown an near-universal IMF, expect the young
+     nuclear cluster in the Galactic center where the MF is flatter than
+     Salpeter.
+   - There is no strong evidence for IMF variations within local
+     galaxies.
+   - Extragalactic determinations of the IMF dynamically compared
+     mass-to-light retios to expectations of SPS models, or use spectral
+     features to determine the relative numbers of low-mass stars. While
+     elliptical galaxies show intriguing evidence for systematic IMF
+     variations, further study is required to confirm.
+
+2. (Sec 3.1) Observations of CMF
+
+   - Observational methods and conclusions:
+
+     1. Millimeter continuum dust emission in nearby molecular clouds.
+
+        - The mass spectrum was reminiscent of the Salpeter IMF slope.
+          The observed cores were the reservoirs that contribute most of
+          the eventual stellar masses.
+
+     2. Near-infrared extinction maps, which complements the dust
+        emission measurements.
+
+        - The mass spectrum has a shape similar to the Chabrier but is
+          shifted toward larger masses by a factor of ~3.
+
+     3. Herschel data (most recent up to 2014)
+
+        - High-mass slope comparable to Salpeter with a peak located at
+          ~1 solar mass.
+
+   - Similarity between the shapes of the CMF and the IMF at large
+     masses is reinforced.
+
+3. (Sec 3.2) Analytical theories for the CMF
+
+   See this section: [[*Star formation: theories][Star formation: theories]]
+
+4. (Sec 3.3) The CMF from numerical simulations
+
+   - Padoan et al. (2007): only thermal support, spectrum too steep. Magnetic pressure support included, spectrum close to Salpeter exponent.
+   - Schmidt et al. (2010): turbulent support is necessary maintain a Salpeter slope. Turbulent forcing (*?*): more compression on gas, smaller collapsing regions.
+   - Smith el al. (2009): both turbulence and self-gravity. define CMF as prestellar cores on the basis of either gravitational potential or thermal and turbulent support; define IMF as sink masses. Conclusion: both CMF and SMF resembled the observed IMF.
+
+5. (Sec 4) The link b/t the CMF and the IMF
+
+   Conditions for the shape of the IMF to derive directly from CMF:
+
+   1. All cores are destined to condense into stars
+   2. A universal core-to-star ratio
+   3. Core fragmentation must be self-similar
+   4. Cores condense at the same rate (??? depending on the timescale.
+
+6. [TODO]{.todo .TODO} (Sec 4.1) Prestellar cores
+
+   - State "TODO" from [2020-03-24 Tue 16:48]
+
+   How do prestellar cores fragment?
+
+   - *Thermal support* :: A fundamental quantity: the ratio of the core mass to Jeans mass, \(M_{\rm core} / M_{\rm Jeans}\), which depends on the monochromatic flux from the core, its distance, the dust temperature, the monochromatic mass-opacity (due to dust), and the mean gas-particle mass.
+
+   - *Non-thermal support* :: - /Kinematics/Internal velocity/ - /Magnetic support/ Crutcher et al. (2009) suggest that magnetic fields are not able to support prestellar cores against gravity. TODO: check in my sims - /Cores from column density maps/ Although different methods of clump finding results in similar CMFs, the existence of the cores should be viewed with caution, particularly at low masses.
+
+7. (Sec 4.2) Core fragmentation
+
+   - The first unstable cores in these simulations are always around the
+     mean thermal Jeans mass, 1 Msol.
+   - Formation of massive disks:
+
+     - Important channel for forming brown dwarfs and very-low-mass H-burning stars (Bate et al., 2002)
+     - Magnetic torques may efficiently remove angular momentum, preventing from forming massive disks.
+     - Radiative feedback from the central star. Radiative heating of high accretion luminosity stabilizes the disk against fragmentation. If accretion is episodic, disk fragmentation can still occur. (Stamatellos:2012)
+
+8. High-mass Cores and IMF
+
+   - Observed CMF only extends to ~10 Msol ???
+   - This should extend to higher masses (Oey, 2011, McKee and Tan, 2002)
+   - Open questions: efficiency with which core gas forms stars (core fragmentation).
+
+     - Idealized geometry: observation, CMF peak at 1 Msol, suggesting e=30% ???
+
+*** Heath2020: On the orbital evolution of binaries with circumbinary
+discs
+
+"We provide physical arguments, and then demonstrate with 3D hydrodynamical simulations, that thick (high pressure, high viscosity) discs drive sufficient accretion of high angular momentum material to force binary expansion, while in the more realistic case of thin (low pressure, low viscosity) discs there is less accretion and the binary shrinks."
+
+** First Stars
+* GMC
+** Observations
+*** DessaugesZavadsky2019 (Hot paper, Sep 27, 2019)
+Resolve GMCs in a typical MW progenitor at z=1: The "Cosmic Snake"
+galaxy that is elongated by gravitational lensing.
+
+*Telescope* : ALMA asdf asdfa asd. aSpell check. ?
+
+*Technique* : CO(4-3) tracing
+
+*Resolution* : 70 pc - 30 pc
+
+*GMC properties* : 17 GMCs with masses, surface densities and Mach number all 10-100 times higher than present-day analogues. Inside 1.7 kpc central region
+
+*GMC densities* : R = 30 pc to 210 pc, M = 8e6 Msol to 1e9 Msol, resulting in n = 1000 to 3000 cm-3
+
+*Some results* : GMC mass function,
+
+- Other properties of the galaxy
+
+  - SFR: 30 Msol/yr, typical at z=1.
+  - Stellar mass: 4e10 Msol
+  - Internal velocity dispersion: \(44 \pm 30\) km/s
+
+*Conclusion* : This corroborates the formation of molecular clouds by fragmentation of distant turbulent galactic gas disks.
+
+*Takeaway* : New observations of GMCs in z=1 galaxies. Density 10 - 100 times higher than present-day analogues.

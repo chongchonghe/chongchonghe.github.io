@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-16 Wed 22:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/org.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div> <a accesskey='h' href='index.html'> UP </a> | <a accesskey='H' href='index.html'> HOME </a> </div><div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1d28995">1. Galaxies</a>
+<ul>
+<li><a href="#org917f270">1.1. Radio Burst</a>
+<ul>
+<li><a href="#org554d232">1.1.1. Zhang2020,Zhang2020a</a></li>
+</ul>
+</li>
+<li><a href="#org390fabc">1.2. Simulations</a>
+<ul>
+<li><a href="#orgb77cb63">1.2.1. Santistevan2021 (hot paper 2021-02-19)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb806f11">2. Galactic Escape Fraction</a>
+<ul>
+<li><a href="#org297d109">2.1. Observations</a>
+<ul>
+<li><a href="#orgf5ef10f">2.1.1. Overview</a></li>
+<li><a href="#orgf48eeeb">2.1.2. Bian:2017</a></li>
+<li><a href="#org6b4844d">2.1.3. Izotov:2018</a></li>
+<li><a href="#org73e9c69">2.1.4. Shapley:2016</a></li>
+<li><a href="#org9ad4db9">2.1.5. Vanzella:2018</a></li>
+<li><a href="#org9e40a94">2.1.6. Izotov2016</a></li>
+<li><a href="#orgf04fb19">2.1.7. Summary</a></li>
+</ul>
+</li>
+<li><a href="#org734d91d">2.2. How to measure fesc from galaxies?</a>
+<ul>
+<li><a href="#orga7c16f1">2.2.1. Choi2020</a></li>
+<li><a href="#org3681a04">2.2.2. Chisholm2020:</a></li>
+<li><a href="#orge03dcdf">2.2.3. Izotov et al. 2016a</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="HTML" id="org960342b">
+<p>
+\(
+	  \newcommand{\dif}{\,\mathrm{d}}
+	  \newcommand{\sci}[2]{#1 \times 10^{#2}}
+	  \def\num#1{\numx#1}\def\numx#1e#2{{#1}\mathrm{e}{#2}}
+	  \newcommand{\msun}{{\rm M}_\odot}
+	  \newcommand{\si}[1]{{\rm #1}}
+\)
+</p>
+
+</div>
+
+<p>
+[toc]
+</p>
+
+<div id="outline-container-org1d28995" class="outline-2">
+<h2 id="org1d28995"><span class="section-number-2">1</span> Galaxies</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org917f270" class="outline-3">
+<h3 id="org917f270"><span class="section-number-3">1.1</span> Radio Burst</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org554d232" class="outline-4">
+<h4 id="org554d232"><span class="section-number-4">1.1.1</span> Zhang2020,Zhang2020a</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Review: The physical mechanisms of fast radio bursts,
+<a href="https://www.nature.com/articles/s41586-020-2828-1">https://www.nature.com/articles/s41586-020-2828-1</a>
+</p>
+
+<ul class="org-ul">
+<li>Fig. 2 | Cartoon pictures of the two general types of FRB radiation
+models. a, Pulsar-like models that invoke the magnetosphere of a
+compact object79 . b, GRB-like models that invoke relativistic shocks
+launched from a compact object101 . Magnetars could be the common
+source for both models.</li>
+<li>Dispersion measure tells about the integrated free election density of
+the intergalactic medium along line of sight.</li>
+</ul>
+
+<p>
+Zhang2020a: "Slow" Radio Bursts from Galactic Magnetars?
+</p>
+
+<ul class="org-ul">
+<li>Fast Radio Bursts are when the line of sight is alined with the beam,
+while Slow Radio Burst with viewing angles somewhat outside the narrow
+emission beam.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org390fabc" class="outline-3">
+<h3 id="org390fabc"><span class="section-number-3">1.2</span> Simulations</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgb77cb63" class="outline-4">
+<h4 id="orgb77cb63"><span class="section-number-4">1.2.1</span> Santistevan2021 (hot paper 2021-02-19)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Hot paper narrative:
+</p>
+
+<ul class="org-ul">
+<li>Intro: In hierarchical structure formation, metal-poor stars in the MW
+originate from mergers of lower-mass galaxies. We therefore expect
+that metal-poor stars have isotropic random orbits.</li>
+
+<li>The key answer: what is the origin of the bias of metal-poor stars on
+prograde disk orbit and what can we learn from it?</li>
+
+<li>Their interpretation, or conclusion, is &#x2026;</li>
+
+<li>GIZMO, FIRE project.
+
+<ul class="org-ul">
+<li>fairly state-of-the-art hydro code for galactic simulations.</li>
+<li>radiative cooling/heating, including redshift-dependent cosmic UV
+background, track the abundance of 11 elements.</li>
+<li>Feedback processes: core-collapse and Ia supernovae, stellar winds,
+radiation pressure, photoionization, and photo-electric heating.</li>
+<li>Metal poor stars: do not model metal enrichment from Pop III stars.
+Start with gas elements with a Z floor of [Fe/H] = -4. They said
+this is supported by both simulations and observations, and they
+claim that the strength of the prograde bias does not depend on the
+initial low metallicity, so the choice of this number is
+unimportant.</li>
+</ul></li>
+
+<li>The setup of the simulations
+
+<ul class="org-ul">
+<li>(Table 1): MW/M31 mass.</li>
+<li>Resolution: softening length of 4 for stars, 40 pc for DM particles,
+and 1 pc hydro.</li>
+<li>Galaxy sample should reflect typical formation histories of MW/M31
+like galaxies.</li>
+</ul></li>
+
+<li>Selecting metal-poor stars in retrograde motion: Eq. 1-2.
+
+<ul class="org-ul">
+<li>Fig.1: show all metal-poor star particles within their seleciton
+region. J_phi is the z-component of the angular momentum. Jz is
+another quantity. Small means it is near the disk plane.</li>
+<li>We see an overabundance of metal-poor stars line in the prograde
+box.</li>
+<li>track theses stars back in time to find their origin,</li>
+</ul></li>
+
+<li>Results
+
+<ul class="org-ul">
+<li>3.1
+
+<ul class="org-ul">
+<li>Fig 2: prograde bias, versus stellar iron abundance. Thick black
+line show the medians across all 12 hosts. Consistent with MW
+observations.</li>
+<li>Green box: a little counter-intuitive.</li>
+<li>compare with H3 survey
+
+<ul class="org-ul">
+<li>Fig 3: Same selection criteria as the H3 survey. The crosses are
+from the H3 survey.</li>
+<li>Fig 4: just show the result do not depend on the way that they
+spatially or kinematically select metal-poor stars</li>
+</ul></li>
+</ul></li>
+
+<li>3.2, source of the prograde bias
+
+<ul class="org-ul">
+<li>Fig 2: no large diﬀerence in the prograde bias for stars that
+formed in-situ versus ex-situ</li>
+
+<li>Fig 6: This primary merger typically contributed ∼ 24 per cent of
+all prograde metal-poor stars, higher than the fraction that
+formed in-situ.</li>
+</ul></li>
+
+<li>3.3, How did the prograde bias evolve over time?
+
+<ul class="org-ul">
+<li>Fig 7. arrow show primary, &#x2026;, mergers. (see conclusion).
+
+<ul class="org-ul">
+<li>Conclusion: For all of these variations, they conclude that the
+prograde bias is a global feature of these MW/M31-mass galaxies.</li>
+</ul></li>
+</ul></li>
+
+<li>3.5 Correlations with galaxy properties
+
+<ul class="org-ul">
+<li>Fig 8. Conclusion is no strong correlation is found.
+
+<ul class="org-ul">
+<li><ol class="org-ol">
+<li>the median oﬀset angle between the angular momentum vector of
+the host's disk and the angular momentum vector of the
+primary merger's orbit</li>
+<li>the lookback time when the primary merger occurred,</li>
+<li>the stellar mass of the primary merger,</li>
+<li>the stellar mass of the primary merger,</li>
+</ol></li>
+
+<li>*This indicates that the strength of the prograde bias has a
+complicated dependence on galaxy formation/merger history, which
+limits our immediate interpretation of how to translate recent
+observations of the pro- grade bias for the MW into a robust
+constraint on its formation history.*</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb806f11" class="outline-2">
+<h2 id="orgb806f11"><span class="section-number-2">2</span> Galactic Escape Fraction</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org297d109" class="outline-3">
+<h3 id="org297d109"><span class="section-number-3">2.1</span> Observations</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgf5ef10f" class="outline-4">
+<h4 id="orgf5ef10f"><span class="section-number-4">2.1.1</span> Overview</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+(From Izotov:2018) A few galaxies with high LyC escape fraction are
+known at high redshifts:
+</p>
+
+<ul class="org-ul">
+<li>Ion2 at z = 3.218 [@Vanzella:2015], \(\sim 60 \%\)</li>
+<li>Ion3 at z = 3.999 [@Vanzella:2018], \(\gtrsim 30\%\) A2218-Flanking at
+\(z \approx 2.5\), [@Bian:2017],</li>
+<li>up to \(72 \%\) five star-forming galaxies at z = 0.3. [@Izotov:2018]</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf48eeeb" class="outline-4">
+<h4 id="orgf48eeeb"><span class="section-number-4">2.1.2</span> Bian:2017</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>A2218-Flanking, a lensed compact dwarf galaxy at redshift
+\(z \approx 2.5\).</li>
+<li>fesc \(\gtrsim 30\%\)</li>
+<li>Find that LyC photons are easier to escape in low-mass galaxies.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6b4844d" class="outline-4">
+<h4 id="org6b4844d"><span class="section-number-4">2.1.3</span> Izotov:2018</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>5 compact SFGs. seen in the Cosmic Origins Spectrograph (COS) NUV
+acquisition images.</li>
+<li>z in the range 0.3 - 0.43, fesc = 40 and 70% from two of the galaxies.</li>
+<li>fesc decreases with increasing M*, but with a large scatter</li>
+<li>We argue that one possible source driving the escape of ionizing
+radiation is stellar winds and radiation from hot massive stars.</li>
+<li>The most reliable selection criterion for LyC leakers is the peak
+separation of the Ly-alpha profile Vsep which is strongly
+anticorrelated to the LyC escape fraction fesc(LyC),</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73e9c69" class="outline-4">
+<h4 id="org73e9c69"><span class="section-number-4">2.1.4</span> Shapley:2016</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>Q1549-C25, \(\ge 51\%\)</li>
+<li>Model the spectral energy distribution infer fesc.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9ad4db9" class="outline-4">
+<h4 id="org9ad4db9"><span class="section-number-4">2.1.5</span> Vanzella:2018</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>~60%</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9e40a94" class="outline-4">
+<h4 id="org9e40a94"><span class="section-number-4">2.1.6</span> Izotov2016</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<p>
+- 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf04fb19" class="outline-4">
+<h4 id="orgf04fb19"><span class="section-number-4">2.1.7</span> Summary</h4>
+<div class="outline-text-4" id="text-2-1-7">
+<p>
+Cosmic Origins Spectrograph observations of five compact star-forming
+galaxies at redshifts \(z\) in the range 0.2993&#x2013;0.4317 shows LyC
+emission with fesc(galaxy) in a range of 2-72 per cent.
+</p>
+
+<p>
+<i>Ion2</i> and <i>Q1549-C25</i> are the only two \(z \sim 3\) galaxies with a
+direct spectroscopic detection of uncontaminated LyC emission. Escape
+fractions of \(\gtrsim 50\%\) is inferred from both of them based on
+simulations of the distribution of HI absorbers in both the
+intergalactic and circumgalactic medium \cite{Vanzella:2016}
+\cite{Shapley:2016}
+</p>
+
+<p>
+[@Vanzella:2018] reported the highest redshift individually-confirmed
+LyC-leaky galaxy {<i>Ion3</i>} at z = 4, % and {<i>A2218-Flanking</i>} at
+\(z \approx 2.5\) is measured to have \(f_{\rm esc, gal} \gtrsim 30\%\)
+[@Bian:2017].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org734d91d" class="outline-3">
+<h3 id="org734d91d"><span class="section-number-3">2.2</span> How to measure fesc from galaxies?</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Direct detection of leaking LyC flux.</li>
+</ul>
+</div>
+
+<div id="outline-container-orga7c16f1" class="outline-4">
+<h4 id="orga7c16f1"><span class="section-number-4">2.2.1</span> Choi2020</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>Choi2020 (2020ApJ&#x2026;902&#x2026;54C): new method, measure fesc from
+individual resolved stars by comparing the number of ionizing photons
+produced by stars to the number that are either absorbed by dust or
+consumed by ionizing the surrounding neutral hydrogen. Found
+substantial fesc (~25%) from NGC 4214 (local galaxy).</li>
+<li>Method:
+
+<ul class="org-ul">
+<li>modeled SEDs of resolved stars within NGC 4214 to infer their
+intrinsic stellar properties, as well as the intervening dust: using
+a stellar SED ﬁtting technique optimized for large resolved star
+datasets, called the Bayesian Extinction And Stellar Tool (BEAST;
+Gordon et al. 2016).</li>
+<li><p>
+Formula:
+</p>
+
+
+<div id="org4cdf7eb" class="figure">
+<p><img src="../images/f1.png" alt="f1.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>first term measured by combining ionizing photons produced by all
+stars in a region of interest, second term from the isotropically
+emitted extinction-corrected Hα recombination emission-line
+luminosity of the region. <i>The ﬁrst two termsare independent of
+viewing angle??</i></li>
+<li>third term is challenging: very along sightlines.</li>
+</ul></li>
+</ul></li>
+
+<li>Conclusion:
+
+<ul class="org-ul">
+<li>demonstrate a new method for measuring the escape fraction of
+ionizing photons.</li>
+<li>supports the idea that starburst UV-faint dwarf galaxies can provide
+a sufﬁcient amount of ionizing photons to the intergalactic medium.</li>
+</ul></li>
+
+<li>good writing:</li>
+</ul>
+
+<blockquote>
+<p>
+Confirming whether faint star forming galaxies were indeed responsible
+for cosmic reionization requires constraining the fraction of LyC
+photons that escape (the "escape fraction", fesc) into the IGM.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+To be consistent with reionizing the Universe by redshift z ∼ 6, fesc
+must be at least 10&#x2013;30%, depending on the choice of the ionizing
+photon production efficiency and the faint-end properties (i.e., slope
+and the limiting magnitude) of the observed rest-frame UV luminosity
+functions (e.g., Ouchi et al. 2009; Finkelstein et al. 2012; Robertson
+et al. 2013; Bouwens et al. 2015; Khaire et al. 2016; Ishigaki et
+al. 2018).
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+fesc at a level of &gt; 20% has been measured only very recently for a
+small number of galaxies based on direct detection of leaking LyC flux
+(e.g., Vanzella et al. 2012; Shapley et al. 2016; Vanzella et
+al. 2016; Bian et al. 2017; Naidu et al. 2017; Izotov et al. 2018a).
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org3681a04" class="outline-4">
+<h4 id="org3681a04"><span class="section-number-4">2.2.2</span> <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.2554C/abstract">Chisholm2020</a>:</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Optically thin spatially resolved Mg II emission maps the escape of
+ionizing photons
+</p>
+
+<ul class="org-ul">
+<li>The first pass (title, abstract, introduction)
+
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Relavent?</li>
+
+<li class="on"><code>[X]</code> Worth reading?</li>
+</ul></li>
+
+<li>The second pass (figures, references)
+
+<ul class="org-ul">
+<li>What are the key results?</li>
+
+<li>Key references
+
+<ul class="org-ul">
+<li>Izotov et al. 2016a: direct detection of leaking LyC flux, found
+fesc &gt; 5-20%</li>
+</ul></li>
+</ul></li>
+
+<li>Summary:
+
+<ul class="org-ul">
+<li>Question addressed: Method of measuring fesc(LyC) from galaxies</li>
+<li>Context:</li>
+<li>Method
+
+<ul class="org-ul">
+<li>new Keck Cosmic Web Imager spatially-resolved spectroscopy of the
+resonant Mg ii 2800 Å doublet from a redshift 0.36 galaxy,
+J1503+3644,</li>
+<li>The measured flux ratio of the red and blue Mg ii emission line
+doublet estimates the neutral gas column density &#x2014;&gt; relative
+escape fraction</li>
+<li>Using the Reddy et al. (2016) attenuation law to fit theoretical
+stellar continuum models to the observed FUV stellar continuum
+features. &#x2014;&gt; absolute escape fraction</li>
+</ul></li>
+
+<li>Conclusion: Mg ii can predict escape fraction within the Epoch of
+Reionization.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge03dcdf" class="outline-4">
+<h4 id="orge03dcdf"><span class="section-number-4">2.2.3</span> Izotov et al. 2016a</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Questions addressed: direct detection of leaking LyC flux
+</p>
+
+<p>
+Context: source of reionization
+</p>
+
+<p>
+Method: reddening law, adopting the extinction curve from Cardelli et
+al. 1989
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-16</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Basics
+Euler: grid based, fixed space. Lagarigian: moving particle.
+
+Kelvin-Helmholtz instability: KHIs occur when velocity shear is present
+at the interface between two ﬂuids.
+
+Reyleigh-Taylor instability: RTIs occur when a denser ﬂuid is
+accelerated by a less dense ﬂuid. Examples: water suspended above oil;
+supernova explosions in which expanding core gas is accelerated into
+denser shell gas.
+
+* Code
+** Summary of widely used codes
+*** Grid based, AMR
+
+- *ART* (Adaptive Reﬁnement Tree) is a N-body + gas dynamics AMR
+  (Adaptive Mesh Reﬁnement) code (Kravtsov 1999). Advantages: resolve
+  shocks within 1-2 cells.
+- *ENZO* is an Eulerian AMR hybrid code (N-body + gas dynamics) that was
+  originally written by Greg Bryan and Michael Norman at the National
+  Center for Supercomputing Applications at the University of Illinois
+  (Bryan & Norman 1997). ENZO uses the piecewise parabolic method
+  (Colella & Woodward 1984, PPM) for solving ﬂuid equations. There is
+  also ENZO-PPM. PPM is a higher order accurate version of Godunov's
+  method with an accurate piecewise parabolic interpolation and a
+  non-linear Riemann solver for shock conditions. The method is third
+  order accurate in space and second order in time for ﬁxed
+  time-stepping.
+- *FLASH* is an AMR hybrid code (N-body + gas dynamics) developed by the
+  ASC Center at the University of Chicago (Fryxell et al. 2000).
+- *ORION*, developed by Richard Klein and Chris McKee. AMR
+  magneto-radiation-hydrodynamics. 
+
+*** SPH
+
+- *GASOLINE*: a parallel Tree + SPH code, described in Wadsley, Stadel &
+  Quinn (2004). The code is an extension to the N-body gravity code
+  PKDGRAV developed by Stadel (2001). GASOLINE uses Artificial Viscosity
+  to resolve shocks. It uses a standard spline smoothing kernel
+  (Monaghan 1992) with compact support for the softening of the
+  gravitational and SPH quantities.
+- *GADGET-2* is a TreeSPH code (Springel, Yoshida & White 2001; Springel
+  2005). It is the updated version of the GADGET-1. The code is similar
+  in character to GASOLINE but uses an entropy conserving formulation of
+  SPH. Use a different formulation of AV than GASOLINE.
+- *Arepo*: first cosmological simulations of galaxy formation performed
+  with the moving mesh code Arepo (Springel, 2010).
+
+** RAMSES
+*** Bleuler 2014
+
+- Sink Particles Creation
+
+  - Sink particles in AMR codes has two types: 'cell-based' and
+    'peak-based'.
+
+    - Cell-based. e.g. Krumholz et al. 2014: convergent velocity +
+      density threshold.
+    - Peak-based. A sink is formed in a small volumes around a density
+      peak. The radius is chosen to
+
+*** Geen2016
+
+- Tools used in the paper
+
+  - RAMSES-RT, a Eulerian adaptive mesh magnetohydrodynamics code rand
+    radiative transfer of UV photons.
+
+- Methods
+
+  - Profile of the cloud: The cloud is assumed to have a power law
+    density profile with a flat core with
+    \(n_{\rm ext}(r) \propto r^{-\omega}\).
+
+- Theories
+
+  - Two phases of expansion:
+
+    1. propagation of ionization fronts up to the Stromgren radius (rs);
+    2. expansion of the HII region. Time order: 1) recombination time,
+       kyrs; 2) with a sound speed ci = 12.5 km/s in cooling
+       equilibrium. The resultant temperature in he ionized region is
+       8400 K, given that
+       \(C_s = \sqrt{\gamma P / \rho} \propto \sqrt{T}\).
+
+- Conclusion
+
+  - The expansion of HII region in clouds is crucial in stellar
+    feedback.
+  - Most of the momentum from a single supernovae is deposited into the
+    dense gas rather than hot diffuse gas.
+  - Supernovae will occur too late to prevent the bulk of star formation
+    in the cloud. (supported by He:2019 and He:2020).
+
+** GIZMO
+*** Cosmic Ray
+Hot paper (2021-10-08 Fri) [[https://arxiv.org/abs/2109.09762][First
+Predicted Cosmic Ray Spectra, Primary-to-Secondary Ratios, and
+Ionization Rates from MHD Galaxy Formation Simulations]] by Hopkins et
+al. /Presented by/ /Benedikt Diemer/
+
+* Comparison of hydrodynamic codes
+** Eulerian grid based v.s. SPH
+*** Agertz2007:
+[[https://ui.adsabs.harvard.edu/abs/2007MNRAS.380..963A/abstract][SPH
+and grid methods]]
+Whilst Eulerian grid based methods are able to resolve and treat
+important dynamical instabilities, such as Kelvin--Helmholtz or
+Rayleigh--Taylor, these processes are poorly or not at all resolved by
+existing SPH techniques. We show that the reason for this is that SPH,
+at least in its standard implementation, introduces spurious pressure
+forces on particles in regions where there are steep density gradients.
+This results in a boundary gap of the size of an SPH smoothing kernel
+radius over which interactions are severely damped.
+
+*The blob test*: a cold blog travels in hot gas in supersonic speed.
+
+Grid code:
+
+- ART (AMR)
+- CHARM (AMR), an N-body + gas dynamics, AMR code, employing a higher
+  order Godunov's method, second-order accurate method in both space and
+  time.
+- ENZO-PPM (AMR): ENZO uses the piecewise parabolic method
+- GASOLINE: a parallel Tree + SPH code, described in Wadsley, Stadel &
+  Quinn (2004). The code is an extension to the N-body gravity code
+  PKDGRAV developed by Stadel (2001). GASOLINE uses Artificial Viscosity
+  to resolve shocks. It uses a standard spline smoothing kernel
+  (Monaghan 1992) with compact support for the softening of the
+  gravitational and SPH quantities.
+
+Conclusion: Whilst Eulerian grid based methods are able to resolve and
+treat important dynamical instabilities, such as Kelvin--Helmholtz or
+Rayleigh--Taylor, these processes are poorly or not at all resolved by
+existing SPH techniques. The reason is that SPH introduces spurious
+pressure forces on particles in regions where there are steep density
+gradients. The GASOLINE runs are not able to resolve small-scale
+instabilities at all through resolution study.
+
+# [[images/Screen Shot 2021-10-23 at 8.30.50 PM.png]]
+# [[images/Screen Shot 2021-10-23 at 8.34.57 PM.png]]
+# [[images/Screen Shot 2021-10-23 at 8.47.24 PM.png]]
+
+[[file:images/Screen Shot 2021-10-23 at 8.30.50 PM.png]]

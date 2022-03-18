@@ -1,7 +1,4 @@
 #+TITLE: My own research
-#+OPTIONS: ^:{}
-#+SETUPFILE: ../style/default.setup
-#+INCLUDE: ../style/latex.setup
 
 * He2019, He2020
 
@@ -28,3 +25,5 @@
 
 Calculated the metal yields in our simulations following Protinari 1998, Table 10. Solar (Z=0.0134) Asplund ARA\\&A 47:481 (2009).
 
+
+| [[file:../img/geen16-fig1.png]] | [[file:../img/geen16-fig1.png]] | [[file:../img/geen16-fig1.png]] |

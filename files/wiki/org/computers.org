@@ -1,0 +1,92 @@
+#+TITLE: computers
+#+SETUPFILE: ../style/default.setup
+
+Mac: moved to =~/config.org=
+
+st: moved to =st:config.org=
+
+* Deepthought2
+
+** Tips and Facts
+
+*** Speed: lustre/ vs home/
+
+About same speed, both for large files (1G) or small files (4k). 
+#+begin_quote
+/lustre/che1234/code-test
+$ dd if=/dev/zero of=/tmp/test1.img bs=4k count=1000 oflag=dsync 
+1000+0 records in
+1000+0 records out
+4096000 bytes (4.1 MB, 3.9 MiB) copied, 39.9342 s, 103 kB/s
+~/code
+$ dd if=/dev/zero of=/tmp/test1.img bs=4k count=100000 oflag=dsync 
+^C1800+0 records in
+1800+0 records out
+7372800 bytes (7.4 MB, 7.0 MiB) copied, 71.8909 s, 103 kB/s
+dddd
+#+end_quote
+
+** 2017, Installed anaconda2
+
+ To activate it,
+ #+BEGIN_SRC shell
+   exec bash
+   unset PYTHONPATH
+   unset PYTHONHOME
+   export PATH=~/anaconda2/bin:${PATH}
+   alias vi="~/usr/local/vim/bin/vim"
+ #+END_SRC
+
+ This has been written in .bashrc.mine, which will excute every time you run `exec bash`.
+
+** 2019/11/30, Installed miniconda3
+
+** 2019/12/09, rclone and sync to google G drive
+
+*** Steps I did to setup
+
+ - Load rclone :: following [[https://www.glue.umd.edu/hpcc/help/software/rclone.html][this link]] and did ~module load
+                  rclone/1.47.0~. This is append to .cshrc.mine
+ - Configure rclone :: following [[http://hpcc.umd.edu/hpcc/help/software/rclone.html#box][this link]]
+
+*** Usage
+
+ - Use e.g. ~rclone cp source/dir dest/dir~. See [[http://hpcc.umd.edu/hpcc/help/software/rclone.html#usage][this link]].
+
+** 2020/4/11, install nnn
+
+ Install from source: need ncursesw (libncursesw5-dev)
+
+*** Installing ncurses
+
+ ~ncurses~ installed in ~~/usr/opt/ncurses~
+
+ Ref: https://www.osetc.com/en/how-to-install-ncurse-library-in-ubuntu-debian-centos-fedora-linux.html
+
+ - ~cd ~/usr/source~
+ - ~wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz~
+ - ~tar xf n<TAB>~
+
+*** Installed nnn (working as of 2020-06-22)
+
+ - Installed ~nnn~ in ~~/usr/local/bin~
+ - Enabled ~quitcd~ by defining ~n ()~ in =.zshrc=
+
+** 2020/4/12, installed mc (Midnight Commander)
+
+** 2021/1/21, install zsh on rhel8
+
+Failed:
+
+Resources:
+- http://zsh.sourceforge.net/FAQ/zshfaq01.html#l7
+- 
+
+- Install missing modules
+  - rpcsvc
+    - Installed into ~/usr/lib/rpcsvc/include/
+- Install zsh
+  - Download source files from http://zsh.sourceforge.net/ into ~/usr/source
+  - =setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${HOME}/usr/lib/rpcsvc/include/rpcsvc/=
+  - 
+  - ~export LD_LIBRARY_PATH=${HOME}/usr/local/libevent/lib/:${LD_LIBRARY_PATH}~ to

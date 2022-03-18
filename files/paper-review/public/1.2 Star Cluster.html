@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-16 Wed 22:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/org.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div> <a accesskey='h' href='index.html'> UP </a> | <a accesskey='H' href='index.html'> HOME </a> </div><div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org75b6d31">1. Star Cluster</a>
+<ul>
+<li><a href="#org86b6bef">1.1. Dust</a>
+<ul>
+<li><a href="#org2a4c845">1.1.1. Gnedin2008</a></li>
+<li><a href="#org42ef7d6">1.1.2. Corrales2016</a></li>
+</ul>
+</li>
+<li><a href="#orgcaeb457">1.2. Supermassive Black Hole Seed</a>
+<ul>
+<li><a href="#orga940cac">1.2.1. Latif:2016</a></li>
+<li><a href="#orga126bb8">1.2.2. Portegies-Zwart:1999</a></li>
+<li><a href="#org51ec941">1.2.3. Katz:2015</a></li>
+<li><a href="#orgf1c8b64">1.2.4. SILCC: chemical evolution</a></li>
+</ul>
+</li>
+<li><a href="#orgd6d9a80">1.3. Escape fraction from MC</a>
+<ul>
+<li><a href="#org4b687d0">1.3.1. Howard (2017)</a></li>
+<li><a href="#orgb712180">1.3.2. [@Howard:2018]}</a></li>
+<li><a href="#org4366303">1.3.3. Howard:2018a</a></li>
+<li><a href="#org6106ed4">1.3.4. Kim:2017</a></li>
+</ul>
+</li>
+<li><a href="#org931f0dc">1.4. Galactic escape fraction</a>
+<ul>
+<li><a href="#org8998114">1.4.1. Gnedin:2008</a></li>
+<li><a href="#org8306bde">1.4.2. Arata:2019</a></li>
+<li><a href="#org26da5a6">1.4.3. Ma2015</a></li>
+</ul>
+</li>
+<li><a href="#org5a23054">1.5. Stellar radiation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="HTML" id="orga6df4e6">
+<p>
+\(
+	  \newcommand{\dif}{\,\mathrm{d}}
+	  \newcommand{\sci}[2]{#1 \times 10^{#2}}
+	  \def\num#1{\numx#1}\def\numx#1e#2{{#1}\mathrm{e}{#2}}
+	  \newcommand{\msun}{{\rm M}_\odot}
+	  \newcommand{\si}[1]{{\rm #1}}
+\)
+</p>
+
+</div>
+
+
+<div id="outline-container-org75b6d31" class="outline-2">
+<h2 id="org75b6d31"><span class="section-number-2">1</span> Star Cluster</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org86b6bef" class="outline-3">
+<h3 id="org86b6bef"><span class="section-number-3">1.1</span> Dust</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org2a4c845" class="outline-4">
+<h4 id="org2a4c845"><span class="section-number-4">1.1.1</span> Gnedin2008</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Table 1 provides parameters for the dust extinction law fits. Assume
+\(N_H\) is gas column density (as opposed to hydrogen column density).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org42ef7d6" class="outline-4">
+<h4 id="org42ef7d6"><span class="section-number-4">1.1.2</span> Corrales2016</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+This paper cited [@Draine2003], but actually using data from both
+[@Weingartner2001] and <span class="underline">Draine2003</span>, as the latter extends the spectrum
+to X-ray, which is the focus of this paper.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcaeb457" class="outline-3">
+<h3 id="orgcaeb457"><span class="section-number-3">1.2</span> Supermassive Black Hole Seed</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+From <a href="https://arxiv.org/abs/1812.08892">https://arxiv.org/abs/1812.08892</a>: Due to the theory of
+primordial star formation and the observed first chemical enrichment,
+the most likely candidates for seed black holes (Volonteri 2010; Latif
+\&amp; Ferrara 2016) are the remnants of Population iii stars (Madau \&amp; Rees
+2001; Bromm et al. 2002; Schneider et al. 2002), the direct collapse of
+primordial gas (Bromm \&amp; Loeb 2003; Koushiappas et al. 2004; Agarwal et
+al. 2012), or via a massive quasi-star formed from collisions in nuclear
+star clusters in the early Universe (Baumgarte \&amp; Shapiro 1999;
+Portegies Zwart et al. 1999; Devecchi \&amp; Volonteri 2009).
+</p>
+</div>
+
+<div id="outline-container-orga940cac" class="outline-4">
+<h4 id="orga940cac"><span class="section-number-4">1.2.1</span> Latif:2016</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ol class="org-ol">
+<li>BH formation scenarios:
+
+<ul class="org-ul">
+<li>core-collapse of massive stars (Ciardi \&amp; Ferrara 2005; Bromm
+
+<ol class="org-ol">
+<li></li>
+</ol></li>
+
+<li>dynamical evolution of dense nuclear star clusters, (Baumgarte \&amp;
+Shapiro 1999; Portegies Zwart et al. 1999; Devecchi \&amp; Volonteri
+
+<ol class="org-ol">
+<li></li>
+</ol></li>
+
+<li>collapse of a protogalactic metal free gas cloud. Here I focus on
+scenario ii.</li>
+</ul></li>
+
+<li>Some backgrounds:
+
+<ul class="org-ul">
+<li>The earlier studies suggested dense stellar clusters with more than
+\(10^7\) stars are required for the run-away collapse to occur (Lee
+1987; Quinlan \&amp; Shapiro 1990). Binary heating stops the core
+collapse in less massive stellar clusters (Heggie 1975; Hut et
+al. 1992). Moreover, the core collapse timescale has to be shorter
+than \(\sim 3\) Myr, otherwise mass loss from the supernova may
+halt the core collapse.</li>
+<li>Mass segregation instability can lead to for mation of BH seed even
+in less massive clusters (Spitzer 1969; Vishniac 1978; Begelman \&amp;
+Rees 1978), if mass segregation occurs within the first 3 Myr. Need
+low metallicity clusters where mass loss from stellar winds is
+expected to be minimum (Hirschi 2007; Glebbeek et al. 2009).</li>
+<li>merging of many stellar mass BHs or a supra-exponential growth of
+stellar mass black holes in a cluster by dense cold gas flows
+Alexander \&amp; Natarajan (2014). Will not work, BHs will be thrown
+away.</li>
+<li>Run-away merging of stellar mass black holes in the core of a dense
+cluster mediated by the extremely large inflows of gas (Davies,
+Miller, \&amp; Bellovary 2011; Lupi et al. 2014).</li>
+</ul></li>
+
+<li>Compact star clusters
+
+<ul class="org-ul">
+<li>Collapse timescale has to be shorter than \(\sim 3\)~Myr.</li>
+<li>Number of collisions and ther increase in mass per collision
+strongly depend on half-mass radius. (Portegies Zwart \&amp; McMillan
+2002). The mass of a Very Massive Star (VMS) linearly increases
+with the initial central density of a cluster.</li>
+<li>At hiehger metallicities, fragmentation occrus at densities at low
+as \(10^3 {\rm cm^{-3}}\), resulting in the core collapse time
+longer than 3 Myr (Omukai et al. 2008; Devecchi \&amp; Volonteri 2009;
+Devecchi et al. 2012).</li>
+<li>Large accretion rates and efficient star formation are required for
+the formation of such compact nuclear stellar. By performming 3D
+cosmological simulations, Latif et al. (2016) find that a dense
+cluster may also form for \(Z/Z_{\odot} \ge 10^{-4}\) in the
+presence of a strong UV flux.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga126bb8" class="outline-4">
+<h4 id="orga126bb8"><span class="section-number-4">1.2.2</span> Portegies-Zwart:1999</h4>
+</div>
+<div id="outline-container-org51ec941" class="outline-4">
+<h4 id="org51ec941"><span class="section-number-4">1.2.3</span> Katz:2015</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+My summary: Kate:2015 set initial conditions for simulations of an star
+cluster with NBODY6 from the gas cloud forming in the core of the
+metal-enriched halo from zoom-in simulation of mini-halos. They find
+that the mass of the VMS can reach \(>400~\msun\) in clusters with
+stellar masses \(\approx 10^4~\msun\) and over \(1000~\msun\) for more
+massive and denser cluster.
+</p>
+
+<p>
+Latif:2016's summary: Katz et al. (2015) used a combination of
+hydrodynamical cosmological simulations and direct N-body simulations to
+estimate the mass of a VMS forming via stellar run-away collisions in a
+metal poor stellar cluster. They found that a VMS of \(\ge 400~\msun\)
+can form in a stellar cluster of \(10^4~\msun\) at z = 15 and may reach
+up to a \(1000~\msun\) for a cluster mass of a few times \(10^5~\msun\).
+</p>
+
+<ol class="org-ol">
+<li><p>
+Methods
+</p>
+
+<p>
+Simualte evolusion of a pair of neighboring high-redshift mini-halos
+with zoom-in RAMSES simulation. The central nuclear star cluster
+(NSC) can be enriched to a critical metallicity, sufficient for Pop.
+II star formation at \(z \approx 27\). From the gas cloud forming in
+the core of the metal-enriched halo, they set initial conditions for
+simulations of an star cluster with NBODY6. The final mass of the VMS
+can reach \(>400~\msun\) in clusters with stellar masses
+\(\approx 10^4~\msun\) and over \(1000~\msun\) for more massive and
+denser cluster.
+</p></li>
+
+<li><p>
+My concerns
+</p>
+
+<p>
+Are the initial conditions of the sampled star cluster realistic?
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf1c8b64" class="outline-4">
+<h4 id="orgf1c8b64"><span class="section-number-4">1.2.4</span> SILCC: chemical evolution</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ol class="org-ol">
+<li>On the SILCC project (led by S. C. O. Glover?) (Seifried et al. 2017)
+4 chemical convergence criteria are proposed. See logs.org for how my
+simulations meet these criteria.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd6d9a80" class="outline-3">
+<h3 id="orgd6d9a80"><span class="section-number-3">1.3</span> Escape fraction from MC</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org4b687d0" class="outline-4">
+<h4 id="org4b687d0"><span class="section-number-4">1.3.1</span> Howard (2017)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ol class="org-ol">
+<li><p>
+Initial conditios
+</p>
+
+<p>
+n = 100 cm-3, corresponding to tff = 4.4 Myr (assuming \(\mu\) =
+1.4). Masses = \(10^{4-6}~\msun\).
+</p></li>
+
+<li><p>
+Method
+</p>
+
+<p>
+include radiation pressure adopting a single UV opacity.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb712180" class="outline-4">
+<h4 id="orgb712180"><span class="section-number-4">1.3.2</span> [@Howard:2018]}</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+\paragraph{Escape fraction from populations}
+</p>
+
+<ul class="org-ul">
+<li>Sampling discrete distribution following \(M^\alpha\) and
+\(\alpha = -1.5\) or \(-2.5\).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4366303" class="outline-4">
+<h4 id="org4366303"><span class="section-number-4">1.3.3</span> Howard:2018a</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Todo: compare Z dependence.
+</p>
+
+<ul class="org-ul">
+<li>Star clusters form in filaments and move with the filamentary gas
+flows.</li>
+<li>Clusters grow by gas inflow from their host filaments and by merging
+events.</li>
+<li>Forms 229 and 146 {<b>cluster particles</b>}.</li>
+<li>Particle merging is allowed.</li>
+<li>Lowering Z results in higher \(f_{\rm star}\), contrary to what we
+find. A factor of \(\sim 4\) difference due to metallicity difference.
+At sub-solar metallicity, the radiation produced by the young stars
+exerts less pressure on the surrounding gas because the opacity is
+lower, allowing the YMC to continue accreting gas throughout its
+entire history.</li>
+<li>Subgrid model for star formation: Samping Chabrier IMF with \(20\%\)
+efficiency.</li>
+<li>Radiative transfer: raytracing scheme. Radiation pressure is included.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6106ed4" class="outline-4">
+<h4 id="org6106ed4"><span class="section-number-4">1.3.4</span> Kim:2017</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+Title: Modeling UV Radiation Feedback from Massive Stars. I.
+Implementation of Adaptive Ray-tracing Method and Tests
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org931f0dc" class="outline-3">
+<h3 id="org931f0dc"><span class="section-number-3">1.4</span> Galactic escape fraction</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org8998114" class="outline-4">
+<h4 id="org8998114"><span class="section-number-4">1.4.1</span> Gnedin:2008</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>Escape fraction of \(1\% - 3\%\) over the entire redshift interval (3
+&lt; \(z\) &lt; 9) and veries by more than an order of magnitude along
+different lines of sight, for a massive galaxies and SFR
+\(\approx 1-5 \ {\rm M_\odot} \ {\rm yr}^{-1}\).
+\(\langle f_{\rm esc}\rangle\) declines steeply at lower masses and
+SFR. Absorption by dust is considered.</li>
+<li>The low values of escape fractions are due to a small fraction of
+young stars located just outside the edge of the H i disk. This
+fraction is smaller in disks of smaller galaxies.</li>
+<li>Alternative method: direct measurements of HI column density at
+\(z \sim 3\).</li>
+<li><b>Absorption by dust</b> Dust may contribute significantly to the
+absorption of ionizing radiation (e.g., Weingartner \&amp; Draine 2001).</li>
+<li>Compare with previous work:
+
+<ul class="org-ul">
+<li>Siana et al. 2007: Lyman continuum escape fractions in galaxies at
+\(z \sim 1\), \(f_{esc} \lesssim 0.1\).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8306bde" class="outline-4">
+<h4 id="org8306bde"><span class="section-number-4">1.4.2</span> Arata:2019</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+A number of literatures have examined the escape fraction of UV photons
+from galaxies. Using zoom-in initial conditions in cosmological
+hydrodynamic simulations, <span class="underline">Arata:2019</span> investigate three massive
+galaxies and find the escape fraction of UV photons fluctuates in the
+range of 0.2 &#x2013; 0.8 with a time-averaged value of 0.3. They find that
+gas and dust are ejected from star-forming regions by supernova
+feedback, allowing the UV photons to escape.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26da5a6" class="outline-4">
+<h4 id="org26da5a6"><span class="section-number-4">1.4.3</span> Ma2015</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+[@Ma2015] studied the escape fraction of ionizing photons from
+less-massive galaxies with halo mass
+\(M_{\rm h} \sim 10^9 - 10^{11} ~\msun\) and showed that
+\(f_{\rm esc}^{\rm gal}\) has large time variability and the
+time-averaged \(f_{\rm esc}^{\rm gal}\) generally remains \(< \sim 5\)
+per cent.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-latex">A number of literature have examined the escape fraction of
+UV photons from galaxies, $f_{\rm esc}^{\rm gal}$. \cite{Ma2015}
+studied the escape fraction of ionizing photons from less-massive
+galaxies with halo mass $M_{\rm h} \sim 10^9 - 10^{11} ~\msun$ and
+showed that $f_{\rm esc}^{\rm gal}$ has large time variability and the
+time-averaged $f_{\rm esc}^{\rm gal}$ generally remains $lesssim 5$
+per cent. Using zoom-in initial conditions in cosmological
+hydrodynamic simulations, \cite{Arata:2019} investigate three massive
+galaxies and find the escape fraction of UV photons fluctuates in the
+range of 20 per cent -- 80 per cent with a time-averaged value of 30
+per cent. They find that gas and dust are ejected from star-forming
+regions by supernova feedback, allowing the UV photons to escape.
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a23054" class="outline-3">
+<h3 id="org5a23054"><span class="section-number-3">1.5</span> Stellar radiation</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Keywords: Vacca function, Schaerer fit
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-16</p>
+</div>
+</body>
+</html>
