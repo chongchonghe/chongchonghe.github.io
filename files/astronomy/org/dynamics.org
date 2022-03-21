@@ -1,0 +1,13 @@
+#+title: Dynamics
+
+* Concepts
+
+** Terms
+
+- *Jeans modeling*: Jeans dynamical modeling: Solve the Jeans equations (or the [[https://clumpy.gitlab.io/CLUMPY/physics_jeans.html#jeans-equation][CBE, collisionless Boltzmann equation]], with link to the CLUMPY code on gitlab.). ▪ Advantages: Very fast, no need to assume a distribution function ▪ Disadvantages: Must bin data to calculate moments, no guarantee there is a DF matching moments, calculation is difficult without assumption of symmetry
+
+- *CBE*: [[https://www.cv.nrao.edu/~jhibbard/students/CPower/dynamics/cbe/cbe.html][webpage]]. 
+
+* N-body
+
+

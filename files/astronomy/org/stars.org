@@ -1,4 +1,5 @@
 #+TITLE: Stars
+
 # #+SETUPFILE: ../style/default.setup
 # #+INCLUDE: ../style/latex.setup
 
@@ -66,17 +67,12 @@ There are differences in the spectra of giant and main-sequence stars of the sam
   Maeder2009, Sec 27.5
 #+END_QUOTE
 
-WR stars are stars with unusual spectra showing prominent broad
-emission lines of ionised helium and highly ionised nitrogen or
-carbon. The spectra indicate very high surface enhancement of heavy
-elements, depletion of hydrogen, and strong stellar winds. They are
-"bare cores" left over from the peeling of massive stars by stellar
-winds.
+WR stars are stars with unusual spectra showing prominent broad emission lines of ionised helium and highly ionised nitrogen or carbon. The spectra indicate very high surface enhancement of heavy elements, depletion of hydrogen, and strong stellar winds. They are "bare cores" left over from the peeling of massive stars by stellar winds.
 
 Properties:
 
 - Masses: 8-25 Msun (up to 80 Msun)
-- Luminosities: 10^5-6.5 Lsun
+- Luminosities: 10^5-6.5 Lsun 
 - Eddington factor: ~0.7 to ~1.0
 - Teff: 3e4 to 1.5e5 K.
 - $\dot{M}$: ~5e-6 to 1e-4 Msun/yr
@@ -87,18 +83,11 @@ Properties:
    :CUSTOM_ID: energy-production-in-stars
    :END:
 
-The net reaction from which most stars gain their energy is:
-$\rm 4{}^1H\rightarrow{}^4He+2e^++2\nu_{\rm e}+\gamma$.\\
-This reaction produces 26.72 MeV. Two reaction chains are responsible
-for this reaction. The slowest, speed-limiting reaction is shown in
-boldface. The energy between brackets is the energy carried away by the
-neutrino.
+The net reaction from which most stars gain their energy is: $\rm 4{}^1H\rightarrow{}^4He+2e^++2\nu_{\rm e}+\gamma$.\\ This reaction produces 26.72 MeV. Two reaction chains are responsible for this reaction. The slowest, speed-limiting reaction is shown in boldface. The energy between brackets is the energy carried away by the neutrino.
 
-1. The proton-proton chain has two subchains:\\
-   $\bf ^1H+p^+\rightarrow{}^2D+e^++\nu_{\bf e}$,  and then
-   $\rm ^2D+p\rightarrow{}^3He+\gamma$.
+1. The proton-proton chain has two subchains:\\ $\bf ^1H+p^+\rightarrow{}^2D+e^++\nu_{\bf e}$,  and then $\rm ^2D+p\rightarrow{}^3He+\gamma$.
 
-2. The CNO cycle.
+2. The CNO cycle.  
 
 * Star Formation
 
@@ -160,8 +149,8 @@ is the turbulence velocity dispersion.
     :END:
 
 \begin{align}
-v_{\rm vir} &= \sqrt{\frac{GM}{R}} = 6.6~\si{km/s} \; \sqrt{\frac{M_4}{R_{\rm pc}}} \\
-R &= \frac{GM}{v^{2}} = 0.43~{\rm pc} \; \left( \frac{M}{10^{4} \msun} \right) \left( \frac{v}{10~\si{km/s}} \right)^{-2}
+v_{\rm vir} &= \sqrt{\frac{GM}{R}} = 6.6~{\rm km/s} \; \sqrt{\frac{M_4}{R_{\rm pc}}} \\
+R &= \frac{GM}{v^{2}} = 0.43~{\rm pc} \; \left( \frac{M}{10^{4} \msun} \right) \left( \frac{v}{10~{\rm km/s}} \right)^{-2}
 \end{align}
 
 **** Thermal timescale (Kelvin-Helmholz)

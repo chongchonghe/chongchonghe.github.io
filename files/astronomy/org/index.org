@@ -1,5 +1,6 @@
 #+TITLE: Home
 * [[file:cheatsheet.org][*Astrophysics Cheat Sheet*]]
+* [[file:dynamics.org][Dynamics]]
 * [[file:ISM.org][ISM]]
 * [[file:math.org][Mathamatical Tools]]
 * [[file:my.org][My own research]]
@@ -7,6 +8,7 @@
 * [[file:cosmology.org][cosmology]]
 * [[file:galaxy.org][galaxy]]
 * [[file:hydro-and-code.org][hydro-and-code]]
+* [[file:obervation.org][obervation]]
 * [[file:solarsystem.org][solarsystem]]
 * [[file:terms.org][terms]]
 * [[file:tutorial.org][tutorial]]
