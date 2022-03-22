@@ -1,5 +1,5 @@
 #+TITLE: Stars
-
+#+INCLUDE: ../style/latex.setup
 # #+SETUPFILE: ../style/default.setup
 # #+INCLUDE: ../style/latex.setup
 
@@ -87,7 +87,7 @@ The net reaction from which most stars gain their energy is: $\rm 4{}^1H\rightar
 
 1. The proton-proton chain has two subchains:\\ $\bf ^1H+p^+\rightarrow{}^2D+e^++\nu_{\bf e}$,  and then $\rm ^2D+p\rightarrow{}^3He+\gamma$.
 
-2. The CNO cycle.  
+2. The CNO cycle. [[https://astronomy.swin.edu.au/cosmos/c/cno+cycle#:~:text=The%20'CNO%20cycle'%20refers%20to,ray%2C%20producing%20nitrogen%2D13.][CNO cycle from COSMOS]]. TODO: Check Ivan's slides. Finish 'The CNO cycle': connection to GC multiple population, excess and undercess of ... elements.
 
 * Star Formation
 
@@ -155,9 +155,11 @@ R &= \frac{GM}{v^{2}} = 0.43~{\rm pc} \; \left( \frac{M}{10^{4} \msun} \right) \
 
 **** Thermal timescale (Kelvin-Helmholz)
 
+The Kelvin-Helmholz timescale is the time it would take a star to emit its entire reserve of thermal energy upon contracting, assuming a constant luminosity. It is the relevant timescale throughout the protostellar stages. 
 $$
 \tau_{\rm th} \approx \frac{GM^2}{RL} \approx 30~{\rm Myr} \left( \frac{M}{M_{\odot}} \right)^2 \left( \frac{R_{\odot}}{R} \right) \left( \frac{L_{\odot}}{L} \right) \sim 30~{\rm Myr} \ \left( \frac{M}{M_{\odot}} \right)^{-2.4}
 $$
+An important fact is that in only 1/10 of the KH time, the star shrinks to 10 times of the MS radius, and 1/2 of the KH time to 2 times the MS radius.
 
 *** Instability
 
@@ -392,7 +394,10 @@ Kelvin-Helmhotz (thermal) timescale. The less massive ($< 3 M_\odot$) of them ap
 
 *** T Tauri Star
 
-T Tauri star is a later phase in a protostar's formation, a class of variable stars that are less than about ten million years old. T Tauri stars are pre-main-sequence stars in the process of contracting to the main sequence along the Hayashi track, a luminosity–temperature relationship obeyed by infant stars of less than 3 solar masses in the pre-main-sequence phase of stellar evolution. It ends when a star develops a radiative zone, or when a smaller star commences nuclear fusion on the main sequence.
+- Pre-main sequence
+- Energy coming from contracting due to self-gravity, not from nuclear fusion. They are newly-formed (< 10 million years old) low to intermediate mass stars (< 3 solar masses) with central temperatures too low for nuclear fusion to have started.
+- They are surrounded by circumstellar discs, probable sites of planet formaiton. 
+- T Tauri stars are pre-main-sequence stars in the process of contracting to the main sequence along the Hayashi track, a luminosity–temperature relationship obeyed by infant stars of less than 3 solar masses in the pre-main-sequence phase of stellar evolution. It ends when a star develops a radiative zone, or when a smaller star commences nuclear fusion on the main sequence.
 
 ** The Fate of Massive Stars
     :PROPERTIES:
@@ -445,3 +450,7 @@ Type Ia SNe are recognised by the silicon absorption line. It is thought that th
 
 
 
+
+Org finished at Mon Mar 21 17:03:28
+
+Org finished at Mon Mar 21 17:03:47

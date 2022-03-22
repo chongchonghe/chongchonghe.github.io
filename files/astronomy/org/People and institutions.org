@@ -1,0 +1,14 @@
+
+* Institutions
+
+** ESO
+
+ESO: The [[https://www.eso.org/public/about-eso/][European Southern Observatory]]. All our telescopes are currently located in the Chilean Atacama Desert, a marvelous place with unique conditions to observe the sky. ESO operates three observing sites in Chile: La Silla, Paranal and Chajnantor. ESO’s Headquarters are located in Garching, close to Munich in Germany. Famouse telescopes operated by ESO are:
+	  - Very Large Telescope (VLT), one of the most advanced optical telescopes in the world. ESO's premier site for observations in visible and infrared light.
+	  - La Silla Observatory. 
+	  - *APEX* (the Atacama Pathfinder Experiment). APEX is a 12-metre diameter telescope, operating at millimetre and submillimetre wavelengths — between infrared light and radio waves. It is a modified ALMA prototype antenna as a single dish on the 5100-metre high site of Llano Chajnantor.
+	  - *ALMA* (The Atacama Large Millimeter/submillimeter Array). Collaboratively with international partners, ESO operates ALMA on the Chajnantor plateau. ALMA allows scientists to investigate the Universe in the millimetre and submillimetre wavelength range of light.  operating at wavelengths of 0.32 to 3.6 mm. The maximum distance between antennas can vary from 150 metres to 16 kilometres.
+	  - *ELT* (the Extremely Large Telescope). the new giant telescope needed by the middle of the next decade. The ELT will be the largest optical/near-infrared telescope in the world: the world’s biggest eye on the sky.
+	  - In the future, Paranal will also host and operate the Cherenkov Telescope Array (CTA) South, the world’s largest and most sensitive gamma-ray observatory.
+
+Org finished at Mon Mar 21 18:16:57

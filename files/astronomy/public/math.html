@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-18 Fri 16:09 -->
+<!-- 2022-03-21 Mon 17:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mathamatical Tools</title>
@@ -193,7 +193,7 @@
 </style>
 <link rel="stylesheet" href="css/org.css" type="text/css" />
 <link rel="stylesheet" href="css/custom.css" type="text/css" />
-<style> #myBtn {display: none; position: fixed; bottom: 30px; right: 40px; z-index: 99; font-size: 20px; border: none; outline: none; background-color: lightgrey; color: white; cursor: pointer; padding: 13px; padding-top: 5px; padding-bottom: 10px; border-radius: 4px;} #myBtn:hover {background-color: #555;} </style>
+<link rel='stylesheet' href='https://www.astro.umd.edu/~chongchong/html_styles/common/toc-left.css' type='text/css' />
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -247,39 +247,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8c467bc">1. Statistics</a>
+<li><a href="#orgde1fb0a">1. Statistics</a>
 <ul>
-<li><a href="#org405afc9">1.1. Basic probability and statistics</a>
+<li><a href="#org510ac28">1.1. Basic probability and statistics</a>
 <ul>
-<li><a href="#org0505060">1.1.1. Central limit theorem</a></li>
+<li><a href="#org59280f2">1.1.1. Central limit theorem</a></li>
 </ul>
 </li>
-<li><a href="#orgfdde5f2">1.2. Bayesian Statistics</a>
+<li><a href="#org5173a80">1.2. Bayesian Statistics</a>
 <ul>
-<li><a href="#orgffcd678">1.2.1. Bayes' Theorem</a></li>
-<li><a href="#org06e2233">1.2.2. Parameter Estimation, Discrete Distributions</a></li>
-<li><a href="#orgd549dfa">1.2.3. Parameter Estimation, Continuous Distributions</a></li>
-<li><a href="#org2724053">1.2.4. Nuisance Parameters: Marginalization</a></li>
-<li><a href="#org1cbe8ce">1.2.5. Model Comparison</a></li>
-<li><a href="#org61e8e59">1.2.6. Example: Fitting a Straight Line to Data</a></li>
+<li><a href="#org69ce9d7">1.2.1. Bayes' Theorem</a></li>
+<li><a href="#org24adfe8">1.2.2. Parameter Estimation, Discrete Distributions</a></li>
+<li><a href="#org987fdb8">1.2.3. Parameter Estimation, Continuous Distributions</a></li>
+<li><a href="#orgdc62c10">1.2.4. Nuisance Parameters: Marginalization</a></li>
+<li><a href="#org9e02904">1.2.5. Model Comparison</a></li>
+<li><a href="#org20ea155">1.2.6. Example: Fitting a Straight Line to Data</a></li>
 </ul>
 </li>
-<li><a href="#org9add831">1.3. Two-point Correlation Function</a>
+<li><a href="#orgfe96eee">1.3. Two-point Correlation Function</a>
 <ul>
-<li><a href="#orgde630e1">1.3.1. Definition</a></li>
-<li><a href="#orgf963cd2">1.3.2. Estimators</a></li>
-<li><a href="#org34cce7b">1.3.3. Analytical Calculation of the Random Field</a></li>
+<li><a href="#org8e76daa">1.3.1. Definition</a></li>
+<li><a href="#org552221d">1.3.2. Estimators</a></li>
+<li><a href="#org9243e9a">1.3.3. Analytical Calculation of the Random Field</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgabd3e0e">2. Fourier Transforms</a>
+<li><a href="#org0ab5603">2. Fourier Transforms</a>
 <ul>
 <li>
 <ul>
 <li>
 <ul>
-<li><a href="#orge33d6cf">2.0.0.1. Power spectrum</a></li>
+<li><a href="#orged76b2a">2.0.0.1. Power spectrum</a></li>
 </ul>
 </li>
 </ul>
@@ -294,7 +294,7 @@
 </ul>
 </div>
 </nav>
-<div class="HTML" id="org626f749">
+<div class="HTML" id="orgaa36069">
 <p>
 \(
 	  \newcommand{\dif}{\,\mathrm{d}}
@@ -307,16 +307,16 @@
 
 </div>
 
-<div id="outline-container-org8c467bc" class="outline-2">
-<h2 id="org8c467bc"><span class="section-number-2">1</span> Statistics</h2>
+<div id="outline-container-orgde1fb0a" class="outline-2">
+<h2 id="orgde1fb0a"><span class="section-number-2">1</span> Statistics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org405afc9" class="outline-3">
-<h3 id="org405afc9"><span class="section-number-3">1.1</span> Basic probability and statistics</h3>
+<div id="outline-container-org510ac28" class="outline-3">
+<h3 id="org510ac28"><span class="section-number-3">1.1</span> Basic probability and statistics</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org0505060" class="outline-4">
-<h4 id="org0505060"><span class="section-number-4">1.1.1</span> Central limit theorem</h4>
+<div id="outline-container-org59280f2" class="outline-4">
+<h4 id="org59280f2"><span class="section-number-4">1.1.1</span> Central limit theorem</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Using the following code, I showed that the number of head-up coins of 100 flipping followes the following distribution: N(50, sigma^2) and sigma = 5. I will work out the math.
@@ -337,8 +337,8 @@ mu, std = norm.fit(count)
 </div>
 
 
-<div id="outline-container-orgfdde5f2" class="outline-3">
-<h3 id="orgfdde5f2"><span class="section-number-3">1.2</span> Bayesian Statistics</h3>
+<div id="outline-container-org5173a80" class="outline-3">
+<h3 id="org5173a80"><span class="section-number-3">1.2</span> Bayesian Statistics</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Here I describe the very basics of Bayes inference with some examples.
@@ -349,8 +349,8 @@ to be a Bayesian in Python</a>, which introduces the Python MCMC package:
 </p>
 </div>
 
-<div id="outline-container-orgffcd678" class="outline-4">
-<h4 id="orgffcd678"><span class="section-number-4">1.2.1</span> Bayes' Theorem</h4>
+<div id="outline-container-org69ce9d7" class="outline-4">
+<h4 id="org69ce9d7"><span class="section-number-4">1.2.1</span> Bayes' Theorem</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 \[P(A|B) = \frac{P(B|A)P(A)}{P(B)},
@@ -375,8 +375,8 @@ probabilities must integrate to unity.</li>
 </div>
 </div>
 
-<div id="outline-container-org06e2233" class="outline-4">
-<h4 id="org06e2233"><span class="section-number-4">1.2.2</span> Parameter Estimation, Discrete Distributions</h4>
+<div id="outline-container-org24adfe8" class="outline-4">
+<h4 id="org24adfe8"><span class="section-number-4">1.2.2</span> Parameter Estimation, Discrete Distributions</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 First consider the discrete case. In a particular model, you expect
@@ -399,8 +399,8 @@ the model in bin \(i\), \(p_i\), is given by
 </div>
 </div>
 
-<div id="outline-container-orgd549dfa" class="outline-4">
-<h4 id="orgd549dfa"><span class="section-number-4">1.2.3</span> Parameter Estimation, Continuous Distributions</h4>
+<div id="outline-container-org987fdb8" class="outline-4">
+<h4 id="org987fdb8"><span class="section-number-4">1.2.3</span> Parameter Estimation, Continuous Distributions</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 The probability of a data is simplily the probability distribution
@@ -411,8 +411,8 @@ posterior probability \(\ln {\cal L} =
 </div>
 </div>
 
-<div id="outline-container-org2724053" class="outline-4">
-<h4 id="org2724053"><span class="section-number-4">1.2.4</span> Nuisance Parameters: Marginalization</h4>
+<div id="outline-container-orgdc62c10" class="outline-4">
+<h4 id="orgdc62c10"><span class="section-number-4">1.2.4</span> Nuisance Parameters: Marginalization</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 Given a posterio probability distribution \(P(a_1, a_2, \cdots, a_n)\),
@@ -427,8 +427,8 @@ parameters:
 </div>
 </div>
 
-<div id="outline-container-org1cbe8ce" class="outline-4">
-<h4 id="org1cbe8ce"><span class="section-number-4">1.2.5</span> Model Comparison</h4>
+<div id="outline-container-org9e02904" class="outline-4">
+<h4 id="org9e02904"><span class="section-number-4">1.2.5</span> Model Comparison</h4>
 <div class="outline-text-4" id="text-1-2-5">
 <p>
 "Bayes factor".
@@ -436,8 +436,8 @@ parameters:
 </div>
 </div>
 
-<div id="outline-container-org61e8e59" class="outline-4">
-<h4 id="org61e8e59"><span class="section-number-4">1.2.6</span> Example: Fitting a Straight Line to Data</h4>
+<div id="outline-container-org20ea155" class="outline-4">
+<h4 id="org20ea155"><span class="section-number-4">1.2.6</span> Example: Fitting a Straight Line to Data</h4>
 <div class="outline-text-4" id="text-1-2-6">
 <p>
 Assume a fitting to the data \[y = \beta_0 + \beta_1 \, x. \label{eq:y}\] If we assume that each data point departs from the staright line by an amount \(\epsilon_i\) which as a \(\mathcal{N}(0,\sigma^2)\) distribution, and \(\sigma\) is known, i.e.,
@@ -477,16 +477,16 @@ For data with uncertainties, \(\sigma\) may be replaced with \(\sigma_i\), the r
 </div>
 </div>
 
-<div id="outline-container-org9add831" class="outline-3">
-<h3 id="org9add831"><span class="section-number-3">1.3</span> Two-point Correlation Function</h3>
+<div id="outline-container-orgfe96eee" class="outline-3">
+<h3 id="orgfe96eee"><span class="section-number-3">1.3</span> Two-point Correlation Function</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 <a href="http://www.astro.lu.se/Education/utb/ASTM21/ASTM21-P1.pdf">This pdf document</a> (or <a href="file:///Users/chongchonghe/Academics/Books-more/Astrophysics/StarsStarClusters/ASTM21-P1.pdf">local</a>) introduces the theories of two-point correlation function with references. Python has a package to do pair counting.
 </p>
 </div>
 
-<div id="outline-container-orgde630e1" class="outline-4">
-<h4 id="orgde630e1"><span class="section-number-4">1.3.1</span> Definition</h4>
+<div id="outline-container-org8e76daa" class="outline-4">
+<h4 id="org8e76daa"><span class="section-number-4">1.3.1</span> Definition</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 In order to quantify the clustering of galaxies, one must survey the entire galaxy distribution, from voids to superclusters. The most commonly used quantitative measure of large scale structure is the galaxy two-point correlation function, which is the amplitude of galaxy clustering as a function of scale. The two-point correlation function, \(\xi(r)\), is defined as a measure of the excess probability above what is expected for an unclustered random Poisson distribution, of finding a galaxy in a volume element \(dV\) at a separation \(r\) from another galaxy,
@@ -498,8 +498,8 @@ In order to quantify the clustering of galaxies, one must survey the entire gala
 </div>
 </div>
 
-<div id="outline-container-orgf963cd2" class="outline-4">
-<h4 id="orgf963cd2"><span class="section-number-4">1.3.2</span> Estimators</h4>
+<div id="outline-container-org552221d" class="outline-4">
+<h4 id="org552221d"><span class="section-number-4">1.3.2</span> Estimators</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 The dataset (\(D\)) under investigation contains \(n\) points. The two-point correlation function is obtained by comparing the distribution of separations in \(D\) with that in a random set, called \(R\), which contains \(r\) points. In the interval \(x\) to \(x + \delta x\), count the number of pairs in \(D\) and \(R\) and denote them as \(N_D\) and \(N_R\), respectively. The 'natural' estimator of \(w(x)\) is
@@ -515,14 +515,14 @@ Landy &amp; Szalay suggested a much better estimate by using also the cross-corr
 </div>
 </div>
 
-<div id="outline-container-org34cce7b" class="outline-4">
-<h4 id="org34cce7b"><span class="section-number-4">1.3.3</span> Analytical Calculation of the Random Field</h4>
+<div id="outline-container-org9243e9a" class="outline-4">
+<h4 id="org9243e9a"><span class="section-number-4">1.3.3</span> Analytical Calculation of the Random Field</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
 I propose to use a general analytical expression to account for Input
 </p>
 
-<pre class="example" id="orgf7421a5">
+<pre class="example" id="org60d29eb">
 Integrate[x ArcCos[(x^2 + r^2 - R^2)/(2 x r)], x]
 </pre>
 
@@ -530,7 +530,7 @@ Integrate[x ArcCos[(x^2 + r^2 - R^2)/(2 x r)], x]
 Output
 </p>
 
-<pre class="example" id="orgb333985">
+<pre class="example" id="orgc05bda7">
 1/4 x (-r Sqrt[-((r^4 + (R^2 - x^2)^2 - 2 r^2 (R^2 + x^2))/(
      r^2 x^2))] + 2 x ArcCos[(r^2 - R^2 + x^2)/(2 r x)]) - (
 r R^2 x Sqrt[-((r^4 + (R^2 - x^2)^2 - 2 r^2 (R^2 + x^2))/(r^2 x^2))]
@@ -543,8 +543,8 @@ r R^2 x Sqrt[-((r^4 + (R^2 - x^2)^2 - 2 r^2 (R^2 + x^2))/(r^2 x^2))]
 </div>
 </div>
 
-<div id="outline-container-orgabd3e0e" class="outline-2">
-<h2 id="orgabd3e0e"><span class="section-number-2">2</span> Fourier Transforms</h2>
+<div id="outline-container-org0ab5603" class="outline-2">
+<h2 id="org0ab5603"><span class="section-number-2">2</span> Fourier Transforms</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Define the Fourier transformation \[\label{eq:fourier1}
@@ -576,8 +576,8 @@ I list the Fourier Transforms of some of the commonly used functions in
 </p>
 </div>
 
-<div id="outline-container-orge33d6cf" class="outline-5">
-<h5 id="orge33d6cf"><span class="section-number-5">2.0.0.1</span> Power spectrum</h5>
+<div id="outline-container-orged76b2a" class="outline-5">
+<h5 id="orged76b2a"><span class="section-number-5">2.0.0.1</span> Power spectrum</h5>
 <div class="outline-text-5" id="text-2-0-0-1">
 <p>
 \(S(\nu) = \Phi(\nu) \Phi^{*}(\nu) = \left| \Phi(\nu) \right|^2\) is
@@ -666,7 +666,7 @@ with its derivative having a height of \(a k\) and FWHM of \(2/k\).
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-18</p>
+<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-21</p>
 </div>
 </body>
 </html>

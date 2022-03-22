@@ -1,15 +1,16 @@
-#+TITLE: Home
-* [[file:cheatsheet.org][*Astrophysics Cheat Sheet*]]
-* [[file:dynamics.org][Dynamics]]
-* [[file:ISM.org][ISM]]
-* [[file:math.org][Mathamatical Tools]]
-* [[file:my.org][My own research]]
-* [[file:stars.org][Stars]]
-* [[file:cosmology.org][cosmology]]
-* [[file:galaxy.org][galaxy]]
-* [[file:hydro-and-code.org][hydro-and-code]]
-* [[file:obervation.org][obervation]]
-* [[file:solarsystem.org][solarsystem]]
-* [[file:terms.org][terms]]
-* [[file:tutorial.org][tutorial]]
+#+TITLE: Index
+#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='https://gongzhitaao.org/orgcss/org.css'/>
+#+options: toc:nil
+* [[file:Cheatsheet.org][*Astrophysics Cheat Sheet*]]
+* [[file:Cosmology.org][Cosmology]]
+* [[file:Dynamics.org][Dynamics]]
+* [[file:Galaxy.org][Galaxy]]
+* [[file:Math.org][Mathamatical Tools]]
+* [[file:My.org][My own research]]
+* [[file:Obervation.org][Obervation]]
+* [[file:People and institutions.org][People and institutions]]
+* [[file:Solarsystem.org][Solarsystem]]
+* [[file:Stars.org][Stars]]
+* [[file:Terms.org][Terms]]
+* [[file:Tutorial.org][Tutorial]]
 

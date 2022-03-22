@@ -1,6 +1,6 @@
 #+SETUPFILE: ../style/default.setup
 #+INCLUDE: ../style/latex.setup
-#+TITLE: ISM
+#+TITLE: ISM and Hydrodynamics
 
 * H II Region
    :PROPERTIES:
@@ -223,3 +223,146 @@ TODO: plot cooling function in RAMSES, find
 
 bibliographystyle:plain
 bibliography:~/folders/BIB_HE.bib
+
+* Hydrodynamics
+
+** Hydrodynamic equations
+
+My notes: "Notability::Research:Topics:19. Fluid dynamics"
+
+*Summary*
+We introduce a /material derivative/ $D/Dt = \partial/\partial t + \mathbf{v} \cdot \nabla$. It is the derivative following the gas flow, defined as $D Q / Dt = \frac{Q(t+\delta t, {\bf x} + {\bf v}\delta t) - Q(t, {\bf x})}{\delta t}$. Then, the /Euler equations of fluid/ is easily represented as
+\begin{align}
+\frac{D \rho}{D t} &= - \rho \nabla \cdot {\bf v} \\
+\frac{D {\bf v}}{D t} &= - \frac{\nabla p}{\rho} + {\bf g} \\
+\frac{D e}{D t} &= - \frac{\nabla \cdot (p {\bf v})}{\rho}
+\end{align}
+The first equation, the equation of continuity, can be derived by inspecting a volume of fluid, in which the outflow rate equals the change in mass, and we obtain $\partial \rho / \partial t + \nabla \cdot (\rho {\bf v}) = 0$. The conversion between the two different form can be acheived by using the expansion of $\nabla \cdot (\rho {\bf v})$. 
+
+** Time Scales
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:time
+   :END:
+
+*** Free fall time
+    :PROPERTIES:
+    :CUSTOM_ID: free-fall-time
+    :END:
+
+Assume mean molecular weight $\mu = 1.4$, the global free-fall time of a
+cloud with particle number density $n$ is given by $$\label{eq:ff}
+t_{{\rm ff}} = \sqrt{\frac{3\pi}{32G\rho_{0}}} \approx 1.376~{\rm Myr}
+\cdot \left(\frac{n}{10^3 \si{cm^{-3}}}\right)^{-1/2}$$
+
+*** Sound speed
+    :PROPERTIES:
+    :CUSTOM_ID: sound-speed
+    :END:
+The /sound speed/ is given by
+$$
+c_{s}=\sqrt{\frac{\gamma p_{0}}{\rho_{0}}}
+= \sqrt{\frac{\gamma kT}{\mu m_{H}}}
+$$
+The /isothermal sound speed/ is therefore
+$$
+c_s = \sqrt{\frac{kT}{\mu m_{H}}} = 0.29\,\si{km/s} \; \left( \frac{T_1}{\mu} \right)^{1/2} = 9.1\,\si{km/s} \; \left( \frac{T_4}{\mu} \right)^{1/2} 
+$$
+where $\mu$ is the mean particle weight. Note that for ionized hydrogen, $\mu = 0.5$ and $c_s = 13\,\si{km/s}$ at $10^4$ K.
+
+*** Alfven wave
+    :PROPERTIES:
+    :CUSTOM_ID: alfven-wave
+    :END:
+
+/(Need to learn)/ The Alfven velocity is given by
+$v_{{\rm A}}=B_{0}/\sqrt{4\pi\rho_{0}}$ (in cgs). Therefore, the Alfven
+wave crossing time is
+$t_{{\rm act}}=L/v_{{\rm A}}=L\sqrt{4\pi\rho_{0}}/B_{0}$.
+
+In He et al. (2019), and , therefore $v_A / \sigma$ = 0.2, where
+$\sigma$ is the turbulence velocity dispersion.
+
+*** Velocity dispersion
+    :PROPERTIES:
+    :CUSTOM_ID: velocity-dispersion
+    :END:
+
+** Jeans Mass
+   :PROPERTIES:
+   :CUSTOM_ID: jeans-mass
+   :END:
+
+$$M_{\rm J} \equiv \frac{4\pi}{3}\lambda_{\rm J}^3 \rho
+  \approx 20 \msun \cdot \left( \frac{T}{10 {\rm K}}
+  \right)^{3/2} \left( \frac{n}{100\,{\rm cm}^{-3}} \right) ^{-1/2}$$
+
+
+** Bondi Accretion
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:bondi
+   :END:
+
+**** Hoyle and Lyttleton accretion
+     :PROPERTIES:
+     :CUSTOM_ID: hoyle-and-lyttleton-accretion
+     :END:
+
+A star moving through gas cloud. Assuming a ballistic orbit for accreted
+particles, we get a impact factor $$\label{eq:1}
+\zeta_{HL} = \frac{2GM}{v_{\infty}^2}.$$ and accretion rate (mass flux)
+$$\label{eq:1}
+\dot{M}_{HL} = \pi \zeta_{HL}^2 v_{\infty} \rho_{\infty} = \frac{4\pi G^2M^2\rho_{\infty}}{v_{\infty}^3}.$$
+
+**** Bondi Accretion
+     :PROPERTIES:
+     :CUSTOM_ID: bondi-accretion
+     :END:
+
+A Bondi radius may be defined as $$r_B = \frac{GM}{c_{s}^2(r_B)}$$ Flow
+outside is subsonic and the density is almost uniform. This ends up with
+a Bondi accretion rate
+$$\dot{M}_B = 4 \pi r_B^2 c_s \rho_{\infty} = \frac{4\pi
+    G^{2}M^{2}\rho_{\infty}}{c_s^{3}}$$ And interpolation formula would
+be $$\label{eq:bondi}
+\dot{M}_B = 4 \pi r_B^2 c_s \rho_{\infty} = \frac{4\pi
+  G^{2}M^{2}\rho_{\infty}}{(c_\infty^2 + v_{\infty}^2)^{3/2} }.$$
+
+** Other topics
+   :PROPERTIES:
+   :CUSTOM_ID: subsec:other
+   :END:
+
+*** Viscosity
+
+*Definition of viscosity*: The fource $F$ acting on the top plate of a fluid is proportional to the gradient of the speed $u$ and the area $A$ of the plate:
+$$
+F = \mu A \frac{\partial u}{\partial y},
+$$
+$\mu$ is the /dynamic viscosity/ of the fluid, with units of Pa s (pascal-second). The /kinematic viscosity/ is defined as the ratio fo the viscosity $\mu$ to the fluid density:
+$$
+\nu = \frac{\mu}{\rho},
+$$
+with the dimension of $L^2/T$. 
+
+*** Reynolds Number
+     :PROPERTIES:
+     :CUSTOM_ID: reynolds-number
+     :END:
+
+$\mathcal{R}=LV/\nu$, where $L$ is the typical length of the object, $V$ is the typical fluid velocity, and $\nu$ is the viscosity of the fluid. Imagine two different fluid flows around two geometrically similar objects. If these two systems have the same Reynolds number, then the flow patterns should be similar. This is called the law of similarity (Reynolds 1883). Systems with low Reynolds number are dominated by viscosity.
+
+There is also the /magnetic Reynolds number/ where the vescosity is replaced with the magnetic diffusivity $\lambda = c^2 / 4 \pi \sigma$. See Sec. 14.2 of of Choudhuri (1998). 
+
+* MHD
+
+** MHD
+
+Within the confines of the magnnetohydrodynamics of a single-component condducting fluid, the material effects of electromagnetic fields enter as two terms:
+#+begin_quote
+Lorentz force per unit volume: ${\bf j} \times {\bf B} / c = (\nabla \times {\bf B}) \times {\bf B} / 4\pi$.\\
+Heat production per volume by Ohmic dissipation: $j^2 / \sigma = \eta | \nabla \times {\bf B} |^2 / 4\pi$  
+#+end_quote
+
+Therefore, the equation of continuity is not changed; the equation of motion has to change by adding a magnetic body force, ${\bf j} \times {\bf B} / \rho c$, where ${\bf j} = (c/4\pi) \nabla \times {\bf B}$  is the electric current density. The energy equation has to add an /Ohmic heating/ term, ${\bf j}^2 / \sigma$ 
+
+Reference: Sec. 14.1 of Choudhuri (1998); page 302 of Shu, F. "Gas Dynamics".

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-19 Sat 18:52 -->
+<!-- 2022-03-21 Mon 17:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -245,9 +245,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde9da69">1. Hydrodynamics</a>
+<li><a href="#org57db164">1. Hydrodynamics</a>
 <ul>
-<li><a href="#org463b95c">1.1. Hydrodynamic equations</a></li>
+<li><a href="#org938d0a0">1.1. Hydrodynamic equations</a></li>
 <li><a href="#subsec:time">1.2. Time Scales</a>
 <ul>
 <li><a href="#free-fall-time">1.2.1. Free fall time</a></li>
@@ -269,15 +269,15 @@
 </li>
 <li><a href="#subsec:other">1.5. Other topics</a>
 <ul>
-<li><a href="#org27cc741">1.5.1. Viscosity</a></li>
+<li><a href="#org5d848c8">1.5.1. Viscosity</a></li>
 <li><a href="#reynolds-number">1.5.2. Reynolds Number</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgfc1a994">2. MHD</a>
+<li><a href="#orgaaf7045">2. MHD</a>
 <ul>
-<li><a href="#orgf399416">2.1. MHD</a></li>
+<li><a href="#org0a81f13">2.1. MHD</a></li>
 </ul>
 </li>
 <li><a href="#hydrodynamic Al-simulations">3. Codes</a>
@@ -290,19 +290,19 @@
 <li><a href="#m1-closure">3.2.3. M1 closure</a></li>
 <li><a href="#cooling-function">3.2.4. Cooling Function</a>
 <ul>
-<li><a href="#org7d1c93d">3.2.4.1. Thermal update</a></li>
-<li><a href="#orgf916a2a">3.2.4.2. In code</a></li>
-<li><a href="#org0b9f949">3.2.4.3. Other notes</a></li>
+<li><a href="#orgd6c44c3">3.2.4.1. Thermal update</a></li>
+<li><a href="#org3814d9e">3.2.4.2. In code</a></li>
+<li><a href="#org9f29f59">3.2.4.3. Other notes</a></li>
 </ul>
 </li>
-<li><a href="#org81a23e0">3.2.5. Sink particles</a></li>
+<li><a href="#org541df6d">3.2.5. Sink particles</a></li>
 </ul>
 </li>
 <li><a href="#n-body">3.3. N-body</a></li>
 <li><a href="#hydro">3.4. Hydro Codes</a>
 <ul>
-<li><a href="#org8be1550">3.4.1. Fire</a></li>
-<li><a href="#org81e3339">3.4.2. </a></li>
+<li><a href="#org9659241">3.4.1. Fire</a></li>
+<li><a href="#orgdcc6ea5">3.4.2. </a></li>
 </ul>
 </li>
 <li><a href="#observations">3.5. Mock Observations</a>
@@ -313,16 +313,16 @@
 </li>
 </ul>
 </li>
-<li><a href="#org1e0cc60">4. Simulation Projects</a>
+<li><a href="#orgcfea9e4">4. Simulation Projects</a>
 <ul>
-<li><a href="#orgfbd8154">4.1. FIRE: Feedback In Realistic Environments</a></li>
-<li><a href="#orgcda23b6">4.2. DRAGON</a></li>
+<li><a href="#org0f939b0">4.1. FIRE: Feedback In Realistic Environments</a></li>
+<li><a href="#orgfc83b1c">4.2. DRAGON</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div class="HTML" id="org38365af">
+<div class="HTML" id="orgb23411f">
 <p>
 \(
 	  \newcommand{\dif}{\,\mathrm{d}}
@@ -335,12 +335,12 @@
 
 </div>
 
-<div id="outline-container-orgde9da69" class="outline-2">
-<h2 id="orgde9da69"><span class="section-number-2">1</span> Hydrodynamics</h2>
+<div id="outline-container-org57db164" class="outline-2">
+<h2 id="org57db164"><span class="section-number-2">1</span> Hydrodynamics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org463b95c" class="outline-3">
-<h3 id="org463b95c"><span class="section-number-3">1.1</span> Hydrodynamic equations</h3>
+<div id="outline-container-org938d0a0" class="outline-3">
+<h3 id="org938d0a0"><span class="section-number-3">1.1</span> Hydrodynamic equations</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 My notes: "Notability::Research:Topics:19. Fluid dynamics"
@@ -472,8 +472,8 @@ be \[\label{eq:bondi}
 <div class="outline-text-3" id="text-subsec:other">
 </div>
 
-<div id="outline-container-org27cc741" class="outline-4">
-<h4 id="org27cc741"><span class="section-number-4">1.5.1</span> Viscosity</h4>
+<div id="outline-container-org5d848c8" class="outline-4">
+<h4 id="org5d848c8"><span class="section-number-4">1.5.1</span> Viscosity</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 <b>Definition of viscosity</b>: The fource \(F\) acting on the top plate of a fluid is proportional to the gradient of the speed \(u\) and the area \(A\) of the plate:
@@ -504,12 +504,12 @@ There is also the <i>magnetic Reynolds number</i> where the vescosity is replace
 </div>
 </div>
 
-<div id="outline-container-orgfc1a994" class="outline-2">
-<h2 id="orgfc1a994"><span class="section-number-2">2</span> MHD</h2>
+<div id="outline-container-orgaaf7045" class="outline-2">
+<h2 id="orgaaf7045"><span class="section-number-2">2</span> MHD</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgf399416" class="outline-3">
-<h3 id="orgf399416"><span class="section-number-3">2.1</span> MHD</h3>
+<div id="outline-container-org0a81f13" class="outline-3">
+<h3 id="org0a81f13"><span class="section-number-3">2.1</span> MHD</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Within the confines of the magnnetohydrodynamics of a single-component condducting fluid, the material effects of electromagnetic fields enter as two terms:
@@ -680,8 +680,8 @@ TODO: make a curve of the cooling funciton
 </p>
 </div>
 
-<div id="outline-container-org7d1c93d" class="outline-5">
-<h5 id="org7d1c93d"><span class="section-number-5">3.2.4.1</span> Thermal update</h5>
+<div id="outline-container-orgd6c44c3" class="outline-5">
+<h5 id="orgd6c44c3"><span class="section-number-5">3.2.4.1</span> Thermal update</h5>
 <div class="outline-text-5" id="text-3-2-4-1">
 <p>
 \[
@@ -704,8 +704,8 @@ The various cooling processes are collisional ionizations/excitations, recombina
 </div>
 </div>
 
-<div id="outline-container-orgf916a2a" class="outline-5">
-<h5 id="orgf916a2a"><span class="section-number-5">3.2.4.2</span> In code</h5>
+<div id="outline-container-org3814d9e" class="outline-5">
+<h5 id="org3814d9e"><span class="section-number-5">3.2.4.2</span> In code</h5>
 <div class="outline-text-5" id="text-3-2-4-2">
 <p>
 <code>ramses/patch/frig/main/cooling_module_frig.f90</code>:
@@ -717,8 +717,8 @@ The various cooling processes are collisional ionizations/excitations, recombina
 </div>
 </div>
 
-<div id="outline-container-org0b9f949" class="outline-5">
-<h5 id="org0b9f949"><span class="section-number-5">3.2.4.3</span> Other notes</h5>
+<div id="outline-container-org9f29f59" class="outline-5">
+<h5 id="org9f29f59"><span class="section-number-5">3.2.4.3</span> Other notes</h5>
 <div class="outline-text-5" id="text-3-2-4-3">
 <p>
 Mean particle mass, \(\mu\), is correctly calculated by the function <code>getMu</code> in main/rt_cooling_module.f90:
@@ -734,8 +734,8 @@ Note that in the most basic H and He senario, we have \(1/\mu = X/1 + Y/4\).
 </div>
 </div>
 
-<div id="outline-container-org81a23e0" class="outline-4">
-<h4 id="org81a23e0"><span class="section-number-4">3.2.5</span> Sink particles</h4>
+<div id="outline-container-org541df6d" class="outline-4">
+<h4 id="org541df6d"><span class="section-number-4">3.2.5</span> Sink particles</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <ul class="org-ul">
 <li>IR feedback from accretion: exists in current version. Use <code>ir_feedback</code> under <span class="underline">Feedback parameters</span>.</li>
@@ -758,8 +758,8 @@ The density field is computed using the 'Cloud-In-Cell' (CIC) interpolation sche
 <div class="outline-text-3" id="text-hydro">
 </div>
 
-<div id="outline-container-org8be1550" class="outline-4">
-<h4 id="org8be1550"><span class="section-number-4">3.4.1</span> Fire</h4>
+<div id="outline-container-org9659241" class="outline-4">
+<h4 id="org9659241"><span class="section-number-4">3.4.1</span> Fire</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 The FIRE simulations use the P-SPH code, a heavily modified version of Volker Springel’s Gadget 3 code whose development is led by Phil Hopkins. In addition to the explicit ISM and stellar feedback physics, P-SPH uses apressure-entropy implementation of smooth particle hydrodynamics (SPH) that resolves all the main historical discrepancies between grid-based and SPH methods, particularly for fluid mixing instabilities.
@@ -767,8 +767,8 @@ The FIRE simulations use the P-SPH code, a heavily modified version of Volker Sp
 </div>
 </div>
 
-<div id="outline-container-org81e3339" class="outline-4">
-<h4 id="org81e3339"><span class="section-number-4">3.4.2</span> </h4>
+<div id="outline-container-orgdcc6ea5" class="outline-4">
+<h4 id="orgdcc6ea5"><span class="section-number-4">3.4.2</span> </h4>
 </div>
 </div>
 
@@ -826,12 +826,12 @@ SDSS Filters on astroML:
 </div>
 </div>
 
-<div id="outline-container-org1e0cc60" class="outline-2">
-<h2 id="org1e0cc60"><span class="section-number-2">4</span> Simulation Projects</h2>
+<div id="outline-container-orgcfea9e4" class="outline-2">
+<h2 id="orgcfea9e4"><span class="section-number-2">4</span> Simulation Projects</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgfbd8154" class="outline-3">
-<h3 id="orgfbd8154"><span class="section-number-3">4.1</span> FIRE: Feedback In Realistic Environments</h3>
+<div id="outline-container-org0f939b0" class="outline-3">
+<h3 id="org0f939b0"><span class="section-number-3">4.1</span> FIRE: Feedback In Realistic Environments</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href="https://fire.northwestern.edu/">https://fire.northwestern.edu/</a>
@@ -839,13 +839,13 @@ SDSS Filters on astroML:
 </div>
 </div>
 
-<div id="outline-container-orgcda23b6" class="outline-3">
-<h3 id="orgcda23b6"><span class="section-number-3">4.2</span> DRAGON</h3>
+<div id="outline-container-orgfc83b1c" class="outline-3">
+<h3 id="orgfc83b1c"><span class="section-number-3">4.2</span> DRAGON</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-19</p>
+<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-03-21</p>
 </div>
 </body>
 </html>
