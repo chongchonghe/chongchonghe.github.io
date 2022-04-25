@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-20 Wed 19:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7eeb542">1. The Properties of Stars</a>
+<ul>
+<li><a href="#subsec:startype">1.1. Stellar Spectra Classification</a>
+<ul>
+<li><a href="#the-hertzsprung-russell-diagram">1.1.1. The Hertzsprung-Russell Diagram</a></li>
+<li><a href="#orgb90099f">1.1.2. Stellar spectrum types</a></li>
+<li><a href="#morgan-keenan-luminosity-classes">1.1.3. Morgan-Keenan Luminosity Classes</a></li>
+</ul>
+</li>
+<li><a href="#wolf-rayet-stars">1.2. Wolf-Rayet stars</a></li>
+<li><a href="#energy-production-in-stars">1.3. Energy production in stars</a></li>
+</ul>
+</li>
+<li><a href="#org8a6487e">2. Star Formation</a>
+<ul>
+<li><a href="#org14cff90">2.1. Star Formation: Observations</a></li>
+<li><a href="#star-formation-theories">2.2. Star Formation: Theories</a>
+<ul>
+<li><a href="#intro">2.2.1. Intro</a></li>
+<li><a href="#time-scales">2.2.2. Time Scales</a></li>
+<li><a href="#orgdfb699a">2.2.3. Instability</a></li>
+<li><a href="#dynamics">2.2.4. Dynamics</a></li>
+<li><a href="#subsec:imf">2.2.5. IMF</a></li>
+<li><a href="#org5158ef9">2.2.6. Virial Theorem</a></li>
+<li><a href="#pop-iii-star-formation">2.2.7. Pop III star formation</a></li>
+<li><a href="#orgb63eed8">2.2.8. Magnetic fields</a></li>
+</ul>
+</li>
+<li><a href="#stellar-feedbacks">2.3. Stellar Feedbacks</a>
+<ul>
+<li><a href="#protostellar-outflows">2.3.1. Protostellar outflows</a></li>
+<li><a href="#sec:wind">2.3.2. Stellar Wind</a></li>
+<li><a href="#feedback-regulated-star-formation">2.3.3. Feedback-regulated Star Formation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org36a13c7">3. Stellar Evolution</a>
+<ul>
+<li><a href="#orge793c56">3.1. Young stellar object</a></li>
+<li><a href="#org731f330">3.2. Pre-main sequence</a>
+<ul>
+<li><a href="#orga870fde">3.2.1. T Tauri Star</a></li>
+</ul>
+</li>
+<li><a href="#the-fate-of-massive-stars">3.3. The Fate of Massive Stars</a>
+<ul>
+<li><a href="#gamma-ray-bursts-grbs">3.3.1. Gamma-ray bursts (GRBs)</a></li>
+</ul>
+</li>
+<li><a href="#org496b479">3.4. Supernova</a>
+<ul>
+<li><a href="#org2c26613">3.4.1. Type Ia SN</a></li>
+<li><a href="#orgc9fe150">3.4.2. Type II SN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org543edf8">4. Binary</a>
+<ul>
+<li><a href="#org0d4c59e">4.1. Primordial Binary and Binary Fraction</a></li>
+<li><a href="#orgb66dff9">4.2. Mass Transfer</a></li>
+</ul>
+</li>
+<li><a href="#org2a579dc">5. Compact objects</a>
+<ul>
+<li><a href="#org991f313">5.1. Neutron stars</a>
+<ul>
+<li><a href="#orgb5eeca5">5.1.1. Equation of state (EOS)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#spectra-lines">6. Spectra lines</a>
+<ul>
+<li>
+<ul>
+<li><a href="#lyman-alpha">6.0.1. Lyman-\(\alpha\)</a></li>
+<li><a href="#lyman-continuum">6.0.2. Lyman continuum</a></li>
+<li><a href="#cm">6.0.3. 21-cm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org335942b">7. Dynamics</a>
+<ul>
+<li><a href="#orgc837c5e">7.1. Concepts</a>
+<ul>
+<li><a href="#orgab92221">7.1.1. Terms</a></li>
+</ul>
+</li>
+<li><a href="#org4a90dc3">7.2. Star cluster dynamics</a>
+<ul>
+<li><a href="#orgeaf9a38">7.2.1. Core collapse</a></li>
+</ul>
+</li>
+<li><a href="#org23569bf">7.3. N-body</a></li>
+</ul>
+</li>
+<li><a href="#h-ii-region">8. H II Region</a>
+<ul>
+<li><a href="#sec:recomb">8.1. Radiative Recombination of Hydrogen</a></li>
+<li><a href="#ionization-time-scales">8.2. Ionization Time Scales</a></li>
+<li><a href="#ionization-fraction">8.3. Ionization Fraction</a></li>
+<li><a href="#i-front-dynamics">8.4. I-front Dynamics</a>
+<ul>
+<li><a href="#propagation-of-ionization-fronts">8.4.1. Propagation of ionization fronts</a></li>
+<li><a href="#expansion-of-h-ii-regions">8.4.2. Expansion of H II Regions</a></li>
+</ul>
+</li>
+<li><a href="#emission-and-absorption-by-the-ism">8.5. Emission and Absorption by the ISM</a>
+<ul>
+<li><a href="#emission-from-hii-regions">8.5.1. Emission from HII Regions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#dust">9. Dust</a>
+<ul>
+<li><a href="#metallicity">9.1. Metallicity</a></li>
+<li><a href="#org14d1474">9.2. Dust Extinction</a></li>
+<li><a href="#sputtering">9.3. Sputtering</a>
+<ul>
+<li><a href="#sputtering-in-hot-gas">9.3.1. Sputtering in Hot Gas</a></li>
+</ul>
+</li>
+<li><a href="#ramsesrt">9.4. RAMSES+RT</a></li>
+</ul>
+</li>
+<li><a href="#orgdd1fa80">10. Hydrodynamics</a>
+<ul>
+<li><a href="#org96d1a8a">10.1. Hydrodynamic equations</a></li>
+<li><a href="#subsec:time">10.2. Time Scales</a>
+<ul>
+<li><a href="#free-fall-time">10.2.1. Free fall time</a></li>
+<li><a href="#sound-speed">10.2.2. Sound speed</a></li>
+<li><a href="#alfven-wave">10.2.3. Alfven wave</a></li>
+<li><a href="#velocity-dispersion">10.2.4. Velocity dispersion</a></li>
+</ul>
+</li>
+<li><a href="#jeans-mass">10.3. Jeans Mass</a></li>
+<li><a href="#subsec:bondi">10.4. Bondi Accretion</a></li>
+<li><a href="#subsec:other">10.5. Other topics</a>
+<ul>
+<li><a href="#orgc78f494">10.5.1. Viscosity</a></li>
+<li><a href="#reynolds-number">10.5.2. Reynolds Number</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6d595e3">11. MHD</a>
+<ul>
+<li><a href="#org237d5c9">11.1. MHD</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="HTML" id="orgb625b05">
+<p>
+\(
+	  \newcommand{\dif}{\,\mathrm{d}}
+	  \newcommand{\sci}[2]{#1 \times 10^{#2}}
+	  \def\num#1{\numx#1}\def\numx#1e#2{{#1}\mathrm{e}{#2}}
+	  \newcommand{\msun}{{\rm M}_\odot}
+	  \newcommand{\si}[1]{{\rm #1}}
+\)
+</p>
+
+</div>
+
+<div id="outline-container-org7eeb542" class="outline-2">
+<h2 id="org7eeb542"><span class="section-number-2">1</span> The Properties of Stars</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-subsec:startype" class="outline-3">
+<h3 id="subsec:startype"><span class="section-number-3">1.1</span> Stellar Spectra Classification</h3>
+<div class="outline-text-3" id="text-subsec:startype">
+</div>
+
+<div id="outline-container-the-hertzsprung-russell-diagram" class="outline-4">
+<h4 id="the-hertzsprung-russell-diagram"><span class="section-number-4">1.1.1</span> The Hertzsprung-Russell Diagram</h4>
+<div class="outline-text-4" id="text-the-hertzsprung-russell-diagram">
+<p>
+Absolute magnitude plotted as a function of spectral type (or
+temperature, increasing to the left).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb90099f" class="outline-4">
+<h4 id="orgb90099f"><span class="section-number-4">1.1.2</span> Stellar spectrum types</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+The Harvard classification scheme of "O B A F G K M" (Oh Be A Fine Girl/Guy, Kiss Me) is a temperature sequence, running from the hottest blue O stars to the coolest red M stars. Stars nearer the beginning of this sequence are referred to as early-type star, and those closer to the end are called late-type stars. Subdivisions like a K0 star is referred as "early K star".
+</p>
+
+<p>
+A table of properties of stars of various spectral type
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">\(T_{\rm eff}\)</th>
+<th scope="col" class="org-left">\(L_{\rm LyC}\)</th>
+<th scope="col" class="org-right">\(L_{\rm PD}/L_{\rm LyC}\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">O3</td>
+<td class="org-right">44500</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">0.425292</td>
+</tr>
+
+<tr>
+<td class="org-left">O5</td>
+<td class="org-right">41000</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">O8</td>
+<td class="org-right">35000</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">0.649449</td>
+</tr>
+
+<tr>
+<td class="org-left">B0</td>
+<td class="org-right">30500</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">0.833039</td>
+</tr>
+
+<tr>
+<td class="org-left">B3</td>
+<td class="org-right">18750</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">2.14857</td>
+</tr>
+
+<tr>
+<td class="org-left">B6</td>
+<td class="org-right">14000</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">4.14736</td>
+</tr>
+
+<tr>
+<td class="org-left">B8</td>
+<td class="org-right">11600</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">6.71968</td>
+</tr>
+
+<tr>
+<td class="org-left">A0</td>
+<td class="org-right">9400</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Ref: Sparke2007 p.g. 23 and Mathmatica: blackbody.nb
+</p>
+</div>
+</div>
+
+<div id="outline-container-morgan-keenan-luminosity-classes" class="outline-4">
+<h4 id="morgan-keenan-luminosity-classes"><span class="section-number-4">1.1.3</span> Morgan-Keenan Luminosity Classes</h4>
+<div class="outline-text-4" id="text-morgan-keenan-luminosity-classes">
+<table id="org615e411" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Morgan-Keenan Luminosity Classes</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Class</th>
+<th scope="col" class="org-left">Type of Star</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Ia-O</td>
+<td class="org-left">Extreme, luminous supergiants</td>
+</tr>
+
+<tr>
+<td class="org-left">Ia</td>
+<td class="org-left">Luminous supergiants</td>
+</tr>
+
+<tr>
+<td class="org-left">Ib</td>
+<td class="org-left">Less luminous supergiants</td>
+</tr>
+
+<tr>
+<td class="org-left">II</td>
+<td class="org-left">Bright giants</td>
+</tr>
+
+<tr>
+<td class="org-left">III</td>
+<td class="org-left">Normal giants</td>
+</tr>
+
+<tr>
+<td class="org-left">IV</td>
+<td class="org-left">Subgiants</td>
+</tr>
+
+<tr>
+<td class="org-left">V</td>
+<td class="org-left">Main-sequence (dwarf) stars</td>
+</tr>
+
+<tr>
+<td class="org-left">VI, sd</td>
+<td class="org-left">Subdwarfs</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">White dwarfs</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+There are differences in the spectra of giant and main-sequence stars of the same spectral type. A luminosity class, designated by a Roman numeral, is appended to a star's Harvard spectral type. Table <a href="#org615e411">1</a> lists the luminosity classes.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-wolf-rayet-stars" class="outline-3">
+<h3 id="wolf-rayet-stars"><span class="section-number-3">1.2</span> Wolf-Rayet stars</h3>
+<div class="outline-text-3" id="text-wolf-rayet-stars">
+<blockquote>
+<p>
+Maeder2009, Sec 27.5
+</p>
+</blockquote>
+
+<p>
+WR stars are stars with unusual spectra showing prominent broad emission lines of ionised helium and highly ionised nitrogen or carbon. The spectra indicate very high surface enhancement of heavy elements, depletion of hydrogen, and strong stellar winds. They are "bare cores" left over from the peeling of massive stars by stellar winds.
+</p>
+
+<p>
+Properties:
+</p>
+
+<ul class="org-ul">
+<li>Masses: 8-25 Msun (up to 80 Msun)</li>
+<li>Luminosities: 10<sup>5</sup>-6.5 Lsun</li>
+<li>Eddington factor: ~0.7 to ~1.0</li>
+<li>Teff: 3e4 to 1.5e5 K.</li>
+<li>\(\dot{M}\): ~5e-6 to 1e-4 Msun/yr</li>
+<li>Lifetime: ~5e5 yr</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-energy-production-in-stars" class="outline-3">
+<h3 id="energy-production-in-stars"><span class="section-number-3">1.3</span> Energy production in stars</h3>
+<div class="outline-text-3" id="text-energy-production-in-stars">
+<p>
+The net reaction from which most stars gain their energy is: \(\rm 4{}^1H\rightarrow{}^4He+2e^++2\nu_{\rm e}+\gamma\).\\ This reaction produces 26.72 MeV. Two reaction chains are responsible for this reaction. The slowest, speed-limiting reaction is shown in boldface. The energy between brackets is the energy carried away by the neutrino.
+</p>
+
+<ol class="org-ol">
+<li>The proton-proton chain has two subchains:\\ \(\bf ^1H+p^+\rightarrow{}^2D+e^++\nu_{\bf e}\),  and then \(\rm ^2D+p\rightarrow{}^3He+\gamma\).</li>
+
+<li>The CNO cycle. <a href="https://astronomy.swin.edu.au/cosmos/c/cno+cycle#:~:text=The%20'CNO%20cycle'%20refers%20to,ray%2C%20producing%20nitrogen%2D13.">CNO cycle from COSMOS</a>. TODO: Check Ivan's slides. Finish 'The CNO cycle': connection to GC multiple population, excess and undercess of &#x2026; elements.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8a6487e" class="outline-2">
+<h2 id="org8a6487e"><span class="section-number-2">2</span> Star Formation</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org14cff90" class="outline-3">
+<h3 id="org14cff90"><span class="section-number-3">2.1</span> Star Formation: Observations</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<i>Molecular Tracers</i>.
+</p>
+<ul class="org-ul">
+<li><b>The problem with H\(_2\)</b>: The low mass of the hydrogen atom makes the exitation energy very high. This is because the level spacing of a quantum oscillator veries with reduced mass as \(m^{-1/2}\). In addition, H2 is homonuclear molecule, so the first level of rotational transition is forbidden, and the second level is 510 K above the ground state.</li>
+<li>Techniques:
+<ul class="org-ul">
+<li></li>
+</ul></li>
+<li>Telescopes: <b>Herschel</b> Space Observatory,</li>
+</ul>
+
+<p>
+<i>Infrared luminosity as a star formation rate tracer.</i> Underlying assumptions: most of the radiant output in the galaxy comes form young, recently formed stars, and (2) in a dusty galaxy most of the starlight will be absorbed by dust grains within the galaxy and then re-radiated in the infrared. This can be explored using the popular <b>stellar population synthesis</b> (SPS) package <b>Starburst99</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-star-formation-theories" class="outline-3">
+<h3 id="star-formation-theories"><span class="section-number-3">2.2</span> Star Formation: Theories</h3>
+<div class="outline-text-3" id="text-star-formation-theories">
+<p>
+TODO: add better Jeans mass, BE mass?
+</p>
+</div>
+
+<div id="outline-container-intro" class="outline-4">
+<h4 id="intro"><span class="section-number-4">2.2.1</span> Intro</h4>
+<div class="outline-text-4" id="text-intro">
+<p>
+Dense molecular clouds have most of the total mass of the interstellar
+gas and have key importance for star formation. CO is the major tracor
+of molecular gas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-time-scales" class="outline-4">
+<h4 id="time-scales"><span class="section-number-4">2.2.2</span> Time Scales</h4>
+<div class="outline-text-4" id="text-time-scales">
+</div>
+
+<ol class="org-ol">
+<li><a id="free-fall-time"></a>Free fall time<br />
+<div class="outline-text-5" id="text-free-fall-time">
+<p>
+\[\label{eq:ff}
+t_{{\rm ff}}=\left(\frac{3\pi}{32G\rho_{0}}\right)^{1/2} \approx 43.5
+\; n_0^{-1/2} \, {\rm Myr} \approx 1.38 \; n_3^{-1/2} \, {\rm Myr}\]
+where \(n\) is hydrogen number density, assuming a mean molecular weight \(\mu = 1.4\). (<a href="file:///Users/chongchonghe/Dropbox/Notability-more/science/Free-fall time.pdf">Derivation</a>.)
+</p>
+</div>
+</li>
+
+<li><a id="alfven-crossing-time"></a>Alfven crossing time<br />
+<div class="outline-text-5" id="text-alfven-crossing-time">
+<p>
+The Alfven velocity is given by \(v_{{\rm A}}=B_{0}/\sqrt{4\pi\rho_{0}}\)
+(in cgs). So, \(t_{{\rm act}}=L/v_{{\rm A}}=L\sqrt{4\pi\rho_{0}}/B_{0}\).
+</p>
+
+<p>
+In the simulations, and , therefore \(v_A / \sigma\) = 0.2, where \(\sigma\)
+is the turbulence velocity dispersion.
+</p>
+</div>
+</li>
+
+<li><a id="velocity-dispersion"></a>Velocity dispersion<br />
+<div class="outline-text-5" id="text-velocity-dispersion">
+\begin{align}
+v_{\rm vir} &= \sqrt{\frac{GM}{R}} = 6.6~{\rm km/s} \; \sqrt{\frac{M_4}{R_{\rm pc}}} \\
+R &= \frac{GM}{v^{2}} = 0.43~{\rm pc} \; \left( \frac{M}{10^{4} \msun} \right) \left( \frac{v}{10~{\rm km/s}} \right)^{-2}
+\end{align}
+</div>
+</li>
+
+<li><a id="orgf5d2c01"></a>Thermal timescale (Kelvin-Helmholz)<br />
+<div class="outline-text-5" id="text-2-2-2-4">
+<p>
+The Kelvin-Helmholz timescale is the time it would take a star to emit its entire reserve of thermal energy upon contracting, assuming a constant luminosity. It is the relevant timescale throughout the protostellar stages.
+\[
+\tau_{\rm th} \approx \frac{GM^2}{RL} \approx 30~{\rm Myr} \left( \frac{M}{M_{\odot}} \right)^2 \left( \frac{R_{\odot}}{R} \right) \left( \frac{L_{\odot}}{L} \right) \sim 30~{\rm Myr} \ \left( \frac{M}{M_{\odot}} \right)^{-2.4}
+\]
+An important fact is that in only 1/10 of the KH time, the star shrinks to 10 times of the MS radius, and 1/2 of the KH time to 2 times the MS radius. &#x2013; CCH
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgdfb699a" class="outline-4">
+<h4 id="orgdfb699a"><span class="section-number-4">2.2.3</span> Instability</h4>
+<div class="outline-text-4" id="text-2-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgd48c713"></a>Jeans Instability<br />
+<div class="outline-text-5" id="text-2-2-3-1">
+<p>
+<a id="org6a9a3f5"></a>
+</p>
+
+<p>
+We define the <b>Jeans length</b>
+\[\lambda_{\rm J} \equiv c_{\rm s} \sqrt{\frac{\pi}{G \bar\rho}} = 5.00\,{\rm pc} \; \mu^{-1} T_1^{1/2} n_2^{-1/2} = 172\,{\rm pc} \; \left ( \frac{c_{s}}{1\,\si{km/s}} \right ) \left( \frac{n}{1\,\si{cm^{-3}}} \right)^{-1/2}  \]
+</p>
+
+<p>
+and the Jeans mass <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+\[M_{\rm J} \equiv \frac{4\pi}{3} \left( \frac{\lambda_{\rm J}}{2}\right)^3 \bar\rho
+  = \frac{\pi^{5/2}}{6} \frac{c_{\rm s}^3}{(G^3 \bar\rho)^{1/2}}
+  = 52.6~\msun \; \left( \frac{c_s}{0.2~\si{km~s^{-1}}} \right)^3 \left( \mu~n_2 \right)^{-1/2}
+  = 160~\msun \, \mu^{-2} T_1^{3/2} n_2^{-1/2}
+  = 82~\msun \, T_1^{3/2} n_2^{-1/2} (\mu = 1.4),
+  \]
+where \(n\) is the <i>particle number density</i> and \(\mu\) is the <i>mean particle weight</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="font-weight: bold;">Bold</span> <span style="font-style: italic;">italic</span>
+\hat{H} \Psi = E \Psi
+</pre>
+</div>
+
+
+<p>
+The <b>Bonnor-Ebert mass</b> is an equivalent to the Jeans mass in an isothermal sphere in pressure equilibrium with its surrounding, which may be a more appropriate description for molecular clumps and cores. <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+\[\label{eq:MBE}
+  M_{\rm BE} = 1.182 \frac{c_s^3}{(G^3 \rho)^{1/2}} = 0.41 M_{\rm J}\]
+Krumholz's notes ("STAR FORMATION IN MOLECULAR CLOUDS", Problem Set 2) <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> has very nice and detailed derivation of the Bonnor-Ebert mass. The idea is that, given a surface pressure \(P_s\) and sound speed \(c_s\) there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, i.e. \(M_{\rm BE}\). This mass is calculated by solving the isothermal <b>Lane-Emden</b> equation and find that the total mass achieves maximum when \(\rho_c / \rho_s \approx 14.0\).
+</p>
+</div>
+</li>
+
+<li><a id="org0b034ee"></a>Toomre Instability<br />
+<div class="outline-text-5" id="text-2-2-3-2">
+<p>
+The Toomre \(Q\) parameter for a disk with Keplerian/flat rotation curve is
+</p>
+
+\begin{align*}
+Q&=\;\cfrac{\Omega c_s}{\pi G \Sigma} ,  \;\; &&{\rm Keplerian}\\
+  &=\;\cfrac{\sqrt{2} \Omega c_s}{\pi G \Sigma},\;\; &&{\rm flat} \\
+  &=\;\cfrac{2 \Omega c_s}{\pi G \Sigma},\;\; &&{\rm rigid}
+\end{align*}
+
+<p>
+assuming the non-thermal velocity dispersion in the disk is subsonic. The disk is unstable when \(Q < 1\). More generally, for a differentially rotating disk, \(k \Omega\) (\(k\) is the constant in front) should be replaced with the epicyclic frequence \(\kappa\).
+</p>
+
+<p>
+\[
+\kappa^2 = \frac{2\Omega}{R} \frac{d}{dR}(R^2 \Omega) =
+4 \Omega^2 + 2 \Omega^2 \frac{d \ln \Omega}{d \ln R}
+\]
+</p>
+
+<p>
+TODO: add physical insight
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-dynamics" class="outline-4">
+<h4 id="dynamics"><span class="section-number-4">2.2.4</span> Dynamics</h4>
+<div class="outline-text-4" id="text-dynamics">
+</div>
+
+<ol class="org-ol">
+<li><a id="virial-velocityescape-velocity"></a>Virial velocity/escape velocity<br />
+<div class="outline-text-5" id="text-virial-velocityescape-velocity">
+<p>
+\[\label{eq:vvir}
+  v_{\rm vir} = \sqrt{\frac{GM}{R}} = 6.6~\si{km.s^{-1}} \; \left(\frac{M}{10^4 \msun}\right)^{1/2} \left(\frac{R}{{\rm pc}}\right)^{-1/2} = 30~\si{km.s^{-1}} \; \left(\frac{M}{\msun}\right)^{1/2} \left(\frac{R}{{\rm AU}}\right)^{-1/2}
+  % \sqrt{\frac{M/10^4 M_\odot}{R/1\,{\rm pc}}}\] Our earth has a mean
+orbital velocity of 29 km/s.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-subsec:imf" class="outline-4">
+<h4 id="subsec:imf"><span class="section-number-4">2.2.5</span> IMF</h4>
+<div class="outline-text-4" id="text-subsec:imf">
+</div>
+
+<ol class="org-ol">
+<li><a id="salpeter-imf"></a>Salpeter IMF<br />
+<div class="outline-text-5" id="text-salpeter-imf">
+<p>
+\[\phi_{\rm Salpeter}(m) \propto m^{-2.35},\] with the normalization
+factor \(A = 1 / 22.4113\).
+</p>
+
+<p>
+In log scale, the IMF curve is represented by
+\[\Phi_{\rm Salpeter}(m) := \frac{dN}{d\log m} = \ln 10 \;m \frac{\dif N}{\dif m}\]
+and Salpeter IMF becomes
+\[\log \Phi_{\rm Salpeter}(m) = -1.35 \log m + \log (A\ln10).\]
+</p>
+</div>
+</li>
+
+<li><a id="kroupa-imf"></a>Kroupa IMF<br />
+<div class="outline-text-5" id="text-kroupa-imf">
+<p>
+The general form of a two-piece IMF could be written as
+\[% \phi_{\rm Kroupa}(m) \propto
+\phi(m) \propto
+\begin{cases}
+m^{-\alpha_1} \; &(m < m_1) \\
+k \, m^{-\alpha_2} \; &(m > m_1)
+\end{cases}\] The two-piece Kroupa single-star IMF has a lower cutoff at
+\(0.08
+M_\odot\) and \(\alpha_1 = 1.3\), \(\alpha_2 = 2.3\), \(k = 0.5\),
+\(m_1 = 0.5M_{\odot}\) (Kroupa 2002, see also \cite{Maschberger:2013}.)
+</p>
+
+<p>
+To ramdom sample Kroupa IMF, we find the Cumulative Distribution
+Function (CDF): \[\begin{aligned}
+\label{eq:2}
+  {\rm CDF}(m) \equiv & \int_a^m \phi(m) \dif m \\
+  =&
+\begin{cases}
+  \cfrac{b^{\beta_{1}} - a^{\beta_1}}{\beta_1} \; &(a < m < m_1) \\
+  k \cfrac{b^{\beta_{2}} - a^{\beta_2}}{\beta_2} \; &(m_1 < a < m) \\
+  \cfrac{m_1^{\beta_{1}} - a^{\beta_1}}{\beta_1} +
+  k \cfrac{b^{\beta_{2}} - m_1^{\beta_2}}{\beta_2} \; &(a < m_1 < m).
+\end{cases}\end{aligned}\] where \(\beta_1 = 1 - \alpha_1\). With a random
+number from 0 to 1, by solving \({\rm CDF}(m) / {\rm
+  CDF}(b) = x\) for \(m\), one gets a randomly generated mass from the
+above distribution function.
+</p>
+
+<p>
+In log scale, the Kroupa IMF becomes \[\frac{dN}{d\log{m}} =
+  \begin{cases}
+    A \cdot \log 10 \, x^{-0.3} & (0.08M_\odot < m < 0.5M_\odot)\\
+    A \cdot 0.5 \log 10 \, x^{-1.3} & (0.5M_\odot < m < 100M_\odot)
+  \end{cases}\]
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org5158ef9" class="outline-4">
+<h4 id="org5158ef9"><span class="section-number-4">2.2.6</span> Virial Theorem</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<p>
+Virial theorem when there is no gas crossing the cloud surce and if the magnetic field at the surface to be a uniform value \(B_0\),
+</p>
+
+<p>
+\[
+\frac{1}{2} \ddot I = 2({\cal T} - {\cal T_S}) + {\cal B} + {\cal W},
+\]
+</p>
+
+<p>
+with
+\[
+B = \frac{1}{8\pi} \int_V (B^2 - B_0^2) dV.
+\]
+</p>
+
+<p>
+The virial theorem with B field, \({\cal W} + {\cal B} = 0\), is equivalent to the solution to hydrostatic equilibrium. See my derivation <a href="file:///Users/chongchonghe/Dropbox/Notability2/Container/Virial theorem with B field.pdf">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-pop-iii-star-formation" class="outline-4">
+<h4 id="pop-iii-star-formation"><span class="section-number-4">2.2.7</span> Pop III star formation</h4>
+<div class="outline-text-4" id="text-pop-iii-star-formation">
+<p>
+Lyman&#x2013;Werner radiation: a strong molecule-destroying Lyman&#x2013;Werner
+(LW) background inhibits effective cooling in low-mass haloes,
+delaying star formation until the collapse or more massive
+haloes. Only when molecular hydrogen (H2) can self-shield from LW
+radiation, which requires a halo capable of cooling by atomic line
+emission, will star formation be possible.
+</p>
+
+<p>
+X-ray, makes cooling faster.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb63eed8" class="outline-4">
+<h4 id="orgb63eed8"><span class="section-number-4">2.2.8</span> Magnetic fields</h4>
+<div class="outline-text-4" id="text-2-2-8">
+<p>
+<b>Magnetic critical mass</b>
+</p>
+
+<p>
+Back-of-the-envolope estimation of the magnetic critical mass: set the magnetic energy \((B^2/8\pi) (4\pi/3 R^3)\) equal to the gravitational energy, \(| -3GM^2/5R |\) and solve for \(M\).
+\[
+M_\Phi \equiv \sqrt{\frac{5}{2}} \, \frac{\Phi_B}{3 \pi G^{1/2}}
+\]
+where \(\Phi_B = \pi R^2 B\) is the magnetic flux and is constant while the cloud contracts (due to flux-freezing).
+For a disk, 3/5 is replaced with 2/3.
+</p>
+
+<figure style="float:right;width:400px;"><img src="../img/B-rho.png"><figcaption>$B-\rho$ relation of one of the zoomin simulations in He2021. Above 1000 cm$^{-3}$, the magnetic field strength scales with density as $B \sim \rho^{1/2}, corresponding to a constant Alfven velocity $v_A = 0.2 {\rm km/s}$.</figcaption></figure>
+
+<p>
+(Crutcher 1999)
+</p>
+<ul class="org-ul">
+<li>If the magnetic field is unimportant throughout the collapse of a spherical cloud, the conservation of magnetic flux implies \(B \propto R^{-2}\), while conservation of mass implies \(\rho \propto R^{-3}\). Therefore, \(B \propto \rho^{2/3}\).</li>
+<li>If the magnetic field is important, clouds must form primarily by flows along field lines, and the clouds will be flattend. Magnetic flux freezing implies \(\pi R^2 z \rho / \pi R^2 B = \rho z / B =\) constant, together with Spiter's assumption (Spitzer 1942) that self-garvity is balance only by internal thermal pressure along the symmetry axis, \(2\pi G \rho z^2 \approx c_s^2\), this yields \(B \propto (\rho T)^{1/2}\).</li>
+</ul>
+
+<p>
+<b>Todo: add 2D phase plot of B-rho from He2021</b>
+</p>
+
+<p>
+<b>Magnetic braking time</b>
+The magnetic braking time is the time it takes for the magnetic braking to stop the rotation of the disk, or \(L/(dL/dt)\), where \(L \sim \rho v_\phi R\) and the torque is approximately \(F R / V\) which has the dimension of pressure, so \(dL/dt \sim B^2\). Therefore, \(t_{br} \approx \rho v_\phi R / B^2\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-stellar-feedbacks" class="outline-3">
+<h3 id="stellar-feedbacks"><span class="section-number-3">2.3</span> Stellar Feedbacks</h3>
+<div class="outline-text-3" id="text-stellar-feedbacks">
+</div>
+
+<div id="outline-container-protostellar-outflows" class="outline-4">
+<h4 id="protostellar-outflows"><span class="section-number-4">2.3.1</span> Protostellar outflows</h4>
+<div class="outline-text-4" id="text-protostellar-outflows">
+<p>
+Due to low velocity of the protostellar outflow, they are not able to
+escape the larger-scale protocluster. For this reason, it is suggested
+that outflows have a limited role in setting final star-formation
+efficiencies.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec:wind" class="outline-4">
+<h4 id="sec:wind"><span class="section-number-4">2.3.2</span> Stellar Wind</h4>
+<div class="outline-text-4" id="text-sec:wind">
+<blockquote>
+<p>
+References: \cite{Choudhuri:2010}, Sec. 4.6. \cite{Carroll:2007}, Pg. 347.
+</p>
+</blockquote>
+
+<p>
+Due to high temperature in the corona of a star, the pressure in the out layers of a star is much higher than the pressure of interstellar medium, causing the star to lose mass in the form of stellar wind. Actually, assuming hydrostatic equilibrium, the asymptotic value of pressure at infinity is much larger than the typical value of the pressure of the interstellar medium. Because of this, Parker (1958) suggested that the solar atmosphere is not in hydrostatic equilibrium but is hydrodynamic and the outer parts of the corona must be expanding in the form of solar wind. Note that solar wind is <b>thermal</b> driven. Very massive stars could have radiatively driven wind as well. Red giants often have much stronger winds due to its weak gravity at the surface.
+</p>
+
+<blockquote>
+<p>
+References: \cite{Krumholz:2019}, Pg. 261.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-feedback-regulated-star-formation" class="outline-4">
+<h4 id="feedback-regulated-star-formation"><span class="section-number-4">2.3.3</span> Feedback-regulated Star Formation</h4>
+<div class="outline-text-4" id="text-feedback-regulated-star-formation">
+<p>
+Types of stellar feedback includes:
+</p>
+
+<ol class="org-ol">
+<li><i>Supernovae and main sequence stellar winds</i></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org36a13c7" class="outline-2">
+<h2 id="org36a13c7"><span class="section-number-2">3</span> Stellar Evolution</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orge793c56" class="outline-3">
+<h3 id="orge793c56"><span class="section-number-3">3.1</span> Young stellar object</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Young stellar object (YSO)
+</p>
+
+
+<p>
+Lada scheme of low-mass stars. Class 0, I, II, and III, distinguished by their spectral energy distribution.
+</p>
+
+<p>
+This classification schema roughly reflects evolutionary sequence. It is believed that most deeply embedded Class 0 sources evolve towards Class I stage, dissipating their circumstellar envelopes. Eventually they become optically visible on the stellar birthline as pre-main-sequence stars. Class II objects have circumstellar disks and correspond roughly to classical T Tauri stars, while Class III stars have lost their disks and correspond approximately to weak-line T Tauri stars. An intermediate stage where disks can only be detected at longer wavelengths (e.g., at {\displaystyle 24{&mu; }m}{\displaystyle 24{&mu; }m}) are known as transition-disk objects. (source: <a href="https://en.wikipedia.org/wiki/Young_stellar_object">wikipedia</a>)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org731f330" class="outline-3">
+<h3 id="org731f330"><span class="section-number-3">3.2</span> Pre-main sequence</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Kelvin-Helmhotz (thermal) timescale. The less massive (\(< 3 M_\odot\)) of them appear as highly variable mass ejecting objects, known as <i>T Tauri</i> stars.
+</p>
+</div>
+
+<div id="outline-container-orga870fde" class="outline-4">
+<h4 id="orga870fde"><span class="section-number-4">3.2.1</span> T Tauri Star</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>Pre-main sequence</li>
+<li>Energy coming from contracting due to self-gravity, not from nuclear fusion. They are newly-formed (&lt; 10 million years old) low to intermediate mass stars (&lt; 3 solar masses) with central temperatures too low for nuclear fusion to have started.</li>
+<li>They are surrounded by circumstellar discs, probable sites of planet formaiton.</li>
+<li>T Tauri stars are pre-main-sequence stars in the process of contracting to the main sequence along the Hayashi track, a luminosity–temperature relationship obeyed by infant stars of less than 3 solar masses in the pre-main-sequence phase of stellar evolution. It ends when a star develops a radiative zone, or when a smaller star commences nuclear fusion on the main sequence.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-the-fate-of-massive-stars" class="outline-3">
+<h3 id="the-fate-of-massive-stars"><span class="section-number-3">3.3</span> The Fate of Massive Stars</h3>
+<div class="outline-text-3" id="text-the-fate-of-massive-stars">
+</div>
+
+<div id="outline-container-gamma-ray-bursts-grbs" class="outline-4">
+<h4 id="gamma-ray-bursts-grbs"><span class="section-number-4">3.3.1</span> Gamma-ray bursts (GRBs)</h4>
+<div class="outline-text-4" id="text-gamma-ray-bursts-grbs">
+
+<div id="orgc312ccf" class="figure">
+<p><img src="../img/GRB-light-curve.png" alt="GRB-light-curve.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Light curves of two GRBs</p>
+</div>
+
+<p>
+Two classes of GRBs:
+</p>
+
+<ul class="org-ul">
+<li>long-soft GRBs
+<ul class="org-ul">
+<li>last longer than 2 seconds, soft spectrum.</li>
+<li>Models: relativistic jets.
+<ul class="org-ul">
+<li>First model: the collapsar model of Stan Woosley, or the hypernova
+model. core-collapse supernovae. A black hole with a debris disk
+surrounding it form at the center of collapse. "The collimating of
+the debris disk and associated magnetic fields would lead to a jet
+emanating from the center of the supernova." (Carroll2007)</li>
+<li>There is also the top-hat model of the lightcurve.</li>
+</ul></li>
+</ul></li>
+<li>short-hard GRBs
+<ul class="org-ul">
+<li>last longer than 2 seconds, hard spectrum.</li>
+<li>Models: One viable model is the coalescence of compact binary
+systems, in which SHBs are the electromagnetic counterparts of
+strong gravitational-wave sources.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org496b479" class="outline-3">
+<h3 id="org496b479"><span class="section-number-3">3.4</span> Supernova</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+A supernova (plural: supernovae, abbreviations: SN and SNe) is a powerful and luminous stellar explosion. This transient astronomical event occurs during the last evolutionary stages of a massive star or when a white dwarf is triggered into runaway nuclear fusion. See a graph of Supernova classification <a href="file:///Users/chongchonghe/Dropbox/Notability2/Container/Supernova.pdf">here</a>.
+</p>
+
+<p>
+The word supernova was coined by Walter Baade and Fritz Zwicky in 1929.
+</p>
+</div>
+
+<div id="outline-container-org2c26613" class="outline-4">
+<h4 id="org2c26613"><span class="section-number-4">3.4.1</span> Type Ia SN</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+Type Ia SNe are recognised by the silicon absorption line. It is thought that these supernovae originate in binaries consisting of a white dwarf and its companion. Material can flow from the companion to the white dwarf until its mass exceeds the limit (about 1.4 \(M_\odot\)). Increase of the density and temperature will ignite an explosive fusion reaction that can destroy the white dwarf. The kenetic energy released in the process is of the order of \(10^{44}\) J. The origin of the radiation energy is the fission of the radioactive nickel isotope 56 created in the explosion.
+</p>
+
+<p>
+<b>Type Ia SN as standard candle</b>: The shape of the lightcurve depends on the brightness of the supernova: the brighter the SN, the broader the top of the lightcurve. Therefore, the maximum brightness of a typer Ia supernova can be determined precisely from its lightcurve. This way they can be used as standard candles to determine dimensions of the universe and cosmological parameters.
+</p>
+
+<p>
+<i>Source: Sec 14.4 of cite:Karttunen2017</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9fe150" class="outline-4">
+<h4 id="orgc9fe150"><span class="section-number-4">3.4.2</span> Type II SN</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<ul class="org-ul">
+<li><b>SN 1054 and the Crab Nebula</b>: SN 1054 is a Type II supernova first observed on July 1054, visible for 2 years. The event was recorded in contemporary Chinese astronomy. The remnant of SN 1054 is known as the <i>Crab Nebula</i>.</li>
+<li><b>Supernova 1987A</b>: observed in the Large Magellanic Cloud. It is a Type II SN. Visible for a while to the unaided eye, it became the closest observable supernova since that of 1604.</li>
+</ul>
+
+
+
+
+<p>
+Org finished at Mon Mar 21 17:03:28
+</p>
+
+<p>
+Org finished at Mon Mar 21 17:03:47
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org543edf8" class="outline-2">
+<h2 id="org543edf8"><span class="section-number-2">4</span> Binary</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org0d4c59e" class="outline-3">
+<h3 id="org0d4c59e"><span class="section-number-3">4.1</span> Primordial Binary and Binary Fraction</h3>
+</div>
+
+<div id="outline-container-orgb66dff9" class="outline-3">
+<h3 id="orgb66dff9"><span class="section-number-3">4.2</span> Mass Transfer</h3>
+</div>
+</div>
+
+
+<div id="outline-container-org2a579dc" class="outline-2">
+<h2 id="org2a579dc"><span class="section-number-2">5</span> Compact objects</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org991f313" class="outline-3">
+<h3 id="org991f313"><span class="section-number-3">5.1</span> Neutron stars</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgb5eeca5" class="outline-4">
+<h4 id="orgb5eeca5"><span class="section-number-4">5.1.1</span> Equation of state (EOS)</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+<a href="../attach/NS_I-short-2020.pdf">A good slides</a> (<a href="https://www.tat.physik.uni-tuebingen.de/~kokkotas/Teaching/GTR_files/NS_I-short-2020.pdf">original url</a>)
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-spectra-lines" class="outline-2">
+<h2 id="spectra-lines"><span class="section-number-2">6</span> Spectra lines</h2>
+<div class="outline-text-2" id="text-spectra-lines">
+</div>
+
+<div id="outline-container-lyman-alpha" class="outline-4">
+<h4 id="lyman-alpha"><span class="section-number-4">6.0.1</span> Lyman-\(\alpha\)</h4>
+<div class="outline-text-4" id="text-lyman-alpha">
+<p>
+(\citealt{Draine2011} Sec 15.7)
+</p>
+
+<p>
+The Lyman-alpha line is the spectral line of hydrogen from \(n=2\) to \(n=1\). 1215.67 angstroms, or 10.2 eV.
+</p>
+
+<p>
+The recombining hydrogen in HII region generates Lyman-alpha radiation in a rate of about \(\frac{2}{3} f_{\rm ion} Q_0\). The Lyman-alpha photons can be resonantly scattered by the small amount of neutral hydrogen.
+</p>
+
+<p>
+Escape of Lyman-alpha photons from galaxies therefore requires either very low dust abundances or "breakout" of the ionization front so that, in at least some directions, the H II is not bounded by dusty H I gas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-lyman-continuum" class="outline-4">
+<h4 id="lyman-continuum"><span class="section-number-4">6.0.2</span> Lyman continuum</h4>
+<div class="outline-text-4" id="text-lyman-continuum">
+</div>
+</div>
+
+<div id="outline-container-cm" class="outline-4">
+<h4 id="cm"><span class="section-number-4">6.0.3</span> 21-cm</h4>
+<div class="outline-text-4" id="text-cm">
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org335942b" class="outline-2">
+<h2 id="org335942b"><span class="section-number-2">7</span> Dynamics</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgc837c5e" class="outline-3">
+<h3 id="orgc837c5e"><span class="section-number-3">7.1</span> Concepts</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+<div id="outline-container-orgab92221" class="outline-4">
+<h4 id="orgab92221"><span class="section-number-4">7.1.1</span> Terms</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<ul class="org-ul">
+<li><b>Jeans modeling</b>: Jeans dynamical modeling: Solve the Jeans equations (or the <a href="https://clumpy.gitlab.io/CLUMPY/physics_jeans.html#jeans-equation">CBE, collisionless Boltzmann equation</a>, with link to the CLUMPY code on gitlab.). ▪ Advantages: Very fast, no need to assume a distribution function ▪ Disadvantages: Must bin data to calculate moments, no guarantee there is a DF matching moments, calculation is difficult without assumption of symmetry</li>
+
+<li><b>CBE</b>: <a href="https://www.cv.nrao.edu/~jhibbard/students/CPower/dynamics/cbe/cbe.html">webpage</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a90dc3" class="outline-3">
+<h3 id="org4a90dc3"><span class="section-number-3">7.2</span> Star cluster dynamics</h3>
+<div class="outline-text-3" id="text-7-2">
+</div>
+<div id="outline-container-orgeaf9a38" class="outline-4">
+<h4 id="orgeaf9a38"><span class="section-number-4">7.2.1</span> Core collapse</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<p>
+Core collapse of star clusters.
+</p>
+<ul class="org-ul">
+<li>New method: B. P. B. Bhat, cumulative number distribution of stars (Aspen talk)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23569bf" class="outline-3">
+<h3 id="org23569bf"><span class="section-number-3">7.3</span> N-body</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Dynamics - Anisotropy parameter beta  = 1 - sigma<sub>phi</sub><sup>2</sup> / sigma<sub>r</sub><sup>2</sup>. (Anna's talk)</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-h-ii-region" class="outline-2">
+<h2 id="h-ii-region"><span class="section-number-2">8</span> H II Region</h2>
+<div class="outline-text-2" id="text-h-ii-region">
+</div>
+
+<div id="outline-container-sec:recomb" class="outline-3">
+<h3 id="sec:recomb"><span class="section-number-3">8.1</span> Radiative Recombination of Hydrogen</h3>
+<div class="outline-text-3" id="text-sec:recomb">
+<p>
+<a href="6.NumericalSimulations.html#sec:ramses">RAMSES</a>
+</p>
+
+<p>
+Case B recombination: optically thick to radiation just above \(I_{\rm H}=13.60\) eV, so that ionizing photons emitted during recombination are immediately reabsorbed, creating another ion and free electron by photoionization.
+</p>
+
+<p>
+Following Draine Ch 15.1.1, let \(Q_{0}\) be the rate of emission of hydrogen-ionizing photons, i.e., \(h\nu>I_{{\rm H}}=13.6\) eV. Equating the rates of photoionization and radiative recombination gives the ionization balance equation:
+</p>
+
+<p>
+\[Q_{0}=\frac{4\pi}{3}R_{{\rm S}}^{\;3}\,\alpha\,n(H^{+})\,n_{e}.\]
+</p>
+
+<p>
+Since \(n(H^{+})=n_{e}=n_{H}\equiv n_{0}\), we can solve for the <i>Stromgren radius</i> \citep[][Eq. 15.1 (pg 163)]{Draine:2011}
+\[
+\label{eq:rs}
+  R_{S}\equiv\left(\frac{3Q_{0}}{4\pi\,n_{0}^{\;2}\,\alpha_{B}}\right)^{1/3} = 3.17 \, Q_{49}^{1/3} \, n_2^{-2/3} \, T_4^{0.28}~{\rm pc},
+\]
+where
+\[
+\alpha_B(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4 {\rm K}} \right)^{-3/4} \, {\rm cm}^3 \, {\rm s}^{-1}.
+\]
+</p>
+
+<p>
+Draine also talked about other aspects of region, including the mean emission measure, mean free path of an 18 eV photon at \(T<50,000\) K, and helium ionization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ionization-time-scales" class="outline-3">
+<h3 id="ionization-time-scales"><span class="section-number-3">8.2</span> Ionization Time Scales</h3>
+<div class="outline-text-3" id="text-ionization-time-scales">
+<p>
+How long will it take to ionize an region?
+</p>
+
+<p>
+\[\tau_{{\rm ioni.}}=\frac{4/3\,\pi R_{{\rm
+S}}^{\;3}\,n_{0}}{Q_{0}}=\frac{1}{\alpha_{B}\,n_{0}}=\frac{1.22\times10^{3}\,{\rm
+yr}}{n_{2}}.\]
+for \(T \sim 10^4\) K. The <i>recombination timescale</i> (after the ionizing source turns off) is identical to the ionization timescale. For \(n_{0}>0.03\,{\rm cm}^{-3}\), this timescale is shorter than the main-sequence lifetime \(\gtrsim\) 5 Myr for a massive star.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ionization-fraction" class="outline-3">
+<h3 id="ionization-fraction"><span class="section-number-3">8.3</span> Ionization Fraction</h3>
+<div class="outline-text-3" id="text-ionization-fraction">
+<p>
+TODO
+</p>
+</div>
+</div>
+
+<div id="outline-container-i-front-dynamics" class="outline-3">
+<h3 id="i-front-dynamics"><span class="section-number-3">8.4</span> I-front Dynamics</h3>
+<div class="outline-text-3" id="text-i-front-dynamics">
+</div>
+
+<div id="outline-container-propagation-of-ionization-fronts" class="outline-4">
+<h4 id="propagation-of-ionization-fronts"><span class="section-number-4">8.4.1</span> Propagation of ionization fronts</h4>
+<div class="outline-text-4" id="text-propagation-of-ionization-fronts">
+</div>
+</div>
+
+<div id="outline-container-expansion-of-h-ii-regions" class="outline-4">
+<h4 id="expansion-of-h-ii-regions"><span class="section-number-4">8.4.2</span> Expansion of H II Regions</h4>
+<div class="outline-text-4" id="text-expansion-of-h-ii-regions">
+<p>
+Expansion of HII regions due to pressure force.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-emission-and-absorption-by-the-ism" class="outline-3">
+<h3 id="emission-and-absorption-by-the-ism"><span class="section-number-3">8.5</span> Emission and Absorption by the ISM</h3>
+<div class="outline-text-3" id="text-emission-and-absorption-by-the-ism">
+</div>
+
+<div id="outline-container-emission-from-hii-regions" class="outline-4">
+<h4 id="emission-from-hii-regions"><span class="section-number-4">8.5.1</span> Emission from HII Regions</h4>
+<div class="outline-text-4" id="text-emission-from-hii-regions">
+<p>
+The UV radiation from OB stars in HII regions cause the photoionization of the surrounding ISM. At \(T \sim 10^4~{\rm K}\) and \(N_e<10^6 {\rm cm^{-3}}\), the luminosity in the H\(\alpha\) line is \[L_{{\rm H}\alpha} = 0.450 (h \nu_{{\rm H}\alpha}) \dot{N}_{\rm ion},\] where \(\dot{N}_{\rm ion}\) is the number of ionizing photons emitted per unit time, and since it has to be balanced by recombination rate, \[\dot{N}_{\rm ion} = \alpha_{\rm B} n_pn_eV.\] The Ly\(\alpha\) emission is determined by substracting the Case B recombination coefficient \(\alpha_{\rm B}\) by the effective recombination coefficient to 2S. At the same environment as above, \[L_{{\rm Ly}\alpha} = 0.676 h \nu_{{\rm Ly}\alpha} \dot{N}_{\rm ion}.\] Thus, we can infer the number of OB stars in a HII region by measuring the luminosity in a recombination line, and since OB stars are short lived, their number is directly related to their birth rate. This provides the principle for deriving the star-formation rate in a star-forming region from its recombination line strengths.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-dust" class="outline-2">
+<h2 id="dust"><span class="section-number-2">9</span> Dust</h2>
+<div class="outline-text-2" id="text-dust">
+</div>
+
+<div id="outline-container-metallicity" class="outline-3">
+<h3 id="metallicity"><span class="section-number-3">9.1</span> Metallicity</h3>
+<div class="outline-text-3" id="text-metallicity">
+<p>
+Solar metallicity is \(Z = 0.0134\) \cite{Asplund2009}, where \(Z\) is the heavy element mass fraction. The <b>metallicity</b> relative to solar is \[[{\rm Fe}/{\rm H}] \equiv \log_{10} \left[ \frac{(N_{\rm Fe}/N_{\rm H})_{\rm star}}{(N_{\rm Fe}/N_H)_{\odot}} \right],\] Stars with [Fe/H] &lt; 0 are metal-poor relative to the Sun. Metal poor makes stars bluer and metal rich makes stars redder due to line blanketing (metals absorb preferentially blue light) and opacity effect (metals absorb energy from the interior of the star, making red giants "swell up" even more, and give them cooler temperatures.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org14d1474" class="outline-3">
+<h3 id="org14d1474"><span class="section-number-3">9.2</span> Dust Extinction</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Figure <a href="#org3fbb21e">2</a>: dust extinction curve from \cite{Gnedin2008}
+</p>
+
+<p>
+cite:Ma2021
+</p>
+
+
+<div id="org3fbb21e" class="figure">
+<p><img src="../img/dust_extinction_fit.png" alt="dust_extinction_fit.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Dust extinction in LMC/SMC</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sputtering" class="outline-3">
+<h3 id="sputtering"><span class="section-number-3">9.3</span> Sputtering</h3>
+<div class="outline-text-3" id="text-sputtering">
+</div>
+
+<div id="outline-container-sputtering-in-hot-gas" class="outline-4">
+<h4 id="sputtering-in-hot-gas"><span class="section-number-4">9.3.1</span> Sputtering in Hot Gas</h4>
+<div class="outline-text-4" id="text-sputtering-in-hot-gas">
+<p>
+[Draine Sec. 25.7] Grain lifetime of a stationary grain is given by \[\tau = 10^5 (1 + T_6^{-3}) \frac{a/0.1 \mu{\rm m}}{n_{\rm H}/{\rm cm}^{-3}} \; {\rm yr}.\] In HII region with \(T = 10^4~{\rm K}\) and \(n_{\rm H} = 10^4~\si{cm^{-3}}\), \(\tau = 10\) Myr for grains with size 0.1 micron. With \(n_{\rm H} = 10^2~\si{cm^{-3}}\), \(\tau = 1000\) Myr, and if the temperature increases to \(10^5\) K, \(\tau = 1\) Myr.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ramsesrt" class="outline-3">
+<h3 id="ramsesrt"><span class="section-number-3">9.4</span> RAMSES+RT</h3>
+<div class="outline-text-3" id="text-ramsesrt">
+<p>
+Possible issues:
+</p>
+
+<ul class="org-ul">
+<li>I see a mu=1.4 with comments: hard set mu=1.4 to make temperature
+agree with Audic &amp; Hennebelle.</li>
+</ul>
+
+<p>
+Mean particle mass, \(\mu\), is correctly calculated by the function
+<code>getMu</code> in main/rt<sub>cooling</sub><sub>module.f90</sub>:
+</p>
+
+<p>
+\[\mu = [X(1+x_{\rm HII}) + \frac{Y}{4}(1 + x_{\rm HeII} + 2x_{\rm HeIII})]^{-1}\]
+</p>
+
+<ul class="org-ul">
+<li>For hydrogen and helium
+
+<ul class="org-ul">
+<li>In each cell, photoheating and radiative cooling of hydrogen and
+helium is performed by the radiative transfer module of RAMSES-RT as
+in Rosdahl et al. (2013).
+
+<ul class="org-ul">
+<li>Photoheating rate \(\mathcal{H}\) is a sum of the heating
+contributiosn from all photoionziation events (HI, HeI, and HeII).</li>
+
+<li>The primordial cooling rate \(\mathcal{L}\) include various cooling processes: collisional ionizations, collisional excitations, recombinations, dielectronic recombinations, bremsstrahlung and Compton cooling.</li>
+</ul></li>
+</ul></li>
+
+<li>For metals
+
+<ul class="org-ul">
+<li>'Neutral' function N(T)
+
+<ul class="org-ul">
+<li>Below 10<sup>4</sup> K: the prescription of Audit &amp; Hennebelle (2005), which
+includes <b>carbon, oxygen and dust grains</b> as well as the <b>ambient
+UV background</b> in the ISM. This is based on the work of Wolfire et
+al. (1995, 2003).
+
+<ul class="org-ul">
+<li>Including cooling by
+
+<ul class="org-ul">
+<li>fine-structure lines of CII (92 K)</li>
+
+<li>fine-structure lines of OI (228 and 326 K)</li>
+
+<li>cooling by H (Lyα line)</li>
+
+<li>cooling by electron recombination onto positively charged
+grains</li>
+</ul></li>
+
+<li>and heating by
+
+<ul class="org-ul">
+<li>photo-electric effect on small grains and PAHs due to the FUV
+galactic radiation.</li>
+</ul></li>
+
+<li>(This might be probmatic due to the hard mu = 1.4. In Audit2005,
+they have no radiative transfer, so the mean particle weight is
+constant at mu = 1.4, while in RAMSES+RT, mu is dramatically
+higher due to ionized electrons.)</li>
+</ul></li>
+
+<li>Above 10<sup>4</sup> K: Sutherland &amp; Dopita (1993)</li>
+</ul></li>
+
+<li>'Photoionized' cooling function
+
+<ul class="org-ul">
+<li>a piecewise fit to Ferland (2003):
+\(\Lambda = 3\times10^{-24}~{\rm erg~cm^3~s^{-1}}\) below 9000 K and
+\(2.2\times10^{-22}~{\rm erg~cm^3~s^{-1}}\) above 10<sup>5</sup> K.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+TODO: make a curve of the cooling funciton
+</p>
+
+<p>
+Radiative cooling and heating of hydrogen and helium is performed by the
+RT module of RAMSES-RT as in Rosdahl et al. (2013), consisting of two
+functions:
+</p>
+
+<ul class="org-ul">
+<li>'Neutral' function \(N(T)\): Audit &amp; Hennebelle (2005), which includes
+cooling from carbon , oxygen, and dust grains as well as the effect of
+the ambient UV background in the ISM.</li>
+
+<li>'photoionized' cooling function \(P(T)\): Ferland (2003)</li>
+</ul>
+
+<p>
+TODO: plot cooling function in RAMSES, find
+</p>
+
+<p>
+bibliographystyle:plain
+bibliography:~/folders/BIB<sub>HE.bib</sub>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgdd1fa80" class="outline-2">
+<h2 id="orgdd1fa80"><span class="section-number-2">10</span> Hydrodynamics</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org96d1a8a" class="outline-3">
+<h3 id="org96d1a8a"><span class="section-number-3">10.1</span> Hydrodynamic equations</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+My notes: "Notability::Research:Topics:19. Fluid dynamics"
+</p>
+
+<p>
+<b>Summary</b>
+We introduce a <i>material derivative</i> \(D/Dt = \partial/\partial t + \mathbf{v} \cdot \nabla\). It is the derivative following the gas flow, defined as \(D Q / Dt = \frac{Q(t+\delta t, {\bf x} + {\bf v}\delta t) - Q(t, {\bf x})}{\delta t}\). Then, the <i>Euler equations of fluid</i> is easily represented as
+</p>
+\begin{align}
+\frac{D \rho}{D t} &= - \rho \nabla \cdot {\bf v} \\
+\frac{D {\bf v}}{D t} &= - \frac{\nabla p}{\rho} + {\bf g} \\
+\frac{D e}{D t} &= - \frac{\nabla \cdot (p {\bf v})}{\rho}
+\end{align}
+<p>
+The first equation, the equation of continuity, can be derived by inspecting a volume of fluid, in which the outflow rate equals the change in mass, and we obtain \(\partial \rho / \partial t + \nabla \cdot (\rho {\bf v}) = 0\). The conversion between the two different form can be acheived by using the expansion of \(\nabla \cdot (\rho {\bf v})\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-subsec:time" class="outline-3">
+<h3 id="subsec:time"><span class="section-number-3">10.2</span> Time Scales</h3>
+<div class="outline-text-3" id="text-subsec:time">
+</div>
+
+<div id="outline-container-free-fall-time" class="outline-4">
+<h4 id="free-fall-time"><span class="section-number-4">10.2.1</span> Free fall time</h4>
+<div class="outline-text-4" id="text-free-fall-time">
+<p>
+Assume mean molecular weight \(\mu = 1.4\), the global free-fall time of a
+cloud with particle number density \(n\) is given by \[\label{eq:ff}
+t_{{\rm ff}} = \sqrt{\frac{3\pi}{32G\rho_{0}}} \approx 1.376~{\rm Myr}
+\cdot \left(\frac{n}{10^3 \si{cm^{-3}}}\right)^{-1/2}\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sound-speed" class="outline-4">
+<h4 id="sound-speed"><span class="section-number-4">10.2.2</span> Sound speed</h4>
+<div class="outline-text-4" id="text-sound-speed">
+<p>
+The <i>sound speed</i> is given by
+\[
+c_{s}=\sqrt{\frac{\gamma p_{0}}{\rho_{0}}}
+= \sqrt{\frac{\gamma kT}{\mu m_{H}}}
+\]
+The <i>isothermal sound speed</i> is therefore
+\[
+c_s = \sqrt{\frac{kT}{\mu m_{H}}} = 0.29\,\si{km/s} \; \left( \frac{T_1}{\mu} \right)^{1/2} = 9.1\,\si{km/s} \; \left( \frac{T_4}{\mu} \right)^{1/2}
+\]
+where \(\mu\) is the mean particle weight. Note that for ionized hydrogen, \(\mu = 0.5\) and \(c_s = 13\,\si{km/s}\) at \(10^4\) K.
+</p>
+</div>
+</div>
+
+<div id="outline-container-alfven-wave" class="outline-4">
+<h4 id="alfven-wave"><span class="section-number-4">10.2.3</span> Alfven wave</h4>
+<div class="outline-text-4" id="text-alfven-wave">
+<p>
+<i>(Need to learn)</i> The Alfven velocity is given by
+\(v_{{\rm A}}=B_{0}/\sqrt{4\pi\rho_{0}}\) (in cgs). Therefore, the Alfven
+wave crossing time is
+\(t_{{\rm act}}=L/v_{{\rm A}}=L\sqrt{4\pi\rho_{0}}/B_{0}\).
+</p>
+
+<p>
+In He et al. (2019), and , therefore \(v_A / \sigma\) = 0.2, where
+\(\sigma\) is the turbulence velocity dispersion.
+</p>
+</div>
+</div>
+
+<div id="outline-container-velocity-dispersion" class="outline-4">
+<h4 id="velocity-dispersion"><span class="section-number-4">10.2.4</span> Velocity dispersion</h4>
+<div class="outline-text-4" id="text-velocity-dispersion">
+</div>
+</div>
+</div>
+
+<div id="outline-container-jeans-mass" class="outline-3">
+<h3 id="jeans-mass"><span class="section-number-3">10.3</span> Jeans Mass</h3>
+<div class="outline-text-3" id="text-jeans-mass">
+<p>
+\[M_{\rm J} \equiv \frac{4\pi}{3}\lambda_{\rm J}^3 \rho
+  \approx 20 \msun \cdot \left( \frac{T}{10 {\rm K}}
+  \right)^{3/2} \left( \frac{n}{100\,{\rm cm}^{-3}} \right) ^{-1/2}\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-subsec:bondi" class="outline-3">
+<h3 id="subsec:bondi"><span class="section-number-3">10.4</span> Bondi Accretion</h3>
+<div class="outline-text-3" id="text-subsec:bondi">
+</div>
+
+<ol class="org-ol">
+<li><a id="hoyle-and-lyttleton-accretion"></a>Hoyle and Lyttleton accretion<br />
+<div class="outline-text-5" id="text-hoyle-and-lyttleton-accretion">
+<p>
+A star moving through gas cloud. Assuming a ballistic orbit for accreted
+particles, we get a impact factor \[\label{eq:1}
+\zeta_{HL} = \frac{2GM}{v_{\infty}^2}.\] and accretion rate (mass flux)
+\[\label{eq:1}
+\dot{M}_{HL} = \pi \zeta_{HL}^2 v_{\infty} \rho_{\infty} = \frac{4\pi G^2M^2\rho_{\infty}}{v_{\infty}^3}.\]
+</p>
+</div>
+</li>
+
+<li><a id="bondi-accretion"></a>Bondi Accretion<br />
+<div class="outline-text-5" id="text-bondi-accretion">
+<p>
+A Bondi radius may be defined as \[r_B = \frac{GM}{c_{s}^2(r_B)}\] Flow
+outside is subsonic and the density is almost uniform. This ends up with
+a Bondi accretion rate
+\[\dot{M}_B = 4 \pi r_B^2 c_s \rho_{\infty} = \frac{4\pi
+    G^{2}M^{2}\rho_{\infty}}{c_s^{3}}\] And interpolation formula would
+be \[\label{eq:bondi}
+\dot{M}_B = 4 \pi r_B^2 c_s \rho_{\infty} = \frac{4\pi
+  G^{2}M^{2}\rho_{\infty}}{(c_\infty^2 + v_{\infty}^2)^{3/2} }.\]
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-subsec:other" class="outline-3">
+<h3 id="subsec:other"><span class="section-number-3">10.5</span> Other topics</h3>
+<div class="outline-text-3" id="text-subsec:other">
+</div>
+
+<div id="outline-container-orgc78f494" class="outline-4">
+<h4 id="orgc78f494"><span class="section-number-4">10.5.1</span> Viscosity</h4>
+<div class="outline-text-4" id="text-10-5-1">
+<p>
+<b>Definition of viscosity</b>: The fource \(F\) acting on the top plate of a fluid is proportional to the gradient of the speed \(u\) and the area \(A\) of the plate:
+\[
+F = \mu A \frac{\partial u}{\partial y},
+\]
+\(\mu\) is the <i>dynamic viscosity</i> of the fluid, with units of Pa s (pascal-second). The <i>kinematic viscosity</i> is defined as the ratio fo the viscosity \(\mu\) to the fluid density:
+\[
+\nu = \frac{\mu}{\rho},
+\]
+with the dimension of \(L^2/T\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-reynolds-number" class="outline-4">
+<h4 id="reynolds-number"><span class="section-number-4">10.5.2</span> Reynolds Number</h4>
+<div class="outline-text-4" id="text-reynolds-number">
+<p>
+\(\mathcal{R}=LV/\nu\), where \(L\) is the typical length of the object, \(V\) is the typical fluid velocity, and \(\nu\) is the viscosity of the fluid. Imagine two different fluid flows around two geometrically similar objects. If these two systems have the same Reynolds number, then the flow patterns should be similar. This is called the law of similarity (Reynolds 1883). Systems with low Reynolds number are dominated by viscosity.
+</p>
+
+<p>
+There is also the <i>magnetic Reynolds number</i> where the vescosity is replaced with the magnetic diffusivity \(\lambda = c^2 / 4 \pi \sigma\). See Sec. 14.2 of of Choudhuri (1998).
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6d595e3" class="outline-2">
+<h2 id="org6d595e3"><span class="section-number-2">11</span> MHD</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org237d5c9" class="outline-3">
+<h3 id="org237d5c9"><span class="section-number-3">11.1</span> MHD</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Within the confines of the magnnetohydrodynamics of a single-component condducting fluid, the material effects of electromagnetic fields enter as two terms:
+</p>
+<blockquote>
+<p>
+Lorentz force per unit volume: \({\bf j} \times {\bf B} / c = (\nabla \times {\bf B}) \times {\bf B} / 4\pi\).<br />
+Heat production per volume by Ohmic dissipation: \(j^2 / \sigma = \eta | \nabla \times {\bf B} |^2 / 4\pi\)
+</p>
+</blockquote>
+
+<p>
+Therefore, the equation of continuity is not changed; the equation of motion has to change by adding a magnetic body force, \({\bf j} \times {\bf B} / \rho c\), where \({\bf j} = (c/4\pi) \nabla \times {\bf B}\)  is the electric current density. The energy equation has to add an <i>Ohmic heating</i> term, \({\bf j}^2 / \sigma\)
+</p>
+
+<p>
+Reference: Sec. 14.1 of Choudhuri (1998); page 302 of Shu, F. "Gas Dynamics".
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+\cite{Mo2010}, Eq. (9.3)
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+\cite{Mo2010}, Eq. (9.5)
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://ned.ipac.caltech.edu/level5/Sept10/Krumholz/Krumholz_contents.html">Link</a>.
+Notability, SF-Notes, 'Krumholz, Star Formation'.
+</p>
+
+<ul class="org-ul">
+<li>Stellar wind
+<ul class="org-ul">
+<li>Stellar winds are fast moving flows of material (protons, electrons and atoms of heavier metals) that are ejected from stars. These winds are characterised by a continuous outflow of material moving at speeds anywhere between 20 and 2,000 km/s.</li>
+<li>Hot, massive stars can produce very strong stellar winds. Over their short lifetimes, they can eject many solar masses (perhaps up to 50% of their initial mass) of material in the form of 2,000 km/sec winds. These stellar winds are driven directly by the radiation pressure from photons escaping the star.</li>
+</ul></li>
+</ul></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p>Author: ChongChong He</p><p></p><p><a href='https://www.astro.umd.edu/~chongchong/'>www.astro.umd.edu/~chongchong/</a></p>
+</div>
+</body>
+</html>

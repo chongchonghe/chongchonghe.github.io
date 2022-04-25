@@ -1,2 +1,572 @@
 #+TITLE: unix
 
+* UNIX/Linux
+
+** Command lines
+
+*** Move files using ssh
+
+**** From other's account to my account (inside ssh)
+
+ /home/name/dir/file /tmp
+
+**** From my account in the cloud to local
+ computer (in terminal) scp user@example.com:/home/name/dir/file /tmp
+
+*** auto mount hdd when reboot
+
+ #+BEGIN_EXAMPLE
+   sudo gedit /etc/fstab
+ #+END_EXAMPLE
+
+ then add the following: (replace the UUID with the disk UUID)
+
+ #+BEGIN_EXAMPLE
+   # the big hdd disk
+   UUID=8184299c-8612-4a07-bcb0-0bafd11d132c /home/chongchong/Big    ext4  0   2
+ #+END_EXAMPLE
+
+ where 0 means dump will assume that the filesystem does not need to be
+ dumped, 2 is the the order in which filesystem checks are done at reboot
+ time: 1 for /, 2 for others
+
+*** Creat symlinks on my user folders:
+
+ #+BEGIN_EXAMPLE
+   ls -s /media/jordan/HDD_ubuntu/chongchong/Videos/ Videos
+ #+END_EXAMPLE
+
+*** Bibtex
+
+ Using bibdesk on mac: e.g.
+
+ #+BEGIN_EXAMPLE
+   adsbibdesk 1989MNRAS.239..605K
+ #+END_EXAMPLE
+
+ will add a bibtex entry to bibdesk, usually with pdf files.
+
+*** Printer
+
+ replace ":lp=/dev/usb/lp0:" line to the following 2 lines
+
+ #+BEGIN_EXAMPLE
+   :rm=(ip address of your printer)\
+   :rp=lp\
+ #+END_EXAMPLE
+
+*** Unzip files with Chinese names
+
+ with p7zip and convmv installed:
+
+ #+BEGIN_EXAMPLE
+    LANG=C 7za x your-zip-file.zip
+    convmv -f GBK -t utf8 --notest -r .
+ #+END_EXAMPLE
+
+*** 删除compiz的配置目录:
+
+ #+BEGIN_EXAMPLE
+   sudo rm -rf  .config/compiz*  .gconf/apps/compiz*  compiz*
+   killall gnome-session
+   sudo reboot
+ #+END_EXAMPLE
+
+** Jobs control
+
+Reference: Linux / Unix: jobs Command Examples]]
+
+- ~jobs~ displays status of jobs in the current shell session,
+  starting with a jobID.
+- ~jobs -l~ lists also the PID
+- ~jobs -r~ lists only the jobs that are running
+- ~kill %1~ kills the job with jobID 1
+- ~kill PID~ kills the job with PID
+
+*** Run jobs in background and redirect stdout and stderr to file
+
+#+begin_src sh
+  command > log.log 2>&1 &
+  tail -f log.log
+#+end_src
+
+For Python, do ~python -u > log.log 2>&1~ in order to make python print to
+stdout in shell script. Also put ~-u~ to shebang.
+
+** Software installation
+
+- How to install rpm without root?
+#+begin_src sh
+  cd my-dir;
+  rpm2cpio to-install.rpm | cpio -idv
+#+end_src
+Ref: https://superuser.com/questions/209808/how-can-i-install-an-rpm-without-being-root
+
+** Shell
+
+Sources:
+- From Bash to Python and vice versa, for admins: [[https://bruxy.regnet.cz/programming/bash-python/workshop_bash-python-en.html]]
+
+*** tips
+
+ - grep
+   - ~grep . "string"~
+   - exclude directories: grep -d skip "string" *
+
+ - ~mv very/long/path/to/{old,new}~
+
+ - mkdir ~/path/to/exampledir~ followed by ~cd !$~
+
+ - [[https://aubreykloppers.wordpress.com/2012/06/20/using-sort-on-a-du-command-in-linux/][disk size and sort]]: ~du -s * | sort -n -r~
+
+** zsh
+*** Moving to zsh
+
+ https://github.com/ohmyzsh/ohmyzsh/issues/3807
+ The way to do it is having one file that is both compatible with bash and zsh, and sourcing it in .bash_profile / .bashrc and .zshrc. .bash_profile can have syntax that is only compatible with bash, so be careful.
+
+**** References
+
+     - oh-my-zsh Cheatsheet:
+       https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet
+     - Moving to zsh: https://scriptingosx.com/2019/06/moving-to-zsh/
+     - [[https://linuxconfig.org/learn-the-basics-of-the-zsh-shell#h8-install-oh-my-zsh][Learn the basics of the ZSH shell]]
+     -
+** ssh
+
+*** SSH without passport
+
+ http://www.rebol.com/docs/ssh-auto-login.html and check the file
+ `~/.ssh/config` at my MacBook Pro
+ Archive:
+ [[/Users/chongchonghe/Documents/computer/archives/How to Setup
+ SSH for Auto Login without a Password.html]]
+
+*** Build a server on a computer: quick reminder
+
+ If you've done it before but forgot, here's the refresher. (Otherwise,
+ read below.)
+
+ On server:
+
+ ``` cd .ssh ssh-keygen -t rsa (hit return through prompts) cat
+ id_rsa.pub >> authorized_keys chmod 600 authorized_keys rm id_rsa.pub
+
+ ```
+
+ On client:
+
+ ``` cd .ssh scp myserver.com:.ssh/id_rsa myserver.rsa chmod 600
+ myserver.rsa echo "Host myserver" >> config echo "Hostname
+ reblets.com" >> config echo "IdentityFile ~/.ssh/myserver.rsa" >>
+ config ```
+
+ Test it:
+
+ ``` scp file myserver:.  ssh myserver ```
+
+*** rsync: update files from remote
+
+ # use `rsync -Lu dp2: .` where -L copy the files pointed by
+ # symbolic links and -u updates the files.
+
+ To sync symbolically link files:
+ #+BEGIN_SRC
+ rsync -Larvh --update dp2:path/to/dir path/to/des
+ #+END_SRC
+
+ To sync of directory of files without directing symlink:
+ #+BEGIN_SRC shell
+ rsync -lar --info=progress2 dp2:path/to/dir path/to/des
+ #+END_SRC
+
+ To sync from server, use ~-t~ and never use ~-a~, because the latter
+ does too much.
+ #+BEGIN_SRC shell
+ rsync -lhrt
+ #+END_SRC
+
+ To do a final check after the transfer:
+ #+BEGIN_SRC shell
+ rsync -larvc --update dp2:path/to/dir path/to/des
+ #+END_SRC
+
+ Here is what the options does:
+ - a : archive - means it preserves permissions (owners, groups),
+	 times, symbolic links, and devices.
+ - r : recursive - means it copies directories and sub directories
+ - v : verbose - means that it prints on the screen what is being
+	 copied
+ - L : --copy-links            transform symlink into referent file/dir
+ - l : copy symlink as symlink
+ - h : --human-readable
+ - --update :: skip files that are newer on the receiver
+ - c : skip based on checksum, not mod-time & size
+
+ Reference:
+ https://www.comentum.com/rsync.html
+ https://linux.die.net/man/1/rsync
+
+ Other helpful options
+ - ~--exclude~ : exclude certain file or directory. e.g. ~rsync -arvu
+   --exclude '*.bash.o*' 'dp2:luster/Sam/Job2.2.2.nr2/*' .~
+
+** ffmpeg
+
+ Installed ffmpeg with homebrew and all libs and supports following
+ [this link](https://gist.github.com/midwire/048d983ac4ddd96d81f6).
+
+ Ref:
+ http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/
+
+ 20+ FFmpeg Commands For Beginners:
+ https://www.ostechnix.com/20-ffmpeg-commands-beginners/
+
+*** make movies from images
+
+ Make high-rez video
+
+ #+BEGIN_SRC shell
+   ffmpeg -r 4 -start_number 20 -f image2 -i {pngs} -vcodec mjpeg -qscale 1 video.avi
+ #+END_SRC
+
+ #+BEGIN_SRC shell
+ ffmpeg -framerate 25 -i %4d.png -pix_fmt yuv420p myvideo.mpg
+ #+END_SRC
+
+*** Cut video
+
+ Any of the following command will cut the video from 30 to 40s. Ref:
+ https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video
+ #+BEGIN_SRC bash
+ ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
+ ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -to 00:00:40.0 output.wmv
+ #+END_SRC
+
+*** convert audio
+
+ #+BEGIN_SRC shell
+ ffmpeg -i audio.mp3 -b:a 320000 -ar 44100 -o out.mp3
+ #+END_SRC
+
+ get info about a file: ~ffmpeg -i filename~
+
+** Movie editing
+
+*** Cut video
+
+ Use ~LosslessCut~, a cross-platform application based on ffmpeg.
+
+*** make movies using ffmpeg
+
+ See ** ffmpeg: *** make movies
+
+** Tools
+
+*** image/movie/gif
+
+**** Make high-quality video from images using ffmpeg
+
+ #+BEGIN_SRC shell
+ ffmpeg -r 4 -start_number 20 -f image2 -i {pngs} -vcodec mjpeg -qscale 1 video.avi
+ #+END_SRC
+
+ parameters: -r refresh rate
+
+**** Make gif from images
+
+ #+BEGIN_SRC shell
+ convert -delay 5 -loop 0 *.pngs out.gif
+ #+END_SRC
+
+** grep and find
+
+ - search all symbolic links
+
+   e.g. find all the symbolic links to Job2.01.2/: ~find Job2* -maxdepth 1 -lname '*Job2.01.2/*'~
+
+** Schedule periodical jobs with cron
+
+ Ref: https://phoenixnap.com/kb/set-up-cron-job-linux
+
+ ~crontab -l~ to list and ~crontab -e~ to edit crontab tasks. Syntax:
+ ~minute(0-59) hour(0-23) day(1-31) month(1-12) weekday(0-6) command~
+
+
+
+* Unix notes
+** Mac
+*** sshfs: link folder via ssh
+Following http://stuff-things.net/2015/05/20/fuse-and-sshfs-on-os-x/
+
+*** VIM
+see Dropbox/notes/vim.md ./configure --prefix=/usr/local\\
+--with-features=huge\\
+--enable-pythoninterp\\
+--enable-perlinterp\\
+--enable-cscope\\
+--with-python-config-dir=$HOME/anaconda3/bin/python3.6-config
+
+**** fortran
+https://gist.github.com/Sharpie/287445
+
+*** Emacs
+Follow ~/.emacs
+
+**** f90-namelist
+https://github.com/ZedThree/f90-namelist-mode
+
+*** Mercurial
+
+1. Download source from https://www.mercurial-scm.org/release/?M=D
+
+2. tar xf mercurial-/, cd mercurial-/
+
+3. make install-home
+
+4. Put the following lines into .cshrc.mine
+
+5. #+begin_src shell
+        set pythonpath = (${HOME}/lib/python)
+        set path = (${HOME}/bin $path)
+   #+end_src
+
+   More on https://www.mercurial-scm.org/wiki/UnixInstall
+
+*** Eclipse
+
+- Download emacs, parallel computation system
+- Install gdb (http://ntraft.com/installing-gdb-on-os-x-mavericks/)
+- ​
+
+** Deep2
+*** Python
+I installed python 2.7.16 in packages/python following (this
+instruction)[https://my.bluehost.com/cgi/help/python-install].
+
+** Some tips
+*** Create links to an application
+First, change directory
+
+#+begin_src shell
+  cd ~/.local/share/applications
+#+end_src
+
+Then, open nano editor
+
+#+begin_src shell
+  nano JabRef.desktop
+#+end_src
+
+Add the following to the file
+
+#+begin_example
+  [Desktop Entry]
+  Type=Application
+  Terminal=false
+  Icon=PATH TO YOUR ICON
+  Exec=java -jar /path/to/your/JabRef-3.2.jar
+  Name=NAME YOUR DESKTOP ICON
+#+end_example
+
+Then, =Ctrl + X --> Y --> Enter=. It should create an icon for you to
+launch, just search for it in Menu.
+
+*** Make install locally
+Use =./configure && make && make install= with specified directory:
+
+#+begin_src shell
+  ./configure
+  make --prefix=/dir
+  make install
+#+end_src
+
+**** Local install python packages
+#+begin_src shell
+  python setup.py install --user
+#+end_src
+
+*** Auto mount hdd when reboot
+#+begin_example
+  sudo gedit /etc/fstab
+#+end_example
+
+then add the following
+
+#+begin_example
+  UUID=8184299c-8612-4a07-bcb0-0bafd11d132c /home/chongchong/Big 0 2
+#+end_example
+
+replace the UUID with the disk UUID. The /0/ means dump will assume that
+the filesystem does not need to be dumped, /2/ is the the order in which
+filesystem checks are done at reboot time: 1 for /, 2 for others
+
+*** Create symlinks to User folders
+#+begin_src shell
+  ls -s /media/jordan/HDD_ubuntu/chongchong/Videos/ Videos
+#+end_src
+
+*** Printer
+#+begin_src shell
+  lp -o sides=two-sided-long-edge -o page-ranges=1-4,7,9 file
+#+end_src
+
+*** Unzip
+.tar.gz. files
+
+#+begin_src shell
+  tar -xvzf file.tar.gz
+#+end_src
+
+.tar.bz2 files
+
+#+begin_src shell
+  tar -vxjf .tar.bz2
+#+end_src
+
+Unzip files with Chinese names, with p7zip and convmv installed
+
+#+begin_src shell
+  LANG=C 7za x your-zip-file.zip
+  convmv -f GBK -t utf8 --notest -r .
+#+end_src
+
+*** Delete the configuration files of compiz
+#+begin_src shell
+  sudo rm -rf .config/compiz*
+  killall gnome-session
+  sudo reboot
+#+end_src
+
+*** Emacs
+**** Change encoding (UTF-8, GB18030, etc)
+Force Emacs to read a file in a specific encoding with
+
+#+begin_example
+  C-x RET c ENCODING RET C-x C-f
+#+end_example
+
+To reload the file with a named encoding, type
+
+#+begin_example
+  M-x revert-buffer-with-coding-system
+#+end_example
+
+**** Multi-shell
+C-u M-x shell ret ret
+
+*** MarkDown
+*** Texstudio
+**** Shortcut problem
+I found this solution
+[[http://askubuntu.com/questions/786280/texmaker-shortcuts-not-working-on-ubuntu-16-04][here]],
+which works fine for TeXStudio.
+
+Edit the file /usr/share/applications/texstudio.desktop and change the
+line
+
+#+begin_example
+  Exec=texstudio %F
+#+end_example
+
+to
+
+#+begin_example
+  Exec=env UBUNTU_MENUPROXY= texstudio %F
+#+end_example
+
+** Thinkpad
+*** Touchpad
+Use the following code to disable touchpad:
+
+#+begin_src shell
+  xinput --disable 13
+#+end_src
+
+or use the following to re-able touchpad:
+
+#+begin_src shell
+  xinput --enable 13
+#+end_src
+
+*** Bluetooth
+I follow
+[[https://askubuntu.com/questions/474839/the-bluetooth-is-disabled-on-ubuntu-14-04][this
+link]] to make bluetooth activated at startup.
+
+*** SSH
+I edited /etc/hosts on my Mac, adding the following line
+
+#+begin_example
+  # ip hostname
+  129.2.96.211 chongchonghe-ThinkPad-P51s
+#+end_example
+
+Some basic operations of SSH
+
+- Check status
+
+#+begin_src shell
+  sudo service ssh status
+#+end_src
+
+- Move files using ssh
+
+#+begin_src shell
+  scp user@example.com:/home/name/dir/file /tmp
+  scp -r user@example.com:/home/name/dir /tmp
+  scp user@example.com:~/\{foo.txt,bar.txt\} # Copy multiple files
+#+end_src
+
+** Startrek
+Things to keep in mind:
+
+- The bash profile is not at /∼/.bash profile/, but at /∼/.bashrc/.
+  After editing /.bashrc/, run =exec bash=.
+
+*** Python
+Update Spyder
+
+#+begin_example
+  pip install -U spyder
+#+end_example
+
+An environment for Python 3.5 installed along with Python 2 by
+
+#+begin_src shell
+  conda create -n py35 python=3.5 anaconda
+#+end_src
+
+To activate this environment, type =source activate py35=; to
+deactivate, use =source deactivate=. The enviroment path is on
+//startrek/chongchong/anaconda2/envs/py35/bin/python/.
+
+*** Firefox
+I set default zoom in to false. Type =about:config= in the address bar,
+then search /browser.zoom.siteSpecific/, and set it to false.
+
+** Lenovo
+*** Chinese Input
+After installing /ibus-pinyin/ and setting up Chinese language support,
+you need to go to IBus Preferences and add /Chinese - Pinyin/.
+
+*** Emacs
+Emacs 25.2 installed. You can remove it using
+
+#+begin_src shell
+  dpkg -r emacs
+#+end_src
+
+*** VIM
+**** Step 1: Use python to build vim
+Following
+https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+
+The anaconda python config directory:
+/home/chongchonghe/anaconda3/bin/python3.6-config (pick one version)
+
+* Digital Workflow
+
+- https://www.comparativist.org/my-workflow/
+- https://dellu.wordpress.com/2017/03/19/comparing-the-3-best-pdf-readers-in-mac-skim-vs-highlights-vs-pdf-expert/
+

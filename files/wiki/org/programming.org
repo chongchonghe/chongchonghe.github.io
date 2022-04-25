@@ -310,3 +310,103 @@ fileHandler.setFormatter(formatter)
 flooger.info("log message")
 #+end_src
 
+
+
+* C++ self notebook
+
+** Print
+#+begin_example
+  cout << "Hello World!" << endl;
+#+end_example
+
+** Declared constants (const)
+/const/ declares constants with a specific type in the same way as one
+would do with a variable:
+
+#+begin_example
+  const int pathwidth = 100;
+  const char tabulator = '\t';
+#+end_example
+
+** Logical operators
+#+begin_example
+  !=      // not equal to
+  !true   // evaluates to faulse
+  &&      // AND
+  ||      // OR
+#+end_example
+
+** Conditional operator (?)
+#+begin_example
+  c = (a>b) ? a : b;   // Assign max(a,b) to c
+#+end_example
+
+** string
+*** string operations
+#+begin_example
+  string myString = "Hello World!";
+  cout << "Size fo String is " << myString.size() << endl;
+  cout << "Is string empty? " << myString.empty() << endl;
+  cout << myString.append(" I'm ChongChong.") << endl;
+#+end_example
+
+Assign string
+
+#+begin_example
+  string myName = "ChongChong He";
+  cout << "first name is " << myName.assign(myName, 0, 10);
+#+end_example
+
+Search string index
+
+#+begin_example
+  int lastNameIndex = myName.find("He", 0); // search starts from 0
+#+end_example
+
+Inseart and delete strings
+
+#+begin_example
+  myName.insert (10, "Jordan ");
+  myName.erase(10, 7);
+  myName.replace(11, 2, "Hehe");
+#+end_example
+
+
+
+* Julia Learning Notes
+
+** Learn
+
+
+** Topics
+
+*** Loops
+
+  #+BEGIN_SRC julia
+    for i in 1:N
+        ...
+    end
+  #+END_SRC
+
+  #+BEGIN_SRC julia
+    for i in 1:2:N
+        ...
+    end
+  #+END_SRC
+
+*** Arrays
+
+  #+BEGIN_SRC julia
+    arr = Vectro
+    arr = Array{Float64}(undef, N)
+    mat = Array{Float64}(undef, N, N)
+    # or
+    arr = Array{Float64, 1}(undef, N)
+    mat = Array{Float64, 2}(undef, N, N)
+  #+END_SRC
+
+*** Miscellaneous
+
+  #+BEGIN_SRC julia
+    run(`pwd`)
+  #+END_SRC

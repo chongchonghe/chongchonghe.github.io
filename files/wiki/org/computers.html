@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-07 Thu 16:50 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>computers</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ChongChong He" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/org.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">computers</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9fa4838">Deepthought2</a>
+<ul>
+<li><a href="#org57f778e">Tips and Facts</a>
+<ul>
+<li><a href="#orgdda3890">Speed: lustre/ vs home/</a></li>
+<li><a href="#org42bb102">Some useful commands</a></li>
+</ul>
+</li>
+<li><a href="#orga095bbb">2017, Installed anaconda2</a></li>
+<li><a href="#orgbf8b427">2019/11/30, Installed miniconda3</a></li>
+<li><a href="#org605f5f0">2019/12/09, rclone and sync to google G drive</a>
+<ul>
+<li><a href="#orgc8e64db">Steps I did to setup</a></li>
+<li><a href="#orgecab54e">Usage</a></li>
+</ul>
+</li>
+<li><a href="#org8b6f791">2020/4/11, install nnn</a>
+<ul>
+<li><a href="#org00f0486">Installing ncurses</a></li>
+<li><a href="#orga2fe040">Installed nnn (working as of 2020-06-22)</a></li>
+</ul>
+</li>
+<li><a href="#org8c9d617">2020/4/12, installed mc (Midnight Commander)</a></li>
+<li><a href="#orgbe2ae52">2021/1/21, install zsh on rhel8</a></li>
+</ul>
+</li>
+<li><a href="#org4d03237">Mac</a>
+<ul>
+<li><a href="#orgf79ec66">sshfs: link folder via ssh</a></li>
+<li><a href="#orgbe0d18f">Bibtex</a></li>
+</ul>
+</li>
+<li><a href="#org1a9a0e4">Deepthought 2</a></li>
+<li><a href="#orgfb9faa7">Linux</a>
+<ul>
+<li><a href="#orgca80e87">Processes</a></li>
+</ul>
+</li>
+<li><a href="#org51de3f4">Others</a>
+<ul>
+<li><a href="#orgea55226">Mercurial</a></li>
+<li><a href="#orgec32efa">MarkDown</a></li>
+<li><a href="#orge16c7c4">Texstudio</a>
+<ul>
+<li><a href="#org3a6a720">Shortcut problem</a></li>
+</ul>
+</li>
+<li><a href="#orgc965aad">Terminal</a>
+<ul>
+<li><a href="#orgb781106">Color Setup</a></li>
+</ul>
+</li>
+<li><a href="#org1f2883c">Modifications</a>
+<ul>
+<li><a href="#org6e1b998">pymses</a></li>
+</ul>
+</li>
+<li><a href="#orga87495f">Miscellaneous</a>
+<ul>
+<li><a href="#org20b67ba">CMUS</a></li>
+</ul>
+</li>
+<li><a href="#org0e819ae">Some tips</a>
+<ul>
+<li><a href="#orgaa590da">Create links to an application</a></li>
+<li><a href="#org6f100b4">Local install</a></li>
+<li><a href="#org02cc682">Auto mount hdd when reboot</a></li>
+<li><a href="#org5a24035">Create symlinks to User folders</a></li>
+<li><a href="#org2ab34e6">Execute UNIX Shell scripts in the background</a></li>
+<li><a href="#org344ea10">Printer</a></li>
+<li><a href="#org48a1021">Unzip</a></li>
+<li><a href="#org4770802">Delete the configuration files of compiz</a></li>
+<li><a href="#org110e5d0">Firefox</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Mac: moved to <code>~/config.org</code>
+</p>
+
+<p>
+st: moved to <code>st:config.org</code>
+</p>
+
+<div id="outline-container-org9fa4838" class="outline-2">
+<h2 id="org9fa4838">Deepthought2</h2>
+<div class="outline-text-2" id="text-org9fa4838">
+</div>
+<div id="outline-container-org57f778e" class="outline-3">
+<h3 id="org57f778e">Tips and Facts</h3>
+<div class="outline-text-3" id="text-org57f778e">
+</div>
+<div id="outline-container-orgdda3890" class="outline-4">
+<h4 id="orgdda3890">Speed: lustre/ vs home/</h4>
+<div class="outline-text-4" id="text-orgdda3890">
+<p>
+About same speed, both for large files (1G) or small files (4k). 
+</p>
+<blockquote>
+<p>
+/lustre/che1234/code-test
+$ dd if=/dev/zero of=/tmp/test1.img bs=4k count=1000 oflag=dsync 
+1000+0 records in
+1000+0 records out
+4096000 bytes (4.1 MB, 3.9 MiB) copied, 39.9342 s, 103 kB/s
+~/code
+$ dd if=/dev/zero of=/tmp/test1.img bs=4k count=100000 oflag=dsync 
+^C1800+0 records in
+1800+0 records out
+7372800 bytes (7.4 MB, 7.0 MiB) copied, 71.8909 s, 103 kB/s
+dddd
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org42bb102" class="outline-4">
+<h4 id="org42bb102">Some useful commands</h4>
+<div class="outline-text-4" id="text-org42bb102">
+<pre class="example">
+module avail python
+module load python/2.7.7
+module list
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga095bbb" class="outline-3">
+<h3 id="orga095bbb">2017, Installed anaconda2</h3>
+<div class="outline-text-3" id="text-orga095bbb">
+<p>
+To activate it,
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">   <span style="color: #e45649;">exec</span> bash
+   <span style="color: #a626a4;">unset</span> PYTHONPATH
+   <span style="color: #a626a4;">unset</span> PYTHONHOME
+   <span style="color: #a626a4;">export</span> <span style="color: #6a1868;">PATH</span>=~/anaconda2/bin:${<span style="color: #6a1868;">PATH</span>}
+   <span style="color: #a626a4;">alias</span> <span style="color: #6a1868;">vi</span>=<span style="color: #50a14f;">"~/usr/local/vim/bin/vim"</span>
+</pre>
+</div>
+
+<p>
+This has been written in .bashrc.mine, which will excute every time you run `exec bash`.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf8b427" class="outline-3">
+<h3 id="orgbf8b427">2019/11/30, Installed miniconda3</h3>
+</div>
+
+<div id="outline-container-org605f5f0" class="outline-3">
+<h3 id="org605f5f0">2019/12/09, rclone and sync to google G drive</h3>
+<div class="outline-text-3" id="text-org605f5f0">
+</div>
+<div id="outline-container-orgc8e64db" class="outline-4">
+<h4 id="orgc8e64db">Steps I did to setup</h4>
+<div class="outline-text-4" id="text-orgc8e64db">
+<dl class="org-dl">
+<dt>Load rclone</dt><dd>following <a href="https://www.glue.umd.edu/hpcc/help/software/rclone.html">this link</a> and did <code>module load
+                  rclone/1.47.0</code>. This is append to .cshrc.mine</dd>
+<dt>Configure rclone</dt><dd>following <a href="http://hpcc.umd.edu/hpcc/help/software/rclone.html#box">this link</a></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgecab54e" class="outline-4">
+<h4 id="orgecab54e">Usage</h4>
+<div class="outline-text-4" id="text-orgecab54e">
+<ul class="org-ul">
+<li>Use e.g. <code>rclone cp source/dir dest/dir</code>. See <a href="http://hpcc.umd.edu/hpcc/help/software/rclone.html#usage">this link</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b6f791" class="outline-3">
+<h3 id="org8b6f791">2020/4/11, install nnn</h3>
+<div class="outline-text-3" id="text-org8b6f791">
+<p>
+Install from source: need ncursesw (libncursesw5-dev)
+</p>
+</div>
+
+<div id="outline-container-org00f0486" class="outline-4">
+<h4 id="org00f0486">Installing ncurses</h4>
+<div class="outline-text-4" id="text-org00f0486">
+<p>
+<code>ncurses</code> installed in <code>~/usr/opt/ncurses</code>
+</p>
+
+<p>
+Ref: <a href="https://www.osetc.com/en/how-to-install-ncurse-library-in-ubuntu-debian-centos-fedora-linux.html">https://www.osetc.com/en/how-to-install-ncurse-library-in-ubuntu-debian-centos-fedora-linux.html</a>
+</p>
+
+<ul class="org-ul">
+<li><code>cd ~/usr/source</code></li>
+<li><code>wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz</code></li>
+<li><code>tar xf n&lt;TAB&gt;</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2fe040" class="outline-4">
+<h4 id="orga2fe040">Installed nnn (working as of 2020-06-22)</h4>
+<div class="outline-text-4" id="text-orga2fe040">
+<ul class="org-ul">
+<li>Installed <code>nnn</code> in <code>~/usr/local/bin</code></li>
+<li>Enabled <code>quitcd</code> by defining <code>n ()</code> in <code>.zshrc</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8c9d617" class="outline-3">
+<h3 id="org8c9d617">2020/4/12, installed mc (Midnight Commander)</h3>
+</div>
+
+<div id="outline-container-orgbe2ae52" class="outline-3">
+<h3 id="orgbe2ae52">2021/1/21, install zsh on rhel8</h3>
+<div class="outline-text-3" id="text-orgbe2ae52">
+<p>
+Failed:
+</p>
+
+<p>
+Resources:
+</p>
+<ul class="org-ul">
+<li><a href="http://zsh.sourceforge.net/FAQ/zshfaq01.html#l7">http://zsh.sourceforge.net/FAQ/zshfaq01.html#l7</a></li>
+<li></li>
+
+
+<li>Install missing modules
+<ul class="org-ul">
+<li>rpcsvc
+<ul class="org-ul">
+<li>Installed into ~/usr/lib/rpcsvc/include/</li>
+</ul></li>
+</ul></li>
+<li>Install zsh
+<ul class="org-ul">
+<li>Download source files from <a href="http://zsh.sourceforge.net/">http://zsh.sourceforge.net/</a> into ~/usr/source</li>
+<li><code>setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${HOME}/usr/lib/rpcsvc/include/rpcsvc/</code></li>
+<li></li>
+
+<li><code>export LD_LIBRARY_PATH=${HOME}/usr/local/libevent/lib/:${LD_LIBRARY_PATH}</code> to</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4d03237" class="outline-2">
+<h2 id="org4d03237">Mac</h2>
+<div class="outline-text-2" id="text-org4d03237">
+</div>
+<div id="outline-container-orgf79ec66" class="outline-3">
+<h3 id="orgf79ec66">sshfs: link folder via ssh</h3>
+<div class="outline-text-3" id="text-orgf79ec66">
+<p>
+Following <a href="http://stuff-things.net/2015/05/20/fuse-and-sshfs-on-os-x/">http://stuff-things.net/2015/05/20/fuse-and-sshfs-on-os-x/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbe0d18f" class="outline-3">
+<h3 id="orgbe0d18f">Bibtex</h3>
+<div class="outline-text-3" id="text-orgbe0d18f">
+<ul class="org-ul">
+<li>I use bibdesk as my primary tool for bibtex organization.</li>
+<li>Use the python package adsbibdesk (<code>ads</code>) to add ads/arxiv articles to
+my bibdesk.</li>
+<li>Use bibtool to clean the .bib file to use in a research paper.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a9a0e4" class="outline-2">
+<h2 id="org1a9a0e4">Deepthought 2</h2>
+<div class="outline-text-2" id="text-org1a9a0e4">
+<p>
+To use anaconda Python:
+</p>
+
+<pre class="example" id="org0ce68a8">
+   exec bash
+   unset PYTHONPATH
+   unset PYTHONHOME
+   export PATH=~/anaconda2/bin:${PATH}
+   alias vi="~/usr/local/vim/bin/vim"
+</pre>
+
+<p>
+This has been written in .bashrc.mine, which will excute every time you
+run <code>exec bash</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb9faa7" class="outline-2">
+<h2 id="orgfb9faa7">Linux</h2>
+<div class="outline-text-2" id="text-orgfb9faa7">
+</div>
+<div id="outline-container-orgca80e87" class="outline-3">
+<h3 id="orgca80e87">Processes</h3>
+<div class="outline-text-3" id="text-orgca80e87">
+<p>
+<code>ps</code>: list all processes
+</p>
+
+<p>
+<code>jobs</code>: list all active jobs
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org51de3f4" class="outline-2">
+<h2 id="org51de3f4">Others</h2>
+<div class="outline-text-2" id="text-org51de3f4">
+</div>
+<div id="outline-container-orgea55226" class="outline-3">
+<h3 id="orgea55226">Mercurial</h3>
+<div class="outline-text-3" id="text-orgea55226">
+<ol class="org-ol">
+<li>Download source from <a href="https://www.mercurial-scm.org/release/?M=D">https://www.mercurial-scm.org/release/?M=D</a></li>
+
+<li>tar xf mercurial-<i>, cd mercurial-</i></li>
+
+<li>make install-home</li>
+
+<li>Put the following lines into .cshrc.mine</li>
+
+<li>​</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">  <span style="color: #a626a4;">set</span> <span style="color: #6a1868;">pythonpath</span> = (${<span style="color: #6a1868;">HOME</span>}/lib/python)
+  <span style="color: #a626a4;">set</span> <span style="color: #6a1868;">path</span> = (${<span style="color: #6a1868;">HOME</span>}/bin $<span style="color: #6a1868;">path</span>)
+</pre>
+</div>
+
+<p>
+More on <a href="https://www.mercurial-scm.org/wiki/UnixInstall">https://www.mercurial-scm.org/wiki/UnixInstall</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgec32efa" class="outline-3">
+<h3 id="orgec32efa">MarkDown</h3>
+<div class="outline-text-3" id="text-orgec32efa">
+<p>
+I've installed python packages: markdown and Pygments, following
+<a href="http://sebastianraschka.com/Articles/2014_markdown_syntax_color.html">http://sebastianraschka.com/Articles/2014_markdown_syntax_color.html</a>
+</p>
+
+<ol class="org-ol">
+<li>#+begin_src shell
+     python -m markdown -x codehilite some_markdown.md &gt; body.html            
+#+end_src</li>
+
+<li>#+begin_src shell
+     pygmentize -S default -f html &gt; codehilite.css
+#+end_src</li>
+
+<li>Insert the codehilite.css, among other css, into your HTML body.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge16c7c4" class="outline-3">
+<h3 id="orge16c7c4">Texstudio</h3>
+<div class="outline-text-3" id="text-orge16c7c4">
+</div>
+<div id="outline-container-org3a6a720" class="outline-4">
+<h4 id="org3a6a720">Shortcut problem</h4>
+<div class="outline-text-4" id="text-org3a6a720">
+<p>
+I found this solution [here][7], which works fine for TeXStudio.
+</p>
+
+<p>
+Edit the file /usr/share/applications/texstudio.desktop and change the
+line
+</p>
+
+<pre class="example" id="orgf240151">
+  Exec=texstudio %F
+</pre>
+
+<p>
+to
+</p>
+
+<pre class="example" id="orgd702053">
+  Exec=env UBUNTU_MENUPROXY= texstudio %F
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc965aad" class="outline-3">
+<h3 id="orgc965aad">Terminal</h3>
+<div class="outline-text-3" id="text-orgc965aad">
+</div>
+<div id="outline-container-orgb781106" class="outline-4">
+<h4 id="orgb781106">Color Setup</h4>
+<div class="outline-text-4" id="text-orgb781106">
+<p>
+I use [Contrast Checker][5] and [rgb to hex][6]
+</p>
+
+<p>
+Current setup: Bg dcc7b4, Fg 1e1e1e
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f2883c" class="outline-3">
+<h3 id="org1f2883c">Modifications</h3>
+<div class="outline-text-3" id="text-org1f2883c">
+</div>
+<div id="outline-container-org6e1b998" class="outline-4">
+<h4 id="org6e1b998">pymses</h4>
+<div class="outline-text-4" id="text-org6e1b998">
+<p>
+Python multiprocess. File
+~/local/pymses_4.0.0/pymses/sources/ramses/octree.py, line 163; line
+364;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">  <span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">if big_scalars_array == None:</span>
+  <span style="color: #e45649;">if</span> big_scalars_array <span style="color: #e45649;">is</span> <span style="color: #b751b6;">None</span>:
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga87495f" class="outline-3">
+<h3 id="orga87495f">Miscellaneous</h3>
+<div class="outline-text-3" id="text-orga87495f">
+</div>
+<div id="outline-container-org20b67ba" class="outline-4">
+<h4 id="org20b67ba">CMUS</h4>
+<div class="outline-text-4" id="text-org20b67ba">
+<p>
+Download cmus from GitHub.
+</p>
+
+<pre class="example" id="orga05ba28">
+  ./configure CONFIG_AAC=y CONFIG_CUE=y CONFIG_FLAC=y
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e819ae" class="outline-3">
+<h3 id="org0e819ae">Some tips</h3>
+<div class="outline-text-3" id="text-org0e819ae">
+</div>
+<div id="outline-container-orgaa590da" class="outline-4">
+<h4 id="orgaa590da">Create links to an application</h4>
+<div class="outline-text-4" id="text-orgaa590da">
+<p>
+First, change directory
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  <span style="color: #a626a4;">cd</span> ~/.local/share/applications
+</pre>
+</div>
+
+<p>
+Then, open nano editor
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  nano JabRef.desktop
+</pre>
+</div>
+
+<p>
+Add the following to the file
+</p>
+
+<pre class="example" id="org0830ca5">
+  [Desktop Entry]
+  Type=Application
+  Terminal=false
+  Icon=PATH TO YOUR ICON
+  Exec=java -jar /path/to/your/JabRef-3.2.jar
+  Name=NAME YOUR DESKTOP ICON
+</pre>
+
+<p>
+Then, <code>Ctrl + X --&gt; Y --&gt; Enter</code>. It should create an icon for you to
+launch, just search for it in Menu.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f100b4" class="outline-4">
+<h4 id="org6f100b4">Local install</h4>
+<div class="outline-text-4" id="text-org6f100b4">
+<p>
+Use <code>./configure &amp;&amp; make &amp;&amp; make install</code> with specified directory:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  ./configure
+  make --prefix=/dir
+  make install
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge6a4ca5" class="outline-5">
+<h5 id="orge6a4ca5">Local install python packages</h5>
+<div class="outline-text-5" id="text-orge6a4ca5">
+<div class="org-src-container">
+<pre class="src src-shell">  python setup.py install --user
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org02cc682" class="outline-4">
+<h4 id="org02cc682">Auto mount hdd when reboot</h4>
+<div class="outline-text-4" id="text-org02cc682">
+<pre class="example" id="orgf6960b1">
+  sudo gedit /etc/fstab
+</pre>
+
+<p>
+then add the following
+</p>
+
+<pre class="example" id="org24166b2">
+  UUID=8184299c-8612-4a07-bcb0-0bafd11d132c /home/chongchong/Big 0 2
+</pre>
+
+<p>
+replace the UUID with the disk UUID. The <i>0</i> means dump will assume that
+the filesystem does not need to be dumped, <i>2</i> is the the order in which
+filesystem checks are done at reboot time: 1 for /, 2 for others
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a24035" class="outline-4">
+<h4 id="org5a24035">Create symlinks to User folders</h4>
+<div class="outline-text-4" id="text-org5a24035">
+<div class="org-src-container">
+<pre class="src src-shell">  ls -s /media/jordan/HDD_ubuntu/chongchong/Videos/ Videos
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2ab34e6" class="outline-4">
+<h4 id="org2ab34e6">Execute UNIX Shell scripts in the background</h4>
+<div class="outline-text-4" id="text-org2ab34e6">
+<pre class="example" id="org8cdf224">
+  #!/bin/bash
+  ssh st scp -r dp2:path1 path2
+
+  nohup ./my-shell-script.sh &gt; sh.log &amp;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org344ea10" class="outline-4">
+<h4 id="org344ea10">Printer</h4>
+<div class="outline-text-4" id="text-org344ea10">
+<div class="org-src-container">
+<pre class="src src-shell">  lp -o <span style="color: #6a1868;">sides</span>=two-sided-long-edge -o page-ranges=1-4,7,9 file
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org48a1021" class="outline-4">
+<h4 id="org48a1021">Unzip</h4>
+<div class="outline-text-4" id="text-org48a1021">
+<p>
+Simple code
+</p>
+
+<pre class="example" id="orgfdf2118">
+  tar xf file.tar.* [-C dir/to/des]
+</pre>
+
+<p>
+.tar.gz. files
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  tar -xvzf file.tar.gz
+</pre>
+</div>
+
+<p>
+.tar.bz2 files
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  tar -vxjf .tar.bz2
+</pre>
+</div>
+
+<p>
+Unzip files with Chinese names, with p7zip and convmv installed
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">  <span style="color: #6a1868;">LANG</span>=C 7za x your-zip-file.zip
+  convmv -f GBK -t utf8 --notest -r .
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4770802" class="outline-4">
+<h4 id="org4770802">Delete the configuration files of compiz</h4>
+<div class="outline-text-4" id="text-org4770802">
+<div class="org-src-container">
+<pre class="src src-shell">  sudo rm -rf .config/compiz*
+  killall gnome-session
+  sudo reboot
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org110e5d0" class="outline-4">
+<h4 id="org110e5d0">Firefox</h4>
+<div class="outline-text-4" id="text-org110e5d0">
+<p>
+To set the default zoom in to false, type <code>about:config</code> in the address
+bar, then search *browser.zoom.siteSpecific and set it to false.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: ChongChong He</p><p></p><p><a href='https://www.astro.umd.edu/~chongchong/'>www.astro.umd.edu/~chongchong/</a></p>
+</div>
+</body>
+</html>

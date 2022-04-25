@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-04-13 Wed 13:14 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="ChongChong He">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width, initial-scale=1'> <style type='text/css'> body { font-size: 20px; } img { max-width: 100%; } html,button,input,select,textarea {  color: black; /* #484C66; */}html {  font-size: 90%;  line-height: 1.4;}*,*:before,*:after {  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;}a {  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  white-space: -pre-wrap;  white-space: -o-pre-wrap;  white-space: -moz-pre-wrap;  white-space: -hp-pre-wrap;  word-wrap: break-word;  text-decoration: none;}a:hover {  color: #0A4C89;}/* * Remove text-shadow in selection highlight: h5bp.com/i * These selection rule sets have to be separate. * Customize the background color to match your design. */::-moz-selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}::selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}/* * A better looking default horizontal rule */hr {  display: block;  height: 1px;  border: 0;  border-top: 1px dashed #CCC;  margin: 1em 0;  padding: 0;}/* * Remove the gap between images, videos, audio and canvas and the bottom of * their containers: h5bp.com/i/440 */audio,canvas,img,video {  vertical-align: middle;}/* * Remove default fieldset styles. */fieldset {  border: 0;  margin: 0;  padding: 0;}/* * Allow only vertical resizing of textareas. */textarea {  resize: vertical;}/* ==========================================================================   Author's custom styles   ========================================================================== */.todo,.done,.tag {  font-family: 'Source Pro', Monaco, 'Courier New', monospace;  padding: 0 0.3em;  background-color: #EEE;  border: 1px solid #CCC;}.todo {  color: #DD4433;}.done {  color: #44934B;}.tag {  font-size: 80%;  font-weight: normal;  margin: 0 0.3em;  display: none;}.timestamp {  color: #BEBEBE;}.timestamp-kwd {  color: #5F9EA0;}.right {  margin-left: auto;  margin-right: 0px;  text-align: right;}.left {  margin-left: 0px;  margin-right: auto;  text-align: left;}.center {  margin-left: auto;  margin-right: auto;  text-align: center;}.underline {  text-decoration: underline;}#postamble p,#preamble p {  font-size: 90%;  margin: .2em;}pre,code {  font-family: 'Source Pro', Monaco, 'Courier New', monospace;  padding-left: 0.3em;  padding-right: 0.3em;}pre {  font-size: 90%;  padding: 8pt;  overflow: auto;  white-space: pre;  word-wrap: normal;}pre.src {  position: relative;}pre.src:before {  display: none;  position: absolute;  background-color: #FFF;  top: 0.5em;  right: 0.5em;  padding: 4px;  border: 1px solid #CCC;}pre.src-sh:before {  content: 'Shell Script';}pre.src-bash:before {  content: 'Bash Script';}pre.src-emacs-lisp:before {  content: 'Emacs Lisp';}pre.src-R:before {  content: 'R';}pre.src-perl:before {  content: 'Perl';}pre.src-java:before {  content: 'Java';}pre.src-sql:before {  content: 'SQL';}pre.src-c:before {  content: 'C';}pre.src-cpp:before {  content: 'C++';}pre.src-html:before {  content: 'HTML';}table {  border-collapse: collapse;  display: block;  overflow-x: auto;}caption.t-above {  caption-side: top;}caption.t-bottom {  caption-side: bottom;}td, th {  vertical-align: top;  border: 1px solid #CCC;  padding: 0.5em;}th.right {  text-align: center;}th.left {  text-align: center;}th.center {  text-align: center;}td.right {  text-align: right;}td.left {  text-align: left;}td.center {  text-align: center;}dt {  font-weight: bold;}#footnotes {  border-top: 5px solid #0A4C89;  margin-bottom: 5em;}#footnotes h2 {  display: none;}#text-footnotes {  margin-top: 1em;}.footpara:nth-child(2) {  display: inline;}.footpara {  display: block;}.footdef sup:before {  content: '[';}.footdef sup:after {  content: ']';}.footdef p {  display: inline;}figure {  margin: 0;}figure img {  max-width: 100%;}figcaption {  text-align: center;  font-size: 0.8em;}.inlinetask {  padding: 10px;  border: 2px solid gray;  margin: 10px;  background: #ffffcc;}#org-div-home-and-up {  text-align: right;  font-size: 70%;  white-space: nowrap;}textarea {  overflow-x: auto;}.linenr {  font-size: smaller;}.code-highlighted {  background-color: #ffff00;}.org-info-js_info-navigation {  border-style: none;}#org-info-js_console-label {  font-size: 10px;  font-weight: bold;  white-space: nowrap;}.org-info-js_search-highlight {  background-color: #ffff00;  color: #000000;  font-weight: bold;}p.verse,blockquote {  margin: 0;  padding: 0;  padding-left: 3%;  border-left: 5px solid #0A4C89;}body {  font-family: Lora, Palatino, Georgia, serif;  width: 92%;  max-width: 1024px;  margin: 0 auto;  background-color: #FFF;}h2 {  line-height: 1.62em;}.title {  margin: 0 0 2em 0;  line-height: 2em;  border-bottom: 5px solid #0A4C89;  text-align: center;}#postamble {  font-size: 80%;  line-height: 1.4em;  text-align: right;}h1, h2, h3, h4, h5, h6 {  font-family: 'Source Sans Pro', sans-serif;  color: #222;}.outline-2 {  margin-bottom: 4em;}.outline-2 h2 {  border-bottom: 1px solid #CCC;}.outline-text-2 code, pre {  background-color: #EEE;}#table-of-contents {  display: none;  margin-left: 0.5em;}#text-table-of-contents ul {  padding-left: 1.8em;}#text-table-of-contents li {  list-style-type: circle;  margin: 0.4em 0;}#text-table-of-contents ul ul {  margin: 0;}#text-table-of-contents li li {  font-weight: normal;  font-size: 90%;  margin: 0;}#content {  overflow: hidden;  *zoom: 1;}/* ==========================================================================   EXAMPLE Media Queries for Responsive Design.   These examples override the primary ('mobile first') styles.   Modify as content requires.   ========================================================================== */@media only screen and (min-width: 35em) {  /* Style adjustments for viewports that meet the condition */}@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {  /* Style adjustments for high resolution devices */}/* ==========================================================================   Print styles.   Inlined to avoid required HTTP connection: h5bp.com/r   ========================================================================== */@media print {  * {    background: transparent !important;    color: #000 !important;    /* Black prints faster: h5bp.com/s */    box-shadow: none !important;    text-shadow: none !important;  }  a,  a:visited {    text-decoration: underline;  }  a[href]:after {    content: ' (' attr(href) ')';  }  abbr[title]:after {    content: ' (' attr(title) ')';  }  /*   * Don't show links for images, or javascript/internal links   */  .ir a:after,  a[href^='javascript:']:after,  a[href^='#']:after {    content: '';  }  pre,  blockquote {    /* border: 1px solid #999; */    page-break-inside: avoid;  }  thead {    display: table-header-group;    /* h5bp.com/t */  }  tr,  img {    page-break-inside: avoid;  }  img {    max-width: 100% !important;  }  @page {    margin: 0.5cm;  }  p,  h2,  h3 {    orphans: 3;    widows: 3;  }  h2,  h3 {    page-break-after: avoid;  }  #table-of-contents {    display: block;    width: initial;    border: none;  }  #table-of-contents a {    text-decoration: none;  }}/* large screen */@media screen and (min-width: 40rem) {  html {    font-size: 100%;  }  #table-of-contents {    display: block;    padding: 1em;    width: 32%;    min-width: 18em;    float: right;    background-color: #EEE;    position: relative;    /* required by z-index */    z-index: 5000;    border: 1px solid #CCC;  }  .tag {    display: initial;  }} </style> 
+<link rel='stylesheet' href='https://www.astro.umd.edu/~chongchong/html_styles/common/toc-left.css' type='text/css' />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div> <a accesskey='h' href='index.html'> UP </a> | <a accesskey='H' href='index.html'> HOME </a> </div><div id="content">
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3432519">1. More Topics in Astrophysics</a>
+<ul>
+<li><a href="#orgf601564">1.1. Solar system</a>
+<ul>
+<li><a href="#orgeab8569">1.1.1. Earth</a></li>
+</ul>
+</li>
+<li><a href="#org13ec8b5">1.2. Telescopes</a>
+<ul>
+<li><a href="#org83a2a29">1.2.1. Space Telescopes</a></li>
+<li><a href="#orgd9f205d">1.2.2. Ground-based Telescopes</a></li>
+</ul>
+</li>
+<li><a href="#orgc943fdb">1.3. Astronomical and Astrophysical Terms</a>
+<ul>
+<li><a href="#orgef72c08">1.3.1. Astrophysics</a></li>
+<li><a href="#orgd0bae64">1.3.2. Galactic</a></li>
+<li><a href="#org0efdb7f">1.3.3. Solar System</a></li>
+<li><a href="#org42b856f">1.3.4. Instrumentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfcab899">2. Scientific Writing</a>
+<ul>
+<li><a href="#org2646a8c">2.1. Online resources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org3432519" class="outline-2">
+<h2 id="org3432519"><span class="section-number-2">1</span> More Topics in Astrophysics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf601564" class="outline-3">
+<h3 id="orgf601564"><span class="section-number-3">1.1</span> Solar system</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+水星, 金星, 地球, 火星, 木星, 土星, 天王星, 海王星
+</p>
+</div>
+
+<div id="outline-container-orgeab8569" class="outline-4">
+<h4 id="orgeab8569"><span class="section-number-4">1.1.1</span> Earth</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>Contrast the atmospheric conditions on Venus with those on Earth. Explain why they are so different. Describe the role of water vapor in the Earth's atmosphere to explain this difference.
+<ul class="org-ul">
+<li>L10.p6, 35. The surface temperature on Venus is much higher than on Earth. That's because Venus has a very thick atmosphere made of CO2 so the greenhouse effect on Venus is much stronger than on Earth, trapping the radiation from the Sun. Water vapor in the Earth's atmosphere has picked up much of the CO2 in the Earth's atmosphere and this CO2 is now stored in the sediments making up the ocean floors, etc. Venus is closer to the Sun than the Earth and H2O in Venus atmosphere was probably photo-dissociated before it could capture the CO2 in the atmosphere.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org13ec8b5" class="outline-3">
+<h3 id="org13ec8b5"><span class="section-number-3">1.2</span> Telescopes</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org83a2a29" class="outline-4">
+<h4 id="org83a2a29"><span class="section-number-4">1.2.1</span> Space Telescopes</h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org16c9086"></a>JWST<br></li>
+
+<li><a id="orgaa6d331"></a>Roman<br></li>
+
+<li><a id="orgbd992f8"></a>euclid<br></li>
+</ol>
+</div>
+
+<div id="outline-container-orgd9f205d" class="outline-4">
+<h4 id="orgd9f205d"><span class="section-number-4">1.2.2</span> Ground-based Telescopes</h4>
+</div>
+</div>
+
+
+<div id="outline-container-orgc943fdb" class="outline-3">
+<h3 id="orgc943fdb"><span class="section-number-3">1.3</span> Astronomical and Astrophysical Terms</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgef72c08" class="outline-4">
+<h4 id="orgef72c08"><span class="section-number-4">1.3.1</span> Astrophysics</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<dl class="org-dl">
+<dt>Colour Magnitude Diagram (CMD)</dt><dd><p>
+A population of stars can be plotted in terms of their brightness (or luminosity, or magnitude) and colour (or surface temperature). Also called a Hertzsprung-Russell (or H-R) diagram.
+</p>
+
+
+<figure id="org4ddc8e7">
+<img src="https://www.schoolsobservatory.org/sites/default/files/activ/clusters/Hertzsprung-Russel_StarData.png" alt="Hertzsprung-Russel_StarData.png" width="500pt float: center">
+
+<figcaption><span class="figure-number">Figure 1: </span>A colour magnitude diagram. Credit: ESO (<a href="http://www.eso.org/public/images/">http://www.eso.org/public/images/</a>)</figcaption>
+</figure>
+
+
+<figure id="org51b20ba">
+<img src="http://astronomyonline.org/images/ImagesFromPapers/B-VDiagram.gif" alt="B-VDiagram.gif" width="500pt float: center">
+
+<figcaption><span class="figure-number">Figure 2: </span>A standard Hertzsprung-Russell (H-R) diagram shown as V v.s. B-V.</figcaption>
+</figure>
+
+
+<figure id="orgb57f67f">
+<img src="http://silkroad.bao.ac.cn/dragon/pics/pic8s.jpg" alt="pic8s.jpg" width="500pt float: center">
+
+<figcaption><span class="figure-number">Figure 3: </span>Observation-like color-magnitude diagram of a cluster at 10 Gyr from the <a href="http://silkroad.bao.ac.cn/dragon/">DRAGON</a> simulation.</figcaption>
+</figure></dd>
+
+<dt>Spectroscopy, Photometry, Astrometry and Polarimetry</dt><dd><ul class="org-ul">
+<li>Photometry: The science of measuring photon flux is known as photometry. Measuring the amount of light an object emits at various wavelengths. e.g. a lightcurve which is a plot of an object’s brightness against time.</li>
+
+<li>Spectroscopy concerns the study of the spectrum of light that many objects emit.</li>
+
+<li>Polarimetry investigates the way light has been polarised – that is, the way the light has been affected by its creation in, or passage through, strong magnetic fields.</li>
+
+<li>Astrometry deals with the exact positions that objects are in the sky, as exemplified by the current European Space Agency (ESA) Gaia mission.</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgd0bae64" class="outline-4">
+<h4 id="orgd0bae64"><span class="section-number-4">1.3.2</span> Galactic</h4>
+<div class="outline-text-4" id="text-1-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="org689ecad"></a>Messier object<br>
+<div class="outline-text-5" id="text-1-3-2-1">
+<p>
+The Messier objects are a set of 110 nebulous objects catalogued by the French astronomer Charles Messier in order to avoid confusion with comets. The catalogue consists of a diverse range of astronomical objects, from star clusters and nebulae to galaxies. For example, M 1 is a supernova remnant known as the Crab Nebula, and M 31 is the great spiral Andromeda Galaxy.
+</p>
+</div>
+</li>
+
+<li><a id="org089037f"></a>Cold Dark Matter (CDM)<br>
+<div class="outline-text-5" id="text-1-3-2-2">
+<p>
+CDM is the idea that a signiﬁcant part of the mass of the Universe is in the form of non-relativistic particles of an unknown kind.
+</p>
+</div>
+</li>
+
+<li><a id="org3e742da"></a>M-sigma relation<br>
+<div class="outline-text-5" id="text-1-3-2-3">
+<ul class="org-ul">
+<li>M-sigma relation = M<sub>BH</sub> M<sub>bulge</sub> relation??</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org0efdb7f" class="outline-4">
+<h4 id="org0efdb7f"><span class="section-number-4">1.3.3</span> Solar System</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="org0e2ff4e"></a>Asteroid v.s. comet<br>
+<div class="outline-text-5" id="text-1-3-3-1">
+<p>
+The main difference between asteroids and comets is their composition. Asteroids are made up of metals and rocky material, while comets are made up of ice, dust and rocky material. Both asteroids and comets were formed early in the history of the solar system about 4.5 billion years ago. Asteroids formed much closer to the Sun, where it was too warm for ices to remain solid. Comets formed farther from the Sun where ices would not melt. Comets which approach the Sun lose material with each orbit because some of their ice melts and vaporizes to form a tail.
+</p>
+
+
+
+<p>
+Org finished at Mon Mar 21 17:56:28
+</p>
+
+<p>
+Org finished at Mon Mar 21 17:58:41
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:02:27
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:02:51
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:03:37
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:04:14
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:04:44
+</p>
+
+<p>
+Org finished at Mon Mar 21 18:05:03
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org42b856f" class="outline-4">
+<h4 id="org42b856f"><span class="section-number-4">1.3.4</span> Instrumentation</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li><b>Spectrum</b> vs <b>Photometry</b>
+<ul class="org-ul">
+<li>?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgfcab899" class="outline-2">
+<h2 id="orgfcab899"><span class="section-number-2">2</span> Scientific Writing</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org2646a8c" class="outline-3">
+<h3 id="org2646a8c"><span class="section-number-3">2.1</span> Online resources</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Caltech Ay31
+<ul class="org-ul">
+<li><a href="https://sites.astro.caltech.edu/~lah/ay31/">https://sites.astro.caltech.edu/~lah/ay31/</a></li>
+<li>The course textboox is Hofmann, Scientific Writing and Communication, 2009. This book comprehensively covers paper and grant proposal writing, and also discusses oral and poster presentations.</li>
+</ul></li>
+<li><a href="http://cosmos2.phy.tufts.edu/~asajina/writing_guide.pdf">http://cosmos2.phy.tufts.edu/~asajina/writing_guide.pdf</a>, a link on iCloud: <a href="file:///Users/chongchonghe/iCloud/Documents/PDF/writing_guide.pdf">writing<sub>guide.pdf</sub></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><p>Author: <a href='https://www.astro.umd.edu/~chongchong/'>Chong-Chong He</a></p><p>Last updated: 2022-04-13</p>
+</div>
+</body>
+</html>

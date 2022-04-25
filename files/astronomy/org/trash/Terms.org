@@ -1,0 +1,65 @@
+* Astronomical and Astrophysical Terms
+
+** Astrophysics
+
+- Colour Magnitude Diagram (CMD) ::
+  A population of stars can be plotted in terms of their brightness (or luminosity, or magnitude) and colour (or surface temperature). Also called a Hertzsprung-Russell (or H-R) diagram.
+
+  #+caption: A colour magnitude diagram. Credit: ESO (http://www.eso.org/public/images/)
+  #+attr_html: :width 500pt float: center
+  [[https://www.schoolsobservatory.org/sites/default/files/activ/clusters/Hertzsprung-Russel_StarData.png]]
+
+  #+caption: A standard Hertzsprung-Russell (H-R) diagram shown as V v.s. B-V.
+  #+attr_html: :width 500pt float: center
+  [[http://astronomyonline.org/images/ImagesFromPapers/B-VDiagram.gif]]
+
+  #+caption: Observation-like color-magnitude diagram of a cluster at 10 Gyr from the [[http://silkroad.bao.ac.cn/dragon/][DRAGON]] simulation.
+  #+attr_html: :width 500pt float: center
+  [[http://silkroad.bao.ac.cn/dragon/pics/pic8s.jpg]]
+
+- Spectroscopy, Photometry, Astrometry and Polarimetry ::
+	  - Photometry: The science of measuring photon flux is known as photometry. Measuring the amount of light an object emits at various wavelengths. e.g. a lightcurve which is a plot of an object’s brightness against time.
+
+	  - Spectroscopy concerns the study of the spectrum of light that many objects emit.
+
+	  - Polarimetry investigates the way light has been polarised – that is, the way the light has been affected by its creation in, or passage through, strong magnetic fields.
+
+	  - Astrometry deals with the exact positions that objects are in the sky, as exemplified by the current European Space Agency (ESA) Gaia mission.
+
+** Galactic
+
+*** Messier object
+
+The Messier objects are a set of 110 nebulous objects catalogued by the French astronomer Charles Messier in order to avoid confusion with comets. The catalogue consists of a diverse range of astronomical objects, from star clusters and nebulae to galaxies. For example, M 1 is a supernova remnant known as the Crab Nebula, and M 31 is the great spiral Andromeda Galaxy.
+
+*** Cold Dark Matter (CDM)
+
+CDM is the idea that a signiﬁcant part of the mass of the Universe is in the form of non-relativistic particles of an unknown kind.
+
+*** M-sigma relation
+
+- M-sigma relation = M_BH M_bulge relation??
+
+** Solar System
+
+*** Asteroid v.s. comet
+
+The main difference between asteroids and comets is their composition. Asteroids are made up of metals and rocky material, while comets are made up of ice, dust and rocky material. Both asteroids and comets were formed early in the history of the solar system about 4.5 billion years ago. Asteroids formed much closer to the Sun, where it was too warm for ices to remain solid. Comets formed farther from the Sun where ices would not melt. Comets which approach the Sun lose material with each orbit because some of their ice melts and vaporizes to form a tail.
+
+
+
+Org finished at Mon Mar 21 17:56:28
+
+Org finished at Mon Mar 21 17:58:41
+
+Org finished at Mon Mar 21 18:02:27
+
+Org finished at Mon Mar 21 18:02:51
+
+Org finished at Mon Mar 21 18:03:37
+
+Org finished at Mon Mar 21 18:04:14
+
+Org finished at Mon Mar 21 18:04:44
+
+Org finished at Mon Mar 21 18:05:03

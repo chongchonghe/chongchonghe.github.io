@@ -659,3 +659,800 @@ Use appliscript: ~export-to-html~
 * PyCharm
 
 ** a
+* More Softwares and Utilities
+** Spacemacs
+
+ Ref: https://develop.spacemacs.org/layers/+lang/latex/README.html
+
+ - Spacemacs cheat sheet: https://steinbaugh.com/posts/spacemacs.html
+
+*** Shortcuts
+**** General
+
+ - ~SPC~ (normal mode) or ~M-m~ (insert mode) to initiate spacemacs shortcuts.
+
+**** Random
+
+ - SPC s c: remove highlight
+
+**** Files manipulations key bindings
+ Files manipulation commands (start with ~f~):
+
+ | Key Binding | Description                                                    |
+ |-------------+----------------------------------------------------------------|
+ | ~SPC f c~   | copy current file to a different location                      |
+ | ~SPC f C d~ | convert file from unix to dos encoding                         |
+ | ~SPC f C u~ | convert file from dos to unix encoding                         |
+ | ~SPC f D~   | delete a file and the associated buffer (ask for confirmation) |
+ | ~SPC f E~   | open a file with elevated privileges (sudo edit)               |
+ | ~SPC f f~   | open file with =helm= (or =ido=)                               |
+ | ~SPC f F~   | try to open the file under point =helm=                        |
+ | ~SPC f j~   | jump to the current buffer file in dired                       |
+ | ~SPC f l~   | open file literally in =fundamental mode=                      |
+ | ~SPC f L~   | Locate a file (using =locate=)                                 |
+ | ~SPC f o~   | open a file using the default external program                 |
+ | ~SPC f R~   | rename the current file                                        |
+ | ~SPC f s~   | save a file                                                    |
+ | ~SPC f S~   | save all files                                                 |
+ | ~SPC f r~   | open a recent file with =helm=                                 |
+ | ~SPC f t~   | toggle file tree side bar using [[https://github.com/jaypei/emacs-neotree][NeoTree]]                        |
+ | ~SPC f v d~ | add a directory variable                                       |
+ | ~SPC f v f~ | add a local variable to the current file                       |
+ | ~SPC f v p~ | add a local variable to the first line of the current file     |
+ | ~SPC f y~   | show current file absolute path in the minibuffer              |
+
+**** mu4e
+
+ | a V | view in browser |
+
+**** Emacs and Spacemacs files
+ Convenient key bindings are located under the prefix ~SPC f e~ to quickly
+ navigate between =Emacs= and Spacemacs specific files.
+
+ | Key Binding | Description                                                        |
+ |-------------+--------------------------------------------------------------------|
+ | ~SPC f e c~ | open =ido= in the =contrib= folder                                 |
+ | ~SPC f e d~ | open the spacemacs dotfile (=~/.spacemacs=)                        |
+ | ~SPC f e D~ | open =ediff= buffer of =~/.spacemacs= and =.spacemacs.template=    |
+ | ~SPC f e f~ | discover the =FAQ= using =helm=                                    |
+ | ~SPC f e i~ | open the all mighty =init.el=                                      |
+ | ~SPC f e R~ | resync the dotfile with spacemacs                                  |
+ | ~SPC f e v~ | display and copy the spacemacs version                             |
+
+
+ --
+**** Comment
+ SPC ;	comment operator
+ SPC c y	comment and yank
+ SPC c p	comment paragraphs
+
+**** Find files
+ SPC ff: find files or url
+ SPC pf: find file in project
+ SPC ph: search in a project with helm
+ SPC bb: search in buffers
+
+ --
+**** Search in files
+ SPC ss
+ /: search with evil
+
+ --
+**** Window
+ | Key Binding        | Description                                                                 |
+ |--------------------+-----------------------------------------------------------------------------|
+ | SPC w =            | balance split windows                                                       |
+ | SPC w c            | close a window                                                              |
+ | SPC w c            | close a window                                                              |
+ | SPC w C            | delete another window using ace-delete-window                               |
+ | SPC w d            | toggle window dedication (dedicated window cannot be reused by a mode)      |
+ | SPC w [hjkl]       | move to window                                                              |
+ | SPC w [HJKL]       | move the window                                                             |
+ | SPC w s or SPC w - | horizontal split                                                            |
+ | SPC w S            | horizontal split and focus new window                                       |
+ | SPC w u            | undo window layout (used to effectively undo a closed window)               |
+ | SPC w U            | redo window layout                                                          |
+ | SPC w v or SPC w / | vertical split                                                              |
+ | SPC w V            | vertical split and focus new window                                         |
+ | SPC w w            | cycle and focus between windows                                             |
+ | SPC w m            | maximize/minimize a window (maximize is equivalent to delete other windows) |
+ | SPC w M            | maximize/minimize a window, when maximized the buffer is centered           |
+
+ --
+**** buffer
+ SPC TAB	switch to alternate buffer in the current window (switch back and forth)
+ SPC b b	switch to a buffer using helm
+ SPC b d	kill the current buffer (does not delete the visited file)
+ SPC b e	erase the content of the buffer (ask for confirmation)
+ SPC b h	open *spacemacs* home buffer
+ SPC b k	kill a buffer
+ SPC b K	kill all buffers except the current one
+
+ --
+**** Project
+ =projectile= commands start with p:
+
+ | Key Binding | Description                                           |
+ |-------------+-------------------------------------------------------|
+ | ~SPC p !~   | run shell command in root                             |
+ | ~SPC p &~   | run async shell command in root                       |
+ | ~SPC p a~   | toggle between implementation and test                |
+ | ~SPC p b~   | switch to project buffer                              |
+ | ~SPC p c~   | compile project using =projectile=                    |
+ | ~SPC p d~   | find directory                                        |
+ | ~SPC p D~   | open project root in =dired=                          |
+ | ~SPC p f~   | find file                                             |
+ | ~SPC p G~   | regenerate the project's =etags= / =gtags=            |
+ | ~SPC p h~   | find file using =helm=                                |
+ | ~SPC p I~   | invalidate the projectile cache                       |
+ | ~SPC p k~   | kill all project buffers                              |
+ | ~SPC p o~   | run =multi-occur=                                     |
+ | ~SPC p p~   | switch project                                        |
+ | ~SPC p r~   | open a recent file                                    |
+ | ~SPC p R~   | replace a string                                      |
+ | ~SPC p s~   | see Searching in a project                            |
+ | ~SPC p t~   | open =NeoTree= in =projectile= root                   |
+ | ~SPC p T~   | find test files                                       |
+ | ~SPC p v~   | open project root in =vc-dir= or =magit=              |
+ | ~SPC p y~   | find tags                                             |
+ | ~SPC /~     | search in project with the best search tool available |
+ | ~SPC s a p~ | run =ag=                                              |
+ | ~SPC s g p~ | run =grep=                                            |
+ | ~SPC s k p~ | run =ack=                                             |
+ | ~SPC s t p~ | run =pt=                                              |
+
+ --
+**** errors
+ SPC e n	go to the next error
+ SPC e p	go to the previous error
+
+ --
+**** Quit
+ SPC q q	Quit Emacs and kill the server, prompt for changed buffers to save
+ SPC q Q	Quit Emacs and kill the server, lose all unsaved changes.
+ SPC q r	Restart both Emacs and the server, prompting to save any changed buffers
+ SPC q s	Save the buffers, quit Emacs and kill the server
+ SPC q z	Kill the current frame
+ --
+**** Ruby on rails
+
+ | Key binding   | Description                                                     |
+ |---------------+-----------------------------------------------------------------|
+ | ~SPC m r f a~ | find localization file                                          |
+ | ~SPC m r f c~ | find controller                                                 |
+ | ~SPC m r f e~ | find environment file                                           |
+ | ~SPC m r f f~ | find feature                                                    |
+ | ~SPC m r f h~ | find helper                                                     |
+ | ~SPC m r f i~ | find initializer                                                |
+ | ~SPC m r f j~ | find javascript file                                            |
+ | ~SPC m r f l~ | find library                                                    |
+ | ~SPC m r f m~ | find model                                                      |
+ | ~SPC m r f n~ | find migration                                                  |
+ | ~SPC m r f o~ | find log                                                        |
+ | ~SPC m r f p~ | find spec file                                                  |
+ | ~SPC m r f r~ | find rake task                                                  |
+ | ~SPC m r f s~ | find stylesheet file                                            |
+ | ~SPC m r f t~ | find test                                                       |
+ | ~SPC m r f u~ | find fixture                                                    |
+ | ~SPC m r f v~ | find view                                                       |
+ | ~SPC m r f y~ | find layout                                                     |
+ | ~SPC m r f @~ | find mailer                                                     |
+ | ~SPC m r g c~ | go to current controller                                        |
+ | ~SPC m r g d~ | go to DB schema                                                 |
+ | ~SPC m r g e~ | go to DB seeds                                                  |
+ | ~SPC m r g h~ | go to current helper                                            |
+ | ~SPC m r g j~ | go to current javascript                                        |
+ | ~SPC m r g g~ | go to Gemfile                                                   |
+ | ~SPC m r g m~ | go to current model                                             |
+ | ~SPC m r g n~ | go to current migration                                         |
+ | ~SPC m r g p~ | go to current spec                                              |
+ | ~SPC m r g r~ | go to routes                                                    |
+ | ~SPC m r g s~ | go to current stylesheet                                        |
+ | ~SPC m r g t~ | go to current test                                              |
+ | ~SPC m r g u~ | go to current fixture                                           |
+ | ~SPC m r g v~ | go to current view                                              |
+ | ~SPC m r g z~ | go to spec helper                                               |
+ | ~SPC m r g .~ | go to file at point (faster but less powerful than ~SPC m g g~) |
+
+**** LaTeX
+
+ - "Compile and view": ~, a~ or ~SPC m a~.
+
+*** Refactoring
+
+ | Key binding   | Description                 |
+ |---------------+-----------------------------|
+ | ~SPC m r R x~ | extract region into partial |
+
+*** RUN commands
+
+ | Key binding   | Description          |
+ |---------------+----------------------|
+ | ~SPC m r :~   | run rake task        |
+ | ~SPC m r c c~ | run rails generator  |
+ | ~SPC m r i~   | start rails console  |
+ | ~SPC m r s r~ | reload Rails project |
+ | ~SPC m r x s~ | start rails server   |
+
+*** Ex-commands
+
+ | Key binding | Description                             |
+ |-------------+-----------------------------------------|
+ | ~:A~        | Switch between implementation and tests |
+
+ --
+
+ # Ruby
+
+*** Key bindings
+**** Ruby (enh-ruby-mode, robe, inf-ruby, ruby-tools)
+
+  | Key binding | Description                                          |
+  |-------------+------------------------------------------------------|
+  | ~SPC m '~   | toggle quotes of current string (only built-in mode) |
+  | ~SPC m {~   | toggle style of current block (only built-in mode)   |
+  | ~SPC m g g~ | go to definition (robe-jump)                         |
+  | ~SPC m h d~ | go to Documentation                                  |
+  | ~SPC m s f~ | send function definition                             |
+  | ~SPC m s F~ | send function definition and switch to REPL          |
+  | ~SPC m s i~ | start REPL                                           |
+  | ~SPC m s r~ | send region                                          |
+  | ~SPC m s R~ | send region and switch to REPL                       |
+  | ~SPC m s s~ | switch to REPL                                       |
+  | ~SPC m x '~ | Change symbol or " string to '                       |
+  | ~SPC m x "~ | Change symbol or ' string to "                       |
+  | ~SPC m x :~ | Change string to symbol                              |
+  | ~%~         | [[https://github.com/redguardtoo/evil-matchit][evil-matchit]] jumps between blocks                    |
+
+**** RuboCop
+
+  | Key binding   | Description                                          |
+  |---------------+------------------------------------------------------|
+  | ~SPC m r r f~ | Runs RuboCop on the currently visited file           |
+  | ~SPC m r r F~ | Runs auto-correct on the currently visited file      |
+  | ~SPC m r r d~ | Prompts from a directory on which to run RuboCop     |
+  | ~SPC m r r D~ | Prompts for a directory on which to run auto-correct |
+  | ~SPC m r r p~ | Runs RuboCop on the entire project                   |
+  | ~SPC m r r P~ | Runs auto-correct on the project                     |
+
+**** Tests
+***** RSpec-mode
+  When =ruby-test-runner= equals =rspec=.
+
+  | Key binding | Description                                   |
+  |-------------+-----------------------------------------------|
+  | ~SPC m t a~ | run all specs                                 |
+  | ~SPC m t b~ | run current spec file                         |
+  | ~SPC m t c~ | run the current spec file and subsequent ones |
+  | ~SPC m t e~ | mark example as pending                       |
+  | ~SPC m t f~ | run method                                    |
+  | ~SPC m t l~ | run last failed spec                          |
+  | ~SPC m t m~ | run specs related to the current buffer       |
+  | ~SPC m t r~ | re-run last spec                              |
+  | ~SPC m t t~ | run spec at pointer                           |
+
+***** Ruby-test-mode
+  When =ruby-test-runner= equals =ruby-test=.
+
+  | Key binding | Description         |
+  |-------------+---------------------|
+  | ~SPC m t b~ | run test file       |
+  | ~SPC m t t~ | run test at pointer |
+
+
+  Git commands (start with ~g~):
+
+  | Key Binding | Description                                         |
+  |-------------+-----------------------------------------------------|
+  | ~SPC g b~   | open a =magit= blame                                |
+  | ~SPC g B~   | quit =magit= blame                                  |
+  | ~SPC g c~   | commit changes                                      |
+  | ~SPC g C~   | checkout branches                                   |
+  | ~SPC g d~   | show diff prompt                                    |
+  | ~SPC g D~   | show diff against current head                      |
+  | ~SPC g e~   | show ediff comparison                               |
+  | ~SPC g E~   | show ediff against current head                     |
+  | ~SPC g f~   | show fetch prompt                                   |
+  | ~SPC g F~   | show pull prompt                                    |
+  | ~SPC g H c~ | clear highlights                                    |
+  | ~SPC g H h~ | highlight regions by age of commits                 |
+  | ~SPC g H t~ | highlight regions by last updated time              |
+  | ~SPC g i~   | git init a given directory                          |
+  | ~SPC g I~   | open =helm-gitignore=                               |
+  | ~SPC g l~   | open a =magit= log                                  |
+  | ~SPC g L~   | display the log for a file                          |
+  | ~SPC g P~   | show push prompt                                    |
+  | ~SPC g s~   | open a =magit= status window                        |
+  | ~SPC g S~   | stage current file                                  |
+  | ~SPC g m~   | display the last commit message of the current line |
+  | ~SPC g t~   | launch the git time machine                         |
+  | ~SPC g U~   | unstage current file                                |
+*** How to install packages?
+
+ - First, check if it is included in one of the Spacemacs layers.
+ - Second, if it is available in elpy, add it to ~spacemacs-additional-layers~.
+   Note that packages installed via package-install will be deleted by Spacemacs
+   at boot.
+ - If you want a lot of configuration of this package, create a layer for it.
+
+ - Install a layer
+
+   - ~M-x configuration-layer/create-layer~, give it a name
+
+   - Move/download package.el into that directory
+
+** JabRef user guide
+
+*** Docs
+ - https://help.jabref.org/en/
+ - https://www.mcgill.ca/library/files/library/jabref_guide_2016.pdf
+
+ Academics/Projects/SKIRT/ramski/
+
+ Academics/Projects/SKIRT/ramski/
+
+ @article{He:2020,
+	 Adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+	 Adsurl = {https://ui.adsabs.harvard.edu/abs/2020MNRAS.492.4858H},
+	 Archiveprefix = {arXiv},
+	 Author = {{He}, Chong-Chong and {Ricotti}, Massimo and {Geen}, Sam},
+	 Date-Added = {2020-07-03 15:46:32 -0400},
+	 Date-Modified = {2020-07-03 15:46:34 -0400},
+	 Doi = {10.1093/mnras/staa165},
+	 Eprint = {2001.06109},
+	 Journal = {\mnras},
+	 Keywords = {MHD, ISM: clouds, H \&lt;sc\&gt;ii\&lt;/sc\&gt; regions, galaxies: star clusters: general, dark ages, reionization, first stars, Astrophysics - Astrophysics of Galaxies},
+	 Month = mar,
+	 Number = {4},
+	 Pages = {4858-4873},
+	 Primaryclass = {astro-ph.GA},
+	 Title = {{Simulating star clusters across cosmic time - II. Escape fraction of ionizing photons from molecular clouds}},
+	 Volume = {492},
+	 Year = 2020,
+	 Bdsk-Url-1 = {https://doi.org/10.1093/mnras/staa165}}
+
+** Latex
+
+*** Useful packages
+
+     - siunitx :: scientific numbers, units, table alignment, etc.
+     - todonotes :: add colorful comments and todo items
+     - fixme :: add comments
+
+*** Diagnostics of common errors
+
+  - Package hyperref Warning: Token not allowed in a PDF string
+    (PDFDocEncoding) :: Caused by equations in section title. Replace
+    equation with ~\texorpdfstring{$equation$}{short version}~. Ref:
+    https://tex.stackexchange.com/questions/53513/hyperref-token-not-allowed/53514
+  -
+
+
+*** How to add packages?
+  (from Evernote)
+
+  http://tex.stackexchange.com/questions/58268/where-does-basictex-put-the-texmf-directory-on-osx
+  The "personal tree" on Mac OS X is rooted in the Library folder for
+  each user. However the installer doesn't touch the users' home
+  directories, so the =~/Library/texmf= folder has to be created. Inside
+  it one has to rebuild the usual TDS structure, so llncs.cls should go
+  into =~/Library/texmf/tex/latex/llncs= and all folders must be created
+  manually. So, open Library in your folder, create texmf, open it,
+  create tex, open it, create latex, open it, create llncs and finally
+  put llncs.cls in the last created folder. This is necessary in order
+  that the TeX programs can correctly find the file.
+
+  Note that no "hashing" operation needs to be performed: the "personal
+  tree" is always searched, since it's assumed not to be very big.
+
+** Markdown
+
+*** Images
+
+ Basic way of inserting image:
+
+ #+BEGIN_SRC
+ ![image](image.png)
+ #+END_SRC
+
+ Control width:
+
+ #+BEGIN_SRC
+ <img src="figure.png" alt="" style="zoom:50%;" />
+ <img src="figure.png" alt="" style="width:500pt;" />
+ #+END_SRC
+
+*** Citation
+
+Use like in latex: ~\cite{He2020}~. In this way, when exporting to latex, it stays as is.
+
+Premeble. e.g.
+#+begin_src markdown
+  ---
+  title: "Paper Review"
+  subtitle: "Notes of paper reading"
+  author: Chong-Chong He
+  header-includes: |
+  \usepackage{color}
+  \usepackage{caption}
+  \usepackage{anysize}
+  \usepackage{siunitx}
+  \usepackage[utf8]{inputenc}
+  \def\msun{Msun}
+  ---
+#+end_src
+
+** Mathematica
+*** Figures
+
+  - [[https://mathematica.stackexchange.com/questions/11350/xkcd-style-plots/11355#11355][xkcd-style Plots]]
+
+  [[./mathematica_figures/xkcd.png]]
+
+  - Font
+
+    - [[https://stackoverflow.com/questions/13134354/mathematica-change-all-text-fonts-simultaneosly-in-plot-or-listplot][Bigger font size]]:
+
+  #+BEGIN_SRC mathematica
+  SetOptions[Plot, BaseStyle -> FontSize -> 18]
+  #+END_SRC
+
+    - Keeping Text Size the Same Throughout Entire Notebook File:
+      https://mathematica.stackexchange.com/questions/1981/keeping-text-size-the-same-throughout-entire-notebook-file/1983#1983
+** mc
+
+*** Keymap
+
+  I added the following to ~~/.config/mc/mc.keymap~. [[https://unix.stackexchange.com/questions/354215/change-sort-order-with-shortcuts-in-midnight-commander/392711#392711][Ref]]
+
+  #+BEGIN_SRC
+  [panel]
+  Sort = alt-!
+  SortPrev =
+  SortNext =
+  SortReverse = alt-@
+  SortByName = alt-#
+  SortByExt = alt+$
+  SortBySize = alt-%
+  SortByMTime =  alt-^
+  #+END_SRC
+** nnn
+
+ todo
+
+** Vim
+
+*** My Vim Notes
+
+**** Local install vim
+
+#+begin_src shell
+  git clone https://github.com/vim/vim.git
+  cd vim
+  ./configure --prefix=/path/to/vim
+  make
+  make install
+  export alias vim /path/to/vim # tcsh
+  export alias vim=/path/to/vim # bash
+#+end_src
+
+**** Configure vim
+
+Following
+https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+
+1. Install Vundle with
+
+   #+BEGIN_EXAMPLE
+     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+   #+END_EXAMPLE
+
+2. mv the .vimrc file to $HOME
+
+3. Uncomment flake8, isnowfy, python related stuff
+
+4. =:PluginInstall=
+   
+***** Steps to configure vim on macos
+
+1. Install anaconda
+
+2. Install Xcode, and follow [[https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error][this page]]
+
+3. =sudo xcode-select -s /Applications/Xcode.app/Contents/Developer=
+
+4. Install homebrew
+
+5. Install MacVim.dmg and link vi to MacVim.app/*.
+
+6. Install YouCompleteMe
+
+   1. Follow https://github.com/Valloric/YouCompleteMe#full-installation-guide
+
+   2. Notes: the path of clang after installed via brew is
+      /usr/local/Cellar/llvm/5.0.1/lib/libclang.dylib
+
+   3. On step 4, do
+
+      #+BEGIN_EXAMPLE
+        cmake -G "Unix Makefiles" -DEXTERNAL_LIBCLANG_PATH=/usr/local/Cellar/llvm/5.0.1/lib/libclang.dylib . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+      #+END_EXAMPLE
+
+7. [[https://gist.github.com/splhack/4ec93591aec286beac496bbd5cc8d764][Use brew to install macvim]]
+
+#+BEGIN_EXAMPLE
+  brew tap macvim-dev/macvim
+  brew install --HEAD macvim-dev/macvim/macvim --with-properly-linked-python2-python3 
+#+END_EXAMPLE
+
+6.  [[https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/][Install Vundle]]
+
+    =git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim=
+
+7.  Setup vundle for vim on =.vimrc=
+
+    #+BEGIN_EXAMPLE
+      set nocompatible              " required
+      filetype off                  " required
+
+      " set the runtime path to include Vundle and initialize
+      set rtp+=~/.vim/bundle/Vundle.vim
+      call vundle#begin()
+
+      " alternatively, pass a path where Vundle should install plugins
+      "call vundle#begin('~/some/path/here')
+
+      " let Vundle manage Vundle, required
+      Plugin 'gmarik/Vundle.vim'
+
+      " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+    #+END_EXAMPLE
+
+    " All of your Plugins must be added before the following line call
+    vundle#end() " required filetype plugin indent on " required
+
+8.  =:PluginInstall=
+
+9.  Follow [[https://github.com/Valloric/YouCompleteMe#mac-os-x][YouCompleteMe github page]] to install YCM
+
+10. Add the rest add-ons following [[https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/][VIM and Python - a Match Made in Heaven]], or just copy paste /.vimrc_20170624/
+
+****** fortran
+
+https://gist.github.com/Sharpie/287445 (not configured yet)
+
+**** Spell check
+
+ To get help, type ~:help spell~.
+
+ To enable spell checking, type ~:set spelllocal~ or ~:set spell~. To disable, type ~:set nospell~.
+
+ You can navigate through the misspelled words by typing any one of the following letters:
+
+ - ]s :: Find the misspelled word after the cursor (Forward search) while you making a README file for your project
+ - [s :: Find the misspelled word before the cursor (Backward search)
+ - ]S (Note the capital “S”) – Similar to “]s” but only stop at bad words, not at rare words or words for another region.
+ - [S :: Similar to “[s” but search backwards.
+ - z= :: find suggestions for the that particular word.
+ - zg :: add to dictionary
+ - zug :: Undo this add
+ - zw :: mark the mispelled word
+ - zuw :: undo this action
+
+** tmux
+
+ Session > Window > Pane
+
+ | key                                    | description              |
+ |----------------------------------------+--------------------------|
+ | ~C-b p~ and ~C-b n~                    | Previous and next window |
+ | ~C-b $~                                | Rename current session   |
+ | ~C-b ,~                                | Rename current window    |
+ | ~C-b d~ or ~tmux detach~               | Detach from a session    |
+ | ~tmux attach [-t 0] [-t session-name]~ | Attach to a session      |
+ | ~tmux kill-session -t session-name/0~  | Kill a session           |
+ | ~FN~+~mouse drag~ then ~CMD+C~         | Copy to system clipboard |
+
+** Typora <<typora>>
+
+*** Themes
+ Download themes from http://theme.typora.io/. I kept a modified
+ version of /solarized/ theme in
+ ~/Users/chongchonghe/Library/Application Support/abnerworks.Typora/themes/solarized.css~
+
+*** Image upload
+
+Setup image upload via uPic. Currently uploading image to github repo =private-upic-library=. 
+ 
+** vifm
+
+https://github.com/vifm/vifm
+
+https://vifm.info/
+
+*** Installation
+
+**** On macOS
+
+
+
+*** General
+
+- Config files are in ~~/.vifm/~. Init file is ~vifmrc~.
+
+- Trash:
+
+  - Trash_directory:
+
+*** Quick tips
+
+- Sort files: ~:sort~
+- Show hidden files: ~za~, ~zo~, ~zm~
+- Run commands inside vifm: simple commands like ~cd~ works, or ~!shell command~.
+- ~Shift+TAB~ to shift your focus to preview pane
+
+*** Trash
+
+- ~:trash~ to go to trash and ~:restore~ on filename to restore a file in trash.
+  ~:lstrash~ list files in trash by their original names. ~:empty~, permanently
+  remove files from all existing non-empty trash directories
+
+- Temporarily disable trash: ~set notrash~. Turn it back on, ~set trash~.
+
+- trashdir:
+  - On Mac: =~/Trash=
+  - On dp2: =/lustre/che1234/Trashdir=
+  - On startrek: TODO
+
+** kitty
+
+- A tutorial with a list of shortcuts: https://www.mdeditor.tw/pl/2i2l
+- kitty homepage: https://sw.kovidgoyal.net/kitty/binary.html
+- Preview Pictures, PDFs and Videos in vifm:
+  https://medium.com/@jakenevergivesup/preview-pictures-pdfs-and-videos-in-vifm-6dac38e0274d
+** 欧陆词典
+
+[[file:/Users/chongchonghe/Documents/Mails/2016-08-16-欧路词典-电脑版注册邮件.eml][Mail: 欧路词典 电脑版注册邮件]] 
+
+激活码：
+0KB9G-FY4H9-LIADW-ABMUA
+** PDF expert
+
+License Key: 
+11C5099F-C5C9E7F6-2AB4B90D-52D3D6C4-379F97C0
+
+email: [[file:/Users/chongchonghe/Documents/Mails/2020-11-03-Your-PDF-Expert-Mac-Paddle.com-Order.eml][Mail: Your PDF Expert Mac Paddle.com Order]] 
+
+** cheat
+
+** ads2bibdesk
+
+Installed on macOS (2021-08-29 Sun)
+
+
+* Disk and Files
+** Drives
+
+*** G drive
+
+ - Partition 1: (Old) Time Machine files
+
+ - Partition 2: Movies, PrivFiles,
+
+ -
+
+*** Samsung T5
+
+ Time Machine
+
+*** Toshiba
+
+ - Partition 1: (Before 2017) Time Machine
+
+ - Partition 2: Movies, Photos,
+
+** Tips
+
+*** Delete time machine backups
+
+ Shrink Your Time Machine Backups and Free Disk Space:
+ http://thegreyblog.blogspot.com/2014/03/shrink-your-time-machine-backups-and.html
+
+ Use ~tmutil~, not ~rm -rf~ or Trash. Here's why:
+ https://osxdaily.com/2015/07/27/delete-old-backups-time-machine-mac/
+
+
+* Mails
+
+** gmail.com (umd.edu)
+
+Filters:
+
+** gmail.com (terpmail.umd.edu)
+
+Filters:
+- logistics: not important logistics messages
+  - marcc-help
+  - 
+
+** Astro Mail: mbsync + mu4e
+
+*** Handbook
+
+- To compose a new mail: C
+- To edit a saved draft: E
+- To send a mail: C-c C-c
+
+*** General
+
+- E-mail files are in ~/mbsync2.
+- Password in Apple Keychain. Not need to type in password again
+- Tips for managing emails:
+  - https://www.mindtools.com/pages/article/managing-email.htm
+- Key-bindings:
+  https://www.djcbsoftware.nl/code/mu/mu4e/Keybindings.html
+- Tutorials
+  http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/#getting-set-up-with-mu-and-offlineimap
+  http://www.macs.hw.ac.uk/~rs46/posts/2014-01-13-mu4e-email-client.html
+  https://ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
+  https://www.djcbsoftware.nl/code/mu/mu4e/Longer-configuration.html
+
+**** How do I organize my emails?
+
+- Folders: INBOX, Action Item, Waiting, Reference, Archive
+
+**** TODO
+
+- Add org-mode to mu4e:
+  http://pragmaticemacs.com/emacs/master-your-inbox-with-mu4e-and-org-mode/
+- Config: sent email (done)
+  https://ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
+  http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/
+- Try evil mode?
+- Think about email organization
+- Alerts for new mail:
+  http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/
+
+*** mu4e and OfflineIMAP (obsolete)
+
+http://kimi.im/2019-03-31-emacs-offlineimap-mu4e-mail-client
+https://wiki.archlinux.org/index.php/OfflineIMAP
+http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/
+http://www.bagualu.net/wordpress/archives/6555
+
+*** mu4e and mbsync (in action)
+
+- General instruction:
+  - http://www.macs.hw.ac.uk/~rs46/posts/2014-01-13-mu4e-email-client.html
+  - http://pragmaticemacs.com/category/mu4e/
+
+**** mbsync
+
+- Following https://ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
+- Other references:
+  - https://webgefrickel.de/blog/a-modern-mutt-setup
+  - https://irreal.org/blog/?p=8004
+  - http://pragmaticemacs.com/emacs/migrating-from-offlineimap-to-mbsync-for-mu4e/
+- [[https://manpages.debian.org/testing/isync/mbsync.1.en.html][mbsync documentation]]
+
+***** Password
+- I store my umdastro password in keychain under ~earth.astro.umd.edu~. I
+  clicked "Always allow to use this keychain", so I don't need to enter password
+  anymore.
+- terpmail.umd.edu: app password: in apple keychain, or access from gmail settings
+
+***** Channel
+Expunge: 'Both'
+Refer to [[https://manpages.debian.org/testing/isync/mbsync.1.en.html][mbsync doc]] for more info.
+
+**** Mu4e
+
+- Doc: http://www.djcbsoftware.nl/code/mu/mu4e/index.html#SEC_Contents
+
+*** astro.umd.edu transition
+
+- Before 3/1/2020
+  - Changed the server to mailhost.astro.umd.edu on Apple Mail,
+    mbsync/mu4e, and Android Gmail.
+- 3/4/2020
+  - Edited .msmtprc and changed the smtp server.

@@ -67,9 +67,9 @@
 	 :options "^:nil"
 	 ;; sitemap
 	 :auto-sitemap t
-         :sitemap-filename "index.org"
-         :sitemap-title "Index"
-         :sitemap-function my-org-publish-org-sitemap
+     :sitemap-filename "index.org"
+     :sitemap-title "Index"
+     :sitemap-function my-org-publish-org-sitemap
 	 :html-home/up-format "<div> <a accesskey='h' href='index.html'> UP </a> | <a accesskey='H' href='index.html'> HOME </a> </div>"
 	 )
 	("css"

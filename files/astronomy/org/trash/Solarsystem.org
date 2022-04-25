@@ -1,0 +1,11 @@
+#+SETUPFILE: ../style/default.setup
+#+INCLUDE: ../style/latex.setup
+
+* Solar system
+
+水星, 金星, 地球, 火星, 木星, 土星, 天王星, 海王星
+
+** Earth
+
+- Contrast the atmospheric conditions on Venus with those on Earth. Explain why they are so different. Describe the role of water vapor in the Earth's atmosphere to explain this difference.
+	  - L10.p6, 35. The surface temperature on Venus is much higher than on Earth. That's because Venus has a very thick atmosphere made of CO2 so the greenhouse effect on Venus is much stronger than on Earth, trapping the radiation from the Sun. Water vapor in the Earth's atmosphere has picked up much of the CO2 in the Earth's atmosphere and this CO2 is now stored in the sediments making up the ocean floors, etc. Venus is closer to the Sun than the Earth and H2O in Venus atmosphere was probably photo-dissociated before it could capture the CO2 in the atmosphere.

@@ -26,6 +26,14 @@ $ dd if=/dev/zero of=/tmp/test1.img bs=4k count=100000 oflag=dsync
 dddd
 #+end_quote
 
+*** Some useful commands
+
+#+begin_src 
+module avail python
+module load python/2.7.7
+module list
+#+end_src
+
 ** 2017, Installed anaconda2
 
  To activate it,
@@ -90,3 +98,222 @@ Resources:
   - =setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${HOME}/usr/lib/rpcsvc/include/rpcsvc/=
   - 
   - ~export LD_LIBRARY_PATH=${HOME}/usr/local/libevent/lib/:${LD_LIBRARY_PATH}~ to
+
+* Mac
+** sshfs: link folder via ssh
+Following http://stuff-things.net/2015/05/20/fuse-and-sshfs-on-os-x/
+
+** Bibtex
+
+- I use bibdesk as my primary tool for bibtex organization.
+- Use the python package adsbibdesk (=ads=) to add ads/arxiv articles to
+  my bibdesk.
+- Use bibtool to clean the .bib file to use in a research paper.
+
+* Deepthought 2
+To use anaconda Python:
+
+#+begin_example
+   exec bash
+   unset PYTHONPATH
+   unset PYTHONHOME
+   export PATH=~/anaconda2/bin:${PATH}
+   alias vi="~/usr/local/vim/bin/vim"
+#+end_example
+
+This has been written in .bashrc.mine, which will excute every time you
+run =exec bash=.
+
+* Linux
+** Processes
+=ps=: list all processes
+
+=jobs=: list all active jobs
+
+* Others
+** Mercurial
+
+1. Download source from https://www.mercurial-scm.org/release/?M=D
+
+2. tar xf mercurial-/, cd mercurial-/
+
+3. make install-home
+
+4. Put the following lines into .cshrc.mine
+
+5. ​
+
+#+begin_src shell
+  set pythonpath = (${HOME}/lib/python)
+  set path = (${HOME}/bin $path)
+#+end_src
+
+More on https://www.mercurial-scm.org/wiki/UnixInstall
+
+** MarkDown
+I've installed python packages: markdown and Pygments, following
+http://sebastianraschka.com/Articles/2014_markdown_syntax_color.html
+
+1. #+begin_src shell
+        python -m markdown -x codehilite some_markdown.md > body.html            
+   #+end_src
+
+2. #+begin_src shell
+        pygmentize -S default -f html > codehilite.css
+   #+end_src
+
+3. Insert the codehilite.css, among other css, into your HTML body.
+
+** Texstudio
+*** Shortcut problem
+I found this solution [here][7], which works fine for TeXStudio.
+
+Edit the file /usr/share/applications/texstudio.desktop and change the
+line
+
+#+begin_example
+  Exec=texstudio %F
+#+end_example
+
+to
+
+#+begin_example
+  Exec=env UBUNTU_MENUPROXY= texstudio %F
+#+end_example
+
+** Terminal
+*** Color Setup
+I use [Contrast Checker][5] and [rgb to hex][6]
+
+Current setup: Bg dcc7b4, Fg 1e1e1e
+
+** Modifications
+*** pymses
+Python multiprocess. File
+~/local/pymses_4.0.0/pymses/sources/ramses/octree.py, line 163; line
+364;
+
+#+begin_src python
+  # if big_scalars_array == None:
+  if big_scalars_array is None:
+#+end_src
+
+** Miscellaneous
+*** CMUS
+Download cmus from GitHub.
+
+#+begin_example
+  ./configure CONFIG_AAC=y CONFIG_CUE=y CONFIG_FLAC=y
+#+end_example
+
+** Some tips
+*** Create links to an application
+First, change directory
+
+#+begin_src shell
+  cd ~/.local/share/applications
+#+end_src
+
+Then, open nano editor
+
+#+begin_src shell
+  nano JabRef.desktop
+#+end_src
+
+Add the following to the file
+
+#+begin_example
+  [Desktop Entry]
+  Type=Application
+  Terminal=false
+  Icon=PATH TO YOUR ICON
+  Exec=java -jar /path/to/your/JabRef-3.2.jar
+  Name=NAME YOUR DESKTOP ICON
+#+end_example
+
+Then, =Ctrl + X --> Y --> Enter=. It should create an icon for you to
+launch, just search for it in Menu.
+
+*** Local install
+Use =./configure && make && make install= with specified directory:
+
+#+begin_src shell
+  ./configure
+  make --prefix=/dir
+  make install
+#+end_src
+
+**** Local install python packages
+#+begin_src shell
+  python setup.py install --user
+#+end_src
+
+*** Auto mount hdd when reboot
+#+begin_example
+  sudo gedit /etc/fstab
+#+end_example
+
+then add the following
+
+#+begin_example
+  UUID=8184299c-8612-4a07-bcb0-0bafd11d132c /home/chongchong/Big 0 2
+#+end_example
+
+replace the UUID with the disk UUID. The /0/ means dump will assume that
+the filesystem does not need to be dumped, /2/ is the the order in which
+filesystem checks are done at reboot time: 1 for /, 2 for others
+
+*** Create symlinks to User folders
+#+begin_src shell
+  ls -s /media/jordan/HDD_ubuntu/chongchong/Videos/ Videos
+#+end_src
+
+*** Execute UNIX Shell scripts in the background
+#+begin_example
+  #!/bin/bash
+  ssh st scp -r dp2:path1 path2
+
+  nohup ./my-shell-script.sh > sh.log &
+#+end_example
+
+*** Printer
+#+begin_src shell
+  lp -o sides=two-sided-long-edge -o page-ranges=1-4,7,9 file
+#+end_src
+
+*** Unzip
+Simple code
+
+#+begin_example
+  tar xf file.tar.* [-C dir/to/des]
+#+end_example
+
+.tar.gz. files
+
+#+begin_src shell
+  tar -xvzf file.tar.gz
+#+end_src
+
+.tar.bz2 files
+
+#+begin_src shell
+  tar -vxjf .tar.bz2
+#+end_src
+
+Unzip files with Chinese names, with p7zip and convmv installed
+
+#+begin_src shell
+  LANG=C 7za x your-zip-file.zip
+  convmv -f GBK -t utf8 --notest -r .
+#+end_src
+
+*** Delete the configuration files of compiz
+#+begin_src shell
+  sudo rm -rf .config/compiz*
+  killall gnome-session
+  sudo reboot
+#+end_src
+
+*** Firefox
+To set the default zoom in to false, type =about:config= in the address
+bar, then search *browser.zoom.siteSpecific and set it to false.

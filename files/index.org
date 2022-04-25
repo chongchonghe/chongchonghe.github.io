@@ -1,7 +1,6 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
 #+TITLE: C.-C. He's Database
 
-- [[./paper-review/public/index.html][Paper reviews]]
+- [[./paper-review/index.html][Paper reviews]]
 - [[file:astronomy/public/index.html][Astronomy]]
 - [[file:wiki/public/index.html][Wiki]]
-

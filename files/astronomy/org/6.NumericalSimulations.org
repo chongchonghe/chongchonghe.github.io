@@ -1,0 +1,209 @@
+
+* Codes
+  :PROPERTIES:
+  :CUSTOM_ID: hydrodynamic Al-simulations
+  :END:
+
+** Hydro Methods and Codes, Summary
+   :PROPERTIES:
+   :CUSTOM_ID: methods-and-code
+   :END:
+
+Specification of the flow field:
+
+- Euler approach: The fluid properties are written as functions of space and times. Cons: limited dynamic range.
+
+- Lagrangian approach: Pieces of the fluid are "tagged". The fluid flow properties are determined by tracking the motion and properties of the particles as they move in time.
+
+- Smooth Particles Hydrodynamics (SPH): an intermediate solution. Follows the Lagrangian evolution of the flow, in which resolution elements are defined as appropriate averages over 50 neighboring particles.
+
+Methods of N-body code:
+
+- Particle-Mesh: fastest, but only support dynamical range of $10^3$.
+
+- P3M: higher spatial resolution, but significant increase in CPU time.
+
+- AP3M: rectangular grids is placed in clustered regions to apply PM
+  solver.
+
+- AMR: Generalization of both AP3M and TREE. e.g. ART.
+
+N-body code:
+
+- ART:
+
+	  - The first implementation of a grid-based high-resolution N-body code.
+
+	  - AMR: recursively in a fully adaptive manner in the regions where the density exceeds a predefined threshold. Mean number of particles per cell remains roughly constant (around 10).
+
+	  - "Quasi-Lagrangian" approach ensures two-body relaxation remains unimportant.
+
+	  - The mesh structure is not created at every time step, but is properly adjusted to the evolving particle distribution.
+
+** RAMSES
+   :PROPERTIES:
+   :CUSTOM_ID: sec:ramses
+   :END:
+
+*** Summary
+    :PROPERTIES:
+    :CUSTOM_ID: summary
+    :END:
+
+- The AMR grid is built on a tree structure.
+
+- The hydrodynamic solver is based on a second order Godunov method, to solve the Euler equation.
+
+- Refinement strategy retained for cosmological simulations is based on a "quasi-Lagrangian" mesh evolution.
+
+*** Features
+    :PROPERTIES:
+    :CUSTOM_ID: features
+    :CLASS: unnumbered
+    :END:
+
+- Coupling a tree-based AMR hydrodynamical scheme to the N-body solver developed for the ART code.
+
+- Hydrodynamical solver: second-order Godunov scheme for perfect gases.
+
+*** M1 closure
+    :PROPERTIES:
+    :CUSTOM_ID: m1-closure
+    :END:
+
+Assume that the radiation field is locally a dipole. The photon distribution function is the Lorentz transform of a Planckian distribution. Dipole is aligned locally to the radiation flux.
+
+Under M1, the radiative transfer equation is turned into an hyperbolic system of conservation laws with source terms.
+
+*** Cooling Function
+    :PROPERTIES:
+    :CUSTOM_ID: cooling-function
+    :END:
+
+Possibly a big issue!!! I see a mu=1.4 with comments: hard set mu=1.4 to make temperature agree with Audic & Hennebelle.
+
+1) For hydrogen and helium
+	   1. In each cell, photoheating and radiative cooling of hydrogen and helium is performed by the radiative transfer module of RAMSES-RT as in Rosdahl et al. (2013).
+	   2. Photoheating rate $\mathcal{H}$ is a sum of the heating contributiosn from all photoionziation events (HI, HeI, and HeII).
+	   3. The primordial cooling rate $\mathcal{L}$ include various cooling processes: collisional ionizations, collisional excitations, recombinations, dielectronic recombinations, bremsstrahlung and Compton cooling.
+2) For metals
+	   1. 'Neutral' function N(T)
+			  - Below 10^4 K: the prescription of Audit & Hennebelle (2005), which includes *carbon, oxygen and dust grains* as well as the *ambient UV background* in the ISM. This is based on the work of Wolfire et al. (1995, 2003).
+					- Including cooling by
+						  - fine-structure lines of CII (92 K)
+						  - fine-structure lines of OI (228 and 326 K)
+						  - cooling by H (Lyα line)
+						  - cooling by electron recombination onto positively charged grains
+					- and heating by
+						  - photo-electric effect on small grains and PAHs due to the FUV galactic radiation.
+					- (This might be probmatic due to the hard mu = 1.4. In Audit2005, they have no radiative transfer, so the mean particle weight is constant at mu = 1.4, while in RAMSES RT, mu is much higher(lower?) due to ionized electrons.)
+			  - Above $10^4$ K: Sutherland & Dopita (1993)
+	   2. 'Photoionized' cooling function
+			  - a piecewise fit to Ferland (2003): $\Lambda = 3\times10^{-24}~{\rm erg~cm^3~s^{-1}}$ below 9000 K and $2.2\times10^{-22}~{\rm erg~cm^3~s^{-1}}$ above 10^5 K.
+3) For H/He
+	   - ...
+
+TODO: make a curve of the cooling funciton
+
+**** Thermal update
+
+$$
+\frac{\partial e}{\partial t} = \Gamma \equiv {\cal H} + {\cal L}
+$$
+where ${\cal H}$ is the photoheating rate and ${\cal L}$ is the cooling rate.
+
+The photoheating rate ${\cal H}$ is a sum of the heating contributions form all photoionization events, calculated with the discretization into M photon groups.
+
+The various cooling processes are collisional ionizations/excitations, recombinations, dielectronic recombinations, bremsstrahlung, and Compton cooling.
+
+*On-the-spot approximation* recombination-emitted photons are absorbed ‘on the spot’ by a near-lying atom (in the same cell), and hence these photon emissions cancel out by local photon absorptions. When OTSA is assumed, the gas is not photoemitting, and the case A recombination rates are replaced with case B recombination rates
+
+**** In code
+
+=ramses/patch/frig/main/cooling_module_frig.f90=:
+- cooling_low(T, n, ref): low-T cooling
+- cooling_high(T, n, ref): high-T cooling
+
+**** Other notes
+
+Mean particle mass, $\mu$, is correctly calculated by the function =getMu= in main/rt_cooling_module.f90:
+
+$$
+\mu = [X(1+x_{\rm HII}) + \frac{Y}{4}(1 + x_{\rm HeII} + 2x_{\rm HeIII})]^{-1}
+$$
+Note that in the most basic H and He senario, we have $1/\mu = X/1 + Y/4$. 
+
+*** Sink particles
+
+- IR feedback from accretion: exists in current version. Use ~ir_feedback~ under _Feedback parameters_. 
+
+** N-body
+   :PROPERTIES:
+   :CUSTOM_ID: n-body
+   :END:
+
+- [[https://www.cs.cmu.edu/afs/cs/academic/class/15850c-s96/www/nbody.html][N-Body/Particle Simulation Methods]]
+
+The density field is computed using the 'Cloud-In-Cell' (CIC) interpolation scheme. The Poisson equation at the course level is solved using standard FFT technique. For fine levels, the potential is found using a relaxation method. The acceleration is then calculated using the 6-points finite difference approximation of the gradient. Variable time steps: a second-order midpoint scheme that reduces exactly to the leapfrog scheme for constant time steps.
+
+** Hydro Codes
+   :PROPERTIES:
+   :CUSTOM_ID: hydro
+   :END:
+
+*** Fire
+
+The FIRE simulations use the P-SPH code, a heavily modified version of Volker Springel’s Gadget 3 code whose development is led by Phil Hopkins. In addition to the explicit ISM and stellar feedback physics, P-SPH uses apressure-entropy implementation of smooth particle hydrodynamics (SPH) that resolves all the main historical discrepancies between grid-based and SPH methods, particularly for fluid mixing instabilities.
+
+*** 
+   
+** Mock Observations
+  :PROPERTIES:
+  :CUSTOM_ID: observations
+  :END:
+
+*** Stellar population sythesis
+   :PROPERTIES:
+   :CUSTOM_ID: stellar-population-sythesis
+   :END:
+
+FSPS: Flexible Stellar Population Synthesis:
+[[https://github.com/cconroy20/fsps]]
+
+pythonFSPS (Flexible Stellar Population Synthesis for Python):
+[[http://dfm.io/python-fsps/current/]]
+
+Starburst99
+
+- [[https://github.com/rjtanner/StarburstPy]]
+- [[https://github.com/Morisset/pyStb99]]
+
+[[https://users.astro.ufl.edu/~desika.narayanan/courses/ism_spring19/hw4.pdf]]
+
+*** Filters
+   :PROPERTIES:
+   :CUSTOM_ID: filters
+   :END:
+
+JWST/NIRCam.F150W:
+[[http://svo2.cab.inta-csic.es/svo/theory/fps3/index.php?id=JWST/NIRCam.F150W&&mode=browse&gname=JWST&gname2=NIRCam]]
+
+Table of FSPS Filters: [[http://dfm.io/python-fsps/current/filters/]]
+
+SDSS Filters on astroML:
+[[https://www.astroml.org/book_figures/appendix/fig_sdss_filters.html]]
+
+* Simulation Projects
+
+** FIRE: Feedback In Realistic Environments
+
+https://fire.northwestern.edu/
+
+** DRAGON
+
+- [[http://silkroad.bao.ac.cn/dragon/][The Dragon Simulation Project]]
+- [[https://ui.adsabs.harvard.edu/abs/2016MNRAS.458.1450W/abstract][The Paper]]
+- 
+
+
+
