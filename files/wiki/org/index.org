@@ -1,9 +1,0 @@
-#+TITLE: Index
-
-#+SETUPFILE: ../style/default.setup
-#+OPTIONS: toc:nil
-* [[file:computers.org][computers]]
-* [[file:programming.org][programming languages]]
-* [[file:softwares.org][softwares]]
-* [[file:unix.org][unix]]
-* [[file:yt.org][yt quick reference]]

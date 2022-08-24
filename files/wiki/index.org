@@ -1,7 +1,0 @@
-#+TITLE: Computer Docs
-
-#+SETUPFILE: ./style/default.setup
-#+OPTIONS: toc:nil
-* [[file:mac.org][mac]]
-* [[file:org.org][org-mode]]
-* [[file:startrek.org][startrek]]
