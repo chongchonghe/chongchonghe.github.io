@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Physics Calculator (Beta)</title>
+  <!-- <script src="https://unpkg.com/mathjs@7.1.0/dist/math.min.js"></script> -->
+  <script type='text/javascript' src="math.min.js"></script>
+  <style>
+
+    html {
+	background-color: gray;
+    }
+    body {
+	max-width: 800px;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	font-size: 16pt;
+	background-color: white;
+	overflow-x: auto;
+	overflow-y: visible;
+    }
+
+    #output
+    {
+	font-family: monospace;
+    }
+
+  </style>
+</head>
+<body>
+
+    <script>
+     const config = {predictable :true }
+     math.config(config)
+     function print(value) {
+         const precision = 4
+         document.write(math.format(value, precision) + '<br>')
+     }
+     function format(value) {
+         return math.format(value, 12)
+     }
+
+     // // functions and constants
+     // print(math.round(math.e, 3))            // 2.718
+     // print(math.atan2(3, -3) / math.pi)      // 0.75
+
+      document.write("Test <br>Input: 1000 km / speedOfLight (expecting 3.336 ms) <br>Output: ")
+     // print(math.typeOf(math.evaluate('4m / 1m')))         // Unit
+     print(math.evaluate('1000 km / speedOfLight in ms'))
+
+     function display() {
+         var expr = document.getElementById("myInput").value;
+         var lines = expr.split("\n");
+         var output = document.getElementById("output");
+         output.style.color = "blue";
+         output.innerHTML = "";
+         const parser = math.parser();
+         /* const mathjs = require('mathjs'); */
+         /* const parser = mathjs.create(mathjs.all, {predictable: true}); */
+         /* const Unit = math.type.Unit; */
+         for(var i = 0; i < lines.length; i++){
+             if (lines[i] == ""){
+                 continue;
+             }
+	           // .includes works in most browsers except IE (of course) and Edge (of course)
+	           // ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes and https://stackoverflow.com/questions/2430000/determine-if-string-is-in-list-in-javascript
+	           try {
+	               if (lines[i].split(' ').includes('in'))
+		                 output.innerHTML += format(parser.evaluate(lines[i]));
+	               else {
+		                 /* output.innerHTML += parser.evaluate(lines[i]).toCGS().toString(); */
+		                 output.innerHTML += format(parser.evaluate(lines[i]).toSI());
+                 }
+	           } catch(err) {
+	               output.style.color = "red";
+	               output.innerHTML = "Line " + (i+1) + ": " + err.message;
+                 output.innerHTML += "<br>";
+	               break;
+	           }
+             output.innerHTML += "<br>";
+         }
+         parser.clear();
+     }
+    </script>
+
+<h2>Physics Calculator (Beta)</h2>
+
+<p>Input:</p>
+<textarea type="text" id="myInput" rows="6" cols="40" style="font-size:16pt">
+G = gravitationConstant
+Msun = 1.988409870698051e+33 g
+au = 149597870700.0 m
+sqrt(G Msun / au) in km/s
+</textarea>
+<br>
+<button type="button" id="myBtn" onclick="display()">Calculate</button>
+
+<script>
+  var input = document.getElementById("myInput");
+  input.addEventListener("keyup", function(event) {
+      if (event.keyCode == 13) {
+          event.preventDefault();
+          document.getElementById("myBtn").click();
+	  <!-- display(); -->
+      }
+  });
+</script>
+
+<p>Output:</p>
+<p id="output"></p>
+
+</body>
+</html>

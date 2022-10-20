@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-git add -A
-git commit -m "$(date +%d.%m.%y-%H:%M:%S)"
-git push origin master
