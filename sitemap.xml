@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://chongchonghe.github.io/zh/sitemap.xml</loc>
+    <loc>https://chongchonghe.github.io/en/sitemap.xml</loc>
+    
+      <lastmod>2020-10-10T00:00:00+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://chongchonghe.github.io/en/sitemap.xml</loc>
-    
-      <lastmod>2020-10-10T00:00:00+00:00</lastmod>
+    <loc>https://chongchonghe.github.io/zh/sitemap.xml</loc>
     
   </sitemap>
   
