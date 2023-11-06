@@ -2,46 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chongchonghe.github.io/welcome/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/about/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chongchonghe.github.io/news/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/research/</loc>
+    <loc>https://chongchonghe.github.io/research/_indexbk/</loc>
   </url><url>
     <loc>https://chongchonghe.github.io/publications/</loc>
     <lastmod>2020-03-08T13:38:07-04:00</lastmod>
-  </url><url>
-    <loc>https://chongchonghe.github.io/data/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/teaching/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/contact/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/</loc>
-    <lastmod>2020-10-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chongchonghe.github.io/zh/"
+                href="https://chongchonghe.github.io/zh/publications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chongchonghe.github.io/"
+                href="https://chongchonghe.github.io/publications/"
                 />
   </url><url>
-    <loc>https://chongchonghe.github.io/teaching/2017-astr100/</loc>
+    <loc>https://chongchonghe.github.io/research/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/research/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/research/"
+                />
   </url><url>
-    <loc>https://chongchonghe.github.io/teaching/2021-astr101/</loc>
+    <loc>https://chongchonghe.github.io/teaching/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/teaching/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/teaching/"
+                />
   </url><url>
-    <loc>https://chongchonghe.github.io/about/cycling/</loc>
-  </url><url>
-    <loc>https://chongchonghe.github.io/publications/attach/</loc>
+    <loc>https://chongchonghe.github.io/authors/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/authors/"
+                />
   </url><url>
     <loc>https://chongchonghe.github.io/categories/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -53,9 +67,70 @@
                 href="https://chongchonghe.github.io/categories/"
                 />
   </url><url>
-    <loc>https://chongchonghe.github.io/about/music/</loc>
+    <loc>https://chongchonghe.github.io/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/"
+                />
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/css/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/categories/demonstra%C3%A7%C3%A3o-do-tema/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/markdown-syntax.pt-br/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/html/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/hugo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/authors/lone-coder/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/markdown/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/markdown-syntax/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/authors/programador-solit%C3%A1rio/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/series/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/series/"
+                />
+  </url><url>
+    <loc>https://chongchonghe.github.io/categories/sintaxe/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chongchonghe.github.io/tags/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -66,5 +141,117 @@
                 hreflang="en"
                 href="https://chongchonghe.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://chongchonghe.github.io/categories/theme-demo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/series/theme-demo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/rich-content.pt-br/</loc>
+    <lastmod>2023-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/rich-content/</loc>
+    <lastmod>2023-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/more-rich-content.pt-br/</loc>
+    <lastmod>2023-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/more-rich-content/</loc>
+    <lastmod>2023-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/math-typesetting.pt-br/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/math-typesetting/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/html-and-css-only-tabs/</loc>
+    <lastmod>2023-07-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/html-and-css-only-tabs.pt-br/</loc>
+    <lastmod>2023-07-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/mermaid-support/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/mermaid-support.pt-br/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/emoji/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/emoji-support/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/emoji-support.pt-br/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/hugo-coder-wiki/</loc>
+    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/hugo-coder-wiki/</loc>
+    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/placeholder-text/</loc>
+    <lastmod>2023-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/text/</loc>
+    <lastmod>2023-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/posts/placeholder-text.pt-br/</loc>
+    <lastmod>2023-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/categoria/temas/</loc>
+    <lastmod>2023-01-04T23:21:18+01:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/categoria/sintaxe/</loc>
+    <lastmod>2023-01-04T23:21:06+01:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/tags/shortcodes/_index.pt-br/</loc>
+    <lastmod>2023-01-04T11:51:36+01:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/about.pt-br/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chongchonghe.github.io/about/cycling/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/about/hiking/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/about/"
+                />
+  </url><url>
+    <loc>https://chongchonghe.github.io/teaching/2017-astr100/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/teaching/2021-astr101/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/about/music/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chongchonghe.github.io/zh/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chongchonghe.github.io/contact/"
+                />
+  </url><url>
+    <loc>https://chongchonghe.github.io/news/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/projects/</loc>
+  </url><url>
+    <loc>https://chongchonghe.github.io/projects/</loc>
   </url>
 </urlset>
