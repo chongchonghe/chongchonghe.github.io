@@ -217,6 +217,18 @@ O Hugo faz o uso de vários projetos de código aberto incluíndo:</description>
       <description>My email address is chongchong.he@anu.edu.au . My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</description>
     </item>
     <item>
+      <title>News</title>
+      <link>https://chongchonghe.github.io/news/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/news/</guid>
+      <description>April 2023
+I defended my Ph.D. thesis in April, 2023. I will be joining the Australian National University as a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics and work with Professor Mark Krumholz.
+June 2021
+I am awarded the Future Investigators in NASA Earth and Space Science and Technology (FINESST)!
+March 2021
+I am awarded an Ann G. Wylie Dissertation Fellowship!</description>
+    </item>
+    <item>
       <title>Projects</title>
       <link>https://chongchonghe.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
