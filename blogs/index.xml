@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Chong-Chong He</title>
+    <link>https://chongchonghe.github.io/blogs/</link>
+    <description>Recent content in Blogs on Chong-Chong He</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chongchonghe.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fun with Julia</title>
+      <link>https://chongchonghe.github.io/blogs/julia/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/blogs/julia/</guid>
+      <description>I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
+Download script.
+using Parameters using Plots using Printf &amp;#34;&amp;#34;&amp;#34; A struct to store all parameters and data of the grids &amp;#34;&amp;#34;&amp;#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.</description>
+    </item>
+    <item>
+      <title>Why you should never use &#39;jet&#39; colormap</title>
+      <link>https://chongchonghe.github.io/blogs/colormap/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/blogs/colormap/</guid>
+      <description>Compare &amp;ldquo;viridis&amp;rdquo; and &amp;ldquo;jet&amp;rdquo; with &amp;ldquo;gray&amp;rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &amp;ldquo;gray&amp;rdquo; colormap.
+from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X + Y*Y) sigma, mu = .</description>
+    </item>
+  </channel>
+</rss>

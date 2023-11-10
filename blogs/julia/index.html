@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Fun with Julia · Chong-Chong He
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Chong-Chong He">
+<meta name="description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
+Download script.
+using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.">
+<meta name="keywords" content="ChongChong,Chong-Chong,blog,personal,academic,website">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fun with Julia"/>
+<meta name="twitter:description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
+Download script.
+using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0."/>
+
+<meta property="og:title" content="Fun with Julia" />
+<meta property="og:description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
+Download script.
+using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chongchonghe.github.io/blogs/julia/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2021-11-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-08T00:00:00+00:00" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chongchonghe.github.io/blogs/julia/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.4fcbe68b8514fd4a0ab2c73a454cde975c5a159868868ed6860c3f7994af0d49.css" integrity="sha256-T8vmi4UU/UoKssc6RUzel1xaFZhoho7Whgw/eZSvDUk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chong-Chong He
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/research/">Research</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/teaching/">Teaching</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blogs/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/zh/">🇨🇳</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chongchonghe.github.io/blogs/julia/">
+          Fun with Julia
+        </a>
+      </h1>
+    </header>
+
+    <p>I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.</p>
+<p>
+<img src="tube-10fps.gif" alt="tube-10fps.gif" title="tube-10fps.gif" /></p>
+<p>
+<a href="tube.jl">Download script</a>.</p>
+<div class="src src-julia">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Parameters</span> 
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Plots</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Printf</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@with_kw</span> <span class="k">mutable struct</span> <span class="kt">Grid</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nx</span><span class="o">::</span><span class="kt">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ng</span><span class="o">::</span><span class="kt">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xmin</span> <span class="o">=</span> <span class="mf">0.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xmax</span> <span class="o">=</span> <span class="mf">1.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xlen</span> <span class="o">=</span> <span class="n">nx</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ng</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">C</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jlo</span> <span class="o">=</span> <span class="n">ng</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">jhi</span> <span class="o">=</span> <span class="n">nx</span> <span class="o">+</span> <span class="n">ng</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># the grids</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xmax</span> <span class="o">-</span> <span class="n">xmin</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">xmin</span> <span class="o">.+</span> <span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="p">(</span><span class="n">nx</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">ng</span><span class="p">)</span> <span class="o">.-</span> <span class="n">ng</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+</span></span><span class="line"><span class="cl">    <span class="n">u</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">xlen</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34; set the initial conditions &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">init!</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mid</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="kt">Int16</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">xlen</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="n">mid</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">.=</span> <span class="mf">1.0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">:</span><span class="k">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">.=</span> <span class="mf">.125</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pressure</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">xlen</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pressure</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="n">mid</span><span class="p">]</span> <span class="o">.=</span> <span class="mf">1.0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pressure</span><span class="p">[(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">:</span><span class="k">end</span><span class="p">]</span> <span class="o">.=</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">.=</span> <span class="mf">0.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">.=</span> <span class="n">pressure</span> <span class="o">./</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">gamma</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">fu</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># return F(u)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pressure</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">gamma</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">.*</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">.*</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.^</span><span class="mi">2</span> <span class="o">./</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fu</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">xlen</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fu</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fu</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.^</span><span class="mi">2</span> <span class="o">./</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">.+</span> <span class="n">pressure</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fu</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">pressure</span><span class="p">)</span> <span class="o">.*</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">./</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fu</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">fill_BCs!</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">ng</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span> <span class="o">+</span> <span class="n">g</span><span class="o">.</span><span class="n">ng</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">summary</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;t = &#34;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;Size: &#34;</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;Density (every 5th): &#34;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">][</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;Velocity (every 5th): &#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">./</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">])[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">plot_curve</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">;</span> <span class="n">fn</span><span class="o">=</span><span class="s">&#34;t.png&#34;</span><span class="p">,</span> <span class="n">is_save</span><span class="o">=</span><span class="nb">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># calculate rho, u, p e</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rho_f</span>  <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vel_f</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">./</span> <span class="n">rho_f</span>
+</span></span><span class="line"><span class="cl">    <span class="n">e_f</span>  <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">epsilon_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">e_f</span><span class="o">./</span><span class="n">rho_f</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">.5</span> <span class="o">.*</span> <span class="n">vel_f</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">gamma</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">.*</span> <span class="n">rho_f</span> <span class="o">.*</span> <span class="n">epsilon_f</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">rho_f</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rho_f</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">vel_f</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">epsilon_f</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># title=[&#34;density&#34; &#34;pressure&#34; &#34;velocity&#34; &#34;specific energy&#34;],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ms</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="nb">false</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s">&#34;x&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ylabel</span><span class="o">=</span><span class="p">[</span><span class="s">&#34;rho&#34;</span> <span class="s">&#34;p&#34;</span> <span class="s">&#34;vel&#34;</span> <span class="s">&#34;epsilon&#34;</span><span class="p">],</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ylim</span><span class="o">=</span><span class="p">[(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mf">.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.6</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)],</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># annotate!(1.25, 1.25, &#34;t = $(g.t)&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">is_save</span>
+</span></span><span class="line"><span class="cl">        <span class="n">savefig</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">plot_heatmap_and_curve</span><span class="p">(</span><span class="n">g</span><span class="o">::</span><span class="kt">Grid</span><span class="p">;</span> <span class="n">fn</span><span class="o">=</span><span class="s">&#34;t.png&#34;</span><span class="p">,</span> <span class="n">is_save</span><span class="o">=</span><span class="nb">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># calculate rho, u, p e</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="kt">Int16</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">h</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rho_f</span>  <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">z</span> <span class="o">=</span> <span class="n">float</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="n">reshape</span><span class="p">(</span><span class="n">rho_f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p0</span> <span class="o">=</span> <span class="n">heatmap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">clim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">showaxis</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="ss">:thermal</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p1</span> <span class="o">=</span> <span class="n">plot_curve</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">is_save</span><span class="o">=</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">l</span> <span class="o">=</span> <span class="nd">@layout</span> <span class="p">[</span><span class="kt">a</span><span class="p">{</span><span class="mf">0.2</span><span class="kt">h</span><span class="p">}</span> <span class="p">;</span> <span class="n">b</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plot</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">is_save</span>
+</span></span><span class="line"><span class="cl">        <span class="n">savefig</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">&#34;&#34;&#34; the main function &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">runnit</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">tmax</span><span class="p">;</span> <span class="n">dnout</span><span class="o">::</span><span class="kt">Int</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">anim</span><span class="o">::</span><span class="kt">Any</span><span class="p">,</span> <span class="n">plotit</span><span class="o">::</span><span class="kt">Function</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">nx</span><span class="o">=</span><span class="n">dx</span><span class="p">,</span> <span class="n">ng</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v</span> <span class="o">=</span> <span class="mf">1.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">g</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="mf">0.45</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dt</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">C</span> <span class="o">*</span> <span class="n">g</span><span class="o">.</span><span class="n">dx</span> <span class="o">/</span> <span class="n">v</span>
+</span></span><span class="line"><span class="cl">    <span class="n">init!</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">uinit</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">unew</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ocount</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;Init:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="s">&#34;dt = &#34;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s">&#34; t = &#34;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># summary(g)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># plot_curve(g, fn=&#34;f_init.png&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># plot_heatmap_and_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">skip</span> <span class="o">=</span> <span class="n">dnout</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">&lt;</span> <span class="n">tmax</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">-</span> <span class="mf">1e-10</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fill_BCs!</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">&gt;</span> <span class="n">tmax</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">tmax</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">-</span> <span class="n">tmax</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="c">### LAX SCHEME ###</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">g</span><span class="o">.</span><span class="n">jlo</span><span class="o">:</span><span class="n">g</span><span class="o">.</span><span class="n">jhi</span>
+</span></span><span class="line"><span class="cl">            <span class="n">unew</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">+</span> <span class="n">g</span><span class="o">.</span><span class="n">u</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">])</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">/</span> <span class="n">g</span><span class="o">.</span><span class="n">dx</span> <span class="o">*</span> <span class="p">(</span><span class="n">fu</span><span class="p">(</span><span class="n">g</span><span class="p">)[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">-</span> <span class="n">fu</span><span class="p">(</span><span class="n">g</span><span class="p">)[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">unew</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+</span></span><span class="line"><span class="cl">        <span class="c"># summary(g)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="n">skip</span> <span class="o">==</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ocount</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># plot_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, idx))</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount))</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">plotit</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span><span class="nd">@sprintf</span><span class="p">(</span><span class="s">&#34;fig/f_</span><span class="si">%04d</span><span class="s">.png&#34;</span><span class="p">,</span> <span class="n">ocount</span><span class="p">),</span> <span class="n">is_save</span><span class="o">=</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Plots</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">anim</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">println</span><span class="p">(</span><span class="s">&#34;Frame &#34;</span><span class="p">,</span> <span class="n">ocount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Tend</span> <span class="o">=</span> <span class="mf">0.3</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Nd = 64</span>
+</span></span><span class="line"><span class="cl"><span class="n">Nd</span> <span class="o">=</span> <span class="mi">512</span>
+</span></span><span class="line"><span class="cl"><span class="n">Anim</span> <span class="o">=</span> <span class="n">Plots</span><span class="o">.</span><span class="n">Animation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c"># runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_curve)</span>
+</span></span><span class="line"><span class="cl"><span class="n">runnit</span><span class="p">(</span><span class="n">Nd</span><span class="p">,</span> <span class="n">Tend</span><span class="p">,</span> <span class="n">dnout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">anim</span><span class="o">=</span><span class="n">Anim</span><span class="p">,</span> <span class="n">plotit</span><span class="o">=</span><span class="n">plot_heatmap_and_curve</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gif</span><span class="p">(</span><span class="n">Anim</span><span class="p">,</span> <span class="s">&#34;tube-10fps.gif&#34;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gif</span><span class="p">(</span><span class="n">Anim</span><span class="p">,</span> <span class="s">&#34;tube-15fps.gif&#34;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gif</span><span class="p">(</span><span class="n">Anim</span><span class="p">,</span> <span class="s">&#34;tube-20fps.gif&#34;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    
+    ©
+    
+    2023
+     Chong-Chong He 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

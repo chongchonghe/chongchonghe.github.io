@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Teaching on Chong-Chong He</title>
+    <title>Teachings on Chong-Chong He</title>
     <link>https://chongchonghe.github.io/teaching/</link>
-    <description>Recent content in Teaching on Chong-Chong He</description>
+    <description>Recent content in Teachings on Chong-Chong He</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Chong-Chong He</copyright>
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chongchonghe.github.io/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASTR101, Spring 2021</title>
+      <link>https://chongchonghe.github.io/teaching/2021-astr101/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/teaching/2021-astr101/</guid>
+      <description>This is a webpage for ASTR101 (Spring 2021), Sections 0109 and 0110, of whom I am the TA. I will post useful links, announcements, lab solutions, etc., here.
+Table of contents Table of contents Links and Files Announcements Discussions Discussion #1 (Feb 3) Discussion #2 (Feb 10) Discussion #3 (Feb 17) Discussion #4 (Feb 24) Discussion #5 (Mar 3) Discussion #6 (Mar 10) Discussion #7 (Mar 24) Discussion #8 (Mar 31) Discussion #9 (Apr 7) Discussion #10 (Apr 14) Discussion #11 (Apr 21) Discussion #12 (Apr 28) Discussion #13 (May 5) Labs Lab #0 (Jan 28) Lab #1 (Feb 4) - Mathematical Tools Lab #2 (Feb 11) - Phases of the Moon Lab #3 (Mar 11) - Moons of Jupiter Lab #4 (Feb 25) - Planetary Surface Features Lab #5 (Mar 4) - Sky Motions Lab #6 - Spectroscopy Lab #7 (Apr 1) - Exoplanets Lab #8 (Apr 8) - Stellar Spectra Additional Lab Instructions Lab #9 (Apr 15) - Measuring Parallax Lab #10 (Apr 22) - Galaxies Lab #11 (Apr 29) - Expansion of the Universe Links and Files Discussion &amp;amp; Lab Syllabus Survey: ASTR101-0109/0111 Lab/Discussion Groups Announcements Lab #1 is graded and the answer key is posted.</description>
+    </item>
+    <item>
+      <title>ASTR100, Fall 2017</title>
+      <link>https://chongchonghe.github.io/teaching/2017-astr100/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/teaching/2017-astr100/</guid>
+      <description>&lt;!DOCTYPE html&gt; ASTR100: Solutions to Selected Discussion Questions ASTR100 Introduction to Astronomy Hello, everyone... I&#39;m ChongChong He, the TA of ASTR100 (Sections 0104 and 0105). I am here to guide you toward a better understanding of astronomy. This website is used to privode solutions to homework and discussion problems, presentation slides, useful information, and materials that I use in the discussion. The syllabus for our discussion is available here. Discussion Meet Time: Fri 10:00-10:50am (0104) 11:00-11:50am (0105) Location: ATL 2400 Office Hours Time: Mon 3:30-4:30 pm, Wed 11:00 am-12:00 pm Location: PSC 1238 Section Policy Please show up for your discussion.</description>
+    </item>
   </channel>
 </rss>
