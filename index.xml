@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chong-Chong He</title>
+    <title>ChongChong He</title>
     <link>https://chongchonghe.github.io/</link>
-    <description>Recent content on Chong-Chong He</description>
+    <description>Recent content on ChongChong He</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; Chong-Chong He</copyright>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; Last modified ChongChong He</copyright>
+    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chongchonghe.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
@@ -19,6 +19,16 @@ Ongoing Work Link to heading Formation of High-mass Stars and Turbulent Circumst
 Effects of Magnetic Fields on the Formation of Protostellar Disks Link to heading Magnetic field lines threading a massive protostellar disk.</description>
     </item>
     <item>
+      <title>Publications</title>
+      <link>https://chongchonghe.github.io/publications/</link>
+      <pubDate>Sun, 08 Mar 2020 13:38:07 -0400</pubDate>
+      <guid>https://chongchonghe.github.io/publications/</guid>
+      <description>For a full list, please check my publications on the SAO/NASA Astrophysics Data System. My name appears as &amp;ldquo;Chong-Chong He&amp;rdquo; in publications.
+First-author refereed publications Link to heading Including first-authored by students I (co-)mentored.
+6 C.-C. He and M. Ricotti, “Massive Prestellar Cores in Radiation-magneto-turbulent Simulations of Molecular Clouds”, MNRAS 522, 5374–5392 (2023). ads | preprint | PDF
+5 R. Hix, C.-C. He, and M. Ricotti, “Bimodal Star Formation in Simulations of Strongly Magnetized Giant Molecular Clouds”, MNRAS 522, 6203–6216 (2023).</description>
+    </item>
+    <item>
       <title>Research</title>
       <link>https://chongchonghe.github.io/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -26,6 +36,13 @@ Effects of Magnetic Fields on the Formation of Protostellar Disks Link to headin
       <description>Research interests:
 star formation, star cluster dynamics, prestellar cores, epoch of reionization, radiation-hydrodynamic code, n-body code, computational astrophysics.
 Ongoing Work: Effects of Magnetic Fields on the Formation of Circumstellar Disks Link to heading Magnetic field lines threading a massive circumstellar disk. Massive Prestellar Cores and Formation of Turbulent Circumstellar Disks Link to heading There should have been a video here but your browser does not seem to support it. The formation of high-mass stars remains an active area of study, with two main theoretical models proposed.</description>
+    </item>
+    <item>
+      <title>Hiking</title>
+      <link>https://chongchonghe.github.io/pages/hiking/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/pages/hiking/</guid>
+      <description> Mt. Olympus | Jun 3, 2023 Link to heading Shenzhen, China | Jul 15, 2023 Link to heading Shenandoah, Virginia | May 11, 2023 Link to heading </description>
     </item>
     <item>
       <title>Guia de Sintaxe Markdown</title>
@@ -223,6 +240,13 @@ from __future__ import division, print_function import numpy as np import matplo
     </item>
     <item>
       <title></title>
+      <link>https://chongchonghe.github.io/bicycling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/bicycling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
       <link>https://chongchonghe.github.io/travel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/travel/</guid>
@@ -235,6 +259,16 @@ from __future__ import division, print_function import numpy as np import matplo
       <guid>https://chongchonghe.github.io/about/</guid>
       <description>I am a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics of the Australian National University. My research focuses on exploring the laws of star formation in galaxies and their role in shaping the universe through simulations on supercomputers. Currently, I am developing a new radiation-hydrodynamic code that fully utilizes the GPUs on the largest supercomputers in the world.
 Before joining ANU, I obtained my PhD degree in Astronomy from the University of Maryland.</description>
+    </item>
+    <item>
+      <title>Classical Music</title>
+      <link>https://chongchonghe.github.io/pages/music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/pages/music/</guid>
+      <description>Over the years I have been obsessed with classical music, particularly classical piano works.
+Who is my favorite composer? Link to heading Ludwig van Beethoven. My other favorite composers are Frédéric Chopin, Franz Liszt, Johann Sebastian Bach, Pyotr Ilyich Tchaikovsky, and more.
+What are my favorite Beethoven works? Link to heading Check this melodic, lively, and magnificent piece: Piano Concerto No. 5 “Emperor”
+this powerful piece: Symphony No. 5 in C minor &amp;ldquo;Fate&amp;rdquo;</description>
     </item>
     <item>
       <title>Contact</title>
