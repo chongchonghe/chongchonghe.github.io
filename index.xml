@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Last modified ChongChong He</copyright>
-    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chongchonghe.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
@@ -36,6 +36,14 @@ First-author refereed publications Link to heading Including first-authored by s
       <description>Research interests:
 star formation, star cluster dynamics, prestellar cores, epoch of reionization, radiation-hydrodynamic code, n-body code, computational astrophysics.
 Ongoing Work: Effects of Magnetic Fields on the Formation of Circumstellar Disks Link to heading Magnetic field lines threading a massive circumstellar disk. Massive Prestellar Cores and Formation of Turbulent Circumstellar Disks Link to heading There should have been a video here but your browser does not seem to support it. The formation of high-mass stars remains an active area of study, with two main theoretical models proposed.</description>
+    </item>
+    <item>
+      <title>Tips on working on remote linux computers</title>
+      <link>https://chongchonghe.github.io/blogs/remote/</link>
+      <pubDate>Sun, 24 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://chongchonghe.github.io/blogs/remote/</guid>
+      <description>Remote Linux environments often require a different set of tools compared to local desktop environments, especially when it comes to file management and navigation. Here are some utilities that can enhance your remote file browsing and editing experience:
+tmux Link to heading tmux is a convenient tool that allows you to split your terminal window into multiple panes, making it easier to manage multiple sessions or tasks simultaneously. This is especially useful when working remotely, as you can have a file browser open in one pane while editing files or running commands in another.</description>
     </item>
     <item>
       <title>Hiking</title>
