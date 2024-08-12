@@ -4,7 +4,7 @@
     <title>ChongChong He</title>
     <link>https://chongchonghe.github.io/</link>
     <description>Recent content on ChongChong He</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&amp;copy; Last modified ChongChong He</copyright>
     <lastBuildDate>Sun, 24 Mar 2024 00:00:00 +0000</lastBuildDate>
@@ -14,35 +14,28 @@
       <link>https://chongchonghe.github.io/researchbk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/researchbk/</guid>
-      <description>Research interests Link to heading star formation, star cluster dynamics, prestellar cores, epoch of reionization, hydrodynamic code, n-body code, computational astrophysics.
-Ongoing Work Link to heading Formation of High-mass Stars and Turbulent Circumstellar Disks Link to heading A massive protostellar disk, or &#39;toroid&#39;, around a group of high-mass stars. To do &amp;hellip;
-Effects of Magnetic Fields on the Formation of Protostellar Disks Link to heading Magnetic field lines threading a massive protostellar disk.</description>
+      <description>Research interests Link to heading star formation, star cluster dynamics, prestellar cores, epoch of reionization, hydrodynamic code, n-body code, computational astrophysics.&#xA;Ongoing Work Link to heading Formation of High-mass Stars and Turbulent Circumstellar Disks Link to heading A massive protostellar disk, or &#39;toroid&#39;, around a group of high-mass stars. To do &amp;hellip;&#xA;Effects of Magnetic Fields on the Formation of Protostellar Disks Link to heading Magnetic field lines threading a massive protostellar disk.</description>
     </item>
     <item>
       <title>Publications</title>
       <link>https://chongchonghe.github.io/publications/</link>
       <pubDate>Sun, 08 Mar 2020 13:38:07 -0400</pubDate>
       <guid>https://chongchonghe.github.io/publications/</guid>
-      <description>For a full list, please check my publications on the SAO/NASA Astrophysics Data System. My name appears as &amp;ldquo;Chong-Chong He&amp;rdquo; in publications.
-Papers under review Link to heading 9 C.-C. He, B. D. Wibking, &amp;amp; M. R. Krumholz, &amp;ldquo;A novel numerical method for mixed-frame multigroup radiation-hydrodynamics with GPU acceleration implemented in the QUOKKA code&amp;rdquo;, MNRAS under review, arXiv preprint: 2407.18304 (2024).
-8 C.-C. He and M. Ricotti, “Formation of large circumstellar discs in multi-scale, ideal-mhd simulations of magnetically critical pre-stellar cores”, MNRAS under review, arXiv preprint: 2403.</description>
+      <description>For a full list, please check my publications on the SAO/NASA Astrophysics Data System. My name appears as &amp;ldquo;Chong-Chong He&amp;rdquo; in publications.&#xA;Papers under review Link to heading 9 C.-C. He, B. D. Wibking, &amp;amp; M. R. Krumholz, &amp;ldquo;A novel numerical method for mixed-frame multigroup radiation-hydrodynamics with GPU acceleration implemented in the QUOKKA code&amp;rdquo;, MNRAS under review, arXiv preprint: 2407.18304 (2024).&#xA;8 C.-C. He and M. Ricotti, “Formation of large circumstellar discs in multi-scale, ideal-mhd simulations of magnetically critical pre-stellar cores”, MNRAS under review, arXiv preprint: 2403.</description>
     </item>
     <item>
       <title>Research</title>
       <link>https://chongchonghe.github.io/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/research/</guid>
-      <description>Research interests:
-star formation, star cluster dynamics, prestellar cores, epoch of reionization, radiation-hydrodynamic code, n-body code, computational astrophysics.
-Development of Next-generation AMR Radiation Hydrodynamics Code on GPUs Link to heading Quokka (Wibking &amp;amp; Krumholz 2022, He, Wibking &amp;amp; Krumholz 2024) is a two-moment AMR (Adaptive Mesh Refinement) radiation hydrodynamics code for astrophysical simulations. It integrates self-gravity, particles, chemistry modules, and magnetic fields (in progress) and is optimized for both CPUs and GPUs.</description>
+      <description>Research interests:&#xA;star formation, star cluster dynamics, prestellar cores, epoch of reionization, radiation-hydrodynamic code, n-body code, computational astrophysics.&#xA;Development of Next-generation AMR Radiation Hydrodynamics Code on GPUs Link to heading Quokka (Wibking &amp;amp; Krumholz 2022, He, Wibking &amp;amp; Krumholz 2024) is a two-moment AMR (Adaptive Mesh Refinement) radiation hydrodynamics code for astrophysical simulations. It integrates self-gravity, particles, chemistry modules, and magnetic fields (in progress) and is optimized for both CPUs and GPUs.</description>
     </item>
     <item>
       <title>Tips on working on remote linux computers</title>
       <link>https://chongchonghe.github.io/blogs/remote/</link>
       <pubDate>Sun, 24 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/blogs/remote/</guid>
-      <description>Remote Linux environments often require a different set of tools compared to local desktop environments, especially when it comes to file management and navigation. Here are some utilities that can enhance your remote file browsing and editing experience:
-tmux Link to heading tmux is a convenient tool that allows you to split your terminal window into multiple panes, making it easier to manage multiple sessions or tasks simultaneously. This is especially useful when working remotely, as you can have a file browser open in one pane while editing files or running commands in another.</description>
+      <description>Remote Linux environments often require a different set of tools compared to local desktop environments, especially when it comes to file management and navigation. Here are some utilities that can enhance your remote file browsing and editing experience:&#xA;tmux Link to heading tmux is a convenient tool that allows you to split your terminal window into multiple panes, making it easier to manage multiple sessions or tasks simultaneously. This is especially useful when working remotely, as you can have a file browser open in one pane while editing files or running commands in another.</description>
     </item>
     <item>
       <title>Hiking</title>
@@ -70,56 +63,28 @@ tmux Link to heading tmux is a convenient tool that allows you to split your ter
       <link>https://chongchonghe.github.io/poststmp/rich-content.pt-br/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo vem com vários &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shortcodes Internos&lt;/a&gt; para conteúdo rico, assim como uma &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuração de Privacidade&lt;/a&gt; e uma gama de Shortcodes simples que permitem embutir versões estáticas e sem JS de várias de redes sociais.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;O Hugo vem com vários &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shortcodes Internos&lt;/a&gt; para conteúdo rico, assim como uma &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuração de Privacidade&lt;/a&gt; e uma gama de Shortcodes simples que permitem embutir versões estáticas e sem JS de várias de redes sociais.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Rich Content</title>
       <link>https://chongchonghe.github.io/poststmp/rich-content/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/rich-content/</guid>
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Mais Conteúdo Rico</title>
       <link>https://chongchonghe.github.io/poststmp/more-rich-content.pt-br/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/more-rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo Coder proporciona alguns Shortcodes Customizados.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;O Hugo Coder proporciona alguns Shortcodes Customizados.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>More Rich Content</title>
       <link>https://chongchonghe.github.io/poststmp/more-rich-content/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/more-rich-content/</guid>
-      <description>&lt;p&gt;Hugo Coder provides some Custom Shortcodes.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;Hugo Coder provides some Custom Shortcodes.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Configuração de Equações Matemáticas</title>
@@ -140,36 +105,28 @@ tmux Link to heading tmux is a convenient tool that allows you to split your ter
       <link>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs/</guid>
-      <description>Shortcodes Link to heading The following content:
-{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Will generate:
-Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading You can also align the tabs to the right:
-{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
+      <description>Shortcodes Link to heading The following content:&#xA;{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Will generate:&#xA;Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading You can also align the tabs to the right:&#xA;{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
     </item>
     <item>
       <title>HTML and CSS only tabs</title>
       <link>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs.pt-br/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs.pt-br/</guid>
-      <description>Shortcodes Link to heading O seguinte conteúdo:
-{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Irá gerar:
-Hello Hello World! Goodbye Goodbye Everybody! Alinhamento à direita Link to heading Você também pode alinhas as tabs à direita:
-{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
+      <description>Shortcodes Link to heading O seguinte conteúdo:&#xA;{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Irá gerar:&#xA;Hello Hello World! Goodbye Goodbye Everybody! Alinhamento à direita Link to heading Você também pode alinhas as tabs à direita:&#xA;{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
     </item>
     <item>
       <title>Mermaid JS support</title>
       <link>https://chongchonghe.github.io/poststmp/mermaid-support/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/mermaid-support/</guid>
-      <description>If you want to use Mermaid-JS on your website. Provide mermaid as Shortcode in your markdown file.
-flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Find more example on Mermaid-JS website.</description>
+      <description>If you want to use Mermaid-JS on your website. Provide mermaid as Shortcode in your markdown file.&#xA;flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Find more example on Mermaid-JS website.</description>
     </item>
     <item>
       <title>Mermaid JS support</title>
       <link>https://chongchonghe.github.io/poststmp/mermaid-support.pt-br/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/mermaid-support.pt-br/</guid>
-      <description>Se quiser usar o Mermaid-JS em sua página. Use o shortcode mermaid em seus conteúdos Markdown.
-flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Entro mais exemplos na página do Mermaid-JS.</description>
+      <description>Se quiser usar o Mermaid-JS em sua página. Use o shortcode mermaid em seus conteúdos Markdown.&#xA;flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Entro mais exemplos na página do Mermaid-JS.</description>
     </item>
     <item>
       <title>Emoji Support</title>
@@ -218,25 +175,21 @@ flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram partici
       <link>https://chongchonghe.github.io/blogs/julia/</link>
       <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/blogs/julia/</guid>
-      <description>I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
-Download script.
-using Parameters using Plots using Printf &amp;#34;&amp;#34;&amp;#34; A struct to store all parameters and data of the grids &amp;#34;&amp;#34;&amp;#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.</description>
+      <description>I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.&#xA;Download script.&#xA;using Parameters using Plots using Printf &amp;#34;&amp;#34;&amp;#34; A struct to store all parameters and data of the grids &amp;#34;&amp;#34;&amp;#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.</description>
     </item>
     <item>
       <title>ASTR101, Spring 2021</title>
       <link>https://chongchonghe.github.io/teaching/2021-astr101/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/teaching/2021-astr101/</guid>
-      <description>This is a webpage for ASTR101 (Spring 2021), Sections 0109 and 0110, of whom I am the TA. I will post useful links, announcements, lab solutions, etc., here.
-Table of contents Table of contents Links and Files Announcements Discussions Discussion #1 (Feb 3) Discussion #2 (Feb 10) Discussion #3 (Feb 17) Discussion #4 (Feb 24) Discussion #5 (Mar 3) Discussion #6 (Mar 10) Discussion #7 (Mar 24) Discussion #8 (Mar 31) Discussion #9 (Apr 7) Discussion #10 (Apr 14) Discussion #11 (Apr 21) Discussion #12 (Apr 28) Discussion #13 (May 5) Labs Lab #0 (Jan 28) Lab #1 (Feb 4) - Mathematical Tools Lab #2 (Feb 11) - Phases of the Moon Lab #3 (Mar 11) - Moons of Jupiter Lab #4 (Feb 25) - Planetary Surface Features Lab #5 (Mar 4) - Sky Motions Lab #6 - Spectroscopy Lab #7 (Apr 1) - Exoplanets Lab #8 (Apr 8) - Stellar Spectra Additional Lab Instructions Lab #9 (Apr 15) - Measuring Parallax Lab #10 (Apr 22) - Galaxies Lab #11 (Apr 29) - Expansion of the Universe Links and Files Discussion &amp;amp; Lab Syllabus Survey: ASTR101-0109/0111 Lab/Discussion Groups Announcements Lab #1 is graded and the answer key is posted.</description>
+      <description>This is a webpage for ASTR101 (Spring 2021), Sections 0109 and 0110, of whom I am the TA. I will post useful links, announcements, lab solutions, etc., here.&#xA;Table of contents Table of contents Links and Files Announcements Discussions Discussion #1 (Feb 3) Discussion #2 (Feb 10) Discussion #3 (Feb 17) Discussion #4 (Feb 24) Discussion #5 (Mar 3) Discussion #6 (Mar 10) Discussion #7 (Mar 24) Discussion #8 (Mar 31) Discussion #9 (Apr 7) Discussion #10 (Apr 14) Discussion #11 (Apr 21) Discussion #12 (Apr 28) Discussion #13 (May 5) Labs Lab #0 (Jan 28) Lab #1 (Feb 4) - Mathematical Tools Lab #2 (Feb 11) - Phases of the Moon Lab #3 (Mar 11) - Moons of Jupiter Lab #4 (Feb 25) - Planetary Surface Features Lab #5 (Mar 4) - Sky Motions Lab #6 - Spectroscopy Lab #7 (Apr 1) - Exoplanets Lab #8 (Apr 8) - Stellar Spectra Additional Lab Instructions Lab #9 (Apr 15) - Measuring Parallax Lab #10 (Apr 22) - Galaxies Lab #11 (Apr 29) - Expansion of the Universe Links and Files Discussion &amp;amp; Lab Syllabus Survey: ASTR101-0109/0111 Lab/Discussion Groups Announcements Lab #1 is graded and the answer key is posted.</description>
     </item>
     <item>
       <title>Why you should never use &#39;jet&#39; colormap</title>
       <link>https://chongchonghe.github.io/blogs/colormap/</link>
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/blogs/colormap/</guid>
-      <description>Compare &amp;ldquo;viridis&amp;rdquo; and &amp;ldquo;jet&amp;rdquo; with &amp;ldquo;gray&amp;rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &amp;ldquo;gray&amp;rdquo; colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X + Y*Y) sigma, mu = .</description>
+      <description>Compare &amp;ldquo;viridis&amp;rdquo; and &amp;ldquo;jet&amp;rdquo; with &amp;ldquo;gray&amp;rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &amp;ldquo;gray&amp;rdquo; colormap.&#xA;from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X + Y*Y) sigma, mu = .</description>
     </item>
     <item>
       <title>ASTR100, Fall 2017</title>
@@ -264,18 +217,14 @@ from __future__ import division, print_function import numpy as np import matplo
       <link>https://chongchonghe.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/about/</guid>
-      <description>I am a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics of the Australian National University. My research focuses on exploring the laws of star formation in galaxies and their role in shaping the universe through simulations on supercomputers. Currently, I am developing a next-generation radiation-hydrodynamic code that fully utilizes the power of GPUs on the largest supercomputers in the world.
-Before joining ANU, I obtained my PhD degree in Astronomy from the University of Maryland.</description>
+      <description>I am a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics of the Australian National University. My research focuses on exploring the laws of star formation in galaxies and their role in shaping the universe through simulations on supercomputers. Currently, I am developing a next-generation radiation-hydrodynamic code that fully utilizes the power of GPUs on the largest supercomputers in the world.&#xA;Before joining ANU, I obtained my PhD degree in Astronomy from the University of Maryland.</description>
     </item>
     <item>
       <title>Classical Music</title>
       <link>https://chongchonghe.github.io/pages/music/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/pages/music/</guid>
-      <description>Over the years I have been obsessed with classical music, particularly classical piano works.
-Who is my favorite composer? Link to heading Ludwig van Beethoven. My other favorite composers are Frédéric Chopin, Franz Liszt, Johann Sebastian Bach, Pyotr Ilyich Tchaikovsky, and more.
-What are my favorite Beethoven works? Link to heading Check this melodic, lively, and magnificent piece: Piano Concerto No. 5 “Emperor”
-this powerful piece: Symphony No. 5 in C minor &amp;ldquo;Fate&amp;rdquo;</description>
+      <description>Over the years I have been obsessed with classical music, particularly classical piano works.&#xA;Who is my favorite composer? Link to heading Ludwig van Beethoven. My other favorite composers are Frédéric Chopin, Franz Liszt, Johann Sebastian Bach, Pyotr Ilyich Tchaikovsky, and more.&#xA;What are my favorite Beethoven works? Link to heading Check this melodic, lively, and magnificent piece: Piano Concerto No. 5 “Emperor”&#xA;this powerful piece: Symphony No. 5 in C minor &amp;ldquo;Fate&amp;rdquo;</description>
     </item>
     <item>
       <title>Contact</title>
@@ -289,20 +238,14 @@ this powerful piece: Symphony No. 5 in C minor &amp;ldquo;Fate&amp;rdquo;</descr
       <link>https://chongchonghe.github.io/news/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/news/</guid>
-      <description>April 2023
-I defended my Ph.D. thesis in April, 2023. I will be joining the Australian National University as a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics and work with Professor Mark Krumholz.
-June 2021
-I am awarded the Future Investigators in NASA Earth and Space Science and Technology (FINESST)!
-March 2021
-I am awarded an Ann G. Wylie Dissertation Fellowship!</description>
+      <description>April 2023&#xA;I defended my Ph.D. thesis in April, 2023. I will be joining the Australian National University as a postdoctoral fellow at the Research School of Astronomy &amp;amp; Astrophysics and work with Professor Mark Krumholz.&#xA;June 2021&#xA;I am awarded the Future Investigators in NASA Earth and Space Science and Technology (FINESST)!&#xA;March 2021&#xA;I am awarded an Ann G. Wylie Dissertation Fellowship!</description>
     </item>
     <item>
       <title>Teaching</title>
       <link>https://chongchonghe.github.io/teach/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/teach/</guid>
-      <description>Courses I taught as a teaching assistant:
-ASTR101 - General Astronomy, Spring 2021 ASTR100 - Introduction to Astronomy, Fall 2017 Galaxies, Cosmology, Origin of the Universe, Stars and Stellar Systems, Solar System Astronomy, and Life in the Universe, 2016-2018 </description>
+      <description>Courses I taught as a teaching assistant:&#xA;ASTR101 - General Astronomy, Spring 2021 ASTR100 - Introduction to Astronomy, Fall 2017 Galaxies, Cosmology, Origin of the Universe, Stars and Stellar Systems, Solar System Astronomy, and Life in the Universe, 2016-2018 </description>
     </item>
   </channel>
 </rss>

@@ -17,20 +17,22 @@
 from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
 <meta name="keywords" content="ChongChong,Chong-Chong,blog,personal,academic,website">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Why you should never use &#39;jet&#39; colormap"/>
-<meta name="twitter:description" content="Compare &ldquo;viridis&rdquo; and &ldquo;jet&rdquo; with &ldquo;gray&rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &ldquo;gray&rdquo; colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = ."/>
 
-<meta property="og:title" content="Why you should never use &#39;jet&#39; colormap" />
-<meta property="og:description" content="Compare &ldquo;viridis&rdquo; and &ldquo;jet&rdquo; with &ldquo;gray&rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &ldquo;gray&rdquo; colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = ." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://chongchonghe.github.io/blogs/colormap/" /><meta property="article:section" content="blogs" />
-<meta property="article:published_time" content="2019-05-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-06T00:00:00+00:00" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Why you should never use &#39;jet&#39; colormap">
+  <meta name="twitter:description" content="Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
+from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
 
-
+<meta property="og:url" content="https://chongchonghe.github.io/blogs/colormap/">
+  <meta property="og:site_name" content="ChongChong He">
+  <meta property="og:title" content="Why you should never use &#39;jet&#39; colormap">
+  <meta property="og:description" content="Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
+from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2019-05-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-05-06T00:00:00+00:00">
 
 
 
@@ -202,17 +204,17 @@ from __future__ import division, print_function import numpy as np import matplo
 </span></span><span class="line"><span class="cl"><span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gaus</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-</span></span></code></pre></div><p><img src="output_3_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img alt="png" src="/blogs/colormap/output_3_0.png"></p>
 <p>Looks nice, ah? But, black and white are boring, so let us make it colorful. Here is what it looks like with the current default colormap &ldquo;viridis&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gaus</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Viridis&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-</span></span></code></pre></div><p><img src="output_5_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img alt="png" src="/blogs/colormap/output_5_0.png"></p>
 <p>Looks awsome! We see a bright dot at the center and gradual change to heavier colors toward the edge. Now, let us see what it looks like when plotted with &ldquo;jet&rdquo;, the default colormap in older versions of matplotlib:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gaus</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Jet&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-</span></span></code></pre></div><p><img src="output_7_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img alt="png" src="/blogs/colormap/output_7_0.png"></p>
 <p>It is a disaster! There are artifactual hierarchical layers showing as abrupt changes in color that are not shown in data.</p>
 <h2 id="define-your-own-color-map">
   Define your own color map
@@ -231,7 +233,7 @@ from __future__ import division, print_function import numpy as np import matplo
 </span></span><span class="line"><span class="cl"><span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-</span></span></code></pre></div><p><img src="output_11_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img alt="png" src="/blogs/colormap/output_11_0.png"></p>
 <p>Assume we want to focus only on the ring (i.e., say, $z&gt;0.9$) and do not care about other areas, then, we want to redefine the colormap so that all bright colors concentrates on $z&gt;0.9$.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Define my own colormap</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
@@ -252,7 +254,7 @@ from __future__ import division, print_function import numpy as np import matplo
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">viridis_mod</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Edited Viridis&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
-</span></span></code></pre></div><p><img src="output_13_0.png" alt="png"></p>
+</span></span></code></pre></div><p><img alt="png" src="/blogs/colormap/output_13_0.png"></p>
 
   </article>
 </section>
@@ -266,7 +268,7 @@ from __future__ import division, print_function import numpy as np import matplo
     
     ©
     
-    Last updated 2024-07-29
+    Last updated 2024-08-12
     ·
      ChongChong He 
     ·
@@ -291,6 +293,9 @@ from __future__ import division, print_function import numpy as np import matplo
 
 
   
+  
+
+
 
   
 

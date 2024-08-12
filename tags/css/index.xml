@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>css on ChongChong He</title>
+    <title>Css on ChongChong He</title>
     <link>https://chongchonghe.github.io/tags/css/</link>
-    <description>Recent content in css on ChongChong He</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Css on ChongChong He</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&amp;copy; Last modified ChongChong He</copyright>
     <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate>
@@ -28,56 +28,28 @@
       <link>https://chongchonghe.github.io/poststmp/rich-content.pt-br/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo vem com vários &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shortcodes Internos&lt;/a&gt; para conteúdo rico, assim como uma &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuração de Privacidade&lt;/a&gt; e uma gama de Shortcodes simples que permitem embutir versões estáticas e sem JS de várias de redes sociais.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;O Hugo vem com vários &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shortcodes Internos&lt;/a&gt; para conteúdo rico, assim como uma &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Configuração de Privacidade&lt;/a&gt; e uma gama de Shortcodes simples que permitem embutir versões estáticas e sem JS de várias de redes sociais.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Rich Content</title>
       <link>https://chongchonghe.github.io/poststmp/rich-content/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/rich-content/</guid>
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Mais Conteúdo Rico</title>
       <link>https://chongchonghe.github.io/poststmp/more-rich-content.pt-br/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/more-rich-content.pt-br/</guid>
-      <description>&lt;p&gt;O Hugo Coder proporciona alguns Shortcodes Customizados.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;O Hugo Coder proporciona alguns Shortcodes Customizados.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>More Rich Content</title>
       <link>https://chongchonghe.github.io/poststmp/more-rich-content/</link>
       <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/more-rich-content/</guid>
-      <description>&lt;p&gt;Hugo Coder provides some Custom Shortcodes.&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;
-  
-  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;
-    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;
-    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/h2&gt;</description>
+      <description>&lt;p&gt;Hugo Coder provides some Custom Shortcodes.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&#xA;  &#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#heading&#34;&gt;&#xA;    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Configuração de Equações Matemáticas</title>
@@ -98,36 +70,28 @@
       <link>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs/</guid>
-      <description>Shortcodes Link to heading The following content:
-{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Will generate:
-Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading You can also align the tabs to the right:
-{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
+      <description>Shortcodes Link to heading The following content:&#xA;{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Will generate:&#xA;Hello Hello World! Goodbye Goodbye Everybody! Right alighment Link to heading You can also align the tabs to the right:&#xA;{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
     </item>
     <item>
       <title>HTML and CSS only tabs</title>
       <link>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs.pt-br/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/html-and-css-only-tabs.pt-br/</guid>
-      <description>Shortcodes Link to heading O seguinte conteúdo:
-{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Irá gerar:
-Hello Hello World! Goodbye Goodbye Everybody! Alinhamento à direita Link to heading Você também pode alinhas as tabs à direita:
-{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
+      <description>Shortcodes Link to heading O seguinte conteúdo:&#xA;{{&amp;lt; tabgroup &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabgroup &amp;gt;}} Irá gerar:&#xA;Hello Hello World! Goodbye Goodbye Everybody! Alinhamento à direita Link to heading Você também pode alinhas as tabs à direita:&#xA;{{&amp;lt; tabgroup align=&amp;#34;right&amp;#34; &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Hello&amp;#34; &amp;gt;}} Hello World! {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab name=&amp;#34;Goodbye&amp;#34; &amp;gt;}} Goodbye Everybody!</description>
     </item>
     <item>
       <title>Mermaid JS support</title>
       <link>https://chongchonghe.github.io/poststmp/mermaid-support/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/mermaid-support/</guid>
-      <description>If you want to use Mermaid-JS on your website. Provide mermaid as Shortcode in your markdown file.
-flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Find more example on Mermaid-JS website.</description>
+      <description>If you want to use Mermaid-JS on your website. Provide mermaid as Shortcode in your markdown file.&#xA;flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Find more example on Mermaid-JS website.</description>
     </item>
     <item>
       <title>Mermaid JS support</title>
       <link>https://chongchonghe.github.io/poststmp/mermaid-support.pt-br/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://chongchonghe.github.io/poststmp/mermaid-support.pt-br/</guid>
-      <description>Se quiser usar o Mermaid-JS em sua página. Use o shortcode mermaid em seus conteúdos Markdown.
-flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Entro mais exemplos na página do Mermaid-JS.</description>
+      <description>Se quiser usar o Mermaid-JS em sua página. Use o shortcode mermaid em seus conteúdos Markdown.&#xA;flowchart LR A --&gt; B B --&gt; C C --&gt; D D --&gt; B sequenceDiagram participant Alice participant Bob Alice-&gt;&gt;Bob: Hi Bob Bob-&gt;&gt;Alice: Hi Alice Entro mais exemplos na página do Mermaid-JS.</description>
     </item>
   </channel>
 </rss>
