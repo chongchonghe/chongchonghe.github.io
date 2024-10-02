@@ -14,23 +14,191 @@
 
 <meta name="author" content="ChongChong He">
 <meta name="description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
+
+
+
 Download script.
-using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.">
+
+using Parameters 
+using Plots
+using Printf
+
+&#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34;
+@with_kw mutable struct Grid
+    nx::Int
+    ng::Int
+    t = 0.
+    xmin = 0.
+    xmax = 1.
+    xlen = nx &#43; 2 * ng
+    gamma = 1.4
+    C = 0
+    jlo = ng &#43; 1
+    jhi = nx &#43; ng
+    # the grids
+    dx = (xmax - xmin) / (nx - 1)
+    x = xmin .&#43; (1:(nx &#43; 2*ng) .- ng) * dx
+    u = zeros(xlen, 3)
+end
+
+&#34;&#34;&#34; set the initial conditions &#34;&#34;&#34;
+function init!(g::Grid)
+    mid = floor(Int16, g.xlen/2)
+    g.u[1:mid, 1] .= 1.0
+    g.u[(mid&#43;1):end, 1] .= .125
+    pressure = zeros(Float64, g.xlen)
+    pressure[1:mid] .= 1.0
+    pressure[(mid&#43;1):end] .= 0.1
+    g.u[:, 2] .= 0.
+    g.u[:, 3] .= pressure ./ (g.gamma - 1)
+    return
+end
+
+function fu(g::Grid)
+    # return F(u)
+    pressure = (g.gamma - 1) .* (g.u[:, 3] - 0.5 .* g.u[:, 2].^2 ./ (g.u[:, 1]))
+    fu = zeros(Float64, g.xlen, 3)
+    fu[:, 1] = g.u[:, 2]
+    fu[:, 2] = g.u[:, 2].^2 ./ g.u[:, 1] .&#43; pressure
+    fu[:, 3] = (g.u[:, 3] &#43; pressure) .* g.u[:, 2] ./ g.u[:, 1]
+    fu
+end
+
+function fill_BCs!(g::Grid)
+    for i = 1:g.ng
+        g.u[i, :] = g.u[g.jlo, :]
+    end
+    for i = (g.jhi &#43; 1) : (g.jhi &#43; g.ng)
+        g.u[i, :] = g.u[g.jhi, :]
+    end
+    return
+end
+
+function summary(g::Grid)
+    println(&#34;t = &#34;, g.t)
+    println(&#34;Size: &#34;, size(g.u))
+    println(&#34;Density (every 5th): &#34;, g.u[:, 1][g.jlo:5:g.jhi])
+    println(&#34;Velocity (every 5th): &#34;, (g.u[:, 2] ./ g.u[:, 1])[g.jlo:5:g.jhi])
+end
+
+&#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34;
+function plot_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true)
+    # calculate rho, u, p e
+    x = g.x[g.jlo:g.jhi]
+    rho_f  = g.u[g.jlo:g.jhi, 1]
+    vel_f = g.u[g.jlo:g.jhi, 2] ./ rho_f
+    e_f  = g.u[g.jlo:g.jhi, 3]
+    epsilon_f = (e_f./rho_f) - (.5 .* vel_f.^2)
+    p = (g.gamma - 1) .* rho_f .* epsilon_f
+    data = zeros(size(rho_f, 1), 4)
+    data[:, 1] = rho_f
+    data[:, 2] = p
+    data[:, 3] = vel_f
+    data[:, 4] = epsilon_f
+
+    p = scatter(x, data, layout=4,
+            # title=[&#34;density&#34; &#34;pressure&#34; &#34;velocity&#34; &#34;specific energy&#34;],
+            ms=1, legend=false, xlabel=&#34;x&#34;,
+            ylabel=[&#34;rho&#34; &#34;p&#34; &#34;vel&#34; &#34;epsilon&#34;], xlim=[0, 1],
+            ylim=[(0., 1.1) (-0., 1.2) (-.2, 1) (1.6, 3.)], dpi=300)
+
+    # annotate!(1.25, 1.25, &#34;t = $(g.t)&#34;)
+    if is_save
+        savefig(fn)
+    else
+        return p
+    end
+end
+
+&#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34;
+function plot_heatmap_and_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true)
+    # calculate rho, u, p e
+    x = g.x[g.jlo:g.jhi]
+    h = floor(Int16, size(x, 1) / 8)
+    y = 1:h
+    rho_f  = g.u[g.jlo:g.jhi, 1]
+    z = float(ones(h) * reshape(rho_f, 1, :))
+    p0 = heatmap(x, y, z, dpi=300, size=(600, 100), clim=(0., 1.), xlim=(-0.05, 1.05),
+            showaxis = false, c=:thermal)
+    p1 = plot_curve(g, is_save=false)
+    l = @layout [a{0.2h} ; b]
+    plot(p0, p1, layout=l)
+    if is_save
+        savefig(fn)
+    end
+end
+
+&#34;&#34;&#34; the main function &#34;&#34;&#34;
+function runnit(dx, tmax; dnout::Int=1, anim::Any, plotit::Function)
+    println(&#34;Hello, world!&#34;)
+    g = Grid(nx=dx, ng=1, t=0.)
+    v = 1.
+    g.C = 0.45
+    dt = g.C * g.dx / v
+    init!(g)
+    uinit = copy(g.u)
+    unew = zeros(size(g.u))
+    count = 0
+    ocount = 0
+    
+    println(&#34;Init:&#34;)
+    println(&#34;dt = &#34;, dt, &#34; t = &#34;, g.t)
+    # summary(g)
+    # plot_curve(g, fn=&#34;f_init.png&#34;)
+    # plot_heatmap_and_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount))
+    skip = dnout
+    while g.t &lt; tmax &#43; dt - 1e-10
+        fill_BCs!(g)
+        if g.t &gt; tmax
+            g.t = tmax
+            dt = dt - (g.t - tmax)
+        end
+        count &#43;= 1
+        ### LAX SCHEME ###
+        for j in g.jlo:g.jhi
+            unew[j, :] = 0.5 * (g.u[j - 1, :] &#43; g.u[j &#43; 1, :]) - 0.5 * dt / g.dx * (fu(g)[j &#43; 1, :] - fu(g)[j - 1, :])
+        end
+        g.u = copy(unew)
+        g.t = g.t &#43; dt
+        # summary(g)
+        if count % skip == 0
+            ocount &#43;= 1
+            # plot_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, idx))
+            # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount))
+            # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false)
+            plotit(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false)
+            Plots.frame(anim)
+            println(&#34;Frame &#34;, ocount)
+        end
+    end
+end 
+
+Tend = 0.3
+# Nd = 64
+Nd = 512
+Anim = Plots.Animation()
+# runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_curve)
+runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_heatmap_and_curve)
+gif(Anim, &#34;tube-10fps.gif&#34;, fps=10)
+gif(Anim, &#34;tube-15fps.gif&#34;, fps=15)
+gif(Anim, &#34;tube-20fps.gif&#34;, fps=20)
+">
 <meta name="keywords" content="ChongChong,Chong-Chong,blog,personal,academic,website">
+
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Fun with Julia">
   <meta name="twitter:description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
 Download script.
-using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.">
+using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0. xmin = 0. xmax = 1. xlen = nx &#43; 2 * ng gamma = 1.4 C = 0 jlo = ng &#43; 1 jhi = nx &#43; ng # the grids dx = (xmax - xmin) / (nx - 1) x = xmin .&#43; (1:(nx &#43; 2*ng) .- ng) * dx u = zeros(xlen, 3) end &#34;&#34;&#34; set the initial conditions &#34;&#34;&#34; function init!(g::Grid) mid = floor(Int16, g.xlen/2) g.u[1:mid, 1] .= 1.0 g.u[(mid&#43;1):end, 1] .= .125 pressure = zeros(Float64, g.xlen) pressure[1:mid] .= 1.0 pressure[(mid&#43;1):end] .= 0.1 g.u[:, 2] .= 0. g.u[:, 3] .= pressure ./ (g.gamma - 1) return end function fu(g::Grid) # return F(u) pressure = (g.gamma - 1) .* (g.u[:, 3] - 0.5 .* g.u[:, 2].^2 ./ (g.u[:, 1])) fu = zeros(Float64, g.xlen, 3) fu[:, 1] = g.u[:, 2] fu[:, 2] = g.u[:, 2].^2 ./ g.u[:, 1] .&#43; pressure fu[:, 3] = (g.u[:, 3] &#43; pressure) .* g.u[:, 2] ./ g.u[:, 1] fu end function fill_BCs!(g::Grid) for i = 1:g.ng g.u[i, :] = g.u[g.jlo, :] end for i = (g.jhi &#43; 1) : (g.jhi &#43; g.ng) g.u[i, :] = g.u[g.jhi, :] end return end function summary(g::Grid) println(&#34;t = &#34;, g.t) println(&#34;Size: &#34;, size(g.u)) println(&#34;Density (every 5th): &#34;, g.u[:, 1][g.jlo:5:g.jhi]) println(&#34;Velocity (every 5th): &#34;, (g.u[:, 2] ./ g.u[:, 1])[g.jlo:5:g.jhi]) end &#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34; function plot_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true) # calculate rho, u, p e x = g.x[g.jlo:g.jhi] rho_f = g.u[g.jlo:g.jhi, 1] vel_f = g.u[g.jlo:g.jhi, 2] ./ rho_f e_f = g.u[g.jlo:g.jhi, 3] epsilon_f = (e_f./rho_f) - (.5 .* vel_f.^2) p = (g.gamma - 1) .* rho_f .* epsilon_f data = zeros(size(rho_f, 1), 4) data[:, 1] = rho_f data[:, 2] = p data[:, 3] = vel_f data[:, 4] = epsilon_f p = scatter(x, data, layout=4, # title=[&#34;density&#34; &#34;pressure&#34; &#34;velocity&#34; &#34;specific energy&#34;], ms=1, legend=false, xlabel=&#34;x&#34;, ylabel=[&#34;rho&#34; &#34;p&#34; &#34;vel&#34; &#34;epsilon&#34;], xlim=[0, 1], ylim=[(0., 1.1) (-0., 1.2) (-.2, 1) (1.6, 3.)], dpi=300) # annotate!(1.25, 1.25, &#34;t = $(g.t)&#34;) if is_save savefig(fn) else return p end end &#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34; function plot_heatmap_and_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true) # calculate rho, u, p e x = g.x[g.jlo:g.jhi] h = floor(Int16, size(x, 1) / 8) y = 1:h rho_f = g.u[g.jlo:g.jhi, 1] z = float(ones(h) * reshape(rho_f, 1, :)) p0 = heatmap(x, y, z, dpi=300, size=(600, 100), clim=(0., 1.), xlim=(-0.05, 1.05), showaxis = false, c=:thermal) p1 = plot_curve(g, is_save=false) l = @layout [a{0.2h} ; b] plot(p0, p1, layout=l) if is_save savefig(fn) end end &#34;&#34;&#34; the main function &#34;&#34;&#34; function runnit(dx, tmax; dnout::Int=1, anim::Any, plotit::Function) println(&#34;Hello, world!&#34;) g = Grid(nx=dx, ng=1, t=0.) v = 1. g.C = 0.45 dt = g.C * g.dx / v init!(g) uinit = copy(g.u) unew = zeros(size(g.u)) count = 0 ocount = 0 println(&#34;Init:&#34;) println(&#34;dt = &#34;, dt, &#34; t = &#34;, g.t) # summary(g) # plot_curve(g, fn=&#34;f_init.png&#34;) # plot_heatmap_and_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount)) skip = dnout while g.t &lt; tmax &#43; dt - 1e-10 fill_BCs!(g) if g.t &gt; tmax g.t = tmax dt = dt - (g.t - tmax) end count &#43;= 1 ### LAX SCHEME ### for j in g.jlo:g.jhi unew[j, :] = 0.5 * (g.u[j - 1, :] &#43; g.u[j &#43; 1, :]) - 0.5 * dt / g.dx * (fu(g)[j &#43; 1, :] - fu(g)[j - 1, :]) end g.u = copy(unew) g.t = g.t &#43; dt # summary(g) if count % skip == 0 ocount &#43;= 1 # plot_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, idx)) # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount)) # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false) plotit(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false) Plots.frame(anim) println(&#34;Frame &#34;, ocount) end end end Tend = 0.3 # Nd = 64 Nd = 512 Anim = Plots.Animation() # runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_curve) runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_heatmap_and_curve) gif(Anim, &#34;tube-10fps.gif&#34;, fps=10) gif(Anim, &#34;tube-15fps.gif&#34;, fps=15) gif(Anim, &#34;tube-20fps.gif&#34;, fps=20) ">
 
 <meta property="og:url" content="https://chongchonghe.github.io/blogs/julia/">
   <meta property="og:site_name" content="ChongChong He">
   <meta property="og:title" content="Fun with Julia">
   <meta property="og:description" content="I am a strong advocate of Julia, a new programming language for scientific computing. Julia combines the speed of C/Fortran with the user-friendliness of Python. In this first demonstration, I wrote a one-dimentional hydrodynamic code. This simulation, along with the plotting and animation, was produced entirely from a single Julia script, as demonstrated below.
 Download script.
-using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0.">
+using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all parameters and data of the grids &#34;&#34;&#34; @with_kw mutable struct Grid nx::Int ng::Int t = 0. xmin = 0. xmax = 1. xlen = nx &#43; 2 * ng gamma = 1.4 C = 0 jlo = ng &#43; 1 jhi = nx &#43; ng # the grids dx = (xmax - xmin) / (nx - 1) x = xmin .&#43; (1:(nx &#43; 2*ng) .- ng) * dx u = zeros(xlen, 3) end &#34;&#34;&#34; set the initial conditions &#34;&#34;&#34; function init!(g::Grid) mid = floor(Int16, g.xlen/2) g.u[1:mid, 1] .= 1.0 g.u[(mid&#43;1):end, 1] .= .125 pressure = zeros(Float64, g.xlen) pressure[1:mid] .= 1.0 pressure[(mid&#43;1):end] .= 0.1 g.u[:, 2] .= 0. g.u[:, 3] .= pressure ./ (g.gamma - 1) return end function fu(g::Grid) # return F(u) pressure = (g.gamma - 1) .* (g.u[:, 3] - 0.5 .* g.u[:, 2].^2 ./ (g.u[:, 1])) fu = zeros(Float64, g.xlen, 3) fu[:, 1] = g.u[:, 2] fu[:, 2] = g.u[:, 2].^2 ./ g.u[:, 1] .&#43; pressure fu[:, 3] = (g.u[:, 3] &#43; pressure) .* g.u[:, 2] ./ g.u[:, 1] fu end function fill_BCs!(g::Grid) for i = 1:g.ng g.u[i, :] = g.u[g.jlo, :] end for i = (g.jhi &#43; 1) : (g.jhi &#43; g.ng) g.u[i, :] = g.u[g.jhi, :] end return end function summary(g::Grid) println(&#34;t = &#34;, g.t) println(&#34;Size: &#34;, size(g.u)) println(&#34;Density (every 5th): &#34;, g.u[:, 1][g.jlo:5:g.jhi]) println(&#34;Velocity (every 5th): &#34;, (g.u[:, 2] ./ g.u[:, 1])[g.jlo:5:g.jhi]) end &#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34; function plot_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true) # calculate rho, u, p e x = g.x[g.jlo:g.jhi] rho_f = g.u[g.jlo:g.jhi, 1] vel_f = g.u[g.jlo:g.jhi, 2] ./ rho_f e_f = g.u[g.jlo:g.jhi, 3] epsilon_f = (e_f./rho_f) - (.5 .* vel_f.^2) p = (g.gamma - 1) .* rho_f .* epsilon_f data = zeros(size(rho_f, 1), 4) data[:, 1] = rho_f data[:, 2] = p data[:, 3] = vel_f data[:, 4] = epsilon_f p = scatter(x, data, layout=4, # title=[&#34;density&#34; &#34;pressure&#34; &#34;velocity&#34; &#34;specific energy&#34;], ms=1, legend=false, xlabel=&#34;x&#34;, ylabel=[&#34;rho&#34; &#34;p&#34; &#34;vel&#34; &#34;epsilon&#34;], xlim=[0, 1], ylim=[(0., 1.1) (-0., 1.2) (-.2, 1) (1.6, 3.)], dpi=300) # annotate!(1.25, 1.25, &#34;t = $(g.t)&#34;) if is_save savefig(fn) else return p end end &#34;&#34;&#34; make the plot or update the animation &#34;&#34;&#34; function plot_heatmap_and_curve(g::Grid; fn=&#34;t.png&#34;, is_save=true) # calculate rho, u, p e x = g.x[g.jlo:g.jhi] h = floor(Int16, size(x, 1) / 8) y = 1:h rho_f = g.u[g.jlo:g.jhi, 1] z = float(ones(h) * reshape(rho_f, 1, :)) p0 = heatmap(x, y, z, dpi=300, size=(600, 100), clim=(0., 1.), xlim=(-0.05, 1.05), showaxis = false, c=:thermal) p1 = plot_curve(g, is_save=false) l = @layout [a{0.2h} ; b] plot(p0, p1, layout=l) if is_save savefig(fn) end end &#34;&#34;&#34; the main function &#34;&#34;&#34; function runnit(dx, tmax; dnout::Int=1, anim::Any, plotit::Function) println(&#34;Hello, world!&#34;) g = Grid(nx=dx, ng=1, t=0.) v = 1. g.C = 0.45 dt = g.C * g.dx / v init!(g) uinit = copy(g.u) unew = zeros(size(g.u)) count = 0 ocount = 0 println(&#34;Init:&#34;) println(&#34;dt = &#34;, dt, &#34; t = &#34;, g.t) # summary(g) # plot_curve(g, fn=&#34;f_init.png&#34;) # plot_heatmap_and_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount)) skip = dnout while g.t &lt; tmax &#43; dt - 1e-10 fill_BCs!(g) if g.t &gt; tmax g.t = tmax dt = dt - (g.t - tmax) end count &#43;= 1 ### LAX SCHEME ### for j in g.jlo:g.jhi unew[j, :] = 0.5 * (g.u[j - 1, :] &#43; g.u[j &#43; 1, :]) - 0.5 * dt / g.dx * (fu(g)[j &#43; 1, :] - fu(g)[j - 1, :]) end g.u = copy(unew) g.t = g.t &#43; dt # summary(g) if count % skip == 0 ocount &#43;= 1 # plot_curve(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, idx)) # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount)) # plot_heatmap(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false) plotit(g, fn=@sprintf(&#34;fig/f_%04d.png&#34;, ocount), is_save=false) Plots.frame(anim) println(&#34;Frame &#34;, ocount) end end end Tend = 0.3 # Nd = 64 Nd = 512 Anim = Plots.Animation() # runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_curve) runnit(Nd, Tend, dnout=5, anim=Anim, plotit=plot_heatmap_and_curve) gif(Anim, &#34;tube-10fps.gif&#34;, fps=10) gif(Anim, &#34;tube-15fps.gif&#34;, fps=15) gif(Anim, &#34;tube-20fps.gif&#34;, fps=20) ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blogs">
@@ -43,12 +211,14 @@ using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all 
 <link rel="canonical" href="https://chongchonghe.github.io/blogs/julia/">
 
 
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.min.aa5ef26fa979d6793724ae2dbd71efa94fd16cb1c5c7db3b6651f21f9892a5fd.css" integrity="sha256-ql7yb6l51nk3JK4tvXHvqU/RbLHFx9s7ZlHyH5iSpf0=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -102,7 +272,7 @@ using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all 
   
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
     </a>
 </div>
 
@@ -368,7 +538,7 @@ using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all 
     
     ©
     
-    Last updated 2024-08-16
+    Last updated 2024-10-02
     ·
      ChongChong He 
     ·
@@ -393,9 +563,10 @@ using Parameters using Plots using Printf &#34;&#34;&#34; A struct to store all 
 
 
   
+
   
 
-
+  
 
   
 

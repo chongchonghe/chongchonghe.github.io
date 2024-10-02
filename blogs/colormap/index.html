@@ -13,21 +13,44 @@
 
 
 <meta name="author" content="ChongChong He">
-<meta name="description" content="Compare &ldquo;viridis&rdquo; and &ldquo;jet&rdquo; with &ldquo;gray&rdquo; colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &ldquo;gray&rdquo; colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
+<meta name="description" content="
+  Compare &ldquo;viridis&rdquo; and &ldquo;jet&rdquo; with &ldquo;gray&rdquo; colormap
+  
+    
+    Link to heading
+  
+
+Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with &ldquo;gray&rdquo; colormap.
+from __future__ import division, print_function
+import numpy as np
+import matplotlib.pyplot as plt
+
+# construct a 2D Gaussian
+x = np.linspace(-3, 3, 200)
+y = x
+X, Y = np.meshgrid(x, y)
+d = np.sqrt(X*X &#43; Y*Y)
+sigma, mu = .5, 0.0
+gaus = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )
+extent = [-3, 3, -3, 3]
+plt.imshow(gaus, cmap=&#39;gray&#39;, extent=extent)
+plt.colorbar();
+
+Looks nice, ah? But, black and white are boring, so let us make it colorful. Here is what it looks like with the current default colormap &ldquo;viridis&rdquo;:">
 <meta name="keywords" content="ChongChong,Chong-Chong,blog,personal,academic,website">
+
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Why you should never use &#39;jet&#39; colormap">
-  <meta name="twitter:description" content="Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
+  <meta name="twitter:description" content=" Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
+from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .5, 0.0 gaus = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) ) extent = [-3, 3, -3, 3] plt.imshow(gaus, cmap=&#39;gray&#39;, extent=extent) plt.colorbar(); Looks nice, ah? But, black and white are boring, so let us make it colorful. Here is what it looks like with the current default colormap “viridis”:">
 
 <meta property="og:url" content="https://chongchonghe.github.io/blogs/colormap/">
   <meta property="og:site_name" content="ChongChong He">
   <meta property="og:title" content="Why you should never use &#39;jet&#39; colormap">
-  <meta property="og:description" content="Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
-from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .">
+  <meta property="og:description" content=" Compare “viridis” and “jet” with “gray” colormap Link to heading Here I create an artificial Gaussian density profile, centering at the origin and having a $\sigma$ of 0.5, and show it with “gray” colormap.
+from __future__ import division, print_function import numpy as np import matplotlib.pyplot as plt # construct a 2D Gaussian x = np.linspace(-3, 3, 200) y = x X, Y = np.meshgrid(x, y) d = np.sqrt(X*X &#43; Y*Y) sigma, mu = .5, 0.0 gaus = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) ) extent = [-3, 3, -3, 3] plt.imshow(gaus, cmap=&#39;gray&#39;, extent=extent) plt.colorbar(); Looks nice, ah? But, black and white are boring, so let us make it colorful. Here is what it looks like with the current default colormap “viridis”:">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blogs">
@@ -40,12 +63,14 @@ from __future__ import division, print_function import numpy as np import matplo
 <link rel="canonical" href="https://chongchonghe.github.io/blogs/colormap/">
 
 
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.135e22c97ff685fe983fc60048e309ced8f00d8d38f536aa67dba8a13a03dfa4.css" integrity="sha256-E14iyX/2hf6YP8YASOMJztjwDY049TaqZ9uooToD36Q=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.min.aa5ef26fa979d6793724ae2dbd71efa94fd16cb1c5c7db3b6651f21f9892a5fd.css" integrity="sha256-ql7yb6l51nk3JK4tvXHvqU/RbLHFx9s7ZlHyH5iSpf0=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -99,7 +124,7 @@ from __future__ import division, print_function import numpy as np import matplo
   
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
     </a>
 </div>
 
@@ -185,7 +210,7 @@ from __future__ import division, print_function import numpy as np import matplo
     <h2 id="compare-viridis-and-jet-with-gray-colormap">
   Compare &ldquo;viridis&rdquo; and &ldquo;jet&rdquo; with &ldquo;gray&rdquo; colormap
   <a class="heading-link" href="#compare-viridis-and-jet-with-gray-colormap">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
@@ -219,7 +244,7 @@ from __future__ import division, print_function import numpy as np import matplo
 <h2 id="define-your-own-color-map">
   Define your own color map
   <a class="heading-link" href="#define-your-own-color-map">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
@@ -268,7 +293,7 @@ from __future__ import division, print_function import numpy as np import matplo
     
     ©
     
-    Last updated 2024-08-16
+    Last updated 2024-10-02
     ·
      ChongChong He 
     ·
@@ -293,9 +318,10 @@ from __future__ import division, print_function import numpy as np import matplo
 
 
   
+
   
 
-
+  
 
   
 
